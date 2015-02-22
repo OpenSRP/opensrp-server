@@ -7,8 +7,8 @@
     <artifactId>drishti</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
-    <name>Drishti</name>
-    <url>http://github.com/modilabs/dristhi</url>
+    <name>opensrp</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
 
     <modules>
         <module>drishti-mother-child</module>
@@ -21,11 +21,6 @@
     </modules>
 
     <properties>
-        <db.server>localhost</db.server>
-        <db.port>5984</db.port>
-        <db.name.drishti>drishti</db.name.drishti>
-        <db.name.drishti-form>drishti-form</db.name.drishti-form>
-        <db.name.motech-scheduletracking>motech-scheduletracking</db.name.motech-scheduletracking>
         <main.basedir>${project.basedir}</main.basedir>
         <motech.version>0.11</motech.version>
         <motech.contrib.group>org.motechproject.contrib-drishti</motech.contrib.group>
@@ -143,6 +138,7 @@
                         <configuration>
                             <files>
                                 <file>${main.basedir}/build/maven.properties</file>
+                                <file>${main.basedir}/assets/config/drishti.properties</file>
                             </files>
                         </configuration>
                     </execution>
@@ -163,11 +159,51 @@
                                     <arg value="-S"/>
                                     <arg value="-X"/>
                                     <arg value="DELETE"/>
-                                    <arg value="http://${db.server}:${db.port}/${db.name.drishti}"/>
-                                    <arg value="http://${db.server}:${db.port}/${db.name.drishti-form}"/>
-                                    <arg value="http://${db.server}:${db.port}/${db.name.motech-scheduletracking}"/>
+                                    <arg value="http://${couchdb.server}:${couchdb.port}/${couchdb.db.drishti}"/>
+                                    <arg value="http://${couchdb.server}:${couchdb.port}/${couchdb.db.drishti-form}"/>
+                                    <arg value="http://${couchdb.server}:${couchdb.port}/${couchdb.db.motech-scheduletracking}"/>
                                 </exec>
                                 <echo message="Dropping DB: END"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>CREATE DB DRISHTI</id>
+                        <phase>pre-integration-test</phase>
+                        <configuration>
+                            <target>
+                                <echo message="CREATING DRISHTI START"/>
+                                <exec executable="curl">
+                                    <arg value="-X"/>
+                                    <arg value="PUT"/>
+                                    <arg value="http://${couchdb.server}:${couchdb.port}/${couchdb.db.drishti}"/>
+                                </exec>
+                                <echo message="CREATED DRISHTI END"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>ADD DEMO1</id>
+                        <phase>post-integration-test</phase>
+                        <configuration>
+                            <target>
+                                <echo message="ADDING DEMO1 START"/>
+                                <exec executable="curl">
+                                	<arg value="-H"/>
+                                	<arg value="&quot;Content-Type: application/json&quot;"/>
+                                    <arg value="-X"/>
+                                    <arg value="POST"/>
+                                    <arg value="http://${couchdb.server}:${couchdb.port}/${couchdb.db.drishti}"/>
+                                    <arg value="-d"/>
+                                    <arg value="@${main.basedir}/build/couch-seed-data/drishti_users.json"/>
+                                </exec>
+                                <echo message="ADDED  DEMO1 END"/>
                             </target>
                         </configuration>
                         <goals>
@@ -191,10 +227,10 @@
                 </dependencies>
 
                 <configuration>
-                    <driver>org.postgresql.Driver</driver>
+                    <driver>${jdbc.driverClassName}</driver>
                     <url>jdbc:postgresql://${postgres.server}:${postgres.port}:postgres</url>
-                    <username>${postgres.other.user}</username>
-                    <password>${postgres.other.password}</password>
+                    <username>${jdbc.username}</username>
+                    <password>${jdbc.password}</password>
                     <skip>${maven.test.skip}</skip>
                 </configuration>
 
@@ -208,7 +244,7 @@
                         <configuration>
                             <url>jdbc:postgresql://${postgres.server}:${postgres.port}/postgres</url>
                             <autocommit>true</autocommit>
-                            <sqlCommand> drop database if exists ${reporting.db}; drop database if exists ${quartz.db};</sqlCommand>
+                            <sqlCommand> drop database if exists ${postgres.db.reporting}; drop database if exists ${postgres.db.quartz};</sqlCommand>
                             <onError>abort</onError>
                         </configuration>
                     </execution>
@@ -220,12 +256,12 @@
                         </goals>
                         <configuration>
                             <url>jdbc:postgresql://${postgres.server}:${postgres.port}/postgres</url>
-                            <username>${postgres.other.user}</username>
-                            <password>${postgres.other.password}</password>
+                            <username>${jdbc.username}</username>
+                            <password>${jdbc.password}</password>
                             <autocommit>true</autocommit>
                             <sqlCommand>
-                                create database ${reporting.db};
-                                create database ${quartz.db};
+                                create database ${postgres.db.reporting};
+                                create database ${postgres.db.quartz};
                             </sqlCommand>
                             <onError>abort</onError>
                         </configuration>
@@ -237,17 +273,17 @@
                             <goal>execute</goal>
                         </goals>
                         <configuration>
-                            <url>jdbc:postgresql://${postgres.server}:${postgres.port}/${reporting.db}</url>
-                            <username>${postgres.other.user}</username>
-                            <password>${postgres.other.password}</password>
+                            <url>jdbc:postgresql://${postgres.server}:${postgres.port}/${postgres.db.reporting}</url>
+                            <username>${jdbc.username}</username>
+                            <password>${jdbc.password}</password>
                             <autocommit>true</autocommit>
                             <sqlCommand>
-                                DROP SCHEMA IF EXISTS ${service.provided.reporting.schema} CASCADE;
-                                DROP SCHEMA IF EXISTS ${anm.reporting.schema} CASCADE;
-                                CREATE SCHEMA ${service.provided.reporting.schema} AUTHORIZATION ${postgres.user};
-                                CREATE SCHEMA ${anm.reporting.schema} AUTHORIZATION ${postgres.user};
-                                GRANT ALL ON SCHEMA ${service.provided.reporting.schema} TO ${postgres.user};
-                                GRANT ALL ON SCHEMA ${anm.reporting.schema} TO ${postgres.user};
+                                DROP SCHEMA IF EXISTS ${postgres.db.reporting.report} CASCADE;
+                                DROP SCHEMA IF EXISTS ${postgres.db.reporting.anm} CASCADE;
+                                CREATE SCHEMA ${postgres.db.reporting.report} AUTHORIZATION ${jdbc.username};
+                                CREATE SCHEMA ${postgres.db.reporting.anm} AUTHORIZATION ${jdbc.username};
+                                GRANT ALL ON SCHEMA ${postgres.db.reporting.report} TO ${jdbc.username};
+                                GRANT ALL ON SCHEMA ${postgres.db.reporting.anm} TO ${jdbc.username};
                             </sqlCommand>
                             <onError>abort</onError>
                         </configuration>
@@ -260,9 +296,9 @@
                             <goal>execute</goal>
                         </goals>
                         <configuration>
-                            <url>jdbc:postgresql://${postgres.server}:${postgres.port}/${quartz.db}</url>
-                            <username>${postgres.user}</username>
-                            <password>${postgres.password}</password>
+                            <url>jdbc:postgresql://${postgres.server}:${postgres.port}/${postgres.db.quartz}</url>
+                            <username>${jdbc.username}</username>
+                            <password>${jdbc.password}</password>
                             <autocommit>true</autocommit>
                             <srcFiles>
                                 <srcFile>../build/sql/tables_quartz.sql</srcFile>
