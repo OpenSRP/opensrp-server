@@ -10,9 +10,9 @@
 
     <artifactId>drishti-mother-child</artifactId>
     <packaging>jar</packaging>
-    <name>drishti-mother-child</name>
-    <url>http://github.com/modilabs/dristhi</url>
-
+    <name>opensrp-mother-child</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
+    
     <properties>
         <main.basedir>${project.basedir}/..</main.basedir>
     </properties>
