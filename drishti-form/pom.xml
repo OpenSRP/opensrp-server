@@ -11,8 +11,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>drishti-form</artifactId>
     <packaging>jar</packaging>
-    <name>drishti-form</name>
-    <url>http://github.com/modilabs/dristhi</url>
+    <name>opensrp-form</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
 
     <properties>
         <main.basedir>${project.basedir}/..</main.basedir>
