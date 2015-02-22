@@ -13,16 +13,23 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
-                <prop key="hibernate.default_schema">${hibernate.default_schema}</prop>
+                <!-- Reading from parent.peroperties file since these are likely to change and not hibernate specific -->
+                <prop key="hibernate.default_schema">#{drishti['postgres.db.reporting.report']}</prop>
             </props>
         </property>
     </bean>
 
     <bean id="serviceProvidedDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.driverClassName}"/>
-        <property name="jdbcUrl" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
+        <!-- Reading from parent projects drishti.properties instead of drishti-report.properties in context. 
+        Uncomment hibernate.connection.XXX propereties below to revert -->
+        <property name="driverClass" value="#{drishti['jdbc.driverClassName']}"/>
+        <property name="jdbcUrl" value="#{drishti['jdbc.url']}"/>
+        <property name="user" value="#{drishti['jdbc.username']}"/>
+        <property name="password" value="#{drishti['jdbc.password']}"/>
+        <!-- <property name="driverClass" value="${hibernate.connection.driver_class}"/>
+        <property name="jdbcUrl" value="${hibernate.connection.url}"/>
+        <property name="user" value="${hibernate.connection.username}"/>
+        <property name="password" value="${hibernate.connection.password}"/> -->
         <property name="maxPoolSize" value="${hibernate.c3p0.max_size}"/>
         <property name="minPoolSize" value="${hibernate.c3p0.min_size}"/>
         <property name="checkoutTimeout" value="${hibernate.c3p0.timeout}"/>
@@ -40,16 +47,23 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
-                <prop key="hibernate.default_schema">${hibernate.anm_report_schema}</prop>
+                <!-- Reading from parent.peroperties file since these are likely to change and not hibernate specific -->
+                <prop key="hibernate.default_schema">#{drishti['postgres.db.reporting.anm']}</prop>
             </props>
         </property>
     </bean>
 
     <bean id="anmReportDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.driverClassName}"/>
-        <property name="jdbcUrl" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
+        <!-- Reading from parent projects drishti.properties instead of drishti-report.properties in context. 
+        Uncomment hibernate.connection.XXX propereties below to revert -->
+        <property name="driverClass" value="#{drishti['jdbc.driverClassName']}"/>
+        <property name="jdbcUrl" value="#{drishti['jdbc.url']}"/>
+        <property name="user" value="#{drishti['jdbc.username']}"/>
+        <property name="password" value="#{drishti['jdbc.password']}"/>
+        <!-- <property name="driverClass" value="${hibernate.connection.driver_class}"/>
+        <property name="jdbcUrl" value="${hibernate.connection.url}"/>
+        <property name="user" value="${hibernate.connection.username}"/>
+        <property name="password" value="${hibernate.connection.password}"/> -->
         <property name="maxPoolSize" value="${hibernate.c3p0.max_size}"/>
         <property name="minPoolSize" value="${hibernate.c3p0.min_size}"/>
         <property name="checkoutTimeout" value="${hibernate.c3p0.timeout}"/>
