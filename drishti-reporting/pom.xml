@@ -11,9 +11,9 @@
     </parent>
 
     <artifactId>drishti-reporting</artifactId>
-    <name>drishti-reporting</name>
     <packaging>war</packaging>
-    <url>http://github.com/modilabs/dristhi</url>
+    <name>opensrp-reporting</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
 
     <properties>
         <jetty.port>9980</jetty.port>
@@ -159,7 +159,7 @@
     </dependencies>
 
     <build>
-        <finalName>drishti-reporting</finalName>
+        <finalName>opensrp-reporting</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -185,7 +185,7 @@
                         </systemProperty>
                         <systemProperty>
                             <name>log4j.configuration</name>
-                            <value>file:${project.basedir}/src/main/resources/log4j.xml</value>
+                            <value>file:${main.basedir}/assets/config/log4j.xml</value>
                         </systemProperty>
                     </systemProperties>
                     <webAppConfig>
@@ -225,8 +225,8 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>2.0.2</version>
                 <configuration>
-                    <user>postgres</user>
-                    <password>password</password>
+                    <user>${postgres.user}</user>
+                    <password>${postgres.password}</password>
                 </configuration>
             </plugin>
         </plugins>
