@@ -11,8 +11,9 @@
     </parent>
 
     <artifactId>drishti-interface</artifactId>
-    <name>drishti-interface</name>
-
+    <name>opensrp-interface</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
+    
     <properties>
         <main.basedir>${project.basedir}/..</main.basedir>
     </properties>
