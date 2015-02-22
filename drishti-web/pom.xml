@@ -12,8 +12,8 @@
 
     <artifactId>drishti-web</artifactId>
     <packaging>war</packaging>
-    <name>drishti-web</name>
-    <url>http://github.com/modilabs/dristhi</url>
+    <name>opensrp-web</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
 
     <properties>
         <jetty.port>9979</jetty.port>
@@ -22,6 +22,7 @@
     </properties>
 
     <build>
+    	<finalName>opensrp-web</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -50,7 +51,7 @@
                         </systemProperty>
                         <systemProperty>
                             <name>log4j.configuration</name>
-                            <value>file:${project.basedir}/src/main/resources/log4j.xml</value>
+                            <value>file:${main.basedir}/assets/config/log4j.xml</value>
                         </systemProperty>
                     </systemProperties>
                     <webAppConfig>

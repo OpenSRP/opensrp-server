@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <appender name="RollingLog" class="org.apache.log4j.DailyRollingFileAppender">
+    <appender name="ReportingRollingLog" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="File" value="drishtiReporting.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -17,7 +17,7 @@
         </layout>
     </appender>
 
-    <appender name="MonitorLog" class="org.apache.log4j.DailyRollingFileAppender">
+    <appender name="ReportingMonitorLog" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="File" value="drishtiReportingMonitoring.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -25,6 +25,22 @@
         </layout>
     </appender>
 
+    <appender name="WebRollingLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="drishtiWeb.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ddMMyyyy HH:mm:ss,SSS} %-5p [%t] [%c{1}] %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="WebMonitorLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="drishtiWebMonitoring.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ddMMyyyy HH:mm:ss,SSS} %m%n"/>
+        </layout>
+    </appender>
+    
     <logger name="org.motechproject">
         <level value="WARN"/>
     </logger>
@@ -45,11 +61,16 @@
         <level value="INFO"/>
     </logger>
 
-    <logger name="DRISHTI_MONITOR">
-        <!--<appender-ref ref="MonitorLog"/>-->
+    <logger name="DRISHTI_REPORT_MONITOR">
+        <!--<appender-ref ref="ReportingMonitorLog"/>-->
         <appender-ref ref="CONSOLE"/>
     </logger>
 
+    <logger name="DRISHTI_WEB_MONITOR">
+        <!--<appender-ref ref="WebMonitorLog"/>-->
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    
     <root>
         <priority value="INFO"/>
         <!--<appender-ref ref="RollingLog"/>-->
