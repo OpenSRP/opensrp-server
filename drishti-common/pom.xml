@@ -12,9 +12,8 @@
 
     <artifactId>drishti-common</artifactId>
     <packaging>jar</packaging>
-
-    <name>drishti-common</name>
-    <url>http://github.com/modilabs/dristhi</url>
+    <name>opensrp-common</name>
+    <url>http://github.com/OpenSRP/opensrp-server</url>
 
     <properties>
         <main.basedir>${project.basedir}/..</main.basedir>
