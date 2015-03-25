@@ -1,5 +1,10 @@
 package org.opensrp.common.util;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
@@ -9,7 +14,7 @@ import static org.motechproject.util.DateUtil.inRange;
 
 public class DateUtil {
     private static DateUtility dateUtility = new RealDate();
-
+    static DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
     public static void fakeIt(LocalDate fakeDayAsToday) {
         dateUtility = new MockDate(fakeDayAsToday);
     }
@@ -36,6 +41,19 @@ public class DateUtil {
         } catch (Exception e) {
             return defaultValue;
         }
+    }
+    public static Date getDateFromString(String dateString)
+    {
+    	Date parsed = null;
+	    try {
+	    	if(dateString!=null && !dateString.equals("null") && dateString.length()>0)
+	    	{
+	    		parsed = sdf.parse(dateString.trim());	    	
+	    	}
+	    } catch (ParseException e) {
+	        e.printStackTrace();
+	    }
+	    return parsed;
     }
 }
 

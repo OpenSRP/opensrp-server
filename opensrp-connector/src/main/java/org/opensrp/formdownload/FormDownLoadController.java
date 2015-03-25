@@ -61,7 +61,7 @@ public byte[] getForm(@RequestParam(value="formname", defaultValue="form_submiss
  * return as a json string
  * */
 private String  readFormDifinitionFromDirectories(){
-    String formName_Version_DefinitionJson = "{success : true, formVersions : [";
+    String formName_Version_DefinitionJson = "{\"formVersions\" : [";
     String formVersionDefinition = "";
     File file = new File(FORMS_DIR);
     File[] files = file.listFiles();
@@ -115,7 +115,7 @@ private String getFormName_Definition(String filePath) {
     } catch (IOException e) {
         e.printStackTrace();
     }
-    return "{formName: " + formName + ", formDataDefinitionVersion: "
-            + versionNo + "}";
+    return "{\"formName\": \"" + formName + "\", \"formDataDefinitionVersion\": \""
+            + versionNo + "\"}";
 }
 }
