@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Tree<K,T>{
 
-	private Map<K, TreeNode<K, T>> map;
+	Map<K, TreeNode<K, T>> map;
 	
 	public Map<K, TreeNode<K, T>> getTree() {
 		return Collections.unmodifiableMap(map);

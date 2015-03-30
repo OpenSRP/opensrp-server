@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+
 @Controller
 public class UserController {
     private String opensrpSiteUrl;
@@ -54,13 +56,13 @@ public class UserController {
 
 	@RequestMapping("/security/authenticate")
 	@ResponseBody
-	public ResponseEntity<Map<String, Object>> authenticate() throws JSONException {
+	public ResponseEntity<String> authenticate() throws JSONException {
         User u = currentUser();
 
 		Location l = openmrsLocationService.getLocation((String) u.getBaseEntity().getAttribute("Location"));
 		Map<String, Object> map = new HashMap<>();
 		map.put("user", u);
 		map.put("location", l);
-        return new ResponseEntity<>(map, allowOrigin(opensrpSiteUrl), OK);
+        return new ResponseEntity<>(new Gson().toJson(map), allowOrigin(opensrpSiteUrl), OK);
 	}
 }

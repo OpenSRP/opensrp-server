@@ -7,7 +7,7 @@ import org.opensrp.api.domain.Location;
 
 public class LocationTree {
 
-	private Tree<String, Location> locationsHierarchy;
+	Tree<String, Location> locationsHierarchy;
 	
 	public LocationTree() {	
 		this.locationsHierarchy = new Tree<String, Location>();

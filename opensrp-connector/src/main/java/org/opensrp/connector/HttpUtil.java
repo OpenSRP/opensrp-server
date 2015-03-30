@@ -53,21 +53,15 @@ public class HttpUtil {
         	
         	HttpURLConnection con = makeConnection(url, payload, HttpMethod.POST, true, username, password);
         	con.setDoOutput(true);
-			PrintWriter writer = new PrintWriter(new OutputStreamWriter(con.getOutputStream()/*, charset*/), true); // true = autoFlush, important!
+        	con.setRequestProperty("Content-Type", "application/json");
+			String charset = "utf-8";
+			PrintWriter writer = new PrintWriter(new OutputStreamWriter(con.getOutputStream(), charset ), true); // true = autoFlush, important!
 
 			// Send normal param.
-		  //  writer.append("--" + boundary).append(CRLF);
-		   // writer.append("Content-Disposition: form-data; name=\""+contentParamName+"\"").append(CRLF);
-		   // writer.append("Content-Type: text/plain; charset=" + charset ).append(CRLF);
-		 //   writer.append(CRLF);
 		    System.out.println(data);
-		    writer.append(data).append(CRLF).flush();
-		    // End of multipart/form-data.
-		  //  writer.append("--" + boundary + "--").append(CRLF);
+		    writer.append(data);
 		    if (writer != null) writer.close();
 
-		    //if(output != null) output.close(); 
-		    	
             return new HttpResponse(con.getResponseCode() == HttpStatus.SC_OK, IOUtils.toString(con.getInputStream()));
 			
         } catch (Exception e) {
