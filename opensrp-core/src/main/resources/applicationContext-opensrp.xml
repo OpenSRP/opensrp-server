@@ -35,4 +35,9 @@
         <constructor-arg ref="couchDbInstance"/>
     </bean>
     <bean id="statsdAgent" class="org.motechproject.metrics.impl.LoggingAgentBackendImpl"/>
+  <bean id="opensrpErrorTraceDatabaseConnector" class="org.ektorp.impl.StdCouchDbConnector">
+        <constructor-arg value="${couchdb.db.error}"/>
+        <constructor-arg ref="couchDbInstance"/>
+    </bean>
+
 </beans>

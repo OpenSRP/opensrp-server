@@ -9,6 +9,19 @@
     </context:component-scan>
     <context:component-scan base-package="org.opensrp.connector"/>
     <mvc:annotation-driven/>
-    <mvc:resources location="/" mapping="/resources/**"/>
+<!--     <mvc:resources location="/" mapping="/resources/**"/> -->
+  <!--    <mvc:resources mapping="/resources/**" location="/WEB-INF/" />-->
+<!--     <mvc:resources mapping="/resources/**" location="/resources/" /> -->
     <mvc:default-servlet-handler/>
+    
+    <bean
+	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix">
+		<value>/WEB-INF/</value>
+	</property>
+	<property name="suffix">
+		<value>.jsp</value>
+	</property>
+    </bean>
+ 
 </beans>

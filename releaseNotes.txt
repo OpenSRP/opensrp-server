@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Date of Release: 27-Jul-2015
 
 New Features
@@ -15,3 +16,24 @@ Fixes
 
 Known Issues
 ============
+=======
+Date of Release: 23-Jun-2015
+
+New Features
+============
+- Added power mock api in pom to handle static class mocks
+
+Changes
+=======
+- Removed all calls to live server in connector tests and now using only mock objects and mock calls
+- Using mocks only instead of calls to server in opensrp web tests
+- Printing message in UserController when team member mapping fails instead of stacktrace as it is ignorable
+
+Fixes
+=====
+- Fixed the issue where code was assigning wrong ID to subform entities
+- 
+
+Known Issues
+============
+>>>>>>> refs/remotes/origin/ErrorLogging

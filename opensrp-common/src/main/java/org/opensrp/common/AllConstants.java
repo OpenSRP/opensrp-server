@@ -15,7 +15,7 @@ public class AllConstants {
     public static final String AUTO_CLOSE_PNC_CLOSE_REASON = "Auto Close PNC";
     public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
     public static final String EMPTY_STRING = "";
-
+    public static final String OPENSRP_ERRORTRACE_DATABASE="opensrpErrorTraceDatabaseConnector";
 
     public static class Form {
         public static final String ENTITY_ID = "entityId";
