@@ -13,3 +13,5 @@ script:
   - java -version
   - mvn --version
   - mvn test
+after_success:
+  - mvn clean test jacoco:report coveralls:report
