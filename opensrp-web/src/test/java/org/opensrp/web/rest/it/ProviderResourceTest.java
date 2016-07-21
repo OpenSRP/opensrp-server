@@ -21,6 +21,7 @@ import org.mockito.Mock;
 import org.opensrp.domain.Client;
 import org.opensrp.service.ClientService;
 import org.opensrp.web.rest.ClientResource;
+import org.opensrp.web.rest.ProviderResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
@@ -47,7 +48,7 @@ public class ProviderResourceTest {
 	@Autowired
 	private ClientService cs;
 	@Autowired
-	private ClientResource cr;
+	private ProviderResource pr;
 	
 	@Test
 	public void testProviderSearch() throws Exception {
@@ -64,7 +65,7 @@ public class ProviderResourceTest {
 		  handlerAdapter.setMessageConverters(messageConverters);
 		
 		  MockHttpServletResponse mockResponse = new MockHttpServletResponse();
-		  handlerAdapter.handle(mockRequest, mockResponse, cr);
+		  handlerAdapter.handle(mockRequest, mockResponse, pr);
 		
 		  String actual = mockResponse.getContentAsString();
 		  System.out.println(actual);

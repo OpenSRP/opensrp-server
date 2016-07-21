@@ -1,0 +1,35 @@
+{
+    "name": "IFA 1",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "IFA 1",
+            "scheduleWindows": {
+                "earliest": ["14 Weeks"],
+                "due": ["16 Weeks"],
+                "late": ["100 Weeks"],
+                "max": ["100 Weeks", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "90"
+                },
+                {
+                    "window": "due",
+                    "offset": ["14 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                },
+                {
+                    "window": "late",
+                    "offset": ["16 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "588"
+                }
+            ]
+        }
+    ]
+}

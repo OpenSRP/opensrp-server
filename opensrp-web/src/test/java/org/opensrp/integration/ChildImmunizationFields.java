@@ -14,8 +14,8 @@ public class ChildImmunizationFields {
 
         public static final String HEPATITIS_0_VALUE = "hepb_0";
 
-        public static final String MEASLES_VALUE = "measles";
-        public static final String MEASLES_BOOSTER_VALUE = "measlesbooster";
+        public static final String MEASLES_VALUE = "measles1";
+        public static final String MEASLES_BOOSTER_VALUE = "measles2";
 
         public static final String OPV_0_VALUE = "opv_0";
         public static final String OPV_1_VALUE = "opv_1";

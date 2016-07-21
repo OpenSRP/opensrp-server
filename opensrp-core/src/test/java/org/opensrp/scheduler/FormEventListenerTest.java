@@ -4,11 +4,11 @@ import static java.util.Arrays.asList;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.opensrp.common.util.EasyMap.mapOf;
 
 import java.text.Normalizer.Form;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,6 +21,9 @@ import org.opensrp.common.AllConstants.Config;
 import org.opensrp.common.AllConstants.OpenSRPEvent;
 import org.opensrp.domain.AppStateToken;
 import org.opensrp.dto.form.FormSubmissionDTO;
+import org.opensrp.form.domain.FormData;
+import org.opensrp.form.domain.FormField;
+import org.opensrp.form.domain.FormInstance;
 import org.opensrp.form.domain.FormSubmission;
 import org.opensrp.form.service.FormSubmissionService;
 import org.opensrp.service.ConfigService;
@@ -61,8 +64,8 @@ public class FormEventListenerTest {
 
     @Test
     public void shouldFetchFormSubmissionsFromSubmissionService() throws Exception {
-    	FormSubmission fs1 = new FormSubmission("anm id 1", "instance id 1", "form name", "entity id 1", "1.0", 0L, null),
-        fs2 = new FormSubmission("anm id 2", "instance id 2", "form name", "entity id 2", "1.0", 0L, null);
+    	FormSubmission fs1 = new FormSubmission("anm id 1", "instance id 1", "form name", "entity id 1", "1.0", 0L, new FormInstance(new FormData("test","def/bindpath", new ArrayList<FormField>(), null))),
+        fs2 = new FormSubmission("anm id 2", "instance id 2", "form name", "entity id 2", "1.0", 0L, new FormInstance(new FormData("test","def/bindpath", new ArrayList<FormField>(), null)));
         List<FormSubmission> formSubmissions = asList(fs1,fs2);
         when(configService.getAppStateTokenByName(Config.FORM_ENTITY_PARSER_LAST_SYNCED_FORM_SUBMISSION)).thenReturn(new AppStateToken("token", 1L, 0));
         when(formSubmissionService.getAllSubmissions(1L, null)).thenReturn(formSubmissions);

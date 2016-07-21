@@ -1,0 +1,35 @@
+{
+    "name": "PENTAVALENT 3",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "pentavalent_3",
+            "scheduleWindows": {
+                "earliest": ["4 Weeks"],
+                "due": ["6 Weeks"],
+                "late": ["12 Months"],
+                "max": ["12 Months"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Day"],
+                    "count": "28"
+                },
+                {
+                    "window": "due",
+                    "offset": ["4 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                },
+                {
+                    "window": "late",
+                    "offset": ["6 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "322"
+                }
+            ]
+        }
+    ]
+}

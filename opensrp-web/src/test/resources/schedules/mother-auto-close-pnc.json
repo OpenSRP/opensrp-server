@@ -1,0 +1,20 @@
+{
+    "name": "Auto Close PNC",
+    "absolute": false,
+    "milestones": [
+        {
+            "name": "Auto Close PNC",
+            "scheduleWindows": {
+                "due": ["8 Weeks", "4 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["8 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "4"
+                }
+            ]
+        }
+    ]
+}

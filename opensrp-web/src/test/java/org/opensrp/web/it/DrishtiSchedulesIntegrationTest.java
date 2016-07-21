@@ -240,10 +240,10 @@ public class DrishtiSchedulesIntegrationTest extends BaseUnitTest {
     public void shouldProvideAlertsForPentavalent1() throws Exception {
         schedule.enrollFor(CHILD_SCHEDULE_PENTAVALENT_1, newDate(2012, JANUARY, 1), new Time(14, 0));
 
-        schedule.assertAlertsStartWith("penta1", earliest, date(1, JANUARY), date(2, JANUARY), date(3, JANUARY), date(4, JANUARY));
-        schedule.assertAlertsStartWith("penta1", due, date(12, FEBRUARY), date(13, FEBRUARY), date(14, FEBRUARY), date(15, FEBRUARY));
-        schedule.assertAlertsStartWith("penta1", late, date(26, FEBRUARY), date(27, FEBRUARY), date(28, FEBRUARY), date(29, FEBRUARY));
-        schedule.assertNoAlerts("penta1", max);
+        schedule.assertAlertsStartWith("pentavalent_1", earliest, date(1, JANUARY), date(2, JANUARY), date(3, JANUARY), date(4, JANUARY));
+        schedule.assertAlertsStartWith("pentavalent_1", due, date(12, FEBRUARY), date(13, FEBRUARY), date(14, FEBRUARY), date(15, FEBRUARY));
+        schedule.assertAlertsStartWith("pentavalent_1", late, date(26, FEBRUARY), date(27, FEBRUARY), date(28, FEBRUARY), date(29, FEBRUARY));
+        schedule.assertNoAlerts("pentavalent_1", max);
 
         visualization.outputTo("child-pentavalent-1.html", 1);
     }
@@ -252,10 +252,10 @@ public class DrishtiSchedulesIntegrationTest extends BaseUnitTest {
     public void shouldProvideAlertsForPentavalent2() throws Exception {
         schedule.enrollFor(CHILD_SCHEDULE_PENTAVALENT_2, newDate(2012, JANUARY, 1), new Time(14, 0));
 
-        schedule.assertAlertsStartWith("penta2", earliest, date(1, JANUARY), date(2, JANUARY), date(3, JANUARY), date(4, JANUARY));
-        schedule.assertAlertsStartWith("penta2", due, date(29, JANUARY), date(30, JANUARY), date(31, JANUARY));
-        schedule.assertAlertsStartWith("penta2", late, date(12, FEBRUARY), date(13, FEBRUARY), date(14, FEBRUARY), date(15, FEBRUARY));
-        schedule.assertNoAlerts("penta2", max);
+        schedule.assertAlertsStartWith("pentavalent_2", earliest, date(1, JANUARY), date(2, JANUARY), date(3, JANUARY), date(4, JANUARY));
+        schedule.assertAlertsStartWith("pentavalent_2", due, date(29, JANUARY), date(30, JANUARY), date(31, JANUARY));
+        schedule.assertAlertsStartWith("pentavalent_2", late, date(12, FEBRUARY), date(13, FEBRUARY), date(14, FEBRUARY), date(15, FEBRUARY));
+        schedule.assertNoAlerts("pentavalent_2", max);
 
         visualization.outputTo("child-pentavalent-2.html", 1);
     }
@@ -264,10 +264,10 @@ public class DrishtiSchedulesIntegrationTest extends BaseUnitTest {
     public void shouldProvideAlertsForPentavalent3() throws Exception {
         schedule.enrollFor(CHILD_SCHEDULE_PENTAVALENT_3, newDate(2012, JANUARY, 1), new Time(14, 0));
 
-        schedule.assertAlertsStartWith("penta3", earliest, date(1, JANUARY), date(2, JANUARY), date(3, JANUARY), date(4, JANUARY));
-        schedule.assertAlertsStartWith("penta3", due, date(29, JANUARY), date(30, JANUARY), date(31, JANUARY));
-        schedule.assertAlertsStartWith("penta3", late, date(12, FEBRUARY), date(13, FEBRUARY), date(14, FEBRUARY), date(15, FEBRUARY));
-        schedule.assertNoAlerts("penta3", max);
+        schedule.assertAlertsStartWith("pentavalent_3", earliest, date(1, JANUARY), date(2, JANUARY), date(3, JANUARY), date(4, JANUARY));
+        schedule.assertAlertsStartWith("pentavalent_3", due, date(29, JANUARY), date(30, JANUARY), date(31, JANUARY));
+        schedule.assertAlertsStartWith("pentavalent_3", late, date(12, FEBRUARY), date(13, FEBRUARY), date(14, FEBRUARY), date(15, FEBRUARY));
+        schedule.assertNoAlerts("pentavalent_3", max);
 
         visualization.outputTo("child-pentavalent-3.html", 1);
     }

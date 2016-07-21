@@ -1,0 +1,35 @@
+{
+    "name": "Expected Date Of Delivery",
+    "absolute": false,
+    "milestones": [
+        {
+            "name": "EDD",
+            "scheduleWindows": {
+                "earliest": ["38 Weeks"],
+                "due": ["40 Weeks", "1 Day"],
+                "late": ["100 Weeks"],
+                "max": ["100 Weeks", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Weeks"],
+                    "count": "3"
+                },
+                {
+                    "window": "late",
+                    "offset": ["2 Days"],
+                    "interval": ["1 Weeks"],
+                    "count": "100"
+                },
+                {
+                    "window": "late",
+                    "offset": ["6 Days"],
+                    "interval": ["1 Weeks"],
+                    "count": "100"
+                }
+            ]
+        }
+   ]
+}

@@ -1,0 +1,52 @@
+{
+    "name": "Male sterilization Followup",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "Male sterilization Followup 1",
+            "scheduleWindows": {
+                "earliest": ["0 Weeks"],
+                "due": ["2 Days"],
+                "late": ["3 Months"],
+                "max": ["3 Months"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Day"],
+                    "count": "2"
+                },
+                {
+                    "window": "late",
+                    "offset": ["2 Days"],
+                    "interval": ["1 Day"],
+                    "count": "89"
+                }
+            ]
+        },
+        {
+            "name": "Male sterilization Followup 2",
+            "scheduleWindows": {
+                "earliest": ["0 Weeks"],
+                "due": ["3 Months", "1 Week"],
+                "late": ["100 Weeks"],
+                "max": ["100 Weeks", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["3 Months"],
+                    "interval": ["1 Day"],
+                    "count": "7"
+                },
+                {
+                    "window": "late",
+                    "offset": ["3 Months", "1 Week"],
+                    "interval": ["1 Day"],
+                    "count": "602"
+                }
+            ]
+        }
+    ]
+}

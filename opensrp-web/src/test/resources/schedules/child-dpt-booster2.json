@@ -1,0 +1,22 @@
+{
+    "name": "DPT Booster 2",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "dptbooster_2",
+            "scheduleWindows": {
+                "earliest": ["5 Years"],
+                "due": ["7 Years"],
+                "max": ["7 Years"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["5 Years"],
+                    "interval": ["1 Day"],
+                    "count": "730"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "BCG",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "bcg",
+            "scheduleWindows": {
+                "earliest": ["0 Days"],
+                "due": ["2 Weeks"],
+                "late": ["1 Year"],
+                "max": ["1 Year"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                },
+                {
+                    "window": "late",
+                    "offset": ["2 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "350"
+                }
+            ]
+        }
+    ]
+}

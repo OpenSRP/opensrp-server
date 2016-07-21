@@ -1,0 +1,35 @@
+{
+    "name": "Delivery Plan",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "Delivery Plan",
+            "scheduleWindows": {
+                "earliest": ["34 Weeks"],
+                "due": ["36 Weeks"],
+                "late": ["300 Days"],
+                "max": ["5 Years"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Day"],
+                    "count": "238"
+                },
+                {
+                    "window": "due",
+                    "offset": ["34 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                },
+                {
+                    "window": "late",
+                    "offset": ["36 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "48"
+                }
+            ]
+        }
+    ]
+}

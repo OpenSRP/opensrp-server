@@ -1,0 +1,29 @@
+{
+    "name": "Condom Refill",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "Condom Refill",
+            "scheduleWindows": {
+                "earliest": ["0 Weeks"],
+                "due": ["1 Weeks"],
+                "late": ["1 Year"],
+                "max": ["1 Year", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "7"
+                },
+                {
+                    "window": "late",
+                    "offset": ["1 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "358"
+                }
+            ]
+        }
+    ]
+}

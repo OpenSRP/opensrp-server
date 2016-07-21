@@ -1,0 +1,104 @@
+{
+    "name": "Ante Natal Care - Normal",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "ANC 1",
+            "scheduleWindows": {
+                "earliest": ["0 Weeks"],
+                "due": ["12 Weeks"],
+                "late": ["14 Weeks"],
+                "max": ["14 weeks"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "84"
+                },
+                {
+                    "window": "late",
+                    "offset": ["12 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                },
+                {
+                    "window": "max",
+                    "offset": ["14 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "2"
+                }
+            ]
+        },
+        {
+            "name": "ANC 2",
+            "scheduleWindows": {
+                "earliest": ["14 Weeks"],
+                "due": ["26 Weeks"],
+                "late": ["28 Weeks"],
+                "max": ["28 Weeks"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["14 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "84"
+                },
+                {
+                    "window": "late",
+                    "offset": ["26 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                }
+            ]
+        },
+        {
+            "name": "ANC 3",
+            "scheduleWindows": {
+                "earliest": ["28 Weeks"],
+                "due": ["34 Weeks"],
+                "late": ["36 Weeks"],
+                "max": ["36 Weeks"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["28 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "42"
+                },
+                {
+                    "window": "late",
+                    "offset": ["34 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                }
+            ]
+        },
+        {
+            "name": "ANC 4",
+            "scheduleWindows": {
+                "earliest": ["36 Weeks"],
+                "due": ["39 Weeks"],
+                "late": ["100 Weeks"],
+                "max": ["100 Weeks", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "due",
+                    "offset": ["36 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "21"
+                },
+                {
+                    "window": "late",
+                    "offset": ["39 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "427"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "name": "FP Referral Followup",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "FP Referral Followup",
+            "scheduleWindows": {
+                "earliest": ["1 Day"],
+                "due": ["2 Days"],
+                "late": ["100 Weeks"],
+                "max": ["100 Weeks", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Day"],
+                    "count": "1"
+                },
+                {
+                    "window": "due",
+                    "offset": ["1 Day"],
+                    "interval": ["1 Day"],
+                    "count": "1"
+                },
+                {
+                    "window": "late",
+                    "offset": ["2 Days"],
+                    "interval": ["1 Day"],
+                    "count": "698"
+                }
+            ]
+        }
+    ]
+}

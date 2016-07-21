@@ -7,10 +7,25 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.opensrp.common.util.HttpResponse;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
@@ -38,7 +53,7 @@ public class HttpUtil {
      */
     public static HttpResponse post(String url, String payload, String data, String username,String password) {
         try {
-        	HttpURLConnection con = makeConnection(url, payload, HttpMethod.POST, true, username, password);
+        	HttpsURLConnection con = makeConnection(url, payload, HttpMethod.POST, true, username, password);
         	con.setDoOutput(true);
         	con.setRequestProperty("Content-Type", "application/json");
 			String charset = "utf-8";
@@ -66,7 +81,7 @@ public class HttpUtil {
      */
     public static HttpResponse get(String url, String payload, String username, String password) {
         try {
-            HttpURLConnection con = makeConnection(url, payload, HttpMethod.GET, true, username, password);
+            HttpsURLConnection con = makeConnection(url, payload, HttpMethod.GET, true, username, password);
             System.out.println(url);
             HttpResponse resp = new HttpResponse(con.getResponseCode() == HttpStatus.SC_OK, IOUtils.toString(con.getInputStream()));
             System.out.println(resp);
@@ -83,7 +98,7 @@ public class HttpUtil {
         }
     }
     
-    static HttpURLConnection makeConnection(String url, String payload, HttpMethod requestMethod, boolean useBasicAuth, String username, String password) throws IOException {
+    static HttpsURLConnection makeConnection(String url, String payload, HttpMethod requestMethod, boolean useBasicAuth, String username, String password) throws IOException {
     	String charset = "UTF-8";
 
         if(url.endsWith("/")){
@@ -91,7 +106,7 @@ public class HttpUtil {
         }
         url = (url+(StringUtils.isEmptyOrWhitespaceOnly(payload)?"":("?"+payload))).replaceAll(" ", "%20");
     	URL urlo = new URL(url);
-		HttpURLConnection conn = (HttpURLConnection) urlo.openConnection();
+		HttpsURLConnection conn = (HttpsURLConnection) urlo.openConnection();
 		conn.setRequestProperty("Accept-Charset", charset);
 		
 		if(useBasicAuth){
@@ -110,4 +125,51 @@ public class HttpUtil {
     public static String removeTrailingSlash(String str){
 		return str.startsWith("/")?str.substring(1):str;
 	}
+    
+    static {
+        disableSslVerification();
+    }
+
+    private static void disableSslVerification() {
+    	System.setProperty("disable_bad_sslciphers", "yes");
+    	System.setProperty("jsse.enableSNIExtension", "false");
+        Security.addProvider(new BouncyCastleProvider());
+
+        try
+        {
+            // Create a trust manager that does not validate certificate chains
+            TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
+                public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+				@Override
+				public void checkClientTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+				}
+            }
+            };
+
+            // Install the all-trusting trust manager
+            SSLContext sc = SSLContext.getInstance("TLS");
+            sc.init(null, trustAllCerts, new java.security.SecureRandom());
+            SSLSocketFactory sf = sc.getSocketFactory();
+            HttpsURLConnection.setDefaultSSLSocketFactory(new SecureSocketFactory(sf));
+
+            // Create all-trusting host name verifier
+            HostnameVerifier allHostsValid = new HostnameVerifier() {
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            };
+
+            // Install the all-trusting host verifier
+            HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (KeyManagementException e) {
+            e.printStackTrace();
+        }
+    }
 }

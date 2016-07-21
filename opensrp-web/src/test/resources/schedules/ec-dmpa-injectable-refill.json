@@ -1,0 +1,35 @@
+{
+    "name": "DMPA Injectable Refill",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "DMPA Injectable Refill",
+            "scheduleWindows": {
+                "earliest": ["12 Weeks"],
+                "due": ["13 Weeks"],
+                "late": ["1 Year"],
+                "max": ["1 Year", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "84"
+                },
+                {
+                    "window": "due",
+                    "offset": ["12 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "7"
+                },
+                {
+                    "window": "late",
+                    "offset": ["13 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "274"
+                }
+            ]
+        }
+    ]
+}

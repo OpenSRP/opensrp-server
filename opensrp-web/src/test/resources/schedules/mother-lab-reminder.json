@@ -1,0 +1,29 @@
+{
+    "name": "Lab Reminders",
+    "absolute": false,
+    "milestones": [
+        {
+            "name": "REMINDER",
+            "scheduleWindows": {
+                "earliest": ["10 Weeks"],
+                "due": ["30 Weeks"],
+                "late": ["40 Weeks", "1 Day"],
+                "max": ["41 Weeks"]
+            },
+            "alerts": [
+                {
+                    "window": "late",
+                    "offset": ["0 Days"],
+                    "interval": ["1 Weeks"],
+                    "count": "11"
+                },
+                {
+                    "window": "max",
+                    "offset": ["1 Day"],
+                    "interval": ["1 Day"],
+                    "count": "3"
+                }
+            ]
+        }
+   ]
+}

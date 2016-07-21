@@ -66,6 +66,7 @@ public class EventService {
 		}
 
 		event.setDateCreated(new Date());
+		event.setDateEdited(new Date());
 		if(StringUtils.isEmptyOrWhitespaceOnly(event.getEventId())){
 			event.setEventId(System.currentTimeMillis()+"");
 		}

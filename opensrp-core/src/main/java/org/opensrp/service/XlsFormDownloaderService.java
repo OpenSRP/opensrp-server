@@ -41,6 +41,8 @@ public class XlsFormDownloaderService {
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
+		
+		System.out.println(DateTime.now().toString("dd-MM-yyyy"));
 	}
 	
 	public boolean downloadFormFiles(String directory,String username ,String formPath, String password,String formId, String formPk) throws IOException{

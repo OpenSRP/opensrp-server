@@ -1,0 +1,35 @@
+{
+    "name": "IFA 2",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "IFA 2",
+            "scheduleWindows": {
+                "earliest": ["1 Months"],
+                "due": ["1 Month", "2 Weeks"],
+                "late": ["100 Weeks"],
+                "max": ["100 Weeks", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "due",
+                    "offset": ["1 Months"],
+                    "interval": ["1 Day"],
+                    "count": "14"
+                },
+                {
+                    "window": "late",
+                    "offset": ["1 Month", "2 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "658"
+                }
+            ]
+        }
+    ]
+}
