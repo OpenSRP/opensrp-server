@@ -146,8 +146,6 @@ public class ErrorTrace extends MotechBaseDataObject {
 		this.dateOccurred = date;
 	}
 
-	
-
 	public String getOccurredAt() {
 		return occurredAt;
 	}

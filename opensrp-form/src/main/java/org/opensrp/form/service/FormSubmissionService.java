@@ -3,6 +3,7 @@ package org.opensrp.form.service;
 import ch.lambdaj.function.convert.Converter;
 
 
+
 import org.opensrp.common.util.DateUtil;
 import org.opensrp.dto.form.FormSubmissionDTO;
 import org.opensrp.form.domain.FormSubmission;
@@ -11,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.opensrp.form.domain.*;
 
 import java.util.Comparator;
 import java.util.List;
@@ -23,7 +25,6 @@ import static java.util.Collections.sort;
 public class FormSubmissionService {
     private static Logger logger = LoggerFactory.getLogger(FormSubmissionService.class.toString());
     private AllFormSubmissions allFormSubmissions;
-
     @Autowired
     public FormSubmissionService(AllFormSubmissions allFormSubmissions) {
         this.allFormSubmissions = allFormSubmissions;
@@ -50,6 +51,9 @@ public class FormSubmissionService {
         return allFormSubmissions.allFormSubmissions(version, batchSize);
     }
 
+   /* public List<org.opensrp.form.domain.Drug> getAllDrugObject(String name) {
+        return allDrugs.findAllByName(name);
+    }*/
     public List<FormSubmission> findByFormName(String formName, long version) {
     	return allFormSubmissions.findByFormName(formName, version);
     }

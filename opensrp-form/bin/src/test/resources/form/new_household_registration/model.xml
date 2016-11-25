@@ -1,0 +1,49 @@
+<model>
+    <instance>
+        <FWNewHH encounter_type="New Household Registration" id="FWNewHH" version="201505061341">
+            <formhub>
+                <uuid/>
+            </formhub>
+            <existing_location openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+            <today openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
+            <start openmrs_entity="encounter" openmrs_entity_id="encounter_start"/>
+            <end openmrs_entity="encounter" openmrs_entity_id="encounter_end"/>
+            <FWNHREGDATE openmrs_entity="concept" openmrs_entity_id="160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <FWGOBHHID openmrs_entity="person_identifier" openmrs_entity_id="GOB HHID"/>
+            <FWJIVHHID openmrs_entity="person_identifier" openmrs_entity_id="JiVitA HHID"/>
+            <FWNHNEARTO openmrs_entity="person_address" openmrs_entity_id="landmark" openmrs_entity_parent="usual_residence"/>
+            <FWNHHHGPS openmrs_entity="person_address" openmrs_entity_id="geopoint" openmrs_entity_parent="usual_residence"/>
+            <FWHOHFNAME openmrs_entity="person" openmrs_entity_id="first_name"/>
+            <FWHOHLNAME openmrs_entity="person" openmrs_entity_id="last_name"/>
+            <FWHOHBIRTHDATE openmrs_entity="person" openmrs_entity_id="birthdate"/>
+            <FWHOHGENDER openmrs_entity="person" openmrs_entity_id="gender"/>
+            <FWHOHBIRTHDATEAPPROX openmrs_entity="person" openmrs_entity_id="birthdate_estimated"/>
+            <FWNHHMBRNUM openmrs_entity="concept" openmrs_entity_id="5611AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <FWNHHMWRA/>
+            <woman template="" openmrs_entity="person" openmrs_entity_id="Census and New Woman Registration">
+                <GOBHHID/>
+                <JiVitAHHID/>
+                <FWWOMFNAME openmrs_entity="person" openmrs_entity_id="first_name"/>
+                <FWWOMLNAME openmrs_entity="person" openmrs_entity_id="last_name"/>
+                <FWWOMNID openmrs_entity="person_identifier" openmrs_entity_id="NID"/>
+                <FWWOMBID openmrs_entity="person_identifier" openmrs_entity_id="Birth Registration ID"/>
+                <FWHUSNAME openmrs_entity="concept" openmrs_entity_id="161135AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                <FWBIRTHDATE openmrs_entity="person" openmrs_entity_id="birthdate"/>
+            	<FWBIRTHDATEAPPROX openmrs_entity="person" openmrs_entity_id="birthdate_estimated"/>
+                <FWGENDER openmrs_entity="person" openmrs_entity_id="gender"/>
+                <FWWOMAGE/>
+                <display_age/>
+                <FWNHWOMSTRMEN/>
+                <FWNHWOMHUSLIV/>
+                <FWNHWOMHUSSTR/>
+                <FWELIGIBLE/>
+                <add_women/>
+            </woman>
+            <join_names/>
+            <MWRA/>
+            <meta>
+                <instanceID/>
+            </meta>
+        </FWNewHH>
+    </instance>
+</model>

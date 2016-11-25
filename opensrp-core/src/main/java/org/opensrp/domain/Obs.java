@@ -1,6 +1,7 @@
 package org.opensrp.domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
@@ -182,6 +183,10 @@ public class Obs {
 	public Obs withEffectiveDatetime(DateTime effectiveDatetime) {
 		this.effectiveDatetime = effectiveDatetime;
 		return this;
-		
+	}
+	
+	public static void main(String[] args) {
+		Obs o1 = new Obs("concept", "str", "454253425", null, Arrays.asList(new String[]{"55"}), null, "WEIGHT");
+		Obs o2 = new Obs("concept", "str", "6565645656", null, Arrays.asList(new String[]{"20"}), null, "HEIGHT");
 	}
 }

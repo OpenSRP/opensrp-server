@@ -27,6 +27,7 @@ public class PatientService extends OpenmrsService{
 	//person methods should be separate
 	private static final String PERSON_URL = "ws/rest/v1/person";
 	private static final String PATIENT_URL = "ws/rest/v1/patient";
+	private static final String RELATION_URL = "ws/rest/v1/relationship";
 	private static final String PATIENT_IDENTIFIER_URL = "identifier";
 	private static final String PERSON_ATTRIBUTE_URL = "attribute";
 	private static final String PERSON_ATTRIBUTE_TYPE_URL = "ws/rest/v1/personattributetype";
@@ -44,11 +45,27 @@ public class PatientService extends OpenmrsService{
     }
 	
     public JSONObject getPatientByIdentifier(String identifier) throws JSONException
+    { 
+    	System.out.println(HttpUtil.get(getURL()+"/"+PATIENT_URL, "v=full&identifier="+identifier, OPENMRS_USER, OPENMRS_PWD).body());
+    	String JSON=getURL()+"/"+PATIENT_URL;
+    	JSONArray p = new JSONObject(HttpUtil.get(JSON, "v=full&identifier="+identifier, OPENMRS_USER, OPENMRS_PWD).body())
+    			.getJSONArray("results");
+    	System.out.println(String.valueOf(p));
+    	return p.length()>0?p.getJSONObject(0):null;
+    }
+    
+    public JSONObject getPatientByIdentifier(int num) throws JSONException
     {
     	JSONArray p = new JSONObject(HttpUtil.get(getURL()
-    			+"/"+PATIENT_URL, "v=full&identifier="+identifier, OPENMRS_USER, OPENMRS_PWD).body())
+    			+"/"+RELATION_URL, "v=full&identifier="+num, OPENMRS_USER, OPENMRS_PWD).body())
     			.getJSONArray("results");
     	return p.length()>0?p.getJSONObject(0):null;
+    }
+    
+    public JSONObject getRelativeByUuid(String uuid, boolean noRepresentationTag) throws JSONException
+    {
+    	return new JSONObject(HttpUtil.get(getURL()
+    			+"/"+RELATION_URL+"/"+uuid, noRepresentationTag?"":"v=full", OPENMRS_USER, OPENMRS_PWD).body());
     }
     
     public JSONObject getPatientByUuid(String uuid, boolean noRepresentationTag) throws JSONException
@@ -76,10 +93,16 @@ public class PatientService extends OpenmrsService{
 		return new JSONObject(HttpUtil.post(getURL()+"/"+PATIENT_IDENTIFIER_TYPE_URL, "", o.toString(), OPENMRS_USER, OPENMRS_PWD).body());
 	}
     
+    
 	public JSONObject convertIdentifierToOpenmrsJson(String name, String description) throws JSONException {
 		JSONObject a = new JSONObject();
 		a.put("name", name);
 		a.put("description", description);
+		return a;
+	}
+	public JSONObject convertRelationShipToOpenmrsJson(int num) throws JSONException {
+		JSONObject a = new JSONObject();
+		a.put("relationship", num);
 		return a;
 	}
 	

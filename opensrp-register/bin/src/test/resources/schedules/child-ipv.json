@@ -1,0 +1,41 @@
+{
+    "name": "IPV",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "ipv",
+            "scheduleWindows": {
+                "earliest": ["4 Weeks"],
+                "due": ["6 Weeks"],
+                "late": ["5 Years"],
+                "max": ["5 Years", "1 Day"]
+            },
+            "alerts": [
+            	{
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "due",
+                    "offset": ["4 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "late",
+                    "offset": ["6 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "1900"
+                },
+                {
+                    "window": "max",
+                    "offset": ["5 Years"],
+                    "interval": ["1 Day"],
+                    "count": "2"
+                }
+            ]
+        }
+    ]
+}

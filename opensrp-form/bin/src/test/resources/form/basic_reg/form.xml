@@ -1,0 +1,287 @@
+<form autocomplete="off" novalidate="novalidate" class="or clearfix" id="patient_basic_reg">
+    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+    <section class="form-logo"></section>
+    <h3 id="form-title">Register with address</h3>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">First name</span>
+        <input type="text" name="/register_with_address/woman_name" data-type-xml="string"/>
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Last name</span>
+        <input type="text" name="/register_with_address/last_name" data-type-xml="string"/>
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Gender</span>
+        <input type="text" name="/register_with_address/gender" data-type-xml="string"/>
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">DOB</span>
+        <input type="date" name="/register_with_address/birthdate" data-type-xml="date"/>
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Location of ANC</span>
+                <span class="required">*</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_with_address/location" data-name="/register_with_address/location" value="karachi" required="required" data-type-xml="select1"/>
+                    <span lang="" class="option-label active">Karachi</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_with_address/location" data-name="/register_with_address/location" value="lahore" required="required" data-type-xml="select1"/>
+                    <span lang="" class="option-label active">Lahore</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">ANC visit date?</span>
+        <span class="required">*</span>
+        <input type="date" name="/register_with_address/anc_visit_date" required="required" data-constraint=".&lt;= /register_with_address/today " data-type-xml="date"/>
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Pulse rate</span>
+        <input type="number" name="/register_with_address/pulse_rate" data-constraint=".&gt;0" data-type-xml="int"/>
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Temperature (C)</span>
+        <input type="number" name="/register_with_address/temperature" data-constraint=".&gt;0" data-type-xml="decimal" step="any"/>
+    </label>
+    <section class="or-group " name="/register_with_address/birthplace_address">
+        <h4>
+            <span lang="" class="question-label active">Birthplace</span>
+        </h4>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Latitude</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_lat" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Longitude</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_lon" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">postalCode / postal_code</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_postcode" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_house" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">STREET / STREET_NUMBER / LANE</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_street" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">SECTOR / AREA</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_area" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">MUNICIPALITY / TOWN / LOCALITY / REGION</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_town" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Bus route custom field</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_busroute" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">COUNTY / DISTRICT</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_district" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">CITY / VILLAGE</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_city" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">state / state_province / stateProvince/ province</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_state" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">country</span>
+            <input type="text" name="/register_with_address/birthplace_address/birthplace_country" data-type-xml="string"/>
+        </label>
+    </section>
+    <!--end of group -->
+    <section class="or-group " name="/register_with_address/usual_residence_address">
+        <h4>
+            <span lang="" class="question-label active">Usual Residence</span>
+        </h4>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">When started (startDate / start_date)</span>
+            <input type="date" name="/register_with_address/usual_residence_address/usual_residence_start" data-type-xml="date"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Latitude</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_lat" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Longitude</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_lon" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">postalCode / postal_code</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_postcode" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_house" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">STREET / STREET_NUMBER / LANE</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_street" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">SECTOR / AREA</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_area" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">MUNICIPALITY / TOWN / LOCALITY / REGION</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_town" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">COUNTY / DISTRICT</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_district" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">CITY / VILLAGE</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_city" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">state / state_province / stateProvince/ province</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_state" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">country</span>
+            <input type="text" name="/register_with_address/usual_residence_address/usual_residence_country" data-type-xml="string"/>
+        </label>
+    </section>
+    <!--end of group -->
+    <section class="or-group " name="/register_with_address/previous_residence_address">
+        <h4>
+            <span lang="" class="question-label active">Previous Residence</span>
+        </h4>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">When started (startDate / start_date)</span>
+            <input type="date" name="/register_with_address/previous_residence_address/previous_residence_start" data-type-xml="date"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">When ended (endDate/end_date)</span>
+            <input type="date" name="/register_with_address/previous_residence_address/previous_residence_end" data-type-xml="date"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Latitude</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_lat" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Longitude</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_lon" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">postalCode / postal_code</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_postcode" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_house" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">STREET / STREET_NUMBER / LANE</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_street" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">SECTOR / AREA</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_area" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">MUNICIPALITY / TOWN / LOCALITY / REGION</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_town" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">COUNTY / DISTRICT</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_district" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">CITY / VILLAGE</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_city" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">state / state_province / stateProvince/ province</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_state" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">country</span>
+            <input type="text" name="/register_with_address/previous_residence_address/previous_residence_country" data-type-xml="string"/>
+        </label>
+    </section>
+    <!--end of group -->
+    <section class="or-group " name="/register_with_address/deathplace_address">
+        <h4>
+            <span lang="" class="question-label active">Death Place</span>
+        </h4>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Latitude</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_lat" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">Longitude</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_lon" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">postalCode / postal_code</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_postcode" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_house" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">STREET / STREET_NUMBER / LANE</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_street" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">SECTOR / AREA</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_area" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">MUNICIPALITY / TOWN / LOCALITY / REGION</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_town" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">COUNTY / DISTRICT</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_district" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">CITY / VILLAGE</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_city" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">state / state_province / stateProvince/ province</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_state" data-type-xml="string"/>
+        </label>
+        <label class="question non-select ">
+            <span lang="" class="question-label active">country</span>
+            <input type="text" name="/register_with_address/deathplace_address/deathplace_country" data-type-xml="string"/>
+        </label>
+    </section>
+    <!--end of group -->
+    <fieldset id="or-preload-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_with_address/today" data-preload="date" data-preload-params="today" data-type-xml="date"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_with_address/start" data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_with_address/end" data-preload="timestamp" data-preload-params="end" data-type-xml="dateTime"/>
+        </label>
+    </fieldset>
+    <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_with_address/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_with_address/formhub/uuid" data-calculate="'38a14aba4f7a446982cf767a798c48f4'" data-type-xml="string"/>
+        </label>
+    </fieldset>
+</form>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+    <instance>
+        <Vaccine_Stock_Position encounter_type="Vaccine stock position" id="vaccine_stock_position" version="201604080502">
+            <formhub>
+                <uuid/>
+            </formhub>
+            <provider_uc/>
+            <provider_town/>
+            <provider_city/>
+            <provider_province/>
+            <provider_id/>
+            <provider_location_id openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+            <provider_location_name/>
+            <provider_location_note/>
+            <start openmrs_entity="concept" openmrs_entity_id="163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <end openmrs_entity="concept" openmrs_entity_id="163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <today/>
+            <deviceid openmrs_entity="concept" openmrs_entity_id="163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <subscriberid openmrs_entity="concept" openmrs_entity_id="163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <simserial openmrs_entity="concept" openmrs_entity_id="163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <phonenumber openmrs_entity="concept" openmrs_entity_id="163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <date_formatted/>
+            <vaccinator_name/>
+            <center_name/>
+            <date openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
+            <report openmrs_entity="concept" openmrs_entity_id="163331AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <Target_assigned_for_vaccination_at_each_month openmrs_entity="concept" openmrs_entity_id="163174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <Target_assigned_for_vaccination_for_the_year openmrs_entity="concept" openmrs_entity_id="163175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <bcg_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <bcg_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <bcg_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <opv_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <opv_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <opv_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <ipv_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="1422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <ipv_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="1422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <ipv_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="1422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <pcv_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <pcv_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <pcv_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <penta_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <penta_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <penta_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <measles_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <measles_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <measles_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <tt_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="104528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <tt_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="104528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <tt_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="104528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <dilutants_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="163287AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <dilutants_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="163287AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <dilutants_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="163287AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <syringes_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <syringes_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <syringes_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="162377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <safety_boxes_balance_in_hand openmrs_entity="concept" openmrs_entity_id="163173AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="163285AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <safety_boxes_received openmrs_entity="concept" openmrs_entity_id="163170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="163285AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <safety_boxes_wasted openmrs_entity="concept" openmrs_entity_id="163172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="163285AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <total_wasted/>
+            <total_received/>
+            <total_balanceInHand/>
+            <meta>
+                <instanceID/>
+            </meta>
+        </Vaccine_Stock_Position>
+    </instance>
+</model>

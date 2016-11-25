@@ -31,9 +31,9 @@ import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+/*import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
-import com.sun.xml.internal.txw2.Document;
+import com.sun.xml.internal.txw2.Document;*/
 
 /**
  * @author muhammad.ahmed@ihsinformatics.com
@@ -55,10 +55,10 @@ public class XlsFormDownloaderService {
 
 	public static void main(String[] args) {
 		try {
-			/*new XlsFormDownloaderService().downloadFormFiles("D:\\opensrpVaccinatorWkspc\\forms", 
-					"maimoonak", "opensrp", JustForFun.Form, "child_vaccination_enrollment", "135187");
+			
+			new XlsFormDownloaderService().downloadFormFiles("D:\\naveed", "shakeeb_raza", "shakeeb_raza", "star2326", "daily_treatment_monitoring", "162327");
 			//-------------------------			
-			new XlsFormDownloaderService().downloadFormFiles("D:\\opensrpVaccinatorWkspc\\forms", 
+		/*	new XlsFormDownloaderService().downloadFormFiles("D:\\opensrpVaccinatorWkspc\\forms", 
 					"maimoonak", "opensrp", JustForFun.Form, "child_vaccination_followup", "135199");
 			//---------------------------
 			new XlsFormDownloaderService().downloadFormFiles("D:\\opensrpVaccinatorWkspc\\forms", 
@@ -112,16 +112,16 @@ public class XlsFormDownloaderService {
         try {
             final org.w3c.dom.Document document = parseXmlFile(unformattedXml);
 
-            OutputFormat format = new OutputFormat(document);
+/*          OutputFormat format = new OutputFormat(document);
             format.setLineWidth(380);
-            //format.setIndenting(true);
+            format.setIndenting(true);
             format.setIndent(2);
             Writer out = new StringWriter();
             XMLSerializer serializer = new XMLSerializer(out, format);
             serializer.serialize(document);
-
-            return out.toString();
-        } catch (IOException e) {
+*/
+            return ""; 
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -145,10 +145,11 @@ public class XlsFormDownloaderService {
 	public boolean downloadFormFiles(String directory,String username ,String formPath, String password,String formId, String formPk) throws IOException{
 		
 		String xmlData=netClientGet.convertToString("", formPath, formId);
+		System.out.print(xmlData);
 		String modelData=netClientGet.getModel(xmlData);
 		String formData=fileCreator.prettyFormat(netClientGet.getForm(xmlData));
 		
-		modelData=format(modelData);
+		// modelData=format(modelData);
 		
 		formData = formData.replaceAll("selected\\(", "contains(");
 		formData = formData.replaceAll("<span.*lang=\"openmrs_code\".*</span>", "");

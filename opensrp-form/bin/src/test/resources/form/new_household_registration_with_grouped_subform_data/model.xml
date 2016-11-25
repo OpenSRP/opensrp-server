@@ -1,0 +1,83 @@
+<model>
+    <instance>
+        <FWNewHH encounter_type="New Household Registration" id="FWNewHH" version="201510181114">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <version/>
+          <changes/>
+          <existing_location openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+          <existing_Country/>
+          <existing_Division/>
+          <existing_District/>
+          <existing_Upazilla/>
+          <existing_Union/>
+          <existing_Ward/>
+          <existing_Subunit/>
+          <existing_Mauzapara/>
+          <today openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
+          <start openmrs_entity="encounter" openmrs_entity_id="encounter_start"/>
+          <end openmrs_entity="encounter" openmrs_entity_id="encounter_end"/>
+          <FWNHREGDATE openmrs_entity="concept" openmrs_entity_id="160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <FWGOBHHID openmrs_entity="person_attribute" openmrs_entity_id="GoB_HHID"/>
+          <FWJIVHHID openmrs_entity="person_attribute" openmrs_entity_id="JiVitA_HHID"/>
+          <FWCOUNTRY openmrs_entity="person_address" openmrs_entity_id="country" openmrs_entity_parent="usual_residence"/>
+          <FWDIVISION openmrs_entity="person_address" openmrs_entity_id="stateProvince" openmrs_entity_parent="usual_residence"/>
+          <FWDISTRICT openmrs_entity="person_address" openmrs_entity_id="countyDistrict" openmrs_entity_parent="usual_residence"/>
+          <FWUPAZILLA openmrs_entity="person_address" openmrs_entity_id="cityVillage" openmrs_entity_parent="usual_residence"/>
+          <FWUNION openmrs_entity="person_address" openmrs_entity_id="address1" openmrs_entity_parent="usual_residence"/>
+          <FWWARD openmrs_entity="person_address" openmrs_entity_id="address2" openmrs_entity_parent="usual_residence"/>
+          <FWSUBUNIT openmrs_entity="person_address" openmrs_entity_id="address3" openmrs_entity_parent="usual_residence"/>
+          <FWMAUZA_PARA openmrs_entity="person_address" openmrs_entity_id="address4" openmrs_entity_parent="usual_residence"/>
+          <FWGOB_HHID openmrs_entity="person_address" openmrs_entity_id="address5" openmrs_entity_parent="usual_residence"/>
+          <FWNHHHGPS openmrs_entity="person_address" openmrs_entity_id="geopoint" openmrs_entity_parent="usual_residence"/>
+          <FWHOHFNAME openmrs_entity="person" openmrs_entity_id="first_name"/>
+          <FWHOHLNAME openmrs_entity="person" openmrs_entity_id="last_name"/>
+          <FWHOHBIRTHDATE openmrs_entity="person" openmrs_entity_id="birthdate"/>
+          <FWHOHGENDER openmrs_entity="person" openmrs_entity_id="gender"/>
+          <FWNHHMBRNUM openmrs_entity="concept" openmrs_entity_id="5611AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <FWNHHMWRA openmrs_entity="concept" openmrs_entity_id="1880AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <woman template="" openmrs_entity="person" openmrs_entity_id="New Woman Registration">
+            <GOBHHID openmrs_entity="person_attribute" openmrs_entity_id="GoB_HHID"/>
+            <JiVitAHHID openmrs_entity="person_attribute" openmrs_entity_id="JiVitA_HHID"/>
+            <REGDATE/>
+            <FWWOMFNAME openmrs_entity="person" openmrs_entity_id="first_name"/>
+            <FWWOMLNAME openmrs_entity="person" openmrs_entity_id="last_name"/>
+            <FWBIRTHDATE openmrs_entity="person" openmrs_entity_id="birthdate">2000-01-02 00:00:00</FWBIRTHDATE>
+            <FWGENDER openmrs_entity="person" openmrs_entity_id="gender"/>
+            <FWWOMAGE openmrs_entity="concept" openmrs_entity_id="1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <display_age/>
+            <FWNHWOMSTRMEN openmrs_entity="concept" openmrs_entity_id="163006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <FWNHWOMHUSLIV openmrs_entity="concept" openmrs_entity_id="162994AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <FWNHWOMHUSALV openmrs_entity="concept" openmrs_entity_id="5561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <FWNHWOMHUSSTR openmrs_entity="concept" openmrs_entity_id="162959AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <FWELIGIBLE openmrs_entity="concept" openmrs_entity_id="162699AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <eligible>
+              <FWWOMANYID openmrs_entity="concept" openmrs_entity_id="163087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+              <FWWOMNID/>
+              <FWWOMRETYPENID openmrs_entity="person_identifier" openmrs_entity_id="NID"/>
+              <FWWOMBID/>
+              <FWWOMRETYPEBID openmrs_entity="person_identifier" openmrs_entity_id="Birth Registration ID"/>
+              <FWHUSNAME openmrs_entity="concept" openmrs_entity_id="161135AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+              <FWWOMCOUNTRY openmrs_entity="person_address" openmrs_entity_id="country" openmrs_entity_parent="usual_residence"/>
+              <FWWOMDIVISION openmrs_entity="person_address" openmrs_entity_id="stateProvince" openmrs_entity_parent="usual_residence"/>
+              <FWWOMDISTRICT openmrs_entity="person_address" openmrs_entity_id="countyDistrict" openmrs_entity_parent="usual_residence"/>
+              <FWWOMUPAZILLA openmrs_entity="person_address" openmrs_entity_id="cityVillage" openmrs_entity_parent="usual_residence"/>
+              <FWWOMUNION openmrs_entity="person_address" openmrs_entity_id="address1" openmrs_entity_parent="usual_residence"/>
+              <FWWOMWARD openmrs_entity="person_address" openmrs_entity_id="address2" openmrs_entity_parent="usual_residence"/>
+              <FWWOMSUBUNIT openmrs_entity="person_address" openmrs_entity_id="address3" openmrs_entity_parent="usual_residence"/>
+              <FWWOMMAUZA_PARA openmrs_entity="person_address" openmrs_entity_id="address4" openmrs_entity_parent="usual_residence"/>
+              <FWWOMGOBHHID openmrs_entity="person_address" openmrs_entity_id="address5" openmrs_entity_parent="usual_residence"/>
+              <FWWOMGPS openmrs_entity="person_address" openmrs_entity_id="geopoint" openmrs_entity_parent="usual_residence"/>
+            </eligible>
+            <add_women/>
+          </woman>
+          <ELCO/>
+          <user_type>FWA</user_type>
+          <external_user_ID/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </FWNewHH>
+      </instance>
+  </model>

@@ -60,7 +60,6 @@ public class ErrorTraceController {
 	
 	@Autowired
 	public ErrorTraceController(ErrorTraceService errorTraceService) {
-
 		this.errorTraceService = errorTraceService;
 	}
 
@@ -69,7 +68,6 @@ public class ErrorTraceController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		ErrorTraceForm errorForm=new ErrorTraceForm();
 		Gson gson = new Gson();
-		// Convert numbers array into JSON string.
 	    String optionsJson = gson.toJson(errorForm.getStatusOptions());
 		model.put("statusOptions",optionsJson);
 		model.put("type", "all");

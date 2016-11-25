@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import org.opensrp.common.util.HttpResponse;
 import org.opensrp.connector.HttpUtil;
 import org.opensrp.domain.Client;
+import org.opensrp.domain.Drug;
 import org.opensrp.domain.Event;
 import org.opensrp.domain.Obs;
 import org.opensrp.domain.User;
@@ -26,8 +27,12 @@ import com.mysql.jdbc.StringUtils;
 public class EncounterService extends OpenmrsService{
 	private static final String ENCOUNTER_URL = "ws/rest/v1/encounter";//"ws/rest/emrapi/encounter";
 	private static final String ENCOUNTER__TYPE_URL = "ws/rest/v1/encountertype";
+	private static final String ORDER_URL = "ws/rest/v1/order";
+	private static final String ORDER_TYPE_URL = "ws/rest/v1/ordertype";
+	private static final String ORDER_FREQUENCY_URL = "ws/rest/v1/orderfrequency";
+	private static final String DRUG_URL = "ws/rest/v1/drug";
 	public static final String OPENMRS_UUID_IDENTIFIER_TYPE = "OPENMRS_UUID";
-
+	
 	private PatientService patientService;
 	private OpenmrsUserService userService;
 	private ClientService clientService;
@@ -38,6 +43,7 @@ public class EncounterService extends OpenmrsService{
 		this.userService = userService;
 		this.clientService = clientService;
 	}
+	
 	
 	public EncounterService(String openmrsUrl, String user, String password) {
     	super(openmrsUrl, user, password);
@@ -224,6 +230,16 @@ public class EncounterService extends OpenmrsService{
 		HttpResponse op = HttpUtil.post(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL)+"/"+ENCOUNTER_URL+"/"+openmrsuuid, "", enc.toString(), OPENMRS_USER, OPENMRS_PWD);
 		return new JSONObject(op.body());
 	}
+	
+	public JSONObject createDrugs(Drug d) throws JSONException{
+		/*JSONObject enc = new JSONObject();
+		
+		
+		HttpResponse op = HttpUtil.post(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL)+"/"+ORDER_URL, "", enc.toString(), OPENMRS_USER, OPENMRS_PWD);
+		return new JSONObject(op.body());*/
+		return null;
+	}
+	
 	
 	private JSONArray convertObsToJson(Obs o) throws JSONException{
 		JSONArray arr = new JSONArray();

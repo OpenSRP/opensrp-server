@@ -1,0 +1,1381 @@
+{
+    "default_language": "default",
+    "id_string": "Delivery_Outcome_EngKan",
+    "children": [
+        {
+            "name": "today",
+            "type": "today"
+        },
+        {
+            "name": "case_lmp",
+            "instance": {
+                "openmrs_entity_id": "1100282",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "delivery_date",
+            "bind": {
+                "required": "yes",
+                "constraint": ".<=${today}"
+            },
+            "label": "Delivery date? ಹೆರಿಗೆ ದಿನಾಂಕ?",
+            "instance": {
+                "openmrs_entity_id": "2129182",
+                "openmrs_entity": "concept"
+            },
+            "type": "date"
+        },
+        {
+            "name": "delivery_reg_date",
+            "bind": {
+                "required": "yes",
+                "constraint": ".<=${today} and .>= ${delivery_date}"
+            },
+            "label": "PNC registration date? ಬಾಣಂತಿ ದಾಖಲಾತಿ ದಿನಾಂಕ?",
+            "instance": {
+                "openmrs_entity_id": "encounter_date",
+                "openmrs_entity": "encounter"
+            },
+            "type": "date"
+        },
+        {
+            "children": [
+                {
+                    "name": "home",
+                    "label": "Home ಮನೆ",
+                    "instance": {
+                        "openmrs_code": "32323213"
+                    }
+                },
+                {
+                    "name": "subcenter",
+                    "label": "Sub Center ಉಪ ಕೇಂದ್ರ",
+                    "instance": {
+                        "openmrs_code": "2321321"
+                    }
+                },
+                {
+                    "name": "phc",
+                    "label": "PHC ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ",
+                    "instance": {
+                        "openmrs_code": "323213"
+                    }
+                },
+                {
+                    "name": "chc",
+                    "label": "CHC ಸಮುದಾಯ ಆರೋಗ್ಯ ಕೇಂದ್ರ",
+                    "instance": {
+                        "openmrs_code": "1213213"
+                    }
+                },
+                {
+                    "name": "sdh",
+                    "label": "SDH ಉಪ ಜಿಲ್ಲಾ ಆಸ್ಪತ್ರೆ",
+                    "instance": {
+                        "openmrs_code": "23123"
+                    }
+                },
+                {
+                    "name": "dh",
+                    "label": "DH ಜಿಲ್ಲಾ ಆಸ್ಪತ್ರೆ",
+                    "instance": {
+                        "openmrs_code": "232113"
+                    }
+                },
+                {
+                    "name": "private_facility",
+                    "label": "Private ಖಾಸಗಿ",
+                    "instance": {
+                        "openmrs_code": "123123"
+                    }
+                }
+            ],
+            "name": "place_delivery",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Place of delivery? ಹೆರಿಗೆಯಾದ ಸ್ಥಳ?",
+            "instance": {
+                "openmrs_entity_id": "location_id",
+                "openmrs_entity": "encounter"
+            },
+            "type": "select one"
+        },
+        {
+            "name": "name_delivery_facility",
+            "bind": {
+                "relevant": "${place_delivery} != 'home'"
+            },
+            "label": "Name of delivery place? ಹೆರಿಗೆಯಾದ ಸ್ಥಳದ ಹೆಸರು?",
+            "instance": {
+                "openmrs_entity_id": "4787232",
+                "openmrs_entity": "concept"
+            },
+            "type": "text"
+        },
+        {
+            "children": [
+                {
+                    "name": "yes",
+                    "label": "Yes ಹೌದು",
+                    "instance": {
+                        "openmrs_code": "1065"
+                    }
+                },
+                {
+                    "name": "no",
+                    "label": "No ಇಲ್ಲ",
+                    "instance": {
+                        "openmrs_code": "1066"
+                    }
+                }
+            ],
+            "name": "only_delivery_facility",
+            "label": "Is this the only place woman went for delivery? ಹೆರಿಗೆಗೆ ಇದೊಂದೆ ಸ್ಥಳಕ್ಕೆ ಹೋಗಿದ್ದರೆ?",
+            "instance": {
+                "openmrs_entity_id": "120009",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one"
+        },
+        {
+            "children": [
+                {
+                    "name": "home",
+                    "label": "Home ಮನೆ",
+                    "instance": {
+                        "openmrs_code": "32323213"
+                    }
+                },
+                {
+                    "name": "subcenter",
+                    "label": "Sub Center ಉಪ ಕೇಂದ್ರ",
+                    "instance": {
+                        "openmrs_code": "2321321"
+                    }
+                },
+                {
+                    "name": "phc",
+                    "label": "PHC ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ",
+                    "instance": {
+                        "openmrs_code": "323213"
+                    }
+                },
+                {
+                    "name": "chc",
+                    "label": "CHC ಸಮುದಾಯ ಆರೋಗ್ಯ ಕೇಂದ್ರ",
+                    "instance": {
+                        "openmrs_code": "1213213"
+                    }
+                },
+                {
+                    "name": "sdh",
+                    "label": "SDH ಉಪ ಜಿಲ್ಲಾ ಆಸ್ಪತ್ರೆ",
+                    "instance": {
+                        "openmrs_code": "23123"
+                    }
+                },
+                {
+                    "name": "dh",
+                    "label": "DH ಜಿಲ್ಲಾ ಆಸ್ಪತ್ರೆ",
+                    "instance": {
+                        "openmrs_code": "232113"
+                    }
+                },
+                {
+                    "name": "private_facility",
+                    "label": "Private ಖಾಸಗಿ",
+                    "instance": {
+                        "openmrs_code": "123123"
+                    }
+                }
+            ],
+            "name": "addl_delivery_facility",
+            "bind": {
+                "relevant": "${only_delivery_facility} = 'no'"
+            },
+            "label": "Where else did she go for delivery? ಹೆರಿಗೆಗೆ ಇನ್ಯಾವ ಸ್ಥಳಕ್ಕೆ ಹೋಗಿದ್ದರೆ?",
+            "instance": {
+                "openmrs_entity_id": "124433",
+                "openmrs_entity": "concept"
+            },
+            "type": "select all that apply"
+        },
+        {
+            "children": [
+                {
+                    "name": "no_staff",
+                    "label": "No staff available for delivery ಹೆರಿಗೆಗೆ ಸಿಬ್ಬಂಧಿಯು ಲಭ್ಯವಿಲ್ಲ",
+                    "instance": {
+                        "openmrs_code": "4123"
+                    }
+                },
+                {
+                    "name": "referred_higher_facility",
+                    "label": "Referred to higher facility ಹೆಚ್ಚಿನ ಸೌಲಭ್ಯಕ್ಕೆ ರೆಫರ್ ಮಾಡಲಾಗಿದೆ",
+                    "instance": {
+                        "openmrs_code": "21312312"
+                    }
+                },
+                {
+                    "name": "lack_of_supplies",
+                    "label": "Lack of supplies ಸರಬರಾಜು ಕೊರತೆ",
+                    "instance": {
+                        "openmrs_code": "134134"
+                    }
+                },
+                {
+                    "name": "no_electricity",
+                    "label": "No electricity ವಿದ್ಯುತ್ ಇಲ್ಲ",
+                    "instance": {
+                        "openmrs_code": "34134134"
+                    }
+                },
+                {
+                    "name": "family_insisted_elsewhere",
+                    "label": "Family insisted on going elsewhere ಕುಟುಂಬಕ್ಕೆ ಬೇರೇಡೆಗೆ ಹೋಗಲು ಒತ್ತಾಯಿಸಿದರು",
+                    "instance": {
+                        "openmrs_code": "341341"
+                    }
+                },
+                {
+                    "name": "no_money",
+                    "label": "Not enough money ಸಾಕಷ್ಟು ಹಣವಿಲ್ಲ",
+                    "instance": {
+                        "openmrs_code": "43434432"
+                    }
+                },
+                {
+                    "name": "others",
+                    "label": "Others ಇತರೆ",
+                    "instance": {
+                        "openmrs_code": "323243224"
+                    }
+                }
+            ],
+            "name": "reasons_addl_delivery_facility",
+            "bind": {
+                "relevant": "${only_delivery_facility} = 'no'"
+            },
+            "label": "Select the reasons why more than one place. ಬೇರೆ ಸ್ಥಳಕ್ಕೆ ಹೋಗಿದ್ದಕ್ಕೆ ಕಾರಣವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ.",
+            "instance": {
+                "openmrs_entity_id": "100933",
+                "openmrs_entity": "concept"
+            },
+            "type": "select all that apply"
+        },
+        {
+            "name": "other_reasons_addl_delivery_facility",
+            "bind": {
+                "relevant": "selected(${reasons_addl_delivery_facility}, 'others')"
+            },
+            "label": "Others ಇತರೆ:",
+            "instance": {
+                "openmrs_entity_id": "2323233",
+                "openmrs_entity": "concept"
+            },
+            "type": "text"
+        },
+        {
+            "children": [
+                {
+                    "name": "yes",
+                    "label": "Yes ಹೌದು",
+                    "instance": {
+                        "openmrs_code": "1065"
+                    }
+                },
+                {
+                    "name": "no",
+                    "label": "No ಇಲ್ಲ",
+                    "instance": {
+                        "openmrs_code": "1066"
+                    }
+                }
+            ],
+            "name": "skilled_delivery",
+            "bind": {
+                "relevant": "${place_delivery} = 'home'",
+                "required": "yes"
+            },
+            "label": "Delivery attended by SBA? ತರಬೇತಿ ಹೊಂದಿದ ಹೆರಿಗೆ ಸಹಾಯಕರು ಹೆರಿಗೆಯಲ್ಲಿ ಹಾಜರಿದ್ದರೆ?",
+            "instance": {
+                "openmrs_entity_id": "3231212",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one"
+        },
+        {
+            "children": [
+                {
+                    "name": "normal",
+                    "label": "Normal ಸಾಮಾನ್ಯ",
+                    "instance": {
+                        "openmrs_code": "43123"
+                    }
+                },
+                {
+                    "name": "cesarean",
+                    "label": "Cesarean ಸಿಸೇರಿಯನ್",
+                    "instance": {
+                        "openmrs_code": "3232"
+                    }
+                },
+                {
+                    "name": "instrumental_forcep",
+                    "label": "Instrumental / Forcep ಉಪಕರಣಗಳಿಂದ ಮಾಡುವ ಹೆರಿಗೆ",
+                    "instance": {
+                        "openmrs_code": "4134123"
+                    }
+                }
+            ],
+            "name": "type_delivery",
+            "label": "Type of delivery? ಯಾವ ವಿಧದ ಹೆರಿಗೆ?",
+            "instance": {
+                "openmrs_entity_id": "120009",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one"
+        },
+        {
+            "children": [
+                {
+                    "name": "live_birth",
+                    "label": "Live Birth ಜೀವಂತ ಜನನ",
+                    "instance": {
+                        "openmrs_code": "38493849"
+                    }
+                },
+                {
+                    "name": "still_birth",
+                    "label": "Still Birth ನಿರ್ಜೀವ ಜನನ",
+                    "instance": {
+                        "openmrs_code": "343434"
+                    }
+                }
+            ],
+            "name": "delivery_outcome",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Delivery outcome? ಹೆರಿಗೆ ಫಲಿತಾಂಶವೇನು?",
+            "instance": {
+                "openmrs_entity_id": "124433",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one"
+        },
+        {
+            "name": "case_parity",
+            "instance": {
+                "openmrs_entity_id": "100933",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "parity",
+            "bind": {
+                "calculate": "${case_parity} + 1"
+            },
+            "instance": {
+                "openmrs_entity_id": "434343",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "case_num_livebirths",
+            "instance": {
+                "openmrs_entity_id": "34324234",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "num_livebirths",
+            "bind": {
+                "relevant": "${delivery_outcome} = 'live_birth'",
+                "calculate": "${case_num_livebirths} + 1"
+            },
+            "instance": {
+                "openmrs_entity_id": "3423423",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "youngestchild_date_of_birth",
+            "bind": {
+                "relevant": "${delivery_outcome} = 'live_birth'",
+                "calculate": "${delivery_date}"
+            },
+            "instance": {
+                "openmrs_entity_id": "120009",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "youngestchild_age",
+            "bind": {
+                "calculate": "int((${today} - ${youngestchild_date_of_birth}) div 30)"
+            },
+            "instance": {
+                "openmrs_entity_id": "124433",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "case_num_stillbirths",
+            "instance": {
+                "openmrs_entity_id": "100933",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "num_stillbirths",
+            "bind": {
+                "relevant": "${delivery_outcome} = 'still_birth'",
+                "calculate": "${case_num_stillbirths} + 1"
+            },
+            "instance": {
+                "openmrs_entity_id": "3432434",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "name": "infection_during_preg",
+                            "label": "Infection during pregnancy ಗರ್ಭಾವಸ್ಥೆಯಲ್ಲಿ ಸೋಂಕು",
+                            "instance": {
+                                "openmrs_code": "2323"
+                            }
+                        },
+                        {
+                            "name": "gest_hypertension",
+                            "label": "Gestational hypertension ಗರ್ಭಾಧಾರಣೆಯಲ್ಲಿನ ಅಧಿಕ ರಕ್ತದೊತ್ತಡ",
+                            "instance": {
+                                "openmrs_code": "2323"
+                            }
+                        },
+                        {
+                            "name": "gest_diabetes",
+                            "label": "Gestational diabetes ಗರ್ಭಾಧಾರಣೆಯಲ್ಲಿನ ಸಕ್ಕರೆ ಕಾಯಿಲೆ",
+                            "instance": {
+                                "openmrs_code": "23213"
+                            }
+                        },
+                        {
+                            "name": "fetal_growth_restriction",
+                            "label": "Fetal growth restriction ಭ್ರೂಣದ ಬೆಳವಣಿಗೆಯಲ್ಲಿ ನಿರ್ಬಂಧ",
+                            "instance": {
+                                "openmrs_code": "23123"
+                            }
+                        },
+                        {
+                            "name": "birth_defects",
+                            "label": "Birth defects ಜನ್ಮ ನ್ಯೂನ್ಯತೆಗಳು",
+                            "instance": {
+                                "openmrs_code": "23213"
+                            }
+                        },
+                        {
+                            "name": "unknown",
+                            "label": "Cause not identified ಕಾರಣವನ್ನು ಗುರುತಿಸಲ್ಪಟ್ಟಿಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "2323"
+                            }
+                        },
+                        {
+                            "name": "others",
+                            "label": "Others ಇತರೆ",
+                            "instance": {
+                                "openmrs_code": "23213"
+                            }
+                        }
+                    ],
+                    "name": "cause_of_still_birth",
+                    "label": "Cause of still birth? ನಿರ್ಜೀವ ಜನನದ ಕಾರಣಗಳು?",
+                    "instance": {
+                        "openmrs_entity_parent": "65435",
+                        "openmrs_entity_id": "4323232",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "yes",
+                            "label": "Yes ಹೌದು",
+                            "instance": {
+                                "openmrs_code": "1065"
+                            }
+                        },
+                        {
+                            "name": "no",
+                            "label": "No ಇಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "1066"
+                            }
+                        }
+                    ],
+                    "name": "woman_survived",
+                    "bind": {
+                        "required": "yes"
+                    },
+                    "label": "Woman survived childbirth? ಮಗುವಿನ ಜನನದ ನಂತರ ಮಹಿಳೆ ಬದುಕುಳಿದರೆ?",
+                    "instance": {
+                        "openmrs_entity_parent": "65435",
+                        "openmrs_entity_id": "100009",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                }
+            ],
+            "name": "still_birth_group",
+            "bind": {
+                "relevant": "${delivery_outcome} = 'still_birth'"
+            },
+            "instance": {
+                "openmrs_entity_id": "65435",
+                "openmrs_entity": "concept"
+            },
+            "type": "group"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "name": "male",
+                                    "label": "Male ಗಂಡು",
+                                    "instance": {
+                                        "openmrs_code": "21321"
+                                    }
+                                },
+                                {
+                                    "name": "female",
+                                    "label": "Female ಹೆಣ್ಣು",
+                                    "instance": {
+                                        "openmrs_code": "312312"
+                                    }
+                                }
+                            ],
+                            "name": "sex_child",
+                            "bind": {
+                                "required": "yes"
+                            },
+                            "label": "Sex of child? ಮಗುವಿನ ಲಿಂಗ?",
+                            "instance": {
+                                "openmrs_entity_id": "gender",
+                                "openmrs_entity": "patient"
+                            },
+                            "type": "select one"
+                        },
+                        {
+                            "name": "sex_child_female",
+                            "bind": {
+                                "calculate": "if(${sex_child} = 'female', 1, 0)"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "sex_child_male",
+                            "bind": {
+                                "calculate": "if(${sex_child} = 'male', 1, 0)"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "birthweight",
+                            "label": "Child birthweight (in kgs)? ಹುಟ್ಟಿದ ಮಗುವಿನ ತೂಕ (ಕೆ.ಜಿ. ಗಳಲ್ಲಿ)?",
+                            "instance": {
+                                "openmrs_entity_id": "323232",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "decimal"
+                        },
+                        {
+                            "control": {
+                                "appearance": "minimal"
+                            },
+                            "children": [
+                                {
+                                    "name": "a_positive",
+                                    "label": "A+",
+                                    "instance": {
+                                        "openmrs_code": "34324"
+                                    }
+                                },
+                                {
+                                    "name": "a_negative",
+                                    "label": "A-",
+                                    "instance": {
+                                        "openmrs_code": "34134"
+                                    }
+                                },
+                                {
+                                    "name": "b_positive",
+                                    "label": "B+",
+                                    "instance": {
+                                        "openmrs_code": "1321312"
+                                    }
+                                },
+                                {
+                                    "name": "b_negative",
+                                    "label": "B-",
+                                    "instance": {
+                                        "openmrs_code": "43434"
+                                    }
+                                },
+                                {
+                                    "name": "ab_positive",
+                                    "label": "AB+",
+                                    "instance": {
+                                        "openmrs_code": "12323214"
+                                    }
+                                },
+                                {
+                                    "name": "ab_negative",
+                                    "label": "AB-",
+                                    "instance": {
+                                        "openmrs_code": "11343141"
+                                    }
+                                },
+                                {
+                                    "name": "o_positive",
+                                    "label": "O+",
+                                    "instance": {
+                                        "openmrs_code": "134343"
+                                    }
+                                },
+                                {
+                                    "name": "o_negative",
+                                    "label": "O-",
+                                    "instance": {
+                                        "openmrs_code": "432434"
+                                    }
+                                }
+                            ],
+                            "name": "child_blood_group",
+                            "label": "Child blood group? ಮಗುವಿನ ರಕ್ತದ ಗುಂಪು?",
+                            "instance": {
+                                "openmrs_entity_id": "232112",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "select one"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "bcg",
+                                    "label": "BCG ಬಿ.ಸಿ.ಜಿ",
+                                    "instance": {
+                                        "openmrs_code": "23123"
+                                    }
+                                },
+                                {
+                                    "name": "opv_0",
+                                    "label": "OPV 0 ಒ.ಪಿ.ವಿ 0",
+                                    "instance": {
+                                        "openmrs_code": "12312"
+                                    }
+                                },
+                                {
+                                    "name": "hepb_0",
+                                    "label": "Hep B 0 ಹೆಪಟೆಟಿಸ್ ಬಿ 0",
+                                    "instance": {
+                                        "openmrs_code": "213123"
+                                    }
+                                }
+                            ],
+                            "name": "immunizations_atbirth",
+                            "label": "Immunizations provided at birth? ಹುಟ್ಟಿದ ಮಗುವಿಗೆ ಇಮ್ಯುನೈಜೇಷನ್ ನೀಡಲಾಯಿತೆ?",
+                            "instance": {
+                                "openmrs_entity_id": "199277",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "select all that apply"
+                        },
+                        {
+                            "name": "case_hepb",
+                            "instance": {
+                                "openmrs_entity_id": "100285",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "hidden"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "yes",
+                                    "label": "Yes ಹೌದು",
+                                    "instance": {
+                                        "openmrs_code": "1065"
+                                    }
+                                },
+                                {
+                                    "name": "no",
+                                    "label": "No ಇಲ್ಲ",
+                                    "instance": {
+                                        "openmrs_code": "1066"
+                                    }
+                                }
+                            ],
+                            "name": "hepb_prophylaxis_provided",
+                            "bind": {
+                                "relevant": "${case_hepb} != ''"
+                            },
+                            "label": "Hep B prophylaxis provided? ಹೆಪಟೆಟಿಸ್ ಬಿ ರೋಗನಿರೋಧಕ ಚಿಕಿತ್ಸೆ ನೀಡಲಾಗಿದೆತೇ?",
+                            "instance": {
+                                "openmrs_entity_id": "3321323",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "select one"
+                        },
+                        {
+                            "name": "lbw",
+                            "bind": {
+                                "calculate": "if(${birthweight} >= 1.5 and ${birthweight} < 2.5, 'Low_Birth_Weight','')"
+                            },
+                            "instance": {
+                                "openmrs_entity_id": "1232132",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "vlbw",
+                            "bind": {
+                                "calculate": "if(${birthweight} < 1.5, 'Very_Low_Birth_Weight', '')"
+                            },
+                            "instance": {
+                                "openmrs_entity_id": "232133",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "num_preg_days",
+                            "bind": {
+                                "calculate": "int(date(${delivery_date}) - date(${case_lmp}))"
+                            },
+                            "instance": {
+                                "openmrs_entity_id": "232323",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "premature",
+                            "bind": {
+                                "calculate": "if(${num_preg_days} < 259, 'Premature', '')"
+                            },
+                            "instance": {
+                                "openmrs_entity_id": "232323",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "premature_message1",
+                            "bind": {
+                                "relevant": "${premature} != ''"
+                            },
+                            "label": "Baby is premature! Advise kangaroo care and rooming in. ಅವಧಿಗೆ ಮುನ್ನ ಜನಿಸಿದ ಮಗು! ಕಾಂಗರೋ ಆರೈಕೆ ಮತ್ತು ಒಂದೇ ರೂಮಿನಲ್ಲಿಡುವಂತೆ ಸಲಹೆ ನೀಡಿ.",
+                            "type": "note"
+                        },
+                        {
+                            "name": "is_child_high_risk1",
+                            "bind": {
+                                "calculate": "if(${premature} != '' or ${lbw} != '' or ${vlbw} != '', 'yes', 'no')"
+                            },
+                            "instance": {
+                                "openmrs_entity_id": "342343",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "child_high_risk_reasons",
+                            "bind": {
+                                "calculate": "concat(${premature}, ' ', ${lbw}, ' ', ${vlbw})"
+                            },
+                            "instance": {
+                                "openmrs_entity_id": "423434",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "calculate"
+                        },
+                        {
+                            "name": "high_risk_note_child",
+                            "bind": {
+                                "relevant": "${is_child_high_risk1} = 'yes'"
+                            },
+                            "label": "Child is at risk because of, ಈಗ ಮಗು ಅಪಾಯದಲ್ಲಿದೆ ಏಕೆಂದರೆ: ${child_high_risk_reasons}",
+                            "type": "note"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "name": "yes",
+                                    "label": "Yes ಹೌದು",
+                                    "instance": {
+                                        "openmrs_code": "1065"
+                                    }
+                                },
+                                {
+                                    "name": "no",
+                                    "label": "No ಇಲ್ಲ",
+                                    "instance": {
+                                        "openmrs_code": "1066"
+                                    }
+                                }
+                            ],
+                            "name": "is_child_high_risk",
+                            "bind": {
+                                "required": "yes"
+                            },
+                            "label": "Do you want to mark child as HR (High Risk)? \nನೀವು ಮಗುವನ್ನು HR (ಹೆಚ್ಚು ಅಪಾಯವಿದೆ) ಎಂದು ಗುರುತಿಸಲು ಬಯಸುವಿರಾ?",
+                            "instance": {
+                                "openmrs_entity_id": "4342343",
+                                "openmrs_entity": "concept"
+                            },
+                            "type": "select one"
+                        },
+                        {
+                            "name": "addl_pnc_visit_message",
+                            "bind": {
+                                "relevant": "${is_child_high_risk1} = 'yes'"
+                            },
+                            "label": "Child needs 3 more PNC visits on days 14, 21, and 28 because of, 14, 21 ಮತ್ತು 28 ನೇ ದಿನಗಳೊಂದು ಮಗುವಿಗೆ 3 ಹೆಚ್ಚಿನ ಭೇಟಿಯ ಅಗತ್ಯವಿದೆ, ಏಕೆಂದರೆ: ${child_high_risk_reasons}",
+                            "type": "note"
+                        }
+                    ],
+                    "name": "child",
+                    "label": "Please enter birth information for each child born. ಜನನವಾದ ಪ್ರತಿ ಮಗುವಿನ ಜನ್ಮ ಮಾಹಿತಿಯನ್ನು ದಯವಿಟ್ಟು ನಮೂದಿಸಿ.",
+                    "instance": {
+                        "openmrs_entity_id": "100029",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "repeat"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "yes",
+                            "label": "Yes ಹೌದು",
+                            "instance": {
+                                "openmrs_code": "1065"
+                            }
+                        },
+                        {
+                            "name": "no",
+                            "label": "No ಇಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "1066"
+                            }
+                        }
+                    ],
+                    "name": "mother_survived",
+                    "bind": {
+                        "required": "yes"
+                    },
+                    "label": "Mother survived childbirth? ಮಗುವಿನ ಜನನದ ನಂತರ ಮಹಿಳೆ ಬದುಕುಳಿದರೆ?",
+                    "instance": {
+                        "openmrs_entity_id": "343434",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "yes",
+                            "label": "Yes ಹೌದು",
+                            "instance": {
+                                "openmrs_code": "1065"
+                            }
+                        },
+                        {
+                            "name": "no",
+                            "label": "No ಇಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "1066"
+                            }
+                        }
+                    ],
+                    "name": "breastfeeding_postbirth",
+                    "bind": {
+                        "relevant": "${mother_survived} = 'yes'",
+                        "required": "yes"
+                    },
+                    "label": "Was breastfeeding started within 1 hour of birth? ಹುಟ್ಟಿದ ಒಂದು ಗಂಟೆಯ ಒಳಗೆ ಎದೆಹಾಲು ನೀಡಲಾಯಿತೆ?",
+                    "instance": {
+                        "openmrs_entity_id": "434343",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                }
+            ],
+            "name": "live_birth_group",
+            "bind": {
+                "relevant": "${delivery_outcome} = 'live_birth'"
+            },
+            "type": "group"
+        },
+        {
+            "name": "case_num_livingchildren",
+            "instance": {
+                "openmrs_entity_id": "434344",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "num_children_born",
+            "bind": {
+                "calculate": "if(${delivery_outcome} = 'still_birth', 0, count(${sex_child}))"
+            },
+            "instance": {
+                "openmrs_entity_id": "43432",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "num_livingchildren",
+            "bind": {
+                "calculate": "${case_num_livingchildren} + ${num_children_born}"
+            },
+            "instance": {
+                "openmrs_entity_id": "54541",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "case_numlivingchildren_female",
+            "instance": {
+                "openmrs_entity_id": "57467",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "num_female_children_born",
+            "bind": {
+                "calculate": "sum(${sex_child_female})"
+            },
+            "instance": {
+                "openmrs_entity_id": "687832",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "numlivingchildren_female",
+            "bind": {
+                "calculate": "${case_numlivingchildren_female} + ${num_female_children_born}"
+            },
+            "instance": {
+                "openmrs_entity_id": "098343",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "case_numlivingchildren_male",
+            "instance": {
+                "openmrs_entity_id": "98664",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "num_male_children_born",
+            "bind": {
+                "calculate": "sum(${sex_child_male})"
+            },
+            "instance": {
+                "openmrs_entity_id": "4343656",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "numlivingchildren_male",
+            "bind": {
+                "calculate": "${case_numlivingchildren_male} + ${num_male_children_born}"
+            },
+            "instance": {
+                "openmrs_entity_id": "342325",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "name": "prolonged_obstructed_labor",
+                            "label": "Prolonged / obstructed labor ದೀರ್ಘಕಾಲೀನ / ಅಡಚಣೆಯನ್ನು ತಂದೊಡ್ಡುವ ಹೆರಿಗೆ ನೋವು",
+                            "instance": {
+                                "openmrs_code": "23123"
+                            }
+                        },
+                        {
+                            "name": "hypertension_fits",
+                            "label": "Severe hypertension / fits ತೀವ್ರತರವಾದ ಅಧಿಕ ರಕ್ತದೊತ್ತಡ / ಮೂರ್ಚೆರೋಗ",
+                            "instance": {
+                                "openmrs_code": "23213"
+                            }
+                        },
+                        {
+                            "name": "bleeding_hemorrhage",
+                            "label": "Bleeding / hemorrhage ರಕ್ತಸ್ರಾವ",
+                            "instance": {
+                                "openmrs_code": "23123"
+                            }
+                        },
+                        {
+                            "name": "fever_infection",
+                            "label": "High fever / infection ಅಧಿಕ ಜ್ವರ / ಸೊಂಕು",
+                            "instance": {
+                                "openmrs_code": "2323"
+                            }
+                        },
+                        {
+                            "name": "cause_not_identified",
+                            "label": "Cause not identified ಕಾರಣವನ್ನು ಗುರುತಿಸಲ್ಪಟ್ಟಿಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "23213"
+                            }
+                        },
+                        {
+                            "name": "others",
+                            "label": "Others ಇತರೆ",
+                            "instance": {
+                                "openmrs_code": "23213"
+                            }
+                        }
+                    ],
+                    "name": "maternal_death_cause",
+                    "label": "Cause of maternal death? ತಾಯಿಯ ಮರಣಕ್ಕೆ ಕಾರಣಗಳು?",
+                    "instance": {
+                        "openmrs_entity_id": "43434",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "name": "other_maternal_death_cause",
+                    "bind": {
+                        "relevant": "${maternal_death_cause} = 'others'"
+                    },
+                    "label": "Others ಇತರೆ:",
+                    "instance": {
+                        "openmrs_entity_id": "43221",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "text"
+                }
+            ],
+            "name": "maternal_death_group",
+            "bind": {
+                "relevant": "(${woman_survived} = 'no' or ${mother_survived} = 'no')"
+            },
+            "type": "group"
+        },
+        {
+            "children": [
+                {
+                    "name": "case_w_rh_negative",
+                    "instance": {
+                        "openmrs_entity_id": "4324234",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "hidden"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "yes",
+                            "label": "Yes ಹೌದು",
+                            "instance": {
+                                "openmrs_code": "1065"
+                            }
+                        },
+                        {
+                            "name": "no",
+                            "label": "No ಇಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "1066"
+                            }
+                        }
+                    ],
+                    "name": "rh_injection_given",
+                    "bind": {
+                        "relevant": "${case_w_rh_negative} != ''"
+                    },
+                    "label": "Rh injection given to woman? ಮಹಿಳೆಗೆ Rh ಚುಚ್ಚುಮದ್ದು ನೀಡಲಾಯಿತೆ?",
+                    "instance": {
+                        "openmrs_entity_id": "32323",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "yes",
+                            "label": "Yes ಹೌದು",
+                            "instance": {
+                                "openmrs_code": "1065"
+                            }
+                        },
+                        {
+                            "name": "no",
+                            "label": "No ಇಲ್ಲ",
+                            "instance": {
+                                "openmrs_code": "1066"
+                            }
+                        }
+                    ],
+                    "name": "had_delivery_complications",
+                    "label": "Were there delivery complications? ಹೆರಿಗೆಯಲ್ಲಿ ತೊಡಕುಂಟಾಯಿತೆ?",
+                    "instance": {
+                        "openmrs_entity_id": "233234",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "hemorrhage",
+                            "label": "Hemorrhage ರಕ್ತಸ್ರಾವ",
+                            "instance": {
+                                "openmrs_code": "4123213"
+                            }
+                        },
+                        {
+                            "name": "placenta_previa",
+                            "label": "Placenta previa ಹಿಂದಿನ ಗರ್ಭದಲ್ಲಿ ಮಾಸು ಮುಂದಿರುವುದು",
+                            "instance": {
+                                "openmrs_code": "2131413"
+                            }
+                        },
+                        {
+                            "name": "cord_prolapse",
+                            "label": "Cord prolapse ಬಳ್ಳಿಯ ಸರಿತ",
+                            "instance": {
+                                "openmrs_code": "4134123"
+                            }
+                        },
+                        {
+                            "name": "prolonged_labor",
+                            "label": "Prolonged / obstructed labor ದೀರ್ಘಕಾಲೀನ / ಅಡಚಣೆಯನ್ನು ತಂದೊಡ್ಡುವ ಹೆರಿಗೆ ನೋವು",
+                            "instance": {
+                                "openmrs_code": "213124123"
+                            }
+                        },
+                        {
+                            "name": "abnormal_presentation",
+                            "label": "Abnormal presentation ಅಪಸಾಮಾನ್ಯ ಪ್ರಸ್ತುತಿ",
+                            "instance": {
+                                "openmrs_code": "14123123"
+                            }
+                        },
+                        {
+                            "name": "perineal_tear",
+                            "label": "Perineal tear (2, 3, or 4 degree)",
+                            "instance": {
+                                "openmrs_code": "23123"
+                            }
+                        },
+                        {
+                            "name": "others",
+                            "label": "Others ಇತರೆ",
+                            "instance": {
+                                "openmrs_code": "32123"
+                            }
+                        }
+                    ],
+                    "name": "complications",
+                    "bind": {
+                        "relevant": "${had_delivery_complications} = 'yes'"
+                    },
+                    "label": "What delivery complications were there? ಯಾವ ಹೆರಿಗೆ ತೊಂದರೆಗಳು ಉಂಟಾದವು?",
+                    "instance": {
+                        "openmrs_entity_id": "25343",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select all that apply"
+                },
+                {
+                    "name": "delivery_complications_other",
+                    "bind": {
+                        "relevant": "selected(${complications}, 'others')"
+                    },
+                    "label": "Others ಇತರೆ:",
+                    "instance": {
+                        "openmrs_entity_id": "2355435",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "text"
+                }
+            ],
+            "name": "woman_survived_group",
+            "bind": {
+                "relevant": "(${woman_survived} = 'yes' or ${mother_survived} = 'yes')"
+            },
+            "type": "group"
+        },
+        {
+            "name": "case_is_high_risk_till_pnc_close",
+            "instance": {
+                "openmrs_entity_id": "8768767",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "case_is_high_risk_till_pnc_close_reason",
+            "instance": {
+                "openmrs_entity_id": "676576",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "case_anaemic_status",
+            "instance": {
+                "openmrs_entity_id": "76767",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "case_pih",
+            "instance": {
+                "openmrs_entity_id": "36787",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "case_pre_eclampsia",
+            "instance": {
+                "openmrs_entity_id": "376784",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "case_jaundice",
+            "instance": {
+                "openmrs_entity_id": "343434",
+                "openmrs_entity": "concept"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "is_high_risk1",
+            "bind": {
+                "calculate": "if(${case_is_high_risk_till_pnc_close} = 'yes' or ${case_anaemic_status} != '' or ${case_pih} != '' or ${case_pre_eclampsia} != '' or ${case_jaundice} != '', 'yes', 'no')"
+            },
+            "instance": {
+                "openmrs_entity_id": "4746767",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "high_risk_reason",
+            "bind": {
+                "calculate": "concat(${case_is_high_risk_till_pnc_close_reason}, ' ', ${case_anaemic_status}, ' ', ${case_pih}, ' ', ${case_pre_eclampsia}, ' ', ${case_jaundice})"
+            },
+            "instance": {
+                "openmrs_entity_id": "5656",
+                "openmrs_entity": "concept"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "high_risk_note_mother",
+            "bind": {
+                "relevant": "${is_high_risk1} = 'yes'"
+            },
+            "label": "Woman is still at risk because of, ಮಹಿಳೆಯು ಈಗಲೂ ಅಪಾಯದಲ್ಲಿದ್ದಾಳೆ ಏಕೆಂದರೆ: ${high_risk_reason}",
+            "type": "note"
+        },
+        {
+            "children": [
+                {
+                    "name": "yes",
+                    "label": "Yes ಹೌದು",
+                    "instance": {
+                        "openmrs_code": "1065"
+                    }
+                },
+                {
+                    "name": "no",
+                    "label": "No ಇಲ್ಲ",
+                    "instance": {
+                        "openmrs_code": "1066"
+                    }
+                }
+            ],
+            "name": "is_high_risk",
+            "bind": {
+                "relevant": "(${woman_survived} = 'yes' or ${mother_survived} = 'yes')",
+                "required": "yes"
+            },
+            "label": "Do you want to mark woman as HR (High Risk)?\nನೀವು ಮಹಿಳೆಯನ್ನು HR (ಹೆಚ್ಚು ಅಪಾಯವಿದೆ) ಎಂದು ಗುರುತಿಸಲು ಬಯಸುವಿರಾ?",
+            "instance": {
+                "openmrs_entity_id": "424253",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one"
+        },
+        {
+            "control": {
+                "bodyless": true
+            },
+            "children": [
+                {
+                    "name": "instanceID",
+                    "bind": {
+                        "readonly": "true()",
+                        "calculate": "concat('uuid:', uuid())"
+                    },
+                    "type": "calculate"
+                }
+            ],
+            "name": "meta",
+            "type": "group"
+        }
+    ],
+    "instance": {
+        "encounter_type": "PNC Registration"
+    },
+    "version": "201504300627",
+    "type": "survey",
+    "name": "PNC_Registration_EngKan",
+    "sms_keyword": "Delivery_Outcome_EngKan",
+    "title": "PNC Registration"
+}

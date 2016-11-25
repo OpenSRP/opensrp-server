@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8"?><form autocomplete="off" novalidate="novalidate" class="or clearfix" id="child_vaccination_followup">
+    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+    <section class="form-logo"> </section>
+    <h3 id="form-title">بچّوں کا فالو اپ رجسٹر برائے ٹیکاجات - Child Follow Up Vaccination Register</h3>
+    <select id="form-languages" data-default-lang="en">
+        <option value="ur">Urdu</option> <option value="en">English</option> <option value="Roman Urdu">Roman Urdu</option> </select>        <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/provider_location_note:label">شہر: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_city ">            </span> ; ٹائون: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_town ">            </span> ; یوسی: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_uc ">            </span> ; سینٹرکا نام: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_location_name ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/provider_location_note:label">City: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_city ">            </span> ; Town: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_town ">            </span> ; UC: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_uc ">            </span> ; Center Name: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_location_name ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/provider_location_note:label">Shehr: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_city ">            </span> ; Town: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_town ">            </span> ; UC: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_uc ">            </span> ; Center ka Naam: <span class="or-output" data-value=" /Child_Vaccination_Followup/provider_location_name ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/provider_location_note" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/existing_client_reg_date_note:label">پروگرام میں اندراج کی تاریخ: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_client_reg_date ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/existing_client_reg_date_note:label">Program Registration date: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_client_reg_date ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/existing_client_reg_date_note:label">Program mai andraj ki tareekh: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_client_reg_date ">            </span>
+    </span>
+    <span lang="ur" class="or-hint " data-itext-id="/Child_Vaccination_Followup/existing_client_reg_date_note:hint">بچے کو ویکسین لگنے کی تاریخ</span>
+    <span lang="en" class="or-hint active" data-itext-id="/Child_Vaccination_Followup/existing_client_reg_date_note:hint">Date on which child was vaccinated</span>
+
+    <span lang="Roman Urdu" class="or-hint " data-itext-id="/Child_Vaccination_Followup/existing_client_reg_date_note:hint">Bachay ko vaccine lagnay ki tareekh</span>
+    <input type="text" name="/Child_Vaccination_Followup/existing_client_reg_date_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/program_client_id_note:label">پروگرام آئی ڈی: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_program_client_id ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/program_client_id_note:label">Program ID: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_program_client_id ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/program_client_id_note:label">Program ID: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_program_client_id ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/program_client_id_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/epi_card_number_note:label">ای پی آئی کارڈ نمبر: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_epi_card_number ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/epi_card_number_note:label">EPI Card Number: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_epi_card_number ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/epi_card_number_note:label">EPI Card Number: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_epi_card_number ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/epi_card_number_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/first_name_note:label">نام: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_first_name ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/first_name_note:label">First Name: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_first_name ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/first_name_note:label">Naam: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_first_name ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/first_name_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/last_name_note:label">والد کا نام: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_last_name ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/last_name_note:label">Last name: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_last_name ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/last_name_note:label">Waalid ka naam: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_last_name ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/last_name_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/calc_dob_note:label">بچے کی تاریخ پیدائش: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_birth_date ">            </span> (<span class="or-output" data-value=" /Child_Vaccination_Followup/child_age ">            </span>) مہینے</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/calc_dob_note:label">Child Date of Birth: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_birth_date ">            </span> (<span class="or-output" data-value=" /Child_Vaccination_Followup/child_age ">            </span>) months</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/calc_dob_note:label">Bachay ki tareekh-e-paidaish: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_birth_date ">            </span> (<span class="or-output" data-value=" /Child_Vaccination_Followup/child_age ">            </span>) mahinay</span>
+    <input type="text" name="/Child_Vaccination_Followup/calc_dob_note" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/gender_note:label">جنس: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_gender ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/gender_note:label">Gender: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_gender ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/gender_note:label">Jins:<span class="or-output" data-value=" /Child_Vaccination_Followup/existing_gender ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/gender_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/mother_name_note:label">ماں کا نام: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_mother_name ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/mother_name_note:label">Mother's Name: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_mother_name ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/mother_name_note:label">Maa ka naam: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_mother_name ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/mother_name_note" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/exisiting_ethnicity_note:label">قومیت: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_ethnicity ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/exisiting_ethnicity_note:label">Ethnicity: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_ethnicity ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/exisiting_ethnicity_note:label">Qomiat: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_ethnicity ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/exisiting_ethnicity_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/address:label">موجودہ پتہ: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_address1 ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_landmark ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_union_councilname ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_townname ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_city_villagename ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_provincename ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/address:label">Current Address: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_address1 ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_landmark ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_union_councilname ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_townname ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_city_villagename ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_provincename ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/address:label">Mojooda Address: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_address1 ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_landmark ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_union_councilname ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_townname ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_city_villagename ">            </span>, <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_provincename ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/address" data-type-xml="string" readonly="readonly"/>
+</label>    <fieldset class="question ">
+    <fieldset>
+        <legend>
+            <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/address_change:label">کیا آپ کا گھر کا پتہ بدلا ہے؟</span>
+            <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/address_change:label">Has your home address changed?</span>
+
+            <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/address_change:label">Kya aap ka ghar ka pata badla hai?</span>                    </legend>
+        <div class="option-wrapper">
+            <label class="">
+                <input type="radio" name="/Child_Vaccination_Followup/address_change" data-name="/Child_Vaccination_Followup/address_change" value="yes" data-type-xml="select1"/>
+                <span lang="ur" class="option-label " data-itext-id="/Child_Vaccination_Followup/address_change/yes:label">ہاں</span>
+                <span lang="en" class="option-label active" data-itext-id="/Child_Vaccination_Followup/address_change/yes:label">Yes</span>
+
+                <span lang="Roman Urdu" class="option-label " data-itext-id="/Child_Vaccination_Followup/address_change/yes:label">Yes</span>
+            </label>
+            <label class="">
+                <input type="radio" name="/Child_Vaccination_Followup/address_change" data-name="/Child_Vaccination_Followup/address_change" value="no" data-type-xml="select1"/>
+                <span lang="ur" class="option-label " data-itext-id="/Child_Vaccination_Followup/address_change/no:label">نہیں</span>
+                <span lang="en" class="option-label active" data-itext-id="/Child_Vaccination_Followup/address_change/no:label">No</span>
+
+                <span lang="Roman Urdu" class="option-label " data-itext-id="/Child_Vaccination_Followup/address_change/no:label">No</span>
+            </label>
+        </div>
+    </fieldset>
+</fieldset>    <label class="question or-appearance-minimal  or-branch pre-init ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/province:label">صوبہ</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/province:label">Province</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/province:label">Suba</span>
+    <span class="required">*</span>
+    <select name="/Child_Vaccination_Followup/province" data-name="/Child_Vaccination_Followup/province" required="required" data-relevant="selected( /Child_Vaccination_Followup/address_change , 'yes')" data-type-xml="select1">
+        <option value="">...</option>
+        <option value="kpk">Khyber Pakhtunkhwa</option>
+        <option value="sindh">Sindh</option>
+        <option value="balochistan">Balochistan</option>
+        <option value="punjab">Punjab</option>
+        <option value="gilgit_baltistan">Gilgit Baltistan</option>
+        <option value="kashmir">Kashmir</option>
+        <option value="fata">FATA</option>
+        <option value="out_of_country">Out of Country</option>
+    </select>
+    <span class="or-option-translations" style="display:none;">
+        <span data-option-value="kpk" lang="ur">خیبر پختون خواہ</span>
+        <span data-option-value="kpk" lang="en">Khyber Pakhtunkhwa</span>
+
+        <span data-option-value="kpk" lang="Roman Urdu">Khyber Pakhtunkhwa</span>
+        <span data-option-value="sindh" lang="ur">سندھ</span>
+        <span data-option-value="sindh" lang="en">Sindh</span>
+
+        <span data-option-value="sindh" lang="Roman Urdu">Sindh</span>
+        <span data-option-value="balochistan" lang="ur">بلوچستان</span>
+        <span data-option-value="balochistan" lang="en">Balochistan</span>
+
+        <span data-option-value="balochistan" lang="Roman Urdu">Balochistan</span>
+        <span data-option-value="punjab" lang="ur">پنجاب</span>
+        <span data-option-value="punjab" lang="en">Punjab</span>
+
+        <span data-option-value="punjab" lang="Roman Urdu">Punjab</span>
+        <span data-option-value="gilgit_baltistan" lang="ur">گلگت بلتستان</span>
+        <span data-option-value="gilgit_baltistan" lang="en">Gilgit Baltistan</span>
+
+        <span data-option-value="gilgit_baltistan" lang="Roman Urdu">Gilgit Baltistan</span>
+        <span data-option-value="kashmir" lang="ur">کشمیر</span>
+        <span data-option-value="kashmir" lang="en">Kashmir</span>
+
+        <span data-option-value="kashmir" lang="Roman Urdu">Kashmir</span>
+        <span data-option-value="fata" lang="ur">فاٹا</span>
+        <span data-option-value="fata" lang="en">FATA</span>
+
+        <span data-option-value="fata" lang="Roman Urdu">FATA</span>
+        <span data-option-value="out_of_country" lang="ur">ملک سے باہر</span>
+        <span data-option-value="out_of_country" lang="en">Out of Country</span>
+
+        <span data-option-value="out_of_country" lang="Roman Urdu">Out of Country</span>                </span>
+</label>    <label class="question or-appearance-minimal  or-branch pre-init ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/city_village:label">شہر</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/city_village:label">City</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/city_village:label">Shehr</span>
+    <span class="required">*</span>
+    <select name="/Child_Vaccination_Followup/city_village" data-name="/Child_Vaccination_Followup/city_village" required="required" data-relevant="selected( /Child_Vaccination_Followup/address_change , 'yes')" data-type-xml="select1">
+        <option class="itemset-template" value="" data-items-path="instance('cities')/root/item[province= /Child_Vaccination_Followup/province  or province='na']">...</option>
+    </select>
+    <span class="or-option-translations" style="display:none;">                </span>
+    <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
+        <span lang="ur" class="option-label " data-itext-id="static_instance-cities-0">کراچی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-cities-0">Karachi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-cities-0">Karachi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-cities-1">حافظ آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-cities-1">Hafizabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-cities-1">Hafizabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-cities-2">مظفر گڑھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-cities-2">Muzaffargarh</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-cities-2">Muzaffargarh</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-cities-3">دیگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-cities-3">Other</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-cities-3">Deegar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-cities-4">قابل اطلاق نہیں</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-cities-4">Not Applicable</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-cities-4">Qaabil-e-atlaaq nahi</span>            </span>
+</label>    <label class="question or-appearance-minimal  or-branch pre-init ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/town:label">ٹاٰئون/ قصبہ/ بستی</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/town:label">Town</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/town:label">Town / Qasbah / Basti</span>
+    <span class="required">*</span>
+    <select name="/Child_Vaccination_Followup/town" data-name="/Child_Vaccination_Followup/town" required="required" data-relevant="selected( /Child_Vaccination_Followup/address_change , 'yes')" data-type-xml="select1">
+        <option class="itemset-template" value="" data-items-path="instance('towns')/root/item[(province= /Child_Vaccination_Followup/province  and city= /Child_Vaccination_Followup/city_village  ) or city='na']">...</option>
+    </select>
+    <span class="or-option-translations" style="display:none;">                </span>
+    <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-0">کورنگی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-0">Korangi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-0">Korangi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-1">لانڈھی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-1">Landhi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-1">Landhi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-2">بلدیہ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-2">Baldia</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-2">Baldia</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-3">بن قاسم</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-3">Bin Qasim</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-3">Bin Qasim</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-4">گڈاپ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-4">Gadap</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-4">Gadap</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-5">گلبرگ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-5">Gulberg</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-5">Gulberg</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-6">گلشن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-6">Gulshan</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-6">Gulshan</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-7">جمشید</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-7">Jamshed</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-7">Jamshed</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-8">کیماری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-8">Kiamari</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-8">Kiamari</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-9">لیاقت آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-9">Liaquatabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-9">Liaquatabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-10">لیاری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-10">Lyari</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-10">Lyari</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-11">ملیر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-11">Malir</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-11">Malir</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-12">نیو کراچی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-12">New Karachi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-12">New Karachi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-13">نارتھ ناظم آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-13">North Nazimabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-13">North Nazimabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-14">اورنگی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-14">Orangi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-14">Orangi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-15">صدر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-15">Saddar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-15">Saddar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-16">شاہ فیصل</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-16">Shah Faisal</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-16">Shah Faisal</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-17">سائٹ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-17">S.I.T.E.</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-17">S.I.T.E.</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-18">دیگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-18">Other</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-18">Deegar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-towns-19">قابل اطلاق نہیں</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-towns-19">Not Applicable</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-towns-19">Qaabil-e-atlaaq nahi</span>            </span>
+</label>    <label class="question or-appearance-minimal  or-branch pre-init ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/union_council:label">یونین کونسل</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/union_council:label">Union Council</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/union_council:label">Union Council</span>
+    <span class="required">*</span>
+    <select name="/Child_Vaccination_Followup/union_council" data-name="/Child_Vaccination_Followup/union_council" required="required" data-relevant="selected( /Child_Vaccination_Followup/address_change , 'yes')" data-type-xml="select1">
+        <option class="itemset-template" value="" data-items-path="instance('ucs')/root/item[(province= /Child_Vaccination_Followup/province  and city= /Child_Vaccination_Followup/city_village  and town= /Child_Vaccination_Followup/town ) or town='na']">...</option>
+    </select>
+    <span class="or-option-translations" style="display:none;">                </span>
+    <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-0">بلال کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-0">Bilal Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-0">Bilal Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-1">ناصر کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-1">Nasir Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-1">Nasir Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-2">چکرا گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-2">Chakra Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-2">Chakra Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-3">مصطفی تاج کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-3">Mustafa Taj Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-3">Mustafa Taj Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-4">ہنڈریڈ کوارٹر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-4">Hundred Quarters</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-4">Hundred Quarters</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-5">گلزار کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-5">Gulzar Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-5">Gulzar Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-6">کورنگی سیکٹر 33</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-6">Korangi Sector 33</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-6">Korangi Sector 33</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-7">زمان ٹاوَن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-7">Zaman Town</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-7">Zaman Town</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-8">حسرت موہانی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-8">Hasrat Mohani Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-8">Hasrat Mohani Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-9">گلشن غازی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-9">Gulshan-e-Ghazi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-9">Gulshan-e-Ghazi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-10">اتحاد ٹاوَن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-10">Ittehad Town</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-10">Ittehad Town</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-11">اسلام نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-11">Islam Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-11">Islam Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-12">نئی آبادی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-12">Nai Abadi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-12">Nai Abadi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-13">سعید آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-13">Saeedabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-13">Saeedabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-14">مسلم مجاہد کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-14">Muslim Mujahid Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-14">Muslim Mujahid Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-15">مہاجر کیمپ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-15">Muhajir Camp</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-15">Muhajir Camp</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-16">رشید آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-16">Rasheedabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-16">Rasheedabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-17">ابراہیم حیدری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-17">Ibrahim Hyderi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-17">Ibrahim Hyderi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-18">رہڑی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-18">Rehri</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-18">Rehri</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-19">کیٹل کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-19">Cattle Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-19">Cattle Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-20">قائدآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-20">Qaidabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-20">Qaidabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-21">لانڈھی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-21">Landhi Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-21">Landhi Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-22">گلشن حدید</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-22">Gulshan-e-Hadeed</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-22">Gulshan-e-Hadeed</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-23">گگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-23">Gaghar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-23">Gaghar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-24">مراد میمن گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-24">Murad Memon Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-24">Murad Memon Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-25">درشانو شنو</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-25">Darsano Chana</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-25">Darsano Chana</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-26">گجرو</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-26">Gujro</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-26">Gujro</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-27">سنگل</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-27">Songal</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-27">Songal</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-28">معمار آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-28">Maymarabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-28">Maymarabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-29">یوسف گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-29">Yousuf Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-29">Yousuf Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-30">منگھوپیر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-30">Manghopir</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-30">Manghopir</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-31">عزیز آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-31">Azizabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-31">Azizabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-32">کریم آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-32">Karimabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-32">Karimabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-33">عائشہ منزل</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-33">Aisha Manzil</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-33">Aisha Manzil</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-34">انچولی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-34">Ancholi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-34">Ancholi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-35">نصیرآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-35">Naseerabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-35">Naseerabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-36">یاسین آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-36">Yaseenabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-36">Yaseenabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-37">واٹرپمپ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-37">Water Pump</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-37">Water Pump</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-38">شفیق مل کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-38">Shafiq Mill Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-38">Shafiq Mill Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-39">دہلی مرچنٹائل سوسائٹی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-39">Delhi Mercantile Society</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-39">Delhi Mercantile Society</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-40">سوک سینٹر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-40">Civic Centre</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-40">Civic Centre</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-41">پیر الہی بخش کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-41">Pir Ilahi Buksh Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-41">Pir Ilahi Buksh Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-42">عیسی نگری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-42">Essa Nagri</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-42">Essa Nagri</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-43">گلشن اقبال</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-43">Gulshan-e-Iqbal</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-43">Gulshan-e-Iqbal</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-44">گیلانی ریلوے اسٹیشن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-44">Gillani Railway Station</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-44">Gillani Railway Station</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-45">شانتی نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-45">Shanti Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-45">Shanti Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-46">جمالی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-46">Jamali Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-46">Jamali Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-47">گلشن اقبال 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-47">Gulshan-e-Iqbal II</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-47">Gulshan-e-Iqbal II</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-48">پہلوان گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-48">Pehlwan Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-48">Pehlwan Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-49">میٹروویل کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-49">Matrovil Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-49">Matrovil Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-50">گلزار ہجری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-50">Gulzar-e-Hijri</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-50">Gulzar-e-Hijri</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-51">صفورا گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-51">Safooran Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-51">Safooran Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-52">اختر کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-52">Akhtar Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-52">Akhtar Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-53">منظور کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-53">Manzoor Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-53">Manzoor Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-54">اعظم بستی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-54">Azam Basti</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-54">Azam Basti</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-55">چنیسر گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-55">Chanesar Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-55">Chanesar Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-56">محمودآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-56">Mahmudabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-56">Mahmudabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-57">پی۔ای۔سی۔ایچ۔ایس</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-57">P.E.C.H.S.</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-57">P.E.C.H.S.</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-58">پی۔ای۔سی۔ایچ۔ایس 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-58">P.E.C.H.S. II</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-58">P.E.C.H.S. II</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-59">جٹ لائن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-59">Jut Line</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-59">Jut Line</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-60">سینٹرل جیکب لائن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-60">Central Jacob Lines</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-60">Central Jacob Lines</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-61">جمشید کوارٹر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-61">Jamshed Quarters</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-61">Jamshed Quarters</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-62">گارڈن ایسٹ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-62">Garden East</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-62">Garden East</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-63">سولجر بازار</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-63">Soldier Bazar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-63">Soldier Bazar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-64">پاکستان کوارٹر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-64">Pakistan Quarters</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-64">Pakistan Quarters</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-65">بھٹا ولیج</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-65">Bhutta Village</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-65">Bhutta Village</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-66">سلطان آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-66">Sultanabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-66">Sultanabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-67">کیماری یو- سی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-67">Kiamari UC</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-67">Kiamari UC</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-68">بابا بھٹ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-68">Baba Bhit</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-68">Baba Bhit</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-69">مچھر کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-69">Machar Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-69">Machar Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-70">ماڑی پور</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-70">Maripur</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-70">Maripur</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-71">شیرشاہ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-71">SherShah</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-71">SherShah</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-72">گابو پٹ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-72">Gabo Pat</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-72">Gabo Pat</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-73">مظفرآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-73">Muzafarabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-73">Muzafarabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-74">مسلم آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-74">Muslimabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-74">Muslimabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-75">داوَد چورنگی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-75">Dawood Chowrangi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-75">Dawood Chowrangi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-76">معین آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-76">Moinabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-76">Moinabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-77">شرافی گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-77">Sharafi Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-77">Sharafi Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-78">بھٹو نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-78">Bhutto Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-78">Bhutto Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-79">خواجہ اجمیر کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-79">Khawaja Ajmeer Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-79">Khawaja Ajmeer Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-80">لانڈھی یوسی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-80">Landhi UC</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-80">Landhi UC</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-81">عوامی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-81">Awami Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-81">Awami Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-82">برمی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-82">Burmee Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-82">Burmee Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-83">کورنگی یوسی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-83">Korangi UC</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-83">Korangi UC</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-84">شیرآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-84">Sherabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-84">Sherabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-85">رضویہ سوسائٹی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-85">Rizvia Society</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-85">Rizvia Society</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-86">فردوس کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-86">Firdous Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-86">Firdous Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-87">سپر مارکیٹ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-87">Super Market</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-87">Super Market</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-88">دک کھانہ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-88">Dak Khana</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-88">Dak Khana</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-89">قاسم آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-89">Qasimabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-89">Qasimabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-90">بندھانی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-90">Bandhani Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-90">Bandhani Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-91">شریف آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-91">Sharifabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-91">Sharifabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-92">کمرشل ایریا</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-92">Commercial Area</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-92">Commercial Area</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-93">مجاہد کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-93">Mujahid Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-93">Mujahid Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-94">ناظم آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-94">Nazimabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-94">Nazimabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-95">عباسی شہید</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-95">Abbasi Shaheed</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-95">Abbasi Shaheed</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-96">آگرہ تاج کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-96">Agra Taj Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-96">Agra Taj Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-97">دریاآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-97">Daryaabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-97">Daryaabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-98">نواآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-98">Nawabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-98">Nawabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-99">خدا- میمن- سوساَٹی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-99">Khada Memon Society</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-99">Khada Memon Society</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-100">بغدادی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-100">Baghdadi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-100">Baghdadi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-101">شاھ باغ لائن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-101">Shah Baig Line</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-101">Shah Baig Line</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-102">بہار کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-102">Bihar Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-102">Bihar Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-103">راگی واڑا</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-103">Ragiwara</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-103">Ragiwara</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-104">سنگولائن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-104">Singo Line</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-104">Singo Line</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-105">چاکی واڑا</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-105">Chakiwara</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-105">Chakiwara</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-106">علامہ اقبال کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-106">Allama Iqbal Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-106">Allama Iqbal Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-107">موڈل کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-107">Model Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-107">Model Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-108">کالا بورڈ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-108">Kala Board</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-108">Kala Board</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-109">سعودآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-109">Saudabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-109">Saudabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-110">کھوکھرا پار</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-110">Khokhra Par</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-110">Khokhra Par</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-111">جعفر تیار</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-111">Jafar-e-Tayyar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-111">Jafar-e-Tayyar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-112">غریب آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-112">Gharibabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-112">Gharibabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-113">غازی بروہی گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-113">Ghazi Brohi Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-113">Ghazi Brohi Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-114">کالیانہ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-114">Kalyana</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-114">Kalyana</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-115">سر سید کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-115">Sir Syed Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-115">Sir Syed Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-116">فاطمہ جناح کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-116">Fatima Jinnah Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-116">Fatima Jinnah Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-117">گودھرا</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-117">Godhra</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-117">Godhra</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-118">ابو زر غفاری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-118">Abu Zar Ghaffari</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-118">Abu Zar Ghaffari</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-119">حاکم احسان</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-119">Hakim Ahsan</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-119">Hakim Ahsan</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-120">مدینہ کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-120">Madina Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-120">Madina Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-121">فیصل کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-121">Faisal Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-121">Faisal Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-122">خمیسو گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-122">Khamiso Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-122">Khamiso Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-123">مصطفی کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-123">Mustufa Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-123">Mustufa Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-124">خواجہ اجمیر نگری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-124">Khawaja Ajmeer Nagri</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-124">Khawaja Ajmeer Nagri</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-125">گلشن سعید</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-125">Gulshan-e-Saeed</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-125">Gulshan-e-Saeed</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-126">شاہ نواز بھٹو کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-126">Shah Nawaz Bhutto Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-126">Shah Nawaz Bhutto Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-127">پاپوش نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-127">Paposh Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-127">Paposh Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-128">پہاڑ گنج</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-128">Pahar Ganj</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-128">Pahar Ganj</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-129">کھنڑو گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-129">Khandu Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-129">Khandu Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-130">حیدری</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-130">Hyderi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-130">Hyderi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-131">سخی حسن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-131">Sakhi Hassan</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-131">Sakhi Hassan</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-132">فاروق اعظم</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-132">Farooq-e-Azam</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-132">Farooq-e-Azam</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-133">نصرت بھٹو کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-133">Nusrat Bhutto Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-133">Nusrat Bhutto Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-134">شادمان ٹاوَن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-134">Shadman Town</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-134">Shadman Town</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-135">بفرزون</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-135">Buffer Zone</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-135">Buffer Zone</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-136">بفرزون 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-136">Buffer Zone II</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-136">Buffer Zone II</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-137">مومن آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-137">Mominabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-137">Mominabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-138">حریانہ کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-138">Haryana Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-138">Haryana Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-139">حنیف آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-139">Hanifabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-139">Hanifabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-140">محمد نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-140">Mohammad Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-140">Mohammad Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-141">مدینہ کالونی اورنگی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-141">Madina Colony Orangi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-141">Madina Colony Orangi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-142">غازی آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-142">Ghaziabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-142">Ghaziabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-143">چشتی نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-143">Chisti Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-143">Chisti Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-144">بلال کالونی اورنگی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-144">Bilal Colony Orangi</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-144">Bilal Colony Orangi</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-145">اقبال بلوچ کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-145">Iqbal Baloch Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-145">Iqbal Baloch Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-146">گبول ٹاوَن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-146">Ghabool Town</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-146">Ghabool Town</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-147">داتا نگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-147">Data Nagar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-147">Data Nagar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-148">مجاہد آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-148">Mujahidabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-148">Mujahidabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-149">بلوچ گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-149">Baloch Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-149">Baloch Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-150">پرانہ حاجی کیمپ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-150">Old Haji Camp</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-150">Old Haji Camp</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-151">گارڈن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-151">Garden</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-151">Garden</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-152">کھارادر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-152">Kharadar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-152">Kharadar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-153">سٹی ریلوے کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-153">City Railway Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-153">City Railway Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-154">ناناک واڑا</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-154">Nanak Wara</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-154">Nanak Wara</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-155">گزدرآباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-155">Gazdarabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-155">Gazdarabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-156">ملت نگر اسلام پورا</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-156">Millat Nagar/Islam Pura</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-156">Millat Nagar/Islam Pura</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-157">صدر یو سی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-157">Saddar UC</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-157">Saddar UC</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-158">سول لائن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-158">Civil Line</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-158">Civil Line</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-159">کلفٹن</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-159">Clifton</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-159">Clifton</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-160">کہکشان</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-160">Kehkashan</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-160">Kehkashan</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-161">ناتھا خان گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-161">Natha Khan Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-161">Natha Khan Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-162">پاک صدر کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-162">Pak Sadat Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-162">Pak Sadat Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-163">ڈرگ کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-163">Drigh Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-163">Drigh Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-164">رائتا پلاٹ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-164">Raita Plot</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-164">Raita Plot</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-165">موریا خان گوٹھ</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-165">Moria Khan Goth</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-165">Moria Khan Goth</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-166">رفا عام سوسا ئٹی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-166">Rafa-e-Aam Society</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-166">Rafa-e-Aam Society</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-167">الفلاح سوسا ئٹی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-167">Al-Falah Society</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-167">Al-Falah Society</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-168">پاک کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-168">Pak Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-168">Pak Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-169">پرانہ گولی مار</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-169">Old Golimar</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-169">Old Golimar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-170">جہان آباد</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-170">Jahanabad</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-170">Jahanabad</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-171">میٹروویل</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-171">Metrovil</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-171">Metrovil</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-172">بہوانی چالی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-172">Bhawani Chali</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-172">Bhawani Chali</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-173">فرونٹر کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-173">Frontier Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-173">Frontier Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-174">بنارس کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-174">Banaras Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-174">Banaras Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-175">قصبہ کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-175">Qasba Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-175">Qasba Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-176">اسلامیہ کالونی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-176">Islamia Colony</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-176">Islamia Colony</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-177">دیگر</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-177">Other</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-177">Deegar</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-ucs-178">قابل اطلاق نہیں</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-ucs-178">Not Applicable</span>
+
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-ucs-178">Qaabil-e-atlaaq nahi</span>            </span>
+</label>    <label class="question or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/address1:label">گھر کا پتہ</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/address1:label">Home Address</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/address1:label">Ghar ka pata</span>
+    <span class="required">*</span>
+    <input type="text" name="/Child_Vaccination_Followup/address1" required="required" data-relevant="selected( /Child_Vaccination_Followup/address_change , 'yes')" data-type-xml="string"/>
+</label>    <label class="question or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/landmark:label">گھر کے قریب کوئی مشہور جگہ</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/landmark:label">Land Mark</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/landmark:label">Ghar ke qareeb koi mashoor jagah</span>
+    <input type="text" name="/Child_Vaccination_Followup/landmark" data-relevant="selected( /Child_Vaccination_Followup/address_change , 'yes')" data-type-xml="string"/>
+</label>    <label class="question non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/center_gps:label">حاصل کردہ معلومات کی جگہ کے GPS کارڈینیٹس درج کریں</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/center_gps:label">Collect GPS coordinates of data entry location:</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/center_gps:label">Hasil karda malomaat ki jaga ke GPS coordinates darj karain</span>
+    <span lang="" class="or-hint active">GPS coordinates can only be collected when outside.</span>
+    <input type="text" name="/Child_Vaccination_Followup/center_gps" data-type-xml="geopoint"/>
+</label>    <label class="note non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/child_was_suffering_from_a_disease_at_birth_note:label">کیا بچہ پیدائش کے وقت کسی مرض میں مبتلا تھا؟ <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_child_was_suffering_from_a_disease_at_birth ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/child_was_suffering_from_a_disease_at_birth_note:label">Child was suffering from a disease at birth: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_child_was_suffering_from_a_disease_at_birth ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/child_was_suffering_from_a_disease_at_birth_note:label">Kya bacha pedaaish k waqt kissi marz mai mubtila tha? <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_child_was_suffering_from_a_disease_at_birth ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/child_was_suffering_from_a_disease_at_birth_note" required="required" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="question non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/aefi:label">حفاظتی ٹیکوں کے مضر اثرات</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/aefi:label">Temporary side-effects of immunization shots</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/aefi:label">Hifazati teekon ke muzr asraat</span>
+    <input type="text" name="/Child_Vaccination_Followup/aefi" data-type-xml="string"/>
+</label>    <fieldset class="question ">
+    <fieldset>
+        <legend>
+            <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/reminders_approval:label">کیا آپ اپنے بچے کی اگلی ویکسین کی تاریخ کے لیے SMS موصول کرنا چاہتے ہیں؟ <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_reminders_approval ">            </span>
+            </span>
+            <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/reminders_approval:label">Are you willing to receive SMS reminders for your next visit? <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_reminders_approval ">            </span>
+            </span>
+
+            <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/reminders_approval:label">Kya aap apnay bachay ki agli vaccine ki tareekh ke liye SMS mausool karna chahtay hain? <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_reminders_approval ">            </span>
+            </span>
+            <span class="required">*</span>                    </legend>
+        <div class="option-wrapper">
+            <label class="">
+                <input type="radio" name="/Child_Vaccination_Followup/reminders_approval" data-name="/Child_Vaccination_Followup/reminders_approval" value="yes" required="required" data-type-xml="select1"/>
+                <span lang="ur" class="option-label " data-itext-id="/Child_Vaccination_Followup/reminders_approval/yes:label">ہاں</span>
+                <span lang="en" class="option-label active" data-itext-id="/Child_Vaccination_Followup/reminders_approval/yes:label">Yes</span>
+
+                <span lang="Roman Urdu" class="option-label " data-itext-id="/Child_Vaccination_Followup/reminders_approval/yes:label">Yes</span>
+            </label>
+            <label class="">
+                <input type="radio" name="/Child_Vaccination_Followup/reminders_approval" data-name="/Child_Vaccination_Followup/reminders_approval" value="no" required="required" data-type-xml="select1"/>
+                <span lang="ur" class="option-label " data-itext-id="/Child_Vaccination_Followup/reminders_approval/no:label">نہیں</span>
+                <span lang="en" class="option-label active" data-itext-id="/Child_Vaccination_Followup/reminders_approval/no:label">No</span>
+
+                <span lang="Roman Urdu" class="option-label " data-itext-id="/Child_Vaccination_Followup/reminders_approval/no:label">No</span>
+            </label>
+        </div>
+    </fieldset>
+</fieldset>    <label class="question or-branch pre-init non-select ">
+    <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/contact_phone_number:jr:constraintMsg">فون نمبر گیارہ ہندسوں پر مشتمل اور مندرجہ ذیل شکل میں ہونا چاہئے: *********03</span>
+    <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/contact_phone_number:jr:constraintMsg">Phone number should be 11 digits in the following format: 03*********</span>
+
+    <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/contact_phone_number:jr:constraintMsg">Phone number 11 hindason par mushtamil aur mundarja zail shakal main hona chahiey: 03*********</span>
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/contact_phone_number:label">موبائل نمبر: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_contact_phone_number ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/contact_phone_number:label">Mobile Number: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_contact_phone_number ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/contact_phone_number:label">Mobile Number: <span class="or-output" data-value=" /Child_Vaccination_Followup/existing_contact_phone_number ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/contact_phone_number" data-constraint="regex(., '^03[0-9]{9}$')" data-relevant=" /Child_Vaccination_Followup/reminders_approval ='yes'" data-type-xml="string"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/bcg_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_bcg ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/bcg_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_bcg ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/bcg_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_bcg ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/bcg_note" data-relevant=" /Child_Vaccination_Followup/e_bcg  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv0_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv0 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/opv0_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv0 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv0_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv0 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/opv0_note" data-relevant=" /Child_Vaccination_Followup/e_opv0  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta2 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/opv1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta2 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta2 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/opv1_note" data-relevant=" /Child_Vaccination_Followup/e_penta2  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/pcv1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta1 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/pcv1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta1 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/pcv1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta1 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/pcv1_note" data-relevant=" /Child_Vaccination_Followup/e_penta1  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/penta1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta3 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/penta1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta3 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/penta1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_penta3 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/penta1_note" data-relevant=" /Child_Vaccination_Followup/e_penta3  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv1 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/opv2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv1 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv1 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/opv2_note" data-relevant=" /Child_Vaccination_Followup/e_opv1  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/pcv2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv2 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/pcv2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv2 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/pcv2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv2 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/pcv2_note" data-relevant=" /Child_Vaccination_Followup/e_opv2  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/penta2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv3 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/penta2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv3 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/penta2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_opv3 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/penta2_note" data-relevant=" /Child_Vaccination_Followup/e_opv3  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv1 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/opv3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv1 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/opv3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv1 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/opv3_note" data-relevant=" /Child_Vaccination_Followup/e_pcv1  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/pcv3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv2 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/pcv3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv2 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/pcv3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv2 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/pcv3_note" data-relevant=" /Child_Vaccination_Followup/e_pcv2  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/penta3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv3 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/penta3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv3 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/penta3_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_pcv3 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/penta3_note" data-relevant=" /Child_Vaccination_Followup/e_pcv3  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/ipv_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_ipv ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/ipv_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_ipv ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/ipv_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_ipv ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/ipv_note" data-relevant=" /Child_Vaccination_Followup/e_ipv  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/measles1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_measles1 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/measles1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_measles1 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/measles1_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_measles1 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/measles1_note" data-relevant=" /Child_Vaccination_Followup/e_measles1  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="note or-branch pre-init non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/measles2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_measles2 ">            </span>
+    </span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/measles2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_measles2 ">            </span>
+    </span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/measles2_note:label">            <span class="or-output" data-value=" /Child_Vaccination_Followup/e_measles2 ">            </span>
+    </span>
+    <input type="text" name="/Child_Vaccination_Followup/measles2_note" data-relevant=" /Child_Vaccination_Followup/e_measles2  != ''" data-type-xml="string" readonly="readonly"/>
+</label>    <label class="question or-appearance-minimal ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines:label">پچھلی تاریخ جب کسی اور سینٹر پر ٹیکے لگواِے گیے یا قطرے پلائے گئے</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines:label">Retro vaccines</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines:label">Pichli tareekh jab kissi aur center par teekay lagwaye gaye ya katray pilaey gaye</span>
+    <select multiple="multiple" name="/Child_Vaccination_Followup/vaccines" data-type-xml="select">
+        <option class="itemset-template" value="" data-items-path="instance('vaccines')/root/item[name != if(  /Child_Vaccination_Followup/e_bcg  != '', 'bcg' , '') and  name != if(  /Child_Vaccination_Followup/e_opv0  != '', 'opv0' , '') and  name != if(  /Child_Vaccination_Followup/e_penta1  != '', 'penta1' , '') and  name != if(  /Child_Vaccination_Followup/e_penta2  != '', 'penta2' , '') and  name != if(  /Child_Vaccination_Followup/e_penta3  != '', 'penta3' , '') and  name != if(  /Child_Vaccination_Followup/e_opv1  != '', 'opv1' , '') and  name != if(  /Child_Vaccination_Followup/e_opv2  != '', 'opv2' , '') and  name != if(  /Child_Vaccination_Followup/e_opv3  != '', 'opv3' , '') and  name != if(  /Child_Vaccination_Followup/e_pcv1  != '', 'pcv1' , '') and  name != if(  /Child_Vaccination_Followup/e_pcv2  != '', 'pcv2' , '') and  name != if(  /Child_Vaccination_Followup/e_pcv3  != '', 'pcv3' , '') and  name != if(  /Child_Vaccination_Followup/e_ipv  != '', 'ipv' , '') and  name != if(  /Child_Vaccination_Followup/e_measles1  != '', 'measles1' , '') and  name != if(  /Child_Vaccination_Followup/e_measles2  != '', 'measles2' , '')]">...</option>
+    </select>
+    <span class="or-option-translations" style="display:none;">                </span>
+    <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-0">بی سی جی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-0">BCG</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-0">1570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-0">BCG</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-1">او پی وی 0</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-1">OPV 0</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-1">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-1">OPV 0</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-2">پی سی وی 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-2">PCV 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-2">162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-2">PCV 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-3">او پی وی 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-3">OPV 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-3">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-3">OPV 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-4">پینٹا ویلنٹ 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-4">Pentavalent 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-4">162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-4">Pentavalent 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-5">پی سی وی 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-5">PCV 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-5">162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-5">PCV 2</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-6">او پی وی 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-6">OPV 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-6">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-6">OPV 2</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-7">پینٹا ویلنٹ 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-7">Pentavalent 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-7">162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-7">Pentavalent 2</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-8">پی سی وی 3</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-8">PCV 3</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-8">162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-8">PCV 3</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-9">او پی وی 3</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-9">OPV 3</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-9">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-9">OPV 3</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-10">پینٹا ویلنٹ 3</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-10">Pentavalent 3</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-10">162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-10">Pentavalent 3</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-11">آئی پی وی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-11">IPV</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-11">82242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-11">IPV</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-12">خسرہ 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-12">Measles 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-12">79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-12">Khasra 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-13">خسرہ 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-13">Measles 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-13">79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-13">Khasra 2</span>            </span>
+</label>    <section class="or-group-data " name="/Child_Vaccination_Followup/vaccines_group">
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/bcg_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/bcg_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/bcg_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/bcg_retro:label">بی سی جی</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/bcg_retro:label">BCG</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/bcg_retro:label">BCG</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/bcg_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'bcg')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv0_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv0_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv0_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv0_retro:label">او پی وی 0</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv0_retro:label">OPV 0</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv0_retro:label">OPV 0</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/opv0_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv0')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv1_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv1_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv1_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv1_retro:label">پی سی وی 1</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv1_retro:label">PCV1</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv1_retro:label">PCV1</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/pcv1_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'pcv1')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv1_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv1_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv1_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv1_retro:label">او پی وی1</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv1_retro:label">OPV 1</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv1_retro:label">OPV 1</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/opv1_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv1')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta1_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta1_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta1_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta1_retro:label">پینٹا ویلنٹ 1</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta1_retro:label">Pentavalent 1</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta1_retro:label">Pentavalent 1</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/penta1_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta1')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv2_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv2_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv2_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv2_retro:label">پی سی وی 2</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv2_retro:label">PCV2</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv2_retro:label">PCV2</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/pcv2_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'pcv2')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv2_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv2_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv2_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv2_retro:label">او پی وی 2</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv2_retro:label">OPV 2</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv2_retro:label">OPV 2</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/opv2_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv2')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta2_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta2_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta2_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta2_retro:label">پینٹا ویلنٹ 2</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta2_retro:label">Pentavalent 2</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta2_retro:label">Pentavalent 2</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/penta2_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta2')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv3_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv3_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv3_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv3_retro:label">پی سی وی 3</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv3_retro:label">PCV3</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/pcv3_retro:label">PCV3</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/pcv3_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'pcv3')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv3_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv3_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv3_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv3_retro:label">او پی وی3</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv3_retro:label">OPV 3</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/opv3_retro:label">OPV 3</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/opv3_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv3')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta3_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta3_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta3_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta3_retro:label">پینٹا ویلنٹ 3</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta3_retro:label">Pentavalent 3</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/penta3_retro:label">Pentavalent 3</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/penta3_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta3')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/ipv_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/ipv_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/ipv_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/ipv_retro:label">آئی پی وی</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/ipv_retro:label">IPV</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/ipv_retro:label">IPV</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/ipv_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'ipv')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles1_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles1_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles1_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles1_retro:label">خسرہ 1</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles1_retro:label">Measles 1</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles1_retro:label">Measles 1</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/measles1_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'measles1')" data-type-xml="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span lang="ur" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles2_retro:jr:constraintMsg">حفاظتی ٹیکا ملنے کی تاریخ، بچے کی تاریخ پیدائش کے بعد اور آج کی تاریخ سے پہلے کی ہونی چاہیے</span>
+        <span lang="en" class="or-constraint-msg active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles2_retro:jr:constraintMsg">The date of vaccination must be greater than the child's birthdate and less than today.</span>
+
+        <span lang="Roman Urdu" class="or-constraint-msg " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles2_retro:jr:constraintMsg">Hifaazati teeka milnay ki tareekh, bachay ki tareekh-e-pedaaish ke baad aur aaj ki tareekh se phlay ki honi chahiye.</span>
+        <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles2_retro:label">خسرہ 2</span>
+        <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles2_retro:label">Measles2</span>
+
+        <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_group/measles2_retro:label">Measles2</span>
+        <input type="date" name="/Child_Vaccination_Followup/vaccines_group/measles2_retro" data-constraint=".&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today " data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'measles2')" data-type-xml="date"/>
+    </label>            </section>
+    <!--end of group -->    <label class="question or-appearance-minimal ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_2:label">آج کون کون سی ویکسین دی گئی ہیں؟</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccines_2:label">Vaccines administered</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccines_2:label">Aaj kon kon si vaccine di gai hain?</span>
+    <span class="required">*</span>
+    <select multiple="multiple" name="/Child_Vaccination_Followup/vaccines_2" required="required" data-constraint="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'bcg') or selected( /Child_Vaccination_Followup/vaccines_2 , 'opv0') , .&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv1') or selected( /Child_Vaccination_Followup/vaccines_2 , 'penta1'), .&gt;=  /Child_Vaccination_Followup/six_weeks  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv2') or selected( /Child_Vaccination_Followup/vaccines_2 , 'penta2'), .&gt;= /Child_Vaccination_Followup/ten_weeks  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv3') or selected( /Child_Vaccination_Followup/vaccines_2 , 'penta3'), .&gt;= /Child_Vaccination_Followup/forteen_weeks  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'measles1'), .&gt;= /Child_Vaccination_Followup/nine_months  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'measles2'), .&gt;=  /Child_Vaccination_Followup/fifteen_months  and .&lt;= /Child_Vaccination_Followup/today ))))))" data-type-xml="select">
+        <option class="itemset-template" value="" data-items-path="instance('vaccines')/root/item[name != if(  /Child_Vaccination_Followup/e_bcg  != '', 'bcg' , '') and  name != if(  /Child_Vaccination_Followup/e_opv0  != '', 'opv0' , '') and  name != if(  /Child_Vaccination_Followup/e_penta2  != '', 'penta2' , '') and  name != if(  /Child_Vaccination_Followup/e_penta1  != '', 'penta1' , '') and  name != if(  /Child_Vaccination_Followup/e_penta3  != '', 'penta3' , '') and  name != if(  /Child_Vaccination_Followup/e_opv1  != '', 'opv1' , '') and  name != if(  /Child_Vaccination_Followup/e_opv2  != '', 'opv2' , '') and  name != if(  /Child_Vaccination_Followup/e_opv3  != '', 'opv3' , '') and  name != if(  /Child_Vaccination_Followup/e_pcv1  != '', 'pcv1' , '') and  name != if(  /Child_Vaccination_Followup/e_pcv2  != '', 'pcv2' , '') and  name != if(  /Child_Vaccination_Followup/e_pcv3  != '', 'pcv3' , '') and  name != if(  /Child_Vaccination_Followup/e_measles1  != '', 'measles1' , '') and  name != if(  /Child_Vaccination_Followup/e_measles2  != '', 'measles2' , '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'bcg'), 'bcg', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'opv0'), 'opv0', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'penta1'), 'penta1', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'opv1'), 'opv1', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'pcv1'), 'pcv1', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'penta2'), 'penta2', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'opv2'), 'opv2', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'pcv2'), 'pcv2', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'penta3'), 'penta3', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'opv3'), 'opv3', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'pcv3'), 'pcv3', '') and name != if(selected( /Child_Vaccination_Followup/vaccines , 'ipv'), 'ipv', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'measles1'), 'measles1', '') and  name != if(selected( /Child_Vaccination_Followup/vaccines , 'measles2'), 'measles2', '')]">...</option>
+    </select>
+    <span class="or-option-translations" style="display:none;">                </span>
+    <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-0">بی سی جی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-0">BCG</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-0">1570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-0">BCG</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-1">او پی وی 0</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-1">OPV 0</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-1">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-1">OPV 0</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-2">پی سی وی 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-2">PCV 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-2">162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-2">PCV 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-3">او پی وی 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-3">OPV 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-3">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-3">OPV 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-4">پینٹا ویلنٹ 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-4">Pentavalent 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-4">162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-4">Pentavalent 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-5">پی سی وی 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-5">PCV 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-5">162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-5">PCV 2</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-6">او پی وی 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-6">OPV 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-6">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-6">OPV 2</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-7">پینٹا ویلنٹ 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-7">Pentavalent 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-7">162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-7">Pentavalent 2</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-8">پی سی وی 3</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-8">PCV 3</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-8">162342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-8">PCV 3</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-9">او پی وی 3</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-9">OPV 3</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-9">783AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-9">OPV 3</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-10">پینٹا ویلنٹ 3</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-10">Pentavalent 3</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-10">162339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-10">Pentavalent 3</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-11">آئی پی وی</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-11">IPV</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-11">82242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-11">IPV</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-12">خسرہ 1</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-12">Measles 1</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-12">79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-12">Khasra 1</span>
+        <span lang="ur" class="option-label " data-itext-id="static_instance-vaccines-13">خسرہ 2</span>
+        <span lang="en" class="option-label active" data-itext-id="static_instance-vaccines-13">Measles 2</span>
+        <span lang="openmrs_code" class="option-label " data-itext-id="static_instance-vaccines-13">79409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+        <span lang="Roman Urdu" class="option-label " data-itext-id="static_instance-vaccines-13">Khasra 2</span>            </span>
+</label>    <label class="question non-select ">
+    <span lang="ur" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccination_date:label">تاریخ</span>
+    <span lang="en" class="question-label active" data-itext-id="/Child_Vaccination_Followup/vaccination_date:label">Vaccination date</span>
+
+    <span lang="Roman Urdu" class="question-label " data-itext-id="/Child_Vaccination_Followup/vaccination_date:label">Tareekh</span>
+    <span class="required">*</span>
+    <input type="date" name="/Child_Vaccination_Followup/vaccination_date" required="required" data-constraint="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'bcg') or selected( /Child_Vaccination_Followup/vaccines_2 , 'opv0') , .&gt;=  /Child_Vaccination_Followup/existing_birth_date  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv1') or selected( /Child_Vaccination_Followup/vaccines_2 , 'penta1'), .&gt;=  /Child_Vaccination_Followup/six_weeks  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv2') or selected( /Child_Vaccination_Followup/vaccines_2 , 'penta2'), .&gt;= /Child_Vaccination_Followup/ten_weeks  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv3') or selected( /Child_Vaccination_Followup/vaccines_2 , 'penta3'), .&gt;= /Child_Vaccination_Followup/forteen_weeks  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'measles1'), .&gt;= /Child_Vaccination_Followup/nine_months  and .&lt;= /Child_Vaccination_Followup/today , if(selected( /Child_Vaccination_Followup/vaccines_2 , 'measles2'), .&gt;=  /Child_Vaccination_Followup/fifteen_months  and .&lt;= /Child_Vaccination_Followup/today ))))))" data-type-xml="date"/>
+</label>  <fieldset id="or-preload-items" style="display:none;">
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/start" data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime"/>
+    </label>
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/end" data-preload="timestamp" data-preload-params="end" data-type-xml="dateTime"/>
+    </label>
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/today" data-preload="date" data-preload-params="today" data-type-xml="date"/>
+    </label>
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/deviceid" data-preload="property" data-preload-params="deviceid" data-type-xml="string"/>
+    </label>
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/subscriberid" data-preload="property" data-preload-params="subscriberid" data-type-xml="string"/>
+    </label>
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/simserial" data-preload="property" data-preload-params="simserial" data-type-xml="string"/>
+    </label>
+    <label class="calculation non-select ">
+        <input type="hidden" name="/Child_Vaccination_Followup/phonenumber" data-preload="property" data-preload-params="phonenumber" data-type-xml="string"/>
+    </label>
+</fieldset>
+    <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/child_age" data-calculate="int(( /Child_Vaccination_Followup/today  -  /Child_Vaccination_Followup/existing_birth_date ) div 30.42)" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/six_weeks" data-calculate=" /Child_Vaccination_Followup/existing_birth_date  + 42" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/ten_weeks" data-calculate=" /Child_Vaccination_Followup/existing_birth_date  + 70" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/forteen_weeks" data-calculate=" /Child_Vaccination_Followup/existing_birth_date  + 98" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/nine_months" data-calculate=" /Child_Vaccination_Followup/existing_birth_date  + 245" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/fifteen_months" data-calculate=" /Child_Vaccination_Followup/existing_birth_date  + 458" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/opv0_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv0')" data-calculate="0" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/pcv1_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'pcv1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/opv1_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/penta1_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/pcv2_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'pcv2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/opv2_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/penta2_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/pcv3_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta2')" data-calculate="3" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/opv3_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'opv3')" data-calculate="3" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/penta3_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'penta3')" data-calculate="3" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/measles1_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'measles1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/vaccines_group/measles2_dose" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'measles2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/bcg" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'bcg'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv0" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv0'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv0_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'opv0')" data-calculate="0" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/pcv1" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'pcv1'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/pcv1_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'pcv1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv1" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv1'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv1_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'opv1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/penta1" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'penta1'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/penta1_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'penta1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/pcv2" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'pcv2'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/pcv2_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'pcv2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv2" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv2'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv2_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'opv2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/penta2" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'penta2'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/penta2_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'penta2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/pcv3" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'pcv3'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/pcv3_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'pcv3')" data-calculate="3" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv3" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'opv3'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/opv3_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'opv3')" data-calculate="3" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/penta3" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'penta3'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/penta3_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'penta3')" data-calculate="3" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/ipv" data-relevant="selected( /Child_Vaccination_Followup/vaccines , 'ipv')" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'ipv'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/measles1" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'measles1'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/measles1_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'measles1')" data-calculate="1" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/measles2" data-calculate="if(selected( /Child_Vaccination_Followup/vaccines_2 , 'measles2'), /Child_Vaccination_Followup/vaccination_date ,'')" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/measles2_dose_today" data-relevant="selected( /Child_Vaccination_Followup/vaccines_2 , 'measles2')" data-calculate="2" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string"/>
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/Child_Vaccination_Followup/formhub/uuid" data-calculate="'8f39facc33754ec89007c9a6183af985'" data-type-xml="string"/>
+        </label>
+    </fieldset>
+</form>

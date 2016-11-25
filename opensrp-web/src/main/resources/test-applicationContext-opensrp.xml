@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="classpath:applicationPlatformServerAPI.xml"/>
+    <util:properties id="opensrp" location="classpath:/opensrp.properties"/>
+     
+    <context:component-scan base-package="org.opensrp"/>
+    <!-- <context:component-scan base-package="com.fileManagement.common"/>
+    <context:component-scan base-package="com.fileManagement.controller"/>
+    <context:component-scan base-package="com.fileManagement.domain"/>
+    <context:component-scan base-package="com.fileManagement.repository"/>
+    <context:component-scan base-package="com.fileManagement.test"/>
+    <context:component-scan base-package="com.fileManagement.service"/> -->
+    
+	<bean id="DatabaseConnector" class="org.ektorp.impl.StdCouchDbConnector">
+        <constructor-arg value="opensrp-multimedia"/>
+        <constructor-arg ref="couchDbInstance"/>
+    </bean>
+</beans>

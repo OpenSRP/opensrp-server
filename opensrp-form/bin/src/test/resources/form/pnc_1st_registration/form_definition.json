@@ -1,0 +1,89 @@
+{
+  "form_data_definition_version": "1",
+  "form": {
+    "default_bind_path": "/model/instance/pnc_first_registration_motherdetails",
+    "bind_type": "demo_mother",
+    "fields": [
+      {
+          "name":"id",
+          "shouldLoadValue": true
+      },
+      {
+        "name": "location",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/location"
+      },
+      {
+        "name": "today",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/today"
+      },
+      {
+        "name": "start",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/start"
+      },
+      {
+        "name": "end",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/end"
+      },
+      {
+        "name": "mother_id",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/mother_id"
+      },
+      {
+        "name": "gender",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/gender"
+      },
+      {
+        "name": "mother_birthdate",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/mother_birthdate"
+      },
+      {
+        "name": "mother_first_name",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/mother_first_name"
+      },
+      {
+        "name": "mother_last_name",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/mother_last_name"
+      },
+      {
+        "name": "delivery_date",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/delivery_date"
+      },
+      {
+        "name": "delivery_facility_name",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/delivery_facility_name"
+      },
+      {
+        "name": "delivery_skilled",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/delivery_skilled"
+      },
+      {
+        "name": "delivery_type",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/delivery_type"
+      },
+      {
+        "name": "delivery_outcome",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/delivery_outcome"
+      },
+      {
+        "name": "parity",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/parity"
+      },
+      {
+        "name": "num_livebirths",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/num_livebirths"
+      },
+      {
+        "name": "num_stillbirths",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/num_stillbirths"
+      },
+      {
+        "name": "complications",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/complications"
+      },
+      {
+        "name": "woman_survived",
+        "bind": "/model/instance/pnc_first_registration_motherdetails/woman_survived"
+      }
+    ]
+  }
+}

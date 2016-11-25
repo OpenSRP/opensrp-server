@@ -1,13 +1,21 @@
 package org.opensrp.service;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.Date;
 import java.util.List;
 
 import org.opensrp.domain.Multimedia;
-import org.opensrp.dto.form.MultimediaDTO;
 import org.opensrp.repository.MultimediaRepository;
+import org.apache.commons.io.FilenameUtils;
+import org.joda.time.DateTime;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,25 +29,50 @@ public class MultimediaService {
 	public MultimediaService(MultimediaRepository multimediaRepository, @Value("#{opensrp['multimedia.directory.name']}") String baseMultimediaDirPath) {
 		this.multimediaRepository = multimediaRepository;
 	}
-
-	public String saveMultimediaFile(MultimediaDTO multimediaDTO, MultipartFile file) {
+	
+	public String saveMultimediaFile(String filePath, Multimedia multimedia) throws FileNotFoundException
+	{
+		  
+		  FileInputStream fis = new FileInputStream(filePath);
+		  String ext = FilenameUtils.getExtension(filePath);
+		  String name = FilenameUtils.getBaseName(filePath);
+		  multimedia.setExtension(ext);
+		  multimedia.setName(name);
+		  MultipartFile multipartFile = null;
+          
+		try {
+			multipartFile = new MockMultipartFile("file", fis);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 		
-		boolean uploadStatus = uploadFile(multimediaDTO, file);
+		return saveMultimediaFile(multimedia,multipartFile);
+	}
+	
+	public String saveMultimediaFile(Multimedia multimedia, MultipartFile file) {
+		
+		boolean uploadStatus = uploadFile(multimedia, file);
 
 		if (uploadStatus) {
 			try {
 				Multimedia multimediaFile = new Multimedia()
-						.withCaseId(multimediaDTO.caseId())
-						.withProviderId(multimediaDTO.providerId())
-						.withContentType(multimediaDTO.contentType())
+						.withBaseEntityId(multimedia.getBaseEntityId())
+						.withProviderId(multimedia.getProviderId())
+						.withContentType(multimedia.getContentType())
 						.withFilePath(multimediaDirPath)
-						.withFileCategory(multimediaDTO.fileCategory());
-
+						.withFileCategory(multimedia.getFileCategory())
+						.withFileName(multimedia.getName())
+						.withFileSize(multimedia.getFileSize())
+						.withUploadDate(multimedia.getUploadDate())
+						.withDescription(multimedia.getDescription());
+				
 				multimediaRepository.add(multimediaFile);
 
 				return "success";
 
 			} catch (Exception e) {
+				System.out.println(e.getMessage());
 				e.getMessage();
 			}
 		}
@@ -48,63 +81,70 @@ public class MultimediaService {
 
 	}
 
-	public boolean uploadFile(MultimediaDTO multimediaDTO,
+	public List<Multimedia> getMultimediaData(int pageSize) throws JSONException
+	{
+		List<Multimedia> data=multimediaRepository.all(pageSize);
+		return data;
+	}
+	
+	public List<Multimedia> getMultimediaFiles(String providerId) {
+		return multimediaRepository.all(providerId,50);
+	}
+	
+	public List<Multimedia> getMultimediaDataByName(int pageSize, String searchByName) throws JSONException
+	{
+		List<Multimedia> data=multimediaRepository.allByName(pageSize,searchByName);
+		return data;
+	}
+	
+	public List<Multimedia> getMultimediaDataByContent(int pageSize, String searchByContent ) throws JSONException
+	{
+		List<Multimedia> data=multimediaRepository.allByContent(pageSize,searchByContent);
+		return data;
+	}
+	
+	public List<Multimedia> getMultimediaDataByDate(int pageSize, DateTime startDate,DateTime endDate ) throws JSONException
+	{
+		List<Multimedia> data=multimediaRepository.allByDate(pageSize,startDate,endDate);
+		return data;
+	}
+	
+	public boolean uploadFile(Multimedia multimedia,
 			MultipartFile multimediaFile) {
-		String baseMultimediaDirPath = "../assets/multimedia";
 		
-		// String baseMultimediaDirPath = System.getProperty("user.home");
-
 		if (!multimediaFile.isEmpty()) {
 			try {
 
-				 multimediaDirPath = baseMultimediaDirPath
-						+ File.separator + multimediaDTO.providerId()
-						+ File.separator;
-
-				switch (multimediaDTO.contentType()) {
+				File multimediaDir;
+				switch (multimedia.getContentType()) {
 				
-				case "application/octet-stream":
-					multimediaDirPath += "videos" + File.separator
-							+ multimediaDTO.caseId() + ".mp4";
+				case "video":
+					multimediaDirPath = "videos" + File.separator
+							+ multimedia.getBaseEntityId() +"."+ multimedia.getExtension();
 					break;
-
-				case "image/jpeg":
-					multimediaDirPath += "images" + File.separator
-							+ multimediaDTO.caseId() + ".jpg";
+				case "document":
+					multimediaDirPath = "documents" + File.separator
+							+ multimedia.getBaseEntityId() +"."+ multimedia.getExtension();
 					break;
-
-				case "image/gif":
-					multimediaDirPath += "images" + File.separator
-							+ multimediaDTO.caseId() + ".gif";
+				case "image":
+					multimediaDirPath = "images" + File.separator
+							+ multimedia.getBaseEntityId() +"."+ multimedia.getExtension();
 					break;
-
-				case "image/png":
-					multimediaDirPath += "images" + File.separator
-							+ multimediaDTO.caseId() + ".png";
-					break;
-
 				default:
-					multimediaDirPath += "images" + File.separator
-							+ multimediaDTO.caseId() + ".jpg";
+					multimediaDirPath = "documents" + File.separator
+							+ multimedia.getBaseEntityId() +"."+ multimedia.getExtension();
 					break;
-
 				}
-
-				File multimediaDir = new File(multimediaDirPath);
-
-				 multimediaFile.transferTo(multimediaDir);
-
-			/*
-			 byte[] bytes = multimediaFile.getBytes();
-			 	
-			 BufferedOutputStream stream = new BufferedOutputStream(
-						new FileOutputStream(multimediaDirPath));
-				stream.write(bytes);
-				stream.close();*/
-				 
+				
+				multimediaDir =  new File(multimediaDirPath);
+				if(!multimediaDir.getParentFile().exists()) {
+					multimediaDir.getParentFile().mkdirs();
+				}
+				multimediaFile.transferTo(multimediaDir);
 				return true;
 				
 			} catch (Exception e) {
+				e.printStackTrace();
 				return false;
 			}
 		} else {
@@ -112,7 +152,4 @@ public class MultimediaService {
 		}
 	}
 
-	public List<Multimedia> getMultimediaFiles(String providerId) {
-		return multimediaRepository.all(providerId);
-	}
 }

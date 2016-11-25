@@ -32,6 +32,9 @@
             	<FWBIRTHDATEAPPROX openmrs_entity="person" openmrs_entity_id="birthdate_estimated"/>
                 <FWGENDER openmrs_entity="person" openmrs_entity_id="gender"/>
                 <FWWOMAGE/>
+                <FWRELATIONSHIP openmrs_entity="relationship" openmrs_entity_id="relationship"/>
+                <FWSTART openmrs_entity="relationship" openmrs_entity_id="start"/>
+                <FWEND openmrs_entity="relationship" openmrs_entity_id="end"/>
                 <display_age/>
                 <FWNHWOMSTRMEN/>
                 <FWNHWOMHUSLIV/>

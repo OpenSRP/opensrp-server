@@ -42,6 +42,7 @@ public class SubformMap{
 	public String getFieldValue(String field) {
 		for (FormFieldMap f : fields) {
 			if (f.name().equalsIgnoreCase(field)) {
+				System.out.println(f.getName()+" : "+ f.value());
 				return f.value();
 			}
 		}

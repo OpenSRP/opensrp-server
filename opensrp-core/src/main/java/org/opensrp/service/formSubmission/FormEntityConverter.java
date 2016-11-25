@@ -17,12 +17,14 @@ import org.joda.time.DateTime;
 import org.opensrp.common.FormEntityConstants;
 import org.opensrp.common.FormEntityConstants.Encounter;
 import org.opensrp.common.FormEntityConstants.FormEntity;
+import org.opensrp.common.FormEntityConstants.Member;
 import org.opensrp.common.FormEntityConstants.Person;
 import org.opensrp.common.util.DateUtil;
 import org.opensrp.domain.Address;
 import org.opensrp.domain.Client;
 import org.opensrp.domain.Event;
 import org.opensrp.domain.Obs;
+import org.opensrp.domain.RelationShip;
 import org.opensrp.form.domain.FormSubmission;
 import org.opensrp.form.service.FormAttributeParser;
 import org.opensrp.form.service.FormFieldMap;
@@ -66,6 +68,10 @@ public class FormEntityConverter {
 		return createEvent(fs.entityId(), fs.formAttributes().get("encounter_type"), fs.fields(), fs);
 	}
 	
+	public RelationShip getRelationFromFormSubmission(FormSubmissionMap fs) throws ParseException {
+		return createRelation(fs);
+	}
+	
 	private Event createEvent(String entityId, String eventType, List<FormFieldMap> fields, FormSubmissionMap fs) throws ParseException {
 		String encounterDateField = getFieldName(Encounter.encounter_date, fs);
 		String encounterLocation = getFieldName(Encounter.location_id, fs);
@@ -103,6 +109,29 @@ public class FormEntityConverter {
 		return e;
 	}
 	
+	private RelationShip createRelation(FormSubmissionMap fs) throws ParseException {
+		String relationship= fs.getFieldValue(getFieldName(Member.relationship_type, fs));
+		String person_B= fs.getFieldValue(getFieldName(Member.person_B, fs)); 
+		String person_A= fs.entityId(); 
+		
+		String start= fs.getFieldValue(getFieldName(Member.start_date, fs));
+		String end= fs.getFieldValue(getFieldName(Member.end_date, fs)); 
+		
+		RelationShip r=new RelationShip(relationship,person_B,start,end);
+		
+		return r;
+	}
+	
+	public RelationShip getRelationFromFormSubmission(FormSubmission fs) throws IllegalStateException{
+		try {
+			return getRelationFromFormSubmission(formAttributeParser.createFormSubmissionMap(fs));
+		} catch (JsonIOException | JsonSyntaxException
+				| XPathExpressionException | ParseException
+				| ParserConfigurationException | SAXException | IOException e) {
+			throw new IllegalStateException(e);
+		}
+	}
+	
 	public Event getEventFromFormSubmission(FormSubmission fs) throws IllegalStateException{
 		try {
 			return getEventFromFormSubmission(formAttributeParser.createFormSubmissionMap(fs));
@@ -126,6 +155,7 @@ public class FormEntityConverter {
 		return createEvent(subformInstance.entityId(), subformInstance.formAttributes().get("openmrs_entity_id"), subformInstance.fields(), fs);
 	}
 	
+	
 	/**
 	 * Get field name for specified openmrs entity in given form submission
 	 * @param en
@@ -148,9 +178,11 @@ public class FormEntityConverter {
 	}
 	
 	String getFieldName(FormEntity en, List<FormFieldMap> fields) {
+		
 		for (FormFieldMap f : fields) {
 			if(f.fieldAttributes().containsKey("openmrs_entity") && 
-					f.fieldAttributes().get("openmrs_entity").equalsIgnoreCase(en.entity())
+					(f.fieldAttributes().get("openmrs_entity").equalsIgnoreCase(en.entity()) || 
+							f.fieldAttributes().get("openmrs_entity").equalsIgnoreCase("Relationship"))
 					&& f.fieldAttributes().get("openmrs_entity_id").equalsIgnoreCase(en.entityId())){
 				return f.name();
 			}
@@ -158,6 +190,19 @@ public class FormEntityConverter {
 		return null;
 	}
 	
+String getFieldValue(FormEntity en, List<FormFieldMap> fields) {
+		
+		for (FormFieldMap f : fields) {
+			System.out.println(en.entityId());
+			if(f.fieldAttributes().containsKey("openmrs_entity") && 
+					f.fieldAttributes().get("openmrs_entity").equalsIgnoreCase(en.entity())
+					&& f.fieldAttributes().get("openmrs_entity_id").equalsIgnoreCase(en.entityId())){
+				System.out.println(f.name()+": "+f.value());
+				return f.value();
+			}
+		}
+		return null;
+	}
 	/**
 	 * Get field name for specified openmrs attribute mappings in given form submission
 	 * @param entity
@@ -193,6 +238,15 @@ public class FormEntityConverter {
 		return paddr;
 	}
 	
+	Map<String, RelationShip> extractRelation(FormSubmissionMap fs) throws ParseException {
+		Map<String, RelationShip> paddr = new HashMap<>();
+		for (FormFieldMap fl : fs.fields()) {
+			fillRelationShipFields(fl, paddr);
+			
+		}
+		return paddr;
+	}
+	
 	Map<String, Address> extractAddressesForSubform(SubformMap subf) throws ParseException {
 		Map<String, Address> paddr = new HashMap<>();
 		for (FormFieldMap fl : subf.fields()) {
@@ -201,6 +255,18 @@ public class FormEntityConverter {
 		return paddr;
 	}
 	
+	void fillRelationShipFields(FormFieldMap fl, Map<String, RelationShip> relatShip) throws ParseException {
+		Map<String, String> att = fl.fieldAttributes();
+		System.out.println(fl.name()+" Attributes: "+ att);
+		if(att.containsKey("openmrs_entity") && att.get("openmrs_entity").equalsIgnoreCase("person_relationship")){
+			String relationShipType = att.get("openmrs_entity_id");
+			String person_b= fl.value();
+			System.out.println("person_b: "+ person_b);
+			relatShip.put(relationShipType,new RelationShip(relationShipType, person_b, "", ""));
+			System.out.println("FillRelationShip: "+ relatShip);
+		}
+		}
+		
 	void fillAddressFields(FormFieldMap fl, Map<String, Address> addresses) throws ParseException {
 		Map<String, String> att = fl.fieldAttributes();
 		if(att.containsKey("openmrs_entity") && att.get("openmrs_entity").equalsIgnoreCase("person_address")){
@@ -335,7 +401,7 @@ public class FormEntityConverter {
 		return createBaseClient(fsubmission);
 
 	}
-	
+	public ArrayList<RelationShip> relationShips;
 	public Client createBaseClient(FormSubmissionMap fs) throws ParseException {
 		String firstName = fs.getFieldValue(getFieldName(Person.first_name, fs));
 		String middleName = fs.getFieldValue(getFieldName(Person.middle_name, fs));
@@ -355,6 +421,8 @@ public class FormEntityConverter {
 			}
 			birthdateApprox = bde > 0 ? true:false;
 		}
+		String person_a=fs.entityId();
+		relationShips = new ArrayList<>(extractRelation(fs).values());
 		String aproxdd = fs.getFieldValue(getFieldName(Person.deathdate_estimated, fs));
 		Boolean deathdateApprox = false;
 		if(!StringUtils.isEmptyOrWhitespaceOnly(aproxdd) && NumberUtils.isNumber(aproxdd)){
@@ -376,11 +444,12 @@ public class FormEntityConverter {
 				.withLastName(lastName)
 				.withBirthdate(birthdate, birthdateApprox)
 				.withDeathdate(deathdate, deathdateApprox)
-				.withGender(gender);
+				.withGender(gender).withRelation(relationShips);
 		
 		c.withAddresses(addresses)
 				.withAttributes(extractAttributes(fs))
 				.withIdentifiers(extractIdentifiers(fs));
+		System.out.println("before returning "+ c.getRelationships());
 		return c;
 	}
 	
@@ -438,6 +507,7 @@ public class FormEntityConverter {
 		c.withAddresses(addresses)
 			.withAttributes(extractAttributes(subf))
 			.withIdentifiers(idents);
+		System.out.println("before returning "+ c.getRelationships());
 
 		return c;
 	}
@@ -462,18 +532,16 @@ public class FormEntityConverter {
 			for (SubformMap sbf : fs.subforms()) {
 				Map<String, String> att = sbf.formAttributes();
 				if(att.containsKey("openmrs_entity") 
-						&& att.get("openmrs_entity").equalsIgnoreCase("person")
+						&& ( att.get("openmrs_entity").equalsIgnoreCase("person"))
 						){
 					Map<String, Object> cne = new HashMap<>();
-
 					Client subformClient = createSubformClient(sbf);
-					
 					if(subformClient != null){
 						cne.put("client", subformClient);
 						cne.put("event", getEventForSubform(fs, att.get("openmrs_entity_id"), sbf));
-						
 						map.put(sbf.entityId(), cne);
 					}
+					
 				}
 			}
 			return map;

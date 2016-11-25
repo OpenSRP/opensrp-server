@@ -1,0 +1,36 @@
+{
+    "name": "TT 5",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "tt5",
+            "scheduleWindows": {
+                "earliest": ["52 Weeks"],
+                "due": ["54 Weeks"],
+                "late": ["33 Years"],
+                "max": ["33 Years", "1 Day"]                
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "366"
+                },
+                {
+                    "window": "due",
+                    "offset": ["52 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "300"
+                },
+                {
+                    "window": "late",
+                    "offset": ["54 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "13000"
+                }
+                
+            ]
+        }
+    ]
+}

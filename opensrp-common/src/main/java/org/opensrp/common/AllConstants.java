@@ -1,5 +1,7 @@
 package org.opensrp.common;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 
 
 public class AllConstants {
@@ -33,7 +35,21 @@ public class AllConstants {
     	public static final String LAST_UPDATE = "lastEdited";
     	
     }
-    
+    public static class MultimediaData {
+    	public static final String BASEENTITYID="baseEntityId";
+    	public static final String NAME="name";
+    	public static final String PROVIDERID="providerId";
+    	public static final String CONTENTTYPE="contentType";
+    	public static final String FILEPATH="fileType";
+    	public static final String FILECATEGORY="fileCategory";
+    	public static final String UPLOADDATE="uploadDate";
+    	public static final String DESCRIPTION="description";
+    	public static final String FILESIZE="fileSize";
+    	public static final String IMAGE="image";
+    	public static final String PREVIEWIMAGE="previewImage";
+    	public static final String COMMENTS="comments";
+    }
+
     public static class Client extends BaseEntity{
     	public static final String FIRST_NAME = "firstName";
     	public static final String MIDDLE_NAME = "middleName";
@@ -44,6 +60,46 @@ public class AllConstants {
     	public static final String DEATH_DATE_APPROX = "deathdateApprox";
     	public static final String GENDER = "gender";
     }
+    
+    public static class Drug extends BaseEntity{
+    	public static final String NAME="name";
+    	public static final String NAMEUUID="nameUuid";
+    	public static final String BASENAME="baseName";
+    	public static final String BASENAMEUUID="baseNameUuid";
+    	public static final String CREATOR="creator";
+    	public static final String CREATORUUID="creatorUuid";
+    	public static final String DOSESTRENGHT="doseStrenght";
+    	public static final String ROUTE="route";
+    	public static final String MAXDAILYDOSE="maxDailyDose";
+    	public static final String MINIDAILYDOSE="miniDailyDose";
+    	public static final String DESCRIPTION="Description";
+    	public static final String COMBINATION="combination";
+    }
+    
+    public static class DrugOrder extends BaseEntity{
+    	public static final String orderType="orderType";
+    	public static final String drugName="drugName";
+    	public static final String orderNumber="orderNumber";
+    	public static final String patientUuid="patientUuid";
+    	public static final String drugUuid="drugUuid";
+    	public static final String action="action";
+    	public static final String careSettingUuid="careSettingUuid";
+    	public static final String previousOrder="previousOrder";
+    	public static final String dateActivated="dateActivated";
+    	public static final String dateStopped="dateStopped";
+    	public static final String autoExpireDate="autoExpireDate";
+    	public static final String encounterUuid="encounterUuid";
+    	public static final String ordererUuid="ordererUuid";
+    	public static final String urgency="urgency";
+    	public static final String instructions="urgency";
+    	public static final String orderReason="orderReason";
+    	public static final String dosingType="dosingType";
+    	public static final String dose="dose";
+    	public static final String doseUnitsUuid="doseUnitsUuid";
+    	public static final String descriptions="descriptions";
+    	public static final String drugFrequencyUuid="drugFrequencyUuid";
+    	public static final String quantity="quantity";
+    	}
     
     public static class Event {
     	public static final String FORM_SUBMISSION_ID = "formSubmissionId";

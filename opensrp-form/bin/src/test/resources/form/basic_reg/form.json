@@ -1,0 +1,653 @@
+{
+    "default_language": "default",
+    "id_string": "patient_basic_reg",
+    "children": [
+        {
+            "name": "woman_name",
+            "label": "First name",
+            "instance": {
+                "openmrs_entity_id": "first_name",
+                "openmrs_entity": "person"
+            },
+            "type": "text"
+        },
+        {
+            "name": "last_name",
+            "label": "Last name",
+            "instance": {
+                "openmrs_entity_id": "last_name",
+                "openmrs_entity": "person"
+            },
+            "type": "text"
+        },
+        {
+            "name": "gender",
+            "default": "female",
+            "label": "Gender",
+            "instance": {
+                "openmrs_entity_id": "gender",
+                "openmrs_entity": "person"
+            },
+            "type": "text"
+        },
+        {
+            "name": "birthdate",
+            "label": "DOB",
+            "instance": {
+                "openmrs_entity_id": "birthdate",
+                "openmrs_entity": "person"
+            },
+            "type": "date"
+        },
+        {
+            "children": [
+                {
+                    "name": "karachi",
+                    "label": "Karachi",
+                    "instance": {
+                        "openmrs_code": "karachi"
+                    }
+                },
+                {
+                    "name": "lahore",
+                    "label": "Lahore",
+                    "instance": {
+                        "openmrs_code": "lahore"
+                    }
+                }
+            ],
+            "name": "location",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Location of ANC",
+            "instance": {
+                "openmrs_entity_id": "location_id",
+                "openmrs_entity": "encounter"
+            },
+            "type": "select one"
+        },
+        {
+            "name": "anc_visit_date",
+            "bind": {
+                "required": "yes",
+                "constraint": ".<=${today}"
+            },
+            "label": "ANC visit date?",
+            "instance": {
+                "openmrs_entity_id": "encounter_date",
+                "openmrs_entity": "encounter"
+            },
+            "type": "date"
+        },
+        {
+            "name": "pulse_rate",
+            "bind": {
+                "constraint": ".>0"
+            },
+            "label": "Pulse rate",
+            "instance": {
+                "openmrs_entity_id": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "integer"
+        },
+        {
+            "name": "temperature",
+            "bind": {
+                "constraint": ".>0"
+            },
+            "label": "Temperature (C)",
+            "instance": {
+                "openmrs_entity_id": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "decimal"
+        },
+        {
+            "children": [
+                {
+                    "name": "birthplace_lat",
+                    "label": "Latitude",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "latitude",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_lon",
+                    "label": "Longitude",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "longitute",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_postcode",
+                    "label": "postalCode / postal_code",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "postalcode",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_house",
+                    "label": "HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "house_number",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_street",
+                    "label": "STREET / STREET_NUMBER / LANE",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "street",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_area",
+                    "label": "SECTOR / AREA",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "area",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_town",
+                    "label": "MUNICIPALITY / TOWN / LOCALITY / REGION",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "town",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_busroute",
+                    "label": "Bus route custom field",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "bus_route",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_district",
+                    "label": "COUNTY / DISTRICT",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "district",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_city",
+                    "label": "CITY / VILLAGE",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "city",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_state",
+                    "label": "state / state_province / stateProvince/ province",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "state",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "birthplace_country",
+                    "label": "country",
+                    "instance": {
+                        "openmrs_entity_parent": "birthplace",
+                        "openmrs_entity_id": "country",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                }
+            ],
+            "name": "birthplace_address",
+            "label": "Birthplace",
+            "type": "group"
+        },
+        {
+            "children": [
+                {
+                    "name": "usual_residence_start",
+                    "label": "When started (startDate / start_date)",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "startdate",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "date"
+                },
+                {
+                    "name": "usual_residence_lat",
+                    "label": "Latitude",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "latitude",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_lon",
+                    "label": "Longitude",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "longitute",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_postcode",
+                    "label": "postalCode / postal_code",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "postalcode",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_house",
+                    "label": "HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "uniit",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_street",
+                    "label": "STREET / STREET_NUMBER / LANE",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "lane",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_area",
+                    "label": "SECTOR / AREA",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "sector",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_town",
+                    "label": "MUNICIPALITY / TOWN / LOCALITY / REGION",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "municipality",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_district",
+                    "label": "COUNTY / DISTRICT",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "district",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_city",
+                    "label": "CITY / VILLAGE",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "city",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_state",
+                    "label": "state / state_province / stateProvince/ province",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "province",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "usual_residence_country",
+                    "label": "country",
+                    "instance": {
+                        "openmrs_entity_parent": "usual_residence",
+                        "openmrs_entity_id": "country",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                }
+            ],
+            "name": "usual_residence_address",
+            "label": "Usual Residence",
+            "type": "group"
+        },
+        {
+            "children": [
+                {
+                    "name": "previous_residence_start",
+                    "label": "When started (startDate / start_date)",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "startdate",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "date"
+                },
+                {
+                    "name": "previous_residence_end",
+                    "label": "When ended (endDate/end_date)",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "enddate",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "date"
+                },
+                {
+                    "name": "previous_residence_lat",
+                    "label": "Latitude",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "latitude",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_lon",
+                    "label": "Longitude",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "longitute",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_postcode",
+                    "label": "postalCode / postal_code",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "postalcode",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_house",
+                    "label": "HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "house",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_street",
+                    "label": "STREET / STREET_NUMBER / LANE",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "street",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_area",
+                    "label": "SECTOR / AREA",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "area",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_town",
+                    "label": "MUNICIPALITY / TOWN / LOCALITY / REGION",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "region",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_district",
+                    "label": "COUNTY / DISTRICT",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "county",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_city",
+                    "label": "CITY / VILLAGE",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "village",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_state",
+                    "label": "state / state_province / stateProvince/ province",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "state",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "previous_residence_country",
+                    "label": "country",
+                    "instance": {
+                        "openmrs_entity_parent": "previous_residence",
+                        "openmrs_entity_id": "country",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                }
+            ],
+            "name": "previous_residence_address",
+            "label": "Previous Residence",
+            "type": "group"
+        },
+        {
+            "children": [
+                {
+                    "name": "deathplace_lat",
+                    "label": "Latitude",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "latitude",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_lon",
+                    "label": "Longitude",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "longitute",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_postcode",
+                    "label": "postalCode / postal_code",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "postal_code",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_house",
+                    "label": "HOUSE_NUMBER / HOUSE / HOUSE_NO / UNIT / UNIT_NUMBER / UNIT_NO",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "unit",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_street",
+                    "label": "STREET / STREET_NUMBER / LANE",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "lane",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_area",
+                    "label": "SECTOR / AREA",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "area",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_town",
+                    "label": "MUNICIPALITY / TOWN / LOCALITY / REGION",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "region",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_district",
+                    "label": "COUNTY / DISTRICT",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "district",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_city",
+                    "label": "CITY / VILLAGE",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "city",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_state",
+                    "label": "state / state_province / stateProvince/ province",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "state_province",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "deathplace_country",
+                    "label": "country",
+                    "instance": {
+                        "openmrs_entity_parent": "deathplace",
+                        "openmrs_entity_id": "country",
+                        "openmrs_entity": "person_address"
+                    },
+                    "type": "text"
+                }
+            ],
+            "name": "deathplace_address",
+            "label": "Death Place",
+            "type": "group"
+        },
+        {
+            "name": "today",
+            "type": "today"
+        },
+        {
+            "name": "start",
+            "type": "start"
+        },
+        {
+            "name": "end",
+            "type": "end"
+        },
+        {
+            "control": {
+                "bodyless": true
+            },
+            "children": [
+                {
+                    "name": "instanceID",
+                    "bind": {
+                        "readonly": "true()",
+                        "calculate": "concat('uuid:', uuid())"
+                    },
+                    "type": "calculate"
+                }
+            ],
+            "name": "meta",
+            "type": "group"
+        }
+    ],
+    "instance": {
+        "encounter_type": "patient_register"
+    },
+    "version": "201504030905",
+    "type": "survey",
+    "name": "register_with_address",
+    "sms_keyword": "patient_basic_reg",
+    "title": "Patient Registration"
+}

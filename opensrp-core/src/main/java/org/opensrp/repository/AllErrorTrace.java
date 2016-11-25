@@ -50,11 +50,4 @@ public class AllErrorTrace extends MotechBaseRepository<ErrorTrace> {
 		return db.queryView(createQuery("all_errors_by_status").
 				key(status).includeDocs(true), ErrorTrace.class);
 	}
-	
-	/*@View(name = "all_solved_errors", map = "function(doc) { if (doc.status === 'solved') { emit(doc.id); } }")
-	public List<ErrorTrace> findAllSolvedErrors() throws DocumentNotFoundException {
-		return db.queryView(createQuery("all_solved__errors").includeDocs(true),
-				ErrorTrace.class);
-	}*/
-
 }

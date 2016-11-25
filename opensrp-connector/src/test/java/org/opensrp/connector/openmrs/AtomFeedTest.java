@@ -21,6 +21,7 @@ import org.ict4h.atomfeed.jdbc.AtomFeedJdbcTransactionManager;
 import org.ict4h.atomfeed.transaction.AFTransactionManager;
 import org.ict4h.atomfeed.transaction.AFTransactionWork;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -52,6 +53,7 @@ public class AtomFeedTest extends TestResourceLoader {
 		MockitoAnnotations.initMocks(this);
 	}
 
+	@Ignore
 	@Test
     public void shouldReadEventsCreatedEvents() throws URISyntaxException {
 		WebClient wc = Mockito.mock(WebClient.class);

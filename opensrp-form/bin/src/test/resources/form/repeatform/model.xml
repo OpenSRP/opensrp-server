@@ -1,0 +1,91 @@
+<model>
+    <instance>
+        <PNC_Registration_EngKan id="Delivery_Outcome_EngKan" encounter_type="PNC Registration" version="201503200602">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <today/>
+          <case_lmp openmrs_entity="concept" openmrs_entity_id="1100282"/>
+          <delivery_date openmrs_entity="concept" openmrs_entity_id="2129182"/>
+          <delivery_reg_date openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
+          <place_delivery openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+          <name_delivery_facility openmrs_entity="concept" openmrs_entity_id="4787232"/>
+          <only_delivery_facility openmrs_entity="concept" openmrs_entity_id="120009"/>
+          <addl_delivery_facility openmrs_entity="concept" openmrs_entity_id="124433"/>
+          <reasons_addl_delivery_facility openmrs_entity="concept" openmrs_entity_id="100933"/>
+          <other_reasons_addl_delivery_facility openmrs_entity="concept" openmrs_entity_id="2323233"/>
+          <skilled_delivery openmrs_entity="concept" openmrs_entity_id="3231212"/>
+          <type_delivery openmrs_entity="concept" openmrs_entity_id="120009"/>
+          <delivery_outcome openmrs_entity="concept" openmrs_entity_id="124433"/>
+          <case_parity openmrs_entity="concept" openmrs_entity_id="100933"/>
+          <parity openmrs_entity="concept" openmrs_entity_id="434343"/>
+          <case_num_livebirths openmrs_entity="concept" openmrs_entity_id="34324234"/>
+          <num_livebirths openmrs_entity="concept" openmrs_entity_id="3423423"/>
+          <youngestchild_date_of_birth openmrs_entity="concept" openmrs_entity_id="120009"/>
+          <youngestchild_age openmrs_entity="concept" openmrs_entity_id="124433"/>
+          <case_num_stillbirths openmrs_entity="concept" openmrs_entity_id="100933"/>
+          <num_stillbirths openmrs_entity="concept" openmrs_entity_id="3432434"/>
+          <still_birth_group openmrs_entity="concept" openmrs_entity_id="65435">
+            <cause_of_still_birth openmrs_entity="concept" openmrs_entity_id="4323232" openmrs_entity_parent="65435"/>
+            <woman_survived openmrs_entity="concept" openmrs_entity_id="100009" openmrs_entity_parent="65435"/>
+          </still_birth_group>
+          <live_birth_group>
+            <child template="" openmrs_entity="person" openmrs_entity_id="new registration">
+              <sex_child openmrs_entity="person" openmrs_entity_id="gender"/>
+              <sex_child_female/>
+              <sex_child_male/>
+              <birthweight openmrs_entity="concept" openmrs_entity_id="323232"/>
+              <child_blood_group openmrs_entity="concept" openmrs_entity_id="232112"/>
+              <immunizations_atbirth openmrs_entity="concept" openmrs_entity_id="199277"/>
+              <case_hepb openmrs_entity="concept" openmrs_entity_id="100285"/>
+              <hepb_prophylaxis_provided openmrs_entity="concept" openmrs_entity_id="3321323"/>
+              <lbw openmrs_entity="concept" openmrs_entity_id="1232132"/>
+              <vlbw openmrs_entity="concept" openmrs_entity_id="232133"/>
+              <num_preg_days openmrs_entity="concept" openmrs_entity_id="232323"/>
+              <premature openmrs_entity="concept" openmrs_entity_id="232323"/>
+              <premature_message1/>
+              <is_child_high_risk1 openmrs_entity="concept" openmrs_entity_id="342343"/>
+              <child_high_risk_reasons openmrs_entity="concept" openmrs_entity_id="423434"/>
+              <high_risk_note_child/>
+              <is_child_high_risk openmrs_entity="concept" openmrs_entity_id="4342343"/>
+              <addl_pnc_visit_message/>
+            </child>
+            <mother_survived openmrs_entity="concept" openmrs_entity_id="343434"/>
+            <breastfeeding_postbirth openmrs_entity="concept" openmrs_entity_id="434343"/>
+          </live_birth_group>
+          <case_num_livingchildren openmrs_entity="concept" openmrs_entity_id="434344"/>
+          <num_children_born openmrs_entity="concept" openmrs_entity_id="43432"/>
+          <num_livingchildren openmrs_entity="concept" openmrs_entity_id="54541"/>
+          <case_numlivingchildren_female openmrs_entity="concept" openmrs_entity_id="57467"/>
+          <num_female_children_born openmrs_entity="concept" openmrs_entity_id="687832"/>
+          <numlivingchildren_female openmrs_entity="concept" openmrs_entity_id="098343"/>
+          <case_numlivingchildren_male openmrs_entity="concept" openmrs_entity_id="98664"/>
+          <num_male_children_born openmrs_entity="concept" openmrs_entity_id="4343656"/>
+          <numlivingchildren_male openmrs_entity="concept" openmrs_entity_id="342325"/>
+          <maternal_death_group>
+            <maternal_death_cause openmrs_entity="concept" openmrs_entity_id="43434"/>
+            <other_maternal_death_cause openmrs_entity="concept" openmrs_entity_id="43221"/>
+          </maternal_death_group>
+          <woman_survived_group>
+            <case_w_rh_negative openmrs_entity="concept" openmrs_entity_id="4324234"/>
+            <rh_injection_given openmrs_entity="concept" openmrs_entity_id="32323"/>
+            <had_delivery_complications openmrs_entity="concept" openmrs_entity_id="233234"/>
+            <complications openmrs_entity="concept" openmrs_entity_id="25343"/>
+            <delivery_complications_other openmrs_entity="concept" openmrs_entity_id="2355435"/>
+          </woman_survived_group>
+          <case_is_high_risk_till_pnc_close openmrs_entity="concept" openmrs_entity_id="8768767"/>
+          <case_is_high_risk_till_pnc_close_reason openmrs_entity="concept" openmrs_entity_id="676576"/>
+          <case_anaemic_status openmrs_entity="concept" openmrs_entity_id="76767"/>
+          <case_pih openmrs_entity="concept" openmrs_entity_id="36787"/>
+          <case_pre_eclampsia openmrs_entity="concept" openmrs_entity_id="376784"/>
+          <case_jaundice openmrs_entity="concept" openmrs_entity_id="343434"/>
+          <is_high_risk1 openmrs_entity="concept" openmrs_entity_id="4746767"/>
+          <high_risk_reason openmrs_entity="concept" openmrs_entity_id="5656"/>
+          <high_risk_note_mother/>
+          <is_high_risk openmrs_entity="concept" openmrs_entity_id="424253"/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </PNC_Registration_EngKan>
+      </instance>
+  </model>

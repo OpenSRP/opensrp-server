@@ -185,6 +185,7 @@ public class BaseEntity extends BaseDataObject {
 	
 	public void setIdentifiers(Map<String, String> identifiers) {
 		this.identifiers = identifiers;
+		System.out.print(this.identifiers);
 	}
 
 	public void addIdentifier(String identifierType, String identifier) {

@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?><form autocomplete="off" class="or clearfix" id="family_registration_form" novalidate="novalidate">
+    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+    <section class="form-logo"> </section>
+    <h3 id="form-title">خاندان رجسٹریشن فارم - Family Registration Form</h3>
+    <select data-default-lang="en" id="form-languages">
+        <option value="Roman Urdu">Roman Urdu</option>  <option value="en">English</option> </select>        <label class="note non-select ">
+    <span class="question-label " data-itext-id="/family_registration_form/provider_location_note:label" lang="Roman Urdu">Shehr: <span class="or-output" data-value=" /family_registration_form/provider_city ">            </span> ; Town: <span class="or-output" data-value=" /family_registration_form/provider_town ">            </span> ; UC: <span class="or-output" data-value=" /family_registration_form/provider_uc ">            </span> ; Center ka naam: <span class="or-output" data-value=" /family_registration_form/provider_location_name ">            </span>
+    </span>
+
+    <span class="question-label active" data-itext-id="/family_registration_form/provider_location_note:label" lang="en">City: <span class="or-output" data-value=" /family_registration_form/provider_city ">            </span> ; Town: <span class="or-output" data-value=" /family_registration_form/provider_town ">            </span> ; UC: <span class="or-output" data-value=" /family_registration_form/provider_uc ">            </span> ; Center Name: <span class="or-output" data-value=" /family_registration_form/provider_location_name ">            </span>
+    </span>
+    <input data-type-xml="string" name="/family_registration_form/provider_location_note" readonly="readonly" type="text"/>
+</label>    <label class="note non-select ">
+    <span class="question-label " data-itext-id="/family_registration_form/household_id_note:label" lang="Roman Urdu">Gharaane ki ID: <span class="or-output" data-value=" /family_registration_form/household_id ">            </span>
+    </span>
+
+    <span class="question-label active" data-itext-id="/family_registration_form/household_id_note:label" lang="en">Household ID : <span class="or-output" data-value=" /family_registration_form/household_id ">            </span>
+    </span>
+    <input data-type-xml="string" name="/family_registration_form/household_id_note" readonly="readonly" required="required" type="text"/>
+</label>    <section class="or-group " name="/family_registration_form/household_head">
+    <h4>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head:label" lang="Roman Urdu">Gharaane k sarbarah ki tafseelat</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head:label" lang="en">Household Head Details</span>
+    </h4>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span class="question-label " data-itext-id="/family_registration_form/household_head/already_enrolled_in_other_program:label" lang="Roman Urdu">Gharane kay sarabarah ka pehlay kisi Thrive kay Progam may indraj hay</span>
+
+                <span class="question-label active" data-itext-id="/family_registration_form/household_head/already_enrolled_in_other_program:label" lang="en">Household head already enrolled in any other Thrive program</span>
+                <span class="required">*</span>                    </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/already_enrolled_in_other_program" data-type-xml="select1" name="/family_registration_form/household_head/already_enrolled_in_other_program" required="required" type="radio" value="yes"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/already_enrolled_in_other_program/yes:label" lang="Roman Urdu">Haan</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/already_enrolled_in_other_program/yes:label" lang="en">Yes</span>
+                </label>
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/already_enrolled_in_other_program" data-type-xml="select1" name="/family_registration_form/household_head/already_enrolled_in_other_program" required="required" type="radio" value="no"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/already_enrolled_in_other_program/no:label" lang="Roman Urdu">Nahi</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/already_enrolled_in_other_program/no:label" lang="en">No</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question or-branch pre-init non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household_head/program_client_id:jr:constraintMsg" lang="Roman Urdu">-</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household_head/program_client_id:jr:constraintMsg" lang="en">Maximum 20 digits and cannot contain anything other than number</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/program_client_id:label" lang="Roman Urdu">Program Client ID</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/program_client_id:label" lang="en">Program Client ID</span>
+        <span class="required">*</span>
+        <input data-constraint="regex(., '[0-9]{0,20}$')" data-relevant="contains( /family_registration_form/household_head/already_enrolled_in_other_program , 'yes')" data-type-xml="string" name="/family_registration_form/household_head/program_client_id" required="required" type="text"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household_head/program_client_id_confirm:jr:constraintMsg" lang="Roman Urdu">Mandarja ID darj bala ID say mukhtalif nahi hosakti</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household_head/program_client_id_confirm:jr:constraintMsg" lang="en">Does not match with value entered above</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/program_client_id_confirm:label" lang="Roman Urdu">Program Client ID dobara darj karen</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/program_client_id_confirm:label" lang="en">Re-enter Program Client ID</span>
+        <span class="required">*</span>
+        <input data-constraint=". =  /family_registration_form/household_head/program_client_id " data-relevant="contains( /family_registration_form/household_head/already_enrolled_in_other_program , 'yes')" data-type-xml="string" name="/family_registration_form/household_head/program_client_id_confirm" required="required" type="text"/>
+    </label>
+    <label class="question non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household_head/first_name:jr:constraintMsg" lang="Roman Urdu">Naam 3-30 huroof par mushtamil hona chahyay kisi makhsoo harf ki bagahir. Iskay ilawa sirf [. - space] hosaktay hen</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household_head/first_name:jr:constraintMsg" lang="en">Name should contain only 3-30 alphabets and no special characters. Only allowed [. - space]</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/first_name:label" lang="Roman Urdu">Naam</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/first_name:label" lang="en">Name</span>
+        <span class="required">*</span>
+        <input data-constraint="regex(., '^[\s\.\-a-zA-Z]{3,30}$')" data-type-xml="string" name="/family_registration_form/household_head/first_name" required="required" type="text"/>
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span class="question-label " data-itext-id="/family_registration_form/household_head/gender:label" lang="Roman Urdu">Jins</span>
+
+                <span class="question-label active" data-itext-id="/family_registration_form/household_head/gender:label" lang="en">Gender</span>
+                <span class="required">*</span>                    </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/gender" data-type-xml="select1" name="/family_registration_form/household_head/gender" required="required" type="radio" value="male"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/gender/male:label" lang="Roman Urdu">Mard/larka</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/gender/male:label" lang="en">Male</span>
+                </label>
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/gender" data-type-xml="select1" name="/family_registration_form/household_head/gender" required="required" type="radio" value="female"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/gender/female:label" lang="Roman Urdu">Aurat/larki</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/gender/female:label" lang="en">Female</span>
+                </label>
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/gender" data-type-xml="select1" name="/family_registration_form/household_head/gender" required="required" type="radio" value="transgender"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/gender/transgender:label" lang="Roman Urdu">Khwaja sira</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/gender/transgender:label" lang="en">Transgender</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span class="question-label " data-itext-id="/family_registration_form/household_head/birth_date_known:label" lang="Roman Urdu">Kya tareekh-e-pedaaish maloom hai?</span>
+
+                <span class="question-label active" data-itext-id="/family_registration_form/household_head/birth_date_known:label" lang="en">Is birthdate known?</span>
+                <span class="required">*</span>                    </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/birth_date_known" data-type-xml="select1" name="/family_registration_form/household_head/birth_date_known" required="required" type="radio" value="yes"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/birth_date_known/yes:label" lang="Roman Urdu">Haan</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/birth_date_known/yes:label" lang="en">Yes</span>
+                </label>
+                <label class="">
+                    <input data-name="/family_registration_form/household_head/birth_date_known" data-type-xml="select1" name="/family_registration_form/household_head/birth_date_known" required="required" type="radio" value="no"/>
+                    <span class="option-label " data-itext-id="/family_registration_form/household_head/birth_date_known/no:label" lang="Roman Urdu">Nahi</span>
+
+                    <span class="option-label active" data-itext-id="/family_registration_form/household_head/birth_date_known/no:label" lang="en">No</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question or-branch pre-init non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household_head/birth_date:jr:constraintMsg" lang="Roman Urdu">Umr 10-160 saal kay darmiyan honi chahyay</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household_head/birth_date:jr:constraintMsg" lang="en">Age must be between 10-160</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/birth_date:label" lang="Roman Urdu">Tareekh-e-pedaaish</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/birth_date:label" lang="en">Birth date</span>
+        <span class="required">*</span>
+        <input data-constraint=".&lt;= /family_registration_form/today  and (int(( /family_registration_form/today  - .) div 365) &lt; 160) and (int(( /family_registration_form/today  - .) div 365) &gt; 10)" data-relevant="contains( /family_registration_form/household_head/birth_date_known , 'yes')" data-type-xml="date" name="/family_registration_form/household_head/birth_date" required="required" type="date"/>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household_head/age:jr:constraintMsg" lang="Roman Urdu">Umr 10-160 saal kay darmiyan honi chahyay</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household_head/age:jr:constraintMsg" lang="en">Age must be between 10-160</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/age:label" lang="Roman Urdu">Umr (saal)</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/age:label" lang="en">Age (years)</span>
+        <span class="required">*</span>
+        <input data-constraint=".&lt;=160" data-relevant="contains( /family_registration_form/household_head/birth_date_known , 'no')" data-type-xml="int" name="/family_registration_form/household_head/age" required="required" type="number"/>
+    </label>
+    <label class="note non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/birth_date_note:label" lang="Roman Urdu">Tareekh-e-pedaaish: <span class="or-output" data-value=" /family_registration_form/household_head/dob ">            </span> (<span class="or-output" data-value=" /family_registration_form/household_head/calc_age ">            </span> saal)</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/birth_date_note:label" lang="en">Date of Birth: <span class="or-output" data-value=" /family_registration_form/household_head/dob ">            </span> (<span class="or-output" data-value=" /family_registration_form/household_head/calc_age ">            </span> years)</span>
+        <input data-type-xml="string" name="/family_registration_form/household_head/birth_date_note" readonly="readonly" type="text"/>
+    </label>
+    <label class="note non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/household_member_id_note:label" lang="Roman Urdu">Household Memebr ID : <span class="or-output" data-value=" /family_registration_form/household_head/household_member_id ">            </span>
+        </span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/household_member_id_note:label" lang="en">Household Memebr ID : <span class="or-output" data-value=" /family_registration_form/household_head/household_member_id ">            </span>
+        </span>
+        <input data-type-xml="string" name="/family_registration_form/household_head/household_member_id_note" readonly="readonly" type="text"/>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/ethnicity:label" lang="Roman Urdu">Qomiat</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/ethnicity:label" lang="en">Ethnicity</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household_head/ethnicity" data-type-xml="select1" name="/family_registration_form/household_head/ethnicity" required="required">
+            <option value="">...</option>
+            <option value="sindhi">Sindhi</option>
+            <option value="muhajir">Muhajir</option>
+            <option value="punjabi">Punjabi</option>
+            <option value="pushtuns">Pushtun</option>
+            <option value="saraiki">Saraiki</option>
+            <option value="balochi">Balochi</option>
+            <option value="other">Other</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">
+            <span data-option-value="sindhi" lang="Roman Urdu">Sindhi</span>
+
+            <span data-option-value="sindhi" lang="en">Sindhi</span>
+            <span data-option-value="muhajir" lang="Roman Urdu">Muhajir</span>
+
+            <span data-option-value="muhajir" lang="en">Muhajir</span>
+            <span data-option-value="punjabi" lang="Roman Urdu">Punjabi</span>
+
+            <span data-option-value="punjabi" lang="en">Punjabi</span>
+            <span data-option-value="pushtuns" lang="Roman Urdu">Pushtun</span>
+
+            <span data-option-value="pushtuns" lang="en">Pushtun</span>
+            <span data-option-value="saraiki" lang="Roman Urdu">Saraiki</span>
+
+            <span data-option-value="saraiki" lang="en">Saraiki</span>
+            <span data-option-value="balochi" lang="Roman Urdu">Balochi</span>
+
+            <span data-option-value="balochi" lang="en">Balochi</span>
+            <span data-option-value="other" lang="Roman Urdu">Deegar</span>
+
+            <span data-option-value="other" lang="en">Other</span>                </span>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/ethnicity_other:label" lang="Roman Urdu">Wazaahat karain</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/ethnicity_other:label" lang="en">Please specify:</span>
+        <span class="required">*</span>
+        <input data-relevant="contains( /family_registration_form/household_head/ethnicity , 'other')" data-type-xml="string" name="/family_registration_form/household_head/ethnicity_other" required="required" type="text"/>
+    </label>
+    <label class="question non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household_head/contact_phone_number:jr:constraintMsg" lang="Roman Urdu">Phone number 11 hindason par mushtamil aur mundarja zail shakal main hona chahiey: 03*********</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household_head/contact_phone_number:jr:constraintMsg" lang="en">Phone number should be 11 digits in the following format: 03*********</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household_head/contact_phone_number:label" lang="Roman Urdu">Mobile phone number:</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household_head/contact_phone_number:label" lang="en">Mobile phone number:</span>
+        <input data-constraint="regex(., '^03[0-9]{9}$')" data-type-xml="string" name="/family_registration_form/household_head/contact_phone_number" type="text"/>
+    </label>            </section>
+    <!--end of group -->    <section class="or-group " name="/family_registration_form/household">
+    <h4>
+        <span class="question-label " data-itext-id="/family_registration_form/household:label" lang="Roman Urdu">Gharaane ki tafseelaat</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household:label" lang="en">Household Details</span>
+    </h4>
+    <label class="question non-select ">
+        <span class="or-constraint-msg " data-itext-id="/family_registration_form/household/num_household_members:jr:constraintMsg" lang="Roman Urdu">0-50 kay darmiyan hona chahyay</span>
+
+        <span class="or-constraint-msg active" data-itext-id="/family_registration_form/household/num_household_members:jr:constraintMsg" lang="en">Should be from 0-50</span>
+        <span class="question-label " data-itext-id="/family_registration_form/household/num_household_members:label" lang="Roman Urdu">Gharaane kay afraad ki taadaad (bashamool sarbarah)</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/num_household_members:label" lang="en">Number of members in household (including head)</span>
+        <span class="required">*</span>
+        <input data-constraint=".&gt;=1 and .&lt;=50" data-type-xml="int" name="/family_registration_form/household/num_household_members" required="required" type="number"/>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/province:label" lang="Roman Urdu">Suba</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/province:label" lang="en">Province</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household/province" data-type-xml="select1" name="/family_registration_form/household/province" required="required">
+            <option value="">...</option>
+            <option value="sindh">Sindh</option>
+            <option value="punjab">Punjab</option>
+            <option value="balochistan">Balochistan</option>
+            <option value="kpk">Khyber Pakhtunkhwah</option>
+            <option value="gilgit_baltistan">Gilgit Baltistan</option>
+            <option value="kashmir">Kashmir</option>
+            <option value="fata">FATA</option>
+            <option value="out_of_country">Out of Country</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">
+            <span data-option-value="sindh" lang="Roman Urdu">Sindh</span>
+
+            <span data-option-value="sindh" lang="en">Sindh</span>
+            <span data-option-value="punjab" lang="Roman Urdu">Punjab</span>
+
+            <span data-option-value="punjab" lang="en">Punjab</span>
+            <span data-option-value="balochistan" lang="Roman Urdu">Balochistan</span>
+
+            <span data-option-value="balochistan" lang="en">Balochistan</span>
+            <span data-option-value="kpk" lang="Roman Urdu">Khyber Pakhtunkhwa</span>
+
+            <span data-option-value="kpk" lang="en">Khyber Pakhtunkhwah</span>
+            <span data-option-value="gilgit_baltistan" lang="Roman Urdu">Gilgit Baltistan</span>
+
+            <span data-option-value="gilgit_baltistan" lang="en">Gilgit Baltistan</span>
+            <span data-option-value="kashmir" lang="Roman Urdu">Kashmir</span>
+
+            <span data-option-value="kashmir" lang="en">Kashmir</span>
+            <span data-option-value="fata" lang="Roman Urdu">FATA</span>
+
+            <span data-option-value="fata" lang="en">FATA</span>
+            <span data-option-value="out_of_country" lang="Roman Urdu">Mulk se baahir</span>
+
+            <span data-option-value="out_of_country" lang="en">Out of Country</span>                </span>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/city_village:label" lang="Roman Urdu">Shehr</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/city_village:label" lang="en">City</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household/city_village" data-type-xml="select1" name="/family_registration_form/household/city_village" required="required">
+            <option class="itemset-template" data-items-path="instance('cities')/root/item[province= /family_registration_form/household/province  or province='na']" value="">...</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">                </span>
+        <span class="itemset-labels" data-label-ref="itextId" data-label-type="itext" data-value-ref="name">
+            <span class="option-label " data-itext-id="static_instance-cities-0" lang="Roman Urdu">Shikarpur</span>
+
+            <span class="option-label active" data-itext-id="static_instance-cities-0" lang="en">Shikarpur</span>
+            <span class="option-label " data-itext-id="static_instance-cities-1" lang="Roman Urdu">Deegar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-cities-1" lang="en">Other</span>
+            <span class="option-label " data-itext-id="static_instance-cities-2" lang="Roman Urdu">Not Applicable</span>
+
+            <span class="option-label active" data-itext-id="static_instance-cities-2" lang="en">Not Applicable</span>            </span>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/town:label" lang="Roman Urdu">Town / Qasbah / Basti</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/town:label" lang="en">Town</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household/town" data-type-xml="select1" name="/family_registration_form/household/town" required="required">
+            <option class="itemset-template" data-items-path="instance('towns')/root/item[(province= /family_registration_form/household/province  and city= /family_registration_form/household/city_village  ) or city='na']" value="">...</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">                </span>
+        <span class="itemset-labels" data-label-ref="itextId" data-label-type="itext" data-value-ref="name">
+            <span class="option-label " data-itext-id="static_instance-towns-0" lang="Roman Urdu">Garhi Yasin</span>
+
+            <span class="option-label active" data-itext-id="static_instance-towns-0" lang="en">Garhi Yasin</span>
+            <span class="option-label " data-itext-id="static_instance-towns-1" lang="Roman Urdu">Khanpur</span>
+
+            <span class="option-label active" data-itext-id="static_instance-towns-1" lang="en">Khanpur</span>
+            <span class="option-label " data-itext-id="static_instance-towns-2" lang="Roman Urdu">Lakhi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-towns-2" lang="en">Lakhi</span>
+            <span class="option-label " data-itext-id="static_instance-towns-3" lang="Roman Urdu">Shikarpur Taluka</span>
+
+            <span class="option-label active" data-itext-id="static_instance-towns-3" lang="en">Shikarpur Taluka</span>
+            <span class="option-label " data-itext-id="static_instance-towns-4" lang="Roman Urdu">Deegar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-towns-4" lang="en">Other</span>
+            <span class="option-label " data-itext-id="static_instance-towns-5" lang="Roman Urdu">Qaabil-e-atlaaq nahi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-towns-5" lang="en">Not Applicable</span>            </span>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/union_council:label" lang="Roman Urdu">Union Council</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/union_council:label" lang="en">Union Council</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household/union_council" data-type-xml="select1" name="/family_registration_form/household/union_council" required="required">
+            <option class="itemset-template" data-items-path="instance('ucs')/root/item[(province= /family_registration_form/household/province  and city= /family_registration_form/household/city_village  and town= /family_registration_form/household/town ) or town='na']" value="">...</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">                </span>
+        <span class="itemset-labels" data-label-ref="itextId" data-label-type="itext" data-value-ref="name">
+            <span class="option-label " data-itext-id="static_instance-ucs-0" lang="Roman Urdu">Madeji</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-0" lang="en">Madeji</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-1" lang="Roman Urdu">Mirzapur</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-1" lang="en">Mirzapur</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-2" lang="Roman Urdu">Bambihar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-2" lang="en">Bambihar</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-3" lang="Roman Urdu">Gaheja</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-3" lang="en">Gaheja</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-4" lang="Roman Urdu">Panah Udho</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-4" lang="en">Panah Udho</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-5" lang="Roman Urdu">Nausharo Abro</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-5" lang="en">Nausharo Abro</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-6" lang="Roman Urdu">Garhi Yasin UC</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-6" lang="en">Garhi Yasin UC</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-7" lang="Roman Urdu">Chato Mangi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-7" lang="en">Chato Mangi</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-8" lang="Roman Urdu">Amrot</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-8" lang="en">Amrot</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-9" lang="Roman Urdu">Jindo Dero</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-9" lang="en">Jindo Dero</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-10" lang="Roman Urdu">Waryaso</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-10" lang="en">Waryaso</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-11" lang="Roman Urdu">Dakhan</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-11" lang="en">Dakhan</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-12" lang="Roman Urdu">Nim Horo</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-12" lang="en">Nim Horo</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-13" lang="Roman Urdu">Deegar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-13" lang="en">Other</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-14" lang="Roman Urdu">Qaabil-e-atlaaq nahi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-14" lang="en">Not Applicable</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-15" lang="Roman Urdu">Thairo</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-15" lang="en">Thairo</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-16" lang="Roman Urdu">Pir Bux Hujra</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-16" lang="en">Pir Bux Hujra</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-17" lang="Roman Urdu">Gari Daakho</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-17" lang="en">Gari Daakho</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-18" lang="Roman Urdu">Muhammad Bagh</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-18" lang="en">Muhammad Bagh</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-19" lang="Roman Urdu">Raheemabad</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-19" lang="en">Raheemabad</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-20" lang="Roman Urdu">Mian Sahib</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-20" lang="en">Mian Sahib</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-21" lang="Roman Urdu">Khanpur UC</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-21" lang="en">Khanpur UC</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-22" lang="Roman Urdu">Gari Teigo</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-22" lang="en">Gari Telgo</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-23" lang="Roman Urdu">Zarkhai</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-23" lang="en">Zarkhai</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-24" lang="Roman Urdu">Shabbirabad</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-24" lang="en">Shabbirabad</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-25" lang="Roman Urdu">Deegar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-25" lang="en">Other</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-26" lang="Roman Urdu">Qaabil-e-atlaaq nahi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-26" lang="en">Not Applicable</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-27" lang="Roman Urdu">Chak</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-27" lang="en">Chak</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-28" lang="Roman Urdu">Mungrani</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-28" lang="en">Mungrani</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-29" lang="Roman Urdu">Rustam</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-29" lang="en">Rustam</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-30" lang="Roman Urdu">Ruk</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-30" lang="en">Ruk</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-31" lang="Roman Urdu">Sher Kot</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-31" lang="en">Sher Kot</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-32" lang="Roman Urdu">Wazirabad</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-32" lang="en">Wazirabad</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-33" lang="Roman Urdu">Lakhi UC</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-33" lang="en">Lakhi UC</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-34" lang="Roman Urdu">Sehwani</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-34" lang="en">Sehwani</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-35" lang="Roman Urdu">Bhirkan</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-35" lang="en">Bhirkan</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-36" lang="Roman Urdu">Taib</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-36" lang="en">Taib</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-37" lang="Roman Urdu">Abdu</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-37" lang="en">Abdu</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-38" lang="Roman Urdu">Deegar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-38" lang="en">Other</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-39" lang="Roman Urdu">Qaabil-e-atlaaq nahi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-39" lang="en">Not Applicable</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-40" lang="Roman Urdu">UC 1</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-40" lang="en">UC 1</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-41" lang="Roman Urdu">UC 2</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-41" lang="en">UC 2</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-42" lang="Roman Urdu">UC 3</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-42" lang="en">UC 3</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-43" lang="Roman Urdu">UC 4</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-43" lang="en">UC 4</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-44" lang="Roman Urdu">UC 5</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-44" lang="en">UC 5</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-45" lang="Roman Urdu">UC 6</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-45" lang="en">UC 6</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-46" lang="Roman Urdu">UC 7</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-46" lang="en">UC 7</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-47" lang="Roman Urdu">UC 8</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-47" lang="en">UC 8</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-48" lang="Roman Urdu">Jagan</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-48" lang="en">Jagan</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-49" lang="Roman Urdu">Lodra</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-49" lang="en">Lodra</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-50" lang="Roman Urdu">Sultan Kot</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-50" lang="en">Sultan Kot</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-51" lang="Roman Urdu">Karan</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-51" lang="en">Karan</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-52" lang="Roman Urdu">Jahanwah</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-52" lang="en">Jahanwah</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-53" lang="Roman Urdu">Jano</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-53" lang="en">Jano</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-54" lang="Roman Urdu">Humayun</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-54" lang="en">Humayun</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-55" lang="Roman Urdu">Deegar</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-55" lang="en">Other</span>
+            <span class="option-label " data-itext-id="static_instance-ucs-56" lang="Roman Urdu">Qaabil-e-atlaaq nahi</span>
+
+            <span class="option-label active" data-itext-id="static_instance-ucs-56" lang="en">Not Applicable</span>            </span>
+    </label>
+    <label class="question non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/address1:label" lang="Roman Urdu">Ghar ka pata</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/address1:label" lang="en">Home Address</span>
+        <span class="required">*</span>
+        <input data-type-xml="string" name="/family_registration_form/household/address1" required="required" type="text"/>
+    </label>
+    <label class="note non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/address:label" lang="Roman Urdu">Pata: <span class="or-output" data-value=" /family_registration_form/household/address1 ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/union_councilname ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/townname ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/city_villagename ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/provincename ">            </span>
+        </span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/address:label" lang="en">Address: <span class="or-output" data-value=" /family_registration_form/household/address1 ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/union_councilname ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/townname ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/city_villagename ">            </span>, <span class="or-output" data-value=" /family_registration_form/household/provincename ">            </span>
+        </span>
+        <input data-type-xml="string" name="/family_registration_form/household/address" readonly="readonly" type="text"/>
+    </label>
+    <label class="question non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/gps_location:label" lang="Roman Urdu">Hasil karda malomaat ki jaga ke GPS coordinates darj karain</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/gps_location:label" lang="en">Collect GPS coordinates of data entry location</span>
+        <span class="or-hint active" lang="">GPS coordinates can only be collected when outside.</span>
+        <input data-type-xml="geopoint" name="/family_registration_form/household/gps_location" type="text"/>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/water_source:label" lang="Roman Urdu">Peenay ke paani ka zariya</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/water_source:label" lang="en">Source of drinking water</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household/water_source" data-type-xml="select1" name="/family_registration_form/household/water_source" required="required">
+            <option value="">...</option>
+            <option value="bore_hole">Bore Hole/Tube Well</option>
+            <option value="roof_catchment">Roof Catchment</option>
+            <option value="spring">Spring</option>
+            <option value="well">Well</option>
+            <option value="river">River/Stream/Canal</option>
+            <option value="water_faucet">Water Faucet in Home</option>
+            <option value="public_water_faucet">Public Water Faucet</option>
+            <option value="lake">Lake/Pond</option>
+            <option value="dam">Dam</option>
+            <option value="bottled_water">Bottled Water</option>
+            <option value="other">Other</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">
+            <span data-option-value="bore_hole" lang="Roman Urdu">Boring ka paani</span>
+
+            <span data-option-value="bore_hole" lang="en">Bore Hole/Tube Well</span>
+            <span data-option-value="roof_catchment" lang="Roman Urdu">Baarish ka jamah kardah paani</span>
+
+            <span data-option-value="roof_catchment" lang="en">Roof Catchment</span>
+            <span data-option-value="spring" lang="Roman Urdu">Chasmay ka paani</span>
+
+            <span data-option-value="spring" lang="en">Spring</span>
+            <span data-option-value="well" lang="Roman Urdu">Koonway ka paani</span>
+
+            <span data-option-value="well" lang="en">Well</span>
+            <span data-option-value="river" lang="Roman Urdu">Darya/Nadi/Neher ka paani</span>
+
+            <span data-option-value="river" lang="en">River/Stream/Canal</span>
+            <span data-option-value="water_faucet" lang="Roman Urdu">Zaathi nal ka paani</span>
+
+            <span data-option-value="water_faucet" lang="en">Water Faucet in Home</span>
+            <span data-option-value="public_water_faucet" lang="Roman Urdu">Awaami nal ka paani</span>
+
+            <span data-option-value="public_water_faucet" lang="en">Public Water Faucet</span>
+            <span data-option-value="lake" lang="Roman Urdu">Jheel/Taalaab ka paani</span>
+
+            <span data-option-value="lake" lang="en">Lake/Pond</span>
+            <span data-option-value="dam" lang="Roman Urdu">Bund ka paani</span>
+
+            <span data-option-value="dam" lang="en">Dam</span>
+            <span data-option-value="bottled_water" lang="Roman Urdu">Bottle ka paani</span>
+
+            <span data-option-value="bottled_water" lang="en">Bottled Water</span>
+            <span data-option-value="other" lang="Roman Urdu">Deegar</span>
+
+            <span data-option-value="other" lang="en">Other</span>                </span>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/water_source_other:label" lang="Roman Urdu">Wazaahat karain</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/water_source_other:label" lang="en">Please specify:</span>
+        <span class="required">*</span>
+        <input data-relevant="contains( /family_registration_form/household/water_source , 'other')" data-type-xml="string" name="/family_registration_form/household/water_source_other" required="required" type="text"/>
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/latrine_system:label" lang="Roman Urdu">Latrine system</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/latrine_system:label" lang="en">Latrine system</span>
+        <span class="required">*</span>
+        <select data-name="/family_registration_form/household/latrine_system" data-type-xml="select1" name="/family_registration_form/household/latrine_system" required="required">
+            <option value="">...</option>
+            <option value="flush_toilet">Flush Toilet</option>
+            <option value="pour_flush_toilet">Pour Flush Toilet</option>
+            <option value="pit">Pit Latrine</option>
+            <option value="other">Other</option>
+        </select>
+        <span class="or-option-translations" style="display:none;">
+            <span data-option-value="flush_toilet" lang="Roman Urdu">Commode</span>
+
+            <span data-option-value="flush_toilet" lang="en">Flush Toilet</span>
+            <span data-option-value="pour_flush_toilet" lang="Roman Urdu">WC</span>
+
+            <span data-option-value="pour_flush_toilet" lang="en">Pour Flush Toilet</span>
+            <span data-option-value="pit" lang="Roman Urdu">Garha</span>
+
+            <span data-option-value="pit" lang="en">Pit Latrine</span>
+            <span data-option-value="other" lang="Roman Urdu">Deegar</span>
+
+            <span data-option-value="other" lang="en">Other</span>                </span>
+    </label>
+    <label class="question or-branch pre-init non-select ">
+        <span class="question-label " data-itext-id="/family_registration_form/household/latrine_system_other:label" lang="Roman Urdu">Wazaahat karain</span>
+
+        <span class="question-label active" data-itext-id="/family_registration_form/household/latrine_system_other:label" lang="en">Please specify:</span>
+        <span class="required">*</span>
+        <input data-relevant="contains( /family_registration_form/household/latrine_system , 'other')" data-type-xml="string" name="/family_registration_form/household/latrine_system_other" required="required" type="text"/>
+    </label>            </section>
+    <!--end of group -->    <label class="question non-select or-appearance-multiline ">
+    <span class="question-label " data-itext-id="/family_registration_form/comments:label" lang="Roman Urdu">Tabsarah</span>
+
+    <span class="question-label active" data-itext-id="/family_registration_form/comments:label" lang="en">Comments</span>
+    <textarea data-type-xml="string" name="/family_registration_form/comments"> </textarea>
+</label>  <fieldset id="or-preload-items" style="display:none;">
+    <label class="calculation non-select ">
+        <input data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime" name="/family_registration_form/start" type="hidden"/>
+    </label>
+    <label class="calculation non-select ">
+        <input data-preload="timestamp" data-preload-params="end" data-type-xml="dateTime" name="/family_registration_form/end" type="hidden"/>
+    </label>
+    <label class="calculation non-select ">
+        <input data-preload="date" data-preload-params="today" data-type-xml="date" name="/family_registration_form/today" type="hidden"/>
+    </label>
+    <label class="calculation non-select ">
+        <input data-preload="property" data-preload-params="deviceid" data-type-xml="string" name="/family_registration_form/deviceid" type="hidden"/>
+    </label>
+    <label class="calculation non-select ">
+        <input data-preload="property" data-preload-params="subscriberid" data-type-xml="string" name="/family_registration_form/subscriberid" type="hidden"/>
+    </label>
+    <label class="calculation non-select ">
+        <input data-preload="property" data-preload-params="simserial" data-type-xml="string" name="/family_registration_form/simserial" type="hidden"/>
+    </label>
+    <label class="calculation non-select ">
+        <input data-preload="property" data-preload-params="phonenumber" data-type-xml="string" name="/family_registration_form/phonenumber" type="hidden"/>
+    </label>
+</fieldset>
+    <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input data-calculate=" /family_registration_form/today " data-type-xml="string" name="/family_registration_form/client_reg_date" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="if(contains( /family_registration_form/household_head/birth_date_known , 'yes'), int(( /family_registration_form/today  -  /family_registration_form/household_head/birth_date ) div 365),  /family_registration_form/household_head/age )" data-type-xml="string" name="/family_registration_form/household_head/calc_age" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="format-date (date( /family_registration_form/today  - int( /family_registration_form/household_head/age  * 365)), '%Y-%m-%d')" data-type-xml="string" name="/family_registration_form/household_head/calc_dob" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="if( /family_registration_form/household_head/birth_date_known ='yes',  /family_registration_form/household_head/birth_date ,  /family_registration_form/household_head/calc_dob )" data-type-xml="string" name="/family_registration_form/household_head/dob" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="if( /family_registration_form/household_head/birth_date_known  = 'yes', '0', '1')" data-type-xml="string" name="/family_registration_form/household_head/dob_estimated" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="concat( /family_registration_form/household_id ,'01')" data-type-xml="string" name="/family_registration_form/household_head/household_member_id" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="jr:choice-name( /family_registration_form/household/province , ' /family_registration_form/household/province ')" data-type-xml="string" name="/family_registration_form/household/provincename" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="jr:choice-name( /family_registration_form/household/city_village , ' /family_registration_form/household/city_village ')" data-type-xml="string" name="/family_registration_form/household/city_villagename" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="jr:choice-name( /family_registration_form/household/town , ' /family_registration_form/household/town ')" data-type-xml="string" name="/family_registration_form/household/townname" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="jr:choice-name( /family_registration_form/household/union_council , ' /family_registration_form/household/union_council ')" data-type-xml="string" name="/family_registration_form/household/union_councilname" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="concat('uuid:', uuid())" data-type-xml="string" name="/family_registration_form/meta/instanceID" type="hidden"/>
+        </label>
+        <label class="calculation non-select ">
+            <input data-calculate="'e76decd350834510a5ce07a8cbea3860'" data-type-xml="string" name="/family_registration_form/formhub/uuid" type="hidden"/>
+        </label>
+    </fieldset>
+</form>

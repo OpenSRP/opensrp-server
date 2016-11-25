@@ -1,14 +1,21 @@
 package org.opensrp.form.repository.it;
 
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.util.DateUtil;
+import org.opensrp.form.domain.*;
 import org.opensrp.form.domain.FormSubmission;
 import org.opensrp.form.repository.AllFormSubmissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.google.gson.JsonObject;
 
 import static java.util.Arrays.asList;
 import static junit.framework.Assert.*;
@@ -18,12 +25,12 @@ import static junit.framework.Assert.*;
 public class AllSubmissionsIntegrationTest {
     @Autowired
     private AllFormSubmissions formSubmissions;
-
+   
     @Before
     public void setUp() throws Exception {
         formSubmissions.removeAll();
     }
-
+    
     @Test
     public void shouldCheckIfFormSubmissionExistsByInstanceId() throws Exception {
         FormSubmission formSubmission = new FormSubmission("anm id 1", "instance id 1", "form name 1", "entity id 1", 1L, "1", null, 0L);

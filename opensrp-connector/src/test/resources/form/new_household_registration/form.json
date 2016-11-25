@@ -89,26 +89,50 @@
             "control": {
                 "appearance": "numbers"
             },
-            "name": "FWJIVHHID",
+            "name": "FWGOBHHID",
             "hint": {
-                "Bengali": "অনুগ্রহ করে খানার দরজাতে লেখা লাল রঙের JiVitA/Study household ID (HHID) টি টাইপ করুন",
-                "English": "Please input the RED – painted JiVitA / Study household ID (HHID) as displayed on the door/wall of the HH."
+                "Bengali": "অনুগ্রহ করে খানার দরজাতে লেখা কালো রঙের JiVitA/Study household ID (HHID) টি টাইপ করুন",
+                "English": "Please input the Black – painted Government household ID (HHID) as displayed on the door/wall of the HH."
             },
             "bind": {
                 "jr:constraintMsg": {
-                    "Bengali": "অনুগ্রহ করে ০০০১ থেকে ৯৯৯৯ এর মধ্যে ৪ ডিজিটের JiVitA HHID টাইপ করুন",
-                    "English": "Please enter 4 digits of JiVitA HHID from 0001 to 9999"
+                    "Bengali": "অনুগ্রহ করে ০০০১ থেকে ৯৯৯৯ এর মধ্যে ৪ ডিজিটের GoB HHID টাইপ করুন",
+                    "English": "Please enter 4 digits of GoB HHID from 0001 to 9999"
                 },
                 "required": "yes",
                 "constraint": "regex(., '^(?!0{4})[0-9]{4}$')"
             },
             "label": {
-                "Bengali": "JiVitA HHID",
-                "English": "JiVitA HHID"
+                "Bengali": "GoB HHID",
+                "English": "GoB HHID"
             },
             "instance": {
-                "openmrs_entity_id": "JiVitA HHID",
+                "openmrs_entity_id": "GOB HHID",
                 "openmrs_entity": "person_identifier"
+            },
+            "type": "text"
+        },
+        {
+            "name": "FWRELATIONSHIP",
+            "instance": {
+                "openmrs_entity_id": "FWRELATIONSHIP",
+                "openmrs_entity": "relationship"
+            },
+            "type": "text"
+        },
+        {
+            "name": "FWSTART",
+            "instance": {
+                "openmrs_entity_id": "FWSTART",
+                "openmrs_entity": "relationship"
+            },
+            "type": "text"
+        },
+        {
+            "name": "FWEND",
+            "instance": {
+                "openmrs_entity_id": "FWEND",
+                "openmrs_entity": "relationship"
             },
             "type": "text"
         },

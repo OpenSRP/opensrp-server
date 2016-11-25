@@ -1,0 +1,74 @@
+{
+  "form_data_definition_version": "1",
+  "form": {
+    "default_bind_path": "/model/instance/test_new_member",
+    "bind_type": "household",
+    "fields": [
+      {
+        "name": "relationship_id",
+        "bind": "/model/instance/test_new_member/relationship_id"
+      },
+      {
+        "name": "person_a",
+        "bind": "/model/instance/test_new_member/person_a"
+      },
+      {
+        "name": "relationship",
+        "bind": "/model/instance/test_new_member/relationship"
+      },
+      {
+        "name": "person_b",
+        "bind": "/model/instance/test_new_member/person_b"
+      },
+      {
+        "name": "start",
+        "bind": "/model/instance/test_new_member/start"
+      },
+      {
+        "name": "end",
+        "bind": "/model/instance/test_new_member/end"
+      },
+      {
+        "name": "creator",
+        "bind": "/model/instance/test_new_member/creator"
+      },
+      {
+        "name": "date_created",
+        "bind": "/model/instance/test_new_member/date_created"
+      },
+      {
+        "name": "date_changed",
+        "bind": "/model/instance/test_new_member/date_changed"
+      },
+      {
+        "name": "changed_by",
+        "bind": "/model/instance/test_new_member/changed_by"
+      },
+      {
+        "name": "voided",
+        "bind": "/model/instance/test_new_member/voided"
+      },
+      {
+        "name": "voided_by",
+        "bind": "/model/instance/test_new_member/voided_by"
+      },
+      {
+        "name": "date_voided",
+        "bind": "/model/instance/test_new_member/date_voided"
+      },
+      {
+        "name": "void_reason",
+        "bind": "/model/instance/test_new_member/void_reason"
+      },
+      {
+        "name": "uuid",
+        "bind": "/model/instance/test_new_member/uuid"
+      },
+      {
+        "name": "FWHOHGENDER",
+        "bind": "/model/instance/test_new_member/FWHOHGENDER"
+      }
+    ]
+      
+  }
+}

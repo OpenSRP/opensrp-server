@@ -178,7 +178,19 @@
                        {
                            "name": "FWELIGIBLE",
                            "source": "elco.FWELIGIBLE"
-                       }
+                       },
+          			   {
+            				"name": "FWRELATIONSHIP",
+                   			"source": "elco.FWRELATIONSHIP"
+          				},
+         				{
+        			    	"name": "FWSTART",
+       				    	"source": "elco.FWSTART"
+        				},
+         				{
+          				 	 "name": "FWEND",
+         				   	 "source": "elco.FWEND"
+       					  }
                    ],
                    "instances": [
                        {
@@ -198,7 +210,11 @@
                            "FWNHWOMHUSLIV": "",
                            "FWNHWOMHUSSTR": "",
                            "FWELIGIBLE": "0",
-                           "id": "babcd9d2-b3e9-4f6d-8a06-2df8f5fbf01f"
+                           "id": "babcd9d2-b3e9-4f6d-8a06-2df8f5fbf01f",
+                           "FWRELATIONSHIP": "8d919b58-c2cc-11de-8d13-0010c6dffd0f",
+                           "FWSTART": "12-12-2012",
+                           "FWEND": "12-12-2014"
+                            
                        },
                        {
                            "GOBHHID": "1234121",
@@ -217,7 +233,10 @@
                            "FWNHWOMHUSLIV": "1",
                            "FWNHWOMHUSSTR": "1",
                            "FWELIGIBLE": "0",
-                           "id": "74eebb60-a1b9-4691-81a4-5c04ecce7ae9"
+                           "id": "74eebb60-a1b9-4691-81a4-5c04ecce7ae9",
+                           "FWRELATIONSHIP": "8d919b58-c2cc-11de-8d13-0010c6dffd0f2",
+                           "FWSTART": "12-12-2012",
+                           "FWEND": "12-12-2014"
                        }
                    ]
                }

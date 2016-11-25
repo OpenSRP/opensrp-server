@@ -19,6 +19,5 @@
     <context:annotation-config/>
     <context:component-scan base-package="org.opensrp.web"/>
     <context:component-scan base-package="org.opensrp.connector"/>
-    
     <mvc:annotation-driven/>
 </beans>

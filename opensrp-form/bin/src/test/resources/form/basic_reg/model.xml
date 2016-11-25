@@ -1,0 +1,79 @@
+<model>
+    <instance>
+        <register_with_address encounter_type="patient_register" id="patient_basic_reg" version="201504030905">
+            <formhub>
+                <uuid/>
+            </formhub>
+            <woman_name openmrs_entity="person" openmrs_entity_id="first_name"/>
+            <last_name openmrs_entity="person" openmrs_entity_id="last_name"/>
+            <gender openmrs_entity="person" openmrs_entity_id="gender">female</gender>
+            <birthdate openmrs_entity="person" openmrs_entity_id="birthdate"/>
+            <location openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+            <anc_visit_date openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
+            <pulse_rate openmrs_entity="concept" openmrs_entity_id="5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <temperature openmrs_entity="concept" openmrs_entity_id="5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            <birthplace_address>
+                <birthplace_lat openmrs_entity="person_address" openmrs_entity_id="latitude" openmrs_entity_parent="birthplace"/>
+                <birthplace_lon openmrs_entity="person_address" openmrs_entity_id="longitute" openmrs_entity_parent="birthplace"/>
+                <birthplace_postcode openmrs_entity="person_address" openmrs_entity_id="postalcode" openmrs_entity_parent="birthplace"/>
+                <birthplace_house openmrs_entity="person_address" openmrs_entity_id="house_number" openmrs_entity_parent="birthplace"/>
+                <birthplace_street openmrs_entity="person_address" openmrs_entity_id="street" openmrs_entity_parent="birthplace"/>
+                <birthplace_area openmrs_entity="person_address" openmrs_entity_id="area" openmrs_entity_parent="birthplace"/>
+                <birthplace_town openmrs_entity="person_address" openmrs_entity_id="town" openmrs_entity_parent="birthplace"/>
+                <birthplace_busroute openmrs_entity="person_address" openmrs_entity_id="bus_route" openmrs_entity_parent="birthplace"/>
+                <birthplace_district openmrs_entity="person_address" openmrs_entity_id="district" openmrs_entity_parent="birthplace"/>
+                <birthplace_city openmrs_entity="person_address" openmrs_entity_id="city" openmrs_entity_parent="birthplace"/>
+                <birthplace_state openmrs_entity="person_address" openmrs_entity_id="state" openmrs_entity_parent="birthplace"/>
+                <birthplace_country openmrs_entity="person_address" openmrs_entity_id="country" openmrs_entity_parent="birthplace"/>
+            </birthplace_address>
+            <usual_residence_address>
+                <usual_residence_start openmrs_entity="person_address" openmrs_entity_id="startdate" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_lat openmrs_entity="person_address" openmrs_entity_id="latitude" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_lon openmrs_entity="person_address" openmrs_entity_id="longitute" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_postcode openmrs_entity="person_address" openmrs_entity_id="postalcode" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_house openmrs_entity="person_address" openmrs_entity_id="unit" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_street openmrs_entity="person_address" openmrs_entity_id="lane" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_area openmrs_entity="person_address" openmrs_entity_id="sector" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_town openmrs_entity="person_address" openmrs_entity_id="municipality" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_district openmrs_entity="person_address" openmrs_entity_id="district" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_city openmrs_entity="person_address" openmrs_entity_id="city" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_state openmrs_entity="person_address" openmrs_entity_id="province" openmrs_entity_parent="usual_residence"/>
+                <usual_residence_country openmrs_entity="person_address" openmrs_entity_id="country" openmrs_entity_parent="usual_residence"/>
+            </usual_residence_address>
+            <previous_residence_address>
+                <previous_residence_start openmrs_entity="person_address" openmrs_entity_id="startdate" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_end openmrs_entity="person_address" openmrs_entity_id="enddate" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_lat openmrs_entity="person_address" openmrs_entity_id="latitude" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_lon openmrs_entity="person_address" openmrs_entity_id="longitute" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_postcode openmrs_entity="person_address" openmrs_entity_id="postalcode" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_house openmrs_entity="person_address" openmrs_entity_id="house" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_street openmrs_entity="person_address" openmrs_entity_id="street" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_area openmrs_entity="person_address" openmrs_entity_id="area" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_town openmrs_entity="person_address" openmrs_entity_id="region" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_district openmrs_entity="person_address" openmrs_entity_id="county" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_city openmrs_entity="person_address" openmrs_entity_id="village" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_state openmrs_entity="person_address" openmrs_entity_id="state" openmrs_entity_parent="previous_residence"/>
+                <previous_residence_country openmrs_entity="person_address" openmrs_entity_id="country" openmrs_entity_parent="previous_residence"/>
+            </previous_residence_address>
+            <deathplace_address>
+                <deathplace_lat openmrs_entity="person_address" openmrs_entity_id="latitude" openmrs_entity_parent="deathplace"/>
+                <deathplace_lon openmrs_entity="person_address" openmrs_entity_id="longitute" openmrs_entity_parent="deathplace"/>
+                <deathplace_postcode openmrs_entity="person_address" openmrs_entity_id="postal_code" openmrs_entity_parent="deathplace"/>
+                <deathplace_house openmrs_entity="person_address" openmrs_entity_id="unit" openmrs_entity_parent="deathplace"/>
+                <deathplace_street openmrs_entity="person_address" openmrs_entity_id="lane" openmrs_entity_parent="deathplace"/>
+                <deathplace_area openmrs_entity="person_address" openmrs_entity_id="area" openmrs_entity_parent="deathplace"/>
+                <deathplace_town openmrs_entity="person_address" openmrs_entity_id="region" openmrs_entity_parent="deathplace"/>
+                <deathplace_district openmrs_entity="person_address" openmrs_entity_id="district" openmrs_entity_parent="deathplace"/>
+                <deathplace_city openmrs_entity="person_address" openmrs_entity_id="city" openmrs_entity_parent="deathplace"/>
+                <deathplace_state openmrs_entity="person_address" openmrs_entity_id="state_province" openmrs_entity_parent="deathplace"/>
+                <deathplace_country openmrs_entity="person_address" openmrs_entity_id="country" openmrs_entity_parent="deathplace"/>
+            </deathplace_address>
+            <today/>
+            <start/>
+            <end/>
+            <meta>
+                <instanceID/>
+            </meta>
+        </register_with_address>
+    </instance>
+</model>

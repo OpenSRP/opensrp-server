@@ -1,0 +1,35 @@
+{
+    "name": "TT 2",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "tt2",
+            "scheduleWindows": {
+                "earliest": ["4 Weeks"],
+                "due": ["6 Weeks"],
+                "late": ["35 Year"],
+                "max": ["35 Year", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "due",
+                    "offset": ["4 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "late",
+                    "offset": ["6 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "13000"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,134 @@
+{
+    "default_language": "Bengali",
+    "id_string": "FWNewHH_2",
+    "children": [
+        {
+            "name": "relationship_id",
+            "instance": {
+                "openmrs_entity_id": "relationship_id",
+                "openmrs_entity": "encounter"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "person_a",
+            "instance": {
+                "openmrs_entity_id": "person_a",
+                "openmrs_entity": "encounter"
+            },
+            "type": "today"
+        },
+        {
+            "name": "_relationship",
+            "instance": {
+                "openmrs_entity_id": "_relationship",
+                "openmrs_entity": "encounter"
+            },
+            "type": "integer"
+        },
+        {
+            "name": "person_b",
+            "instance": {
+                "openmrs_entity_id": "person_b",
+                "openmrs_entity": "encounter"
+            },
+            "type": "integer"
+        },
+        {
+            "name": "start",
+            "instance": {
+                "openmrs_entity_id": "encounter_start",
+                "openmrs_entity": "encounter"
+            },
+            "type": "start"
+        },
+        {
+            "name": "end",
+            "instance": {
+                "openmrs_entity_id": "encounter_end",
+                "openmrs_entity": "encounter"
+            },
+            "type": "end"
+        },
+        {
+            "name": "creator",
+            "instance": {
+                "openmrs_entity_id": "creator",
+                "openmrs_entity": "person"
+            },
+            "type": "text"
+        },
+        {
+            "name": "date_created",
+            "instance": {
+                "openmrs_entity_id": "date_created",
+                "openmrs_entity": "encounter"
+            },
+            "type": "date"
+        },
+        {
+            "name": "date_changed",
+            "instance": {
+                "openmrs_entity_id": "date_changed",
+                "openmrs_entity": "encounter"
+            },
+            "type": "date"
+        },
+        {
+            "name": "changed_by",
+            "instance": {
+                "openmrs_entity_id": "changed_by",
+                "openmrs_entity": "encounter"
+            },
+            "type" :"text"
+        },
+        {
+            "name": "voided",
+            "instance": {
+                "openmrs_entity_id": "voided",
+                "openmrs_entity": "encounter"
+            },
+            "type": "text"
+        },
+        {
+            "name": "voided_by",
+            "instance": {
+                "openmrs_entity_id": "voided_by",
+                "openmrs_entity": "person"
+            },
+            "type": "text"
+        },
+        {
+            "name": "date_voided",
+            "instance": {
+                "openmrs_entity_id": "voided",
+                "openmrs_entity": "encounter"
+            },
+            "type": "date"
+         },
+        {
+            "name": "voided_reason",
+            "instance": {
+                "openmrs_entity_id": "voided_reason",
+                "openmrs_entity": "encounter"
+            },
+            "type": "text"
+        },
+        {
+            "name": "uuid",
+            "instance": {
+                "openmrs_entity_id": "uuid",
+                "openmrs_entity": "concept"
+            },
+            "type": "text"
+        }
+    ],
+    "instance": {
+        "encounter_type": "test New Household Registration"
+    },
+    "version": "201505070930",
+    "type": "survey",
+    "name": "Relationship",
+    "sms_keyword": "Relationship",
+    "title": "FW new Relationship Reg"
+}

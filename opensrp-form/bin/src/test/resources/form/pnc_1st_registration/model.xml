@@ -1,0 +1,31 @@
+<model>
+    <instance>
+        <pnc_first_registration_motherdetails encounter_type="PNC Registration" id="pnc_1st_registration" version="201504011203">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <location openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+          <today openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
+          <start openmrs_entity="encounter" openmrs_entity_id="encounter_start"/>
+          <end openmrs_entity="encounter" openmrs_entity_id="encounter_end"/>
+          <mother_id openmrs_entity="person_identifier" openmrs_entity_id="OpenSRPID"/>
+          <gender openmrs_entity="person" openmrs_entity_id="gender"/>
+          <mother_birthdate openmrs_entity="person" openmrs_entity_id="birthdate"/>
+          <mother_first_name openmrs_entity="person" openmrs_entity_id="first_name"/>
+          <mother_last_name openmrs_entity="person" openmrs_entity_id="last_name"/>
+          <delivery_date openmrs_entity="concept" openmrs_entity_id="5599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <delivery_facility_name openmrs_entity="concept" openmrs_entity_id="162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <delivery_skilled openmrs_entity="concept" openmrs_entity_id="160083AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <delivery_type openmrs_entity="concept" openmrs_entity_id="5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <delivery_outcome openmrs_entity="concept" openmrs_entity_id="159917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <parity openmrs_entity="concept" openmrs_entity_id="1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <num_livebirths openmrs_entity="concept" openmrs_entity_id="160601AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <num_stillbirths openmrs_entity="concept" openmrs_entity_id="160077AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <complications openmrs_entity="concept" openmrs_entity_id="1576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <woman_survived openmrs_entity="concept" openmrs_entity_id="136600AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </pnc_first_registration_motherdetails>
+      </instance>
+  </model>

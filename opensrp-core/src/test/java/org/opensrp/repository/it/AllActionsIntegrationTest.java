@@ -20,7 +20,7 @@ import org.opensrp.scheduler.repository.AllActions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
+import org.opensrp.repository.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:test-applicationContext-opensrp.xml")
 public class AllActionsIntegrationTest {

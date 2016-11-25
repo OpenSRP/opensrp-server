@@ -43,6 +43,14 @@ public class HouseholdService extends OpenmrsService{
 		return new JSONObject(HttpUtil.post(getURL()+"/"+RELATIONSHIP_TYPE_URL, "", o.toString(), OPENMRS_USER, OPENMRS_PWD).body());
 	}
 	
+	public JSONObject getRelationship(String clientUuid, String relationshipInWord, String relativeUuid) throws JSONException
+    {
+    	JSONArray r = new JSONObject(HttpUtil.get(getURL()
+    			+"/"+RELATIONSHIP_URL, "v=full&relation="+relationshipInWord+""+"&personA="+clientUuid+"&personB="+relativeUuid, OPENMRS_USER, OPENMRS_PWD).body())
+    			.getJSONArray("results");
+    	return r.length()>0?r.getJSONObject(0):null;
+    }
+	
 	public JSONObject createRelationship(String clientUuid, String isARelationship, String relativeUuid) throws JSONException{
 		JSONObject o = convertRelationshipToOpenmrsJson(clientUuid, isARelationship, relativeUuid);
 		return new JSONObject(HttpUtil.post(getURL()+"/"+RELATIONSHIP_URL, "", o.toString(), OPENMRS_USER, OPENMRS_PWD).body());
@@ -90,7 +98,6 @@ public class HouseholdService extends OpenmrsService{
 
 				JSONObject mp = ignoreExisting&&hhMemEx!=null?hhMemEx:patientService.createPatient(m.getClient());
 				JSONObject me = encounterService.createEncounter(m.getEvent().get(0));
-				
 				createRelationship(hhp.getString("uuid"), hhrel, mp.getString("uuid"));
 			}
 		}

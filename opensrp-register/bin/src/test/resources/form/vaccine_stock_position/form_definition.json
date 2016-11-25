@@ -1,0 +1,189 @@
+{
+  "form_data_definition_version" : "1",
+  "form" : {
+    "bind_type" : "stock",
+    "default_bind_path" : "/model/instance/Vaccine_Stock_Position/",
+    "fields" : [ {
+      "name" : "id",
+      "shouldLoadValue" : true
+    },{
+      "name" : "no_client_event",
+      "value" : true
+    }, {
+      "name" : "provider_uc",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_uc",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_town",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_town",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_city",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_city",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_province",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_province",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_id",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_id",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_location_id",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_location_id",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_location_name",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_location_name",
+      "shouldLoadValue" : true
+    }, {
+      "name" : "provider_location_note",
+      "bind" : "/model/instance/Vaccine_Stock_Position/provider_location_note"
+    }, {
+      "name" : "start",
+      "bind" : "/model/instance/Vaccine_Stock_Position/start"
+    }, {
+      "name" : "end",
+      "bind" : "/model/instance/Vaccine_Stock_Position/end"
+    }, {
+      "name" : "today",
+      "bind" : "/model/instance/Vaccine_Stock_Position/today"
+    }, {
+      "name" : "deviceid",
+      "bind" : "/model/instance/Vaccine_Stock_Position/deviceid"
+    }, {
+      "name" : "subscriberid",
+      "bind" : "/model/instance/Vaccine_Stock_Position/subscriberid"
+    }, {
+      "name" : "simserial",
+      "bind" : "/model/instance/Vaccine_Stock_Position/simserial"
+    }, {
+      "name" : "phonenumber",
+      "bind" : "/model/instance/Vaccine_Stock_Position/phonenumber"
+    }, {
+      "name" : "date_formatted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/date_formatted"
+    }, {
+      "name" : "vaccinator_name",
+      "bind" : "/model/instance/Vaccine_Stock_Position/vaccinator_name"
+    }, {
+      "name" : "center_name",
+      "bind" : "/model/instance/Vaccine_Stock_Position/center_name"
+    }, {
+      "name" : "date",
+      "bind" : "/model/instance/Vaccine_Stock_Position/date"
+    }, {
+      "name" : "report",
+      "bind" : "/model/instance/Vaccine_Stock_Position/report"
+    }, {
+      "name" : "Target_assigned_for_vaccination_at_each_month",
+      "bind" : "/model/instance/Vaccine_Stock_Position/Target_assigned_for_vaccination_at_each_month"
+    }, {
+      "name" : "Target_assigned_for_vaccination_for_the_year",
+      "bind" : "/model/instance/Vaccine_Stock_Position/Target_assigned_for_vaccination_for_the_year"
+    }, {
+      "name" : "bcg_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/bcg_balance_in_hand"
+    }, {
+      "name" : "bcg_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/bcg_received"
+    }, {
+      "name" : "bcg_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/bcg_wasted"
+    }, {
+      "name" : "opv_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/opv_balance_in_hand"
+    }, {
+      "name" : "opv_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/opv_received"
+    }, {
+      "name" : "opv_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/opv_wasted"
+    }, {
+      "name" : "ipv_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/ipv_balance_in_hand"
+    }, {
+      "name" : "ipv_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/ipv_received"
+    }, {
+      "name" : "ipv_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/ipv_wasted"
+    }, {
+      "name" : "pcv_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/pcv_balance_in_hand"
+    }, {
+      "name" : "pcv_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/pcv_received"
+    }, {
+      "name" : "pcv_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/pcv_wasted"
+    }, {
+      "name" : "penta_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/penta_balance_in_hand"
+    }, {
+      "name" : "penta_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/penta_received"
+    }, {
+      "name" : "penta_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/penta_wasted"
+    }, {
+      "name" : "measles_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/measles_balance_in_hand"
+    }, {
+      "name" : "measles_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/measles_received"
+    }, {
+      "name" : "measles_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/measles_wasted"
+    }, {
+      "name" : "tt_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/tt_balance_in_hand"
+    }, {
+      "name" : "tt_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/tt_received"
+    }, {
+      "name" : "tt_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/tt_wasted"
+    }, {
+      "name" : "dilutants_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/dilutants_balance_in_hand"
+    }, {
+      "name" : "dilutants_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/dilutants_received"
+    }, {
+      "name" : "dilutants_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/dilutants_wasted"
+    }, {
+      "name" : "syringes_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/syringes_balance_in_hand"
+    }, {
+      "name" : "syringes_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/syringes_received"
+    }, {
+      "name" : "syringes_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/syringes_wasted"
+    }, {
+      "name" : "safety_boxes_balance_in_hand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/safety_boxes_balance_in_hand"
+    }, {
+      "name" : "safety_boxes_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/safety_boxes_received"
+    }, {
+      "name" : "safety_boxes_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/safety_boxes_wasted"
+    }, {
+      "name" : "total_wasted",
+      "bind" : "/model/instance/Vaccine_Stock_Position/total_wasted"
+    }, {
+      "name" : "total_received",
+      "bind" : "/model/instance/Vaccine_Stock_Position/total_received"
+    }, {
+      "name" : "total_balanceInHand",
+      "bind" : "/model/instance/Vaccine_Stock_Position/total_balanceInHand"
+    }, {
+      "name" : "instanceID",
+      "bind" : "/model/instance/Vaccine_Stock_Position/meta/instanceID"
+    } ]
+  }
+}

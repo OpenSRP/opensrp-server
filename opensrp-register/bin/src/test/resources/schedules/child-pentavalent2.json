@@ -1,0 +1,41 @@
+{
+    "name": "Penta 2",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "penta2",
+            "scheduleWindows": {
+                "earliest": ["4 Weeks"],
+                "due": ["6 Weeks"],
+                "late": ["52 Weeks"],
+                "max": ["1 Year", "1 Day"]
+            },
+            "alerts": [
+                {
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "due",
+                    "offset": ["4 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "late",
+                    "offset": ["6 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "366"
+                },
+                {
+                    "window": "max",
+                    "offset": ["1 Year"],
+                    "interval": ["1 Day"],
+                    "count": "2"
+                }
+            ]
+        }
+    ]
+}

@@ -13,13 +13,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Error Handling</title>
-    
 <%--     <script type="text/javascript" src="<c:url value="/resources/src/js/jquery.min.js"/>"></script> --%>
-
-  
-
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
 

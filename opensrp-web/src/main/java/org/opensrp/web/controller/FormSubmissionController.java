@@ -7,7 +7,6 @@ import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
@@ -15,17 +14,19 @@ import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.opensrp.api.domain.Drug;
 import org.opensrp.common.AllConstants;
 import org.opensrp.connector.openmrs.constants.OpenmrsHouseHold;
 import org.opensrp.connector.openmrs.service.EncounterService;
 import org.opensrp.connector.openmrs.service.HouseholdService;
+import org.opensrp.connector.openmrs.service.OrderService;
 import org.opensrp.connector.openmrs.service.PatientService;
 import org.opensrp.domain.Client;
+import org.opensrp.form.domain.*;
 import org.opensrp.domain.ErrorTrace;
 import org.opensrp.domain.Event;
 import org.opensrp.domain.Multimedia;
 import org.opensrp.dto.form.FormSubmissionDTO;
-import org.opensrp.dto.form.MultimediaDTO;
 import org.opensrp.form.domain.FormSubmission;
 import org.opensrp.form.service.FormSubmissionConverter;
 import org.opensrp.form.service.FormSubmissionService;
@@ -61,6 +62,7 @@ public class FormSubmissionController {
     private PatientService patientService;
     private HouseholdService householdService;
     private ErrorTraceService errorTraceService;
+    private OrderService DrugService;
     
     @Autowired //TODO: Julkar Confirm this
     private MultimediaService multimediaService;
@@ -108,8 +110,6 @@ public class FormSubmissionController {
             }
         });
     }
-    
- 
 
     @RequestMapping(headers = {"Accept=application/json"}, method = POST, value = "/form-submissions")
     public ResponseEntity<HttpStatus> submitForms(@RequestBody List<FormSubmissionDTO> formSubmissionsDTO) {
@@ -195,23 +195,23 @@ public class FormSubmissionController {
     }
     @RequestMapping(headers = {"Accept=application/json"}, method = GET, value = "/multimedia-file")
     @ResponseBody
-    public List<MultimediaDTO> getFiles(@RequestParam("anm-id") String providerId) {
+    public List<Multimedia> getFiles(@RequestParam("anm-id") String providerId) {
     	
     	List<Multimedia> allMultimedias = multimediaService.getMultimediaFiles(providerId);
     	
-    	return with(allMultimedias).convert(new Converter<Multimedia, MultimediaDTO>() {
+    	return with(allMultimedias).convert(new Converter<Multimedia, Multimedia>() {
 			@Override
-			public MultimediaDTO convert(Multimedia md) {
-				return new MultimediaDTO(md.getCaseId(), md.getProviderId(), md.getContentType(), md.getFilePath(), md.getFileCategory());
+			public Multimedia convert(Multimedia md) {
+				return new Multimedia(md.getBaseEntityId(), md.getProviderId(), md.getContentType(), md.getFilePath(), md.getFileCategory());
 			}
 		});
     }
     @RequestMapping(headers = {"Accept=multipart/form-data"}, method = POST, value = "/multimedia-file")
     public ResponseEntity<String> uploadFiles(@RequestParam("anm-id") String providerId, @RequestParam("entity-id") String entityId,@RequestParam("content-type") String contentType, @RequestParam("file-category") String fileCategory, @RequestParam("file") MultipartFile file) {
     	
-    	MultimediaDTO multimediaDTO = new MultimediaDTO(entityId, providerId, contentType, null, fileCategory);
+    	Multimedia Multimedia = new Multimedia(entityId, providerId, contentType, null, fileCategory);
     	
-    	String status = multimediaService.saveMultimediaFile(multimediaDTO, file);
+    	String status = multimediaService.saveMultimediaFile(Multimedia, file);
     	 
     	 return new ResponseEntity<>(new Gson().toJson(status), HttpStatus.OK);
     }

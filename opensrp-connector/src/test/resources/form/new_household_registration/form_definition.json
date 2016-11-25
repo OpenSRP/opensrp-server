@@ -158,6 +158,18 @@
           {
             "name": "FWELIGIBLE",
             "bind": "/model/instance/FWNewHH/woman/FWELIGIBLE"
+          },
+          {
+            "name": "FWRELATIONSHIP",
+            "bind": "/model/instance/FWNewHH/woman/FWRELATIONSHIP"
+          },
+          {
+            "name": "FWSTART",
+            "bind": "/model/instance/FWNewHH/woman/FWSTART"
+          },
+          {
+            "name": "FWEND",
+            "bind": "/model/instance/FWNewHH/woman/FWEND"
           }
         ]
       }

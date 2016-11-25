@@ -117,12 +117,8 @@ function getErrors(status){
 				{
 					return "<center>"+data+"</center>"
 			}
-				}
-			
-				]
-
-					
-				});
+				}]
+});
 				
 			}
 
@@ -280,10 +276,7 @@ function getErrors(status){
 			<div class="col-md-2"></div>
 		</div>
 		<div class="row">
-
-
-
-			<div class="col-md-2">
+		<div class="col-md-2">
 				<ul class="nav nav-stacked nav-tabs">
 					<li style="cursor:pointer"><a onclick="getErrors('');">All Errors</a></li>
 					<li style="cursor:pointer"><a onclick="getErrors('solved');">Solved Errors</a></li>

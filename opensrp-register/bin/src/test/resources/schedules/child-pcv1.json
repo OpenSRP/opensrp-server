@@ -1,0 +1,41 @@
+{
+    "name": "PCV 1",
+    "absolute": true,
+    "milestones": [
+        {
+            "name": "pcv1",
+            "scheduleWindows": {
+                "earliest": ["6 Weeks"],
+                "due": ["8 Weeks"],
+                "late": ["5 Years"],
+                "max": ["5 Years", "1 Day"]
+            },
+            "alerts": [
+            	{
+                    "window": "earliest",
+                    "offset": ["0 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "50"
+                },
+                {
+                    "window": "due",
+                    "offset": ["6 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "30"
+                },
+                {
+                    "window": "late",
+                    "offset": ["8 Weeks"],
+                    "interval": ["1 Day"],
+                    "count": "1900"
+                },
+                {
+                    "window": "max",
+                    "offset": ["5 Years"],
+                    "interval": ["1 Day"],
+                    "count": "2"
+                }
+            ]
+        }
+    ]
+}

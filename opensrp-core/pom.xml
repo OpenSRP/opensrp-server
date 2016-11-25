@@ -48,6 +48,117 @@
         </resources>
     </build>
 	<dependencies>
+	<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jcodec</groupId>
+			<artifactId>jcodec-javase</artifactId>
+			<version>0.1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco</groupId>
+			<artifactId>javacpp</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>opencv</artifactId>
+			<version>3.1.0-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>ffmpeg</artifactId>
+			<version>3.0.2-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>flycapture</artifactId>
+			<version>2.9.3.43-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>libdc1394</artifactId>
+			<version>2.2.4-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>libfreenect</artifactId>
+			<version>0.5.3-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>videoinput</artifactId>
+			<version>0.200-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>artoolkitplus</artifactId>
+			<version>2.3.1-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>chilitags</artifactId>
+			<version>master-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>flandmark</artifactId>
+			<version>1.07-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>fftw</artifactId>
+			<version>3.3.4-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>gsl</artifactId>
+			<version>2.1-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>llvm</artifactId>
+			<version>3.8.0-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>leptonica</artifactId>
+			<version>1.73-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>tesseract</artifactId>
+			<version>3.04.01-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>caffe</artifactId>
+			<version>rc3-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>cuda</artifactId>
+			<version>7.5-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>mxnet</artifactId>
+			<version>master-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>tensorflow</artifactId>
+			<version>0.8.0-1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco</groupId>
+			<artifactId>javacv</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<dependency>
 			<artifactId>motech-platform-server-api</artifactId>
 			<groupId>org.motechproject</groupId>
@@ -58,23 +169,11 @@
 			<artifactId>ektorplucene</artifactId>
 			<version>0.2.0</version>
 		</dependency>
-		<!-- <dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-core</artifactId>
-		    <version>2.2.2</version>
-		</dependency> -->
-		
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.2.2</version>
 		</dependency>
-		
-		<!-- <dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		    <version>2.2.2</version>
-		</dependency> -->
 		<dependency>
 			<artifactId>motech-sms-api</artifactId>
 			<groupId>org.motechproject</groupId>
@@ -85,6 +184,12 @@
 			<groupId>org.motechproject</groupId>
 			<version>${motech.version}</version>
 		</dependency>
+		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-mock</artifactId>
+    <version>2.0.8</version>
+</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>

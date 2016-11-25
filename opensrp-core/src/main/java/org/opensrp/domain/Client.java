@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +34,7 @@ public class Client extends BaseEntity {
 	@JsonProperty
 	private String gender;
 	@JsonProperty
-	private Map<String, List<String>> relationships;
+	private  List<RelationShip> relationships;
 
 	protected Client() {
 		
@@ -152,14 +153,21 @@ public class Client extends BaseEntity {
 		this.gender = gender;
 	}
 
-	public Map<String, List<String>> getRelationships() {
+	public  List<RelationShip> getRelationships() {
 		return relationships;
 	}
 
-	public void setRelationships(Map<String, List<String>> relationships) {
-		this.relationships = relationships;
+	public void setRelationShip(List<RelationShip> relationship) {
+		this.relationships = relationship;
 	}
-	
+
+	public void addRelationship(RelationShip Relationship) {
+		if (relationships == null) {
+			relationships = new ArrayList<>();
+		}
+		relationships.add(Relationship);
+	}
+
 	public Client withFirstName(String firstName) {
 		this.firstName = firstName;
 		return this;
@@ -204,46 +212,52 @@ public class Client extends BaseEntity {
 		this.gender = gender.name();
 		return this;
 	}
-
 	/**
 	 * Overrides the existing data
 	 */
-	public Client withRelationships(Map<String, List<String>> relationships) {
-		this.relationships = relationships;
+	public Client withRelation(List<RelationShip> relationShips) {
+		this.relationships = relationShips;
+		return this;
+	}
+	public Client withRelation(RelationShip relationship) {
+		if(relationships == null){
+			relationships  = new ArrayList<>();
+		}
+		relationships.add(relationship);
 		return this;
 	}
 	
-	public List<String> findRelatives(String relationshipType) {
-		if(relationships == null){
-			relationships = new HashMap<>();
-		}
-		
-		return relationships.get(relationshipType);
-	}
 	
-	public void addRelationship(String relationType, String relativeEntityId) {
+	public RelationShip getObs(String parent, String concept) {
 		if(relationships == null){
-			relationships = new HashMap<>();
+			relationships = new ArrayList<>();
 		}
-		
-		List<String> relatives = findRelatives(relationType);
-		if(relatives == null){
-			relatives = new ArrayList<>();
-		}
-		relatives.add(relativeEntityId);
-		relationships.put(relationType, relatives);
-	}
-	
-	public List<String> getRelationships(String relativeEntityId) {
-		List<String> relations = new ArrayList<String>();
-		for (Entry<String, List<String>> rl : relationships.entrySet()) {
-			if(rl.getValue().toString().equalsIgnoreCase(relativeEntityId)){
-				relations.add(rl.getKey());
+		for (RelationShip o : relationships) {
+			// parent is blank OR matches with obs parent
+			if((StringUtils.isBlank(parent) 
+					|| (StringUtils.isNotBlank(o.getRelationship()) && parent.equalsIgnoreCase(o.getRelationship()))) 
+				&& o.getRelationship().equalsIgnoreCase("relationship")){
+				return o; //TODO handle duplicates
 			}
-		}
-		return relations;
+		} 
+		return null;
 	}
 
+	/**
+	 * WARNING: Overrides all existing obs
+	 * @param obs
+	 * @return
+	 */
+	
+	
+	public void addObs(RelationShip relationship) {
+		if(relationships == null){
+			relationships = new ArrayList<>();
+		}
+		
+		relationships.add(relationship);
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		return EqualsBuilder.reflectionEquals(this, o, "id", "revision");

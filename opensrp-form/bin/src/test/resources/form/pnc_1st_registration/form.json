@@ -1,0 +1,373 @@
+{
+    "name": "pnc_first_registration_motherdetails",
+    "title": "PNC Registration",
+    "sms_keyword": "pnc_1st_registration",
+    "default_language": "default",
+    "instance": {
+        "encounter_type": "PNC Registration"
+    },
+    "version": "201504011203",
+    "id_string": "pnc_1st_registration",
+    "type": "survey",
+    "children": [
+        {
+            "instance": {
+                "openmrs_entity_id": "location_id",
+                "openmrs_entity": "encounter"
+            },
+            "type": "text",
+            "name": "location",
+            "label": "Location"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "encounter_date",
+                "openmrs_entity": "encounter"
+            },
+            "type": "today",
+            "name": "today"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "encounter_start",
+                "openmrs_entity": "encounter"
+            },
+            "type": "start",
+            "name": "start"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "encounter_end",
+                "openmrs_entity": "encounter"
+            },
+            "type": "end",
+            "name": "end"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "OpenSRPID",
+                "openmrs_entity": "person_identifier"
+            },
+            "type": "integer",
+            "name": "mother_id",
+            "label": "Mother ID number:"
+        },
+        {
+            "name": "gender",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Gender? ಮಗುವಿನ ಲಿಂಗ?",
+            "instance": {
+                "openmrs_entity_id": "gender",
+                "openmrs_entity": "person"
+            },
+            "type": "select one",
+            "children": [
+                {
+                    "instance": {
+                        "openmrs_code": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "male",
+                    "label": "Male ಗಂಡು"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "female",
+                    "label": "Female ಹೆಣ್ಣು"
+                }
+            ]
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "birthdate",
+                "openmrs_entity": "person"
+            },
+            "type": "date",
+            "name": "mother_birthdate",
+            "label": "Mother's DOB?"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "first_name",
+                "openmrs_entity": "person"
+            },
+            "type": "text",
+            "name": "mother_first_name",
+            "label": "Mother's first name?"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "last_name",
+                "openmrs_entity": "person"
+            },
+            "type": "text",
+            "name": "mother_last_name",
+            "label": "Mother's last name?"
+        },
+        {
+            "bind": {
+                "required": "yes",
+                "constraint": ".<=${today}"
+            },
+            "type": "date",
+            "instance": {
+                "openmrs_entity_id": "5599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "name": "delivery_date",
+            "label": "Delivery date? ಹೆರಿಗೆ ದಿನಾಂಕ?"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "text",
+            "name": "delivery_facility_name",
+            "label": "Name of delivery facility? ಹೆರಿಗೆಯಾದ ಸ್ಥಳದ ಹೆಸರು?"
+        },
+        {
+            "name": "delivery_skilled",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Delivery attended by SBA? ತರಬೇತಿ ಹೊಂದಿದ ಹೆರಿಗೆ ಸಹಾಯಕರು ಹೆರಿಗೆಯಲ್ಲಿ ಹಾಜರಿದ್ದರೆ?",
+            "instance": {
+                "openmrs_entity_id": "160083AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one",
+            "children": [
+                {
+                    "instance": {
+                        "openmrs_code": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "yes",
+                    "label": "Yes ಹೌದು"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "no",
+                    "label": "No ಇಲ್ಲ"
+                }
+            ]
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "label": "Type of delivery? ಯಾವ ವಿಧದ ಹೆರಿಗೆ?",
+            "type": "select one",
+            "children": [
+                {
+                    "instance": {
+                        "openmrs_code": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "normal",
+                    "label": "Normal ಸಾಮಾನ್ಯ"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "cesarean",
+                    "label": "Cesarean ಸಿಸೇರಿಯನ್"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "118159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "instrumental_forcep",
+                    "label": "Instrumental / Forcep ಉಪಕರಣಗಳಿಂದ ಮಾಡುವ ಹೆರಿಗೆ"
+                }
+            ],
+            "name": "delivery_type"
+        },
+        {
+            "name": "delivery_outcome",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Delivery outcome? ಹೆರಿಗೆ ಫಲಿತಾಂಶವೇನು?",
+            "instance": {
+                "openmrs_entity_id": "159917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one",
+            "children": [
+                {
+                    "instance": {
+                        "openmrs_code": "151849AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "live_birth",
+                    "label": "Live Birth ಜೀವಂತ ಜನನ"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "125872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "still_birth",
+                    "label": "Still Birth ನಿರ್ಜೀವ ಜನನ"
+                }
+            ]
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "int",
+            "name": "parity",
+            "label": "Parity"
+        },
+        {
+            "bind": {
+                "relevant": "${delivery_outcome} = 'live_birth'"
+            },
+            "type": "int",
+            "instance": {
+                "openmrs_entity_id": "160601AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "name": "num_livebirths",
+            "label": "Live births"
+        },
+        {
+            "bind": {
+                "relevant": "${delivery_outcome} = 'still_birth'"
+            },
+            "type": "int",
+            "instance": {
+                "openmrs_entity_id": "160077AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "name": "num_stillbirths",
+            "label": "Still births"
+        },
+        {
+            "instance": {
+                "openmrs_entity_id": "1576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "label": "What delivery complications were there? ಯಾವ ಹೆರಿಗೆ ತೊಂದರೆಗಳು ಉಂಟಾದವು?",
+            "type": "select all that apply",
+            "children": [
+                {
+                    "instance": {
+                        "openmrs_code": "230AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "hemorrhage",
+                    "label": "Hemorrhage ರಕ್ತಸ್ರಾವ"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "114127AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "placenta_previa",
+                    "label": "Placenta previa ಹಿಂದಿನ ಗರ್ಭದಲ್ಲಿ ಮಾಸು ಮುಂದಿರುವುದು"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "128420AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "cord_prolapse",
+                    "label": "Cord prolapse ಬಳ್ಳಿಯ ಸರಿತ"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "115036AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "prolonged_labor",
+                    "label": "Prolonged / obstructed labor ದೀರ್ಘಕಾಲೀನ / ಅಡಚಣೆಯನ್ನು ತಂದೊಡ್ಡುವ ಹೆರಿಗೆ ನೋವು"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "1172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "abnormal_presentation",
+                    "label": "Abnormal presentation ಅಪಸಾಮಾನ್ಯ ಪ್ರಸ್ತುತಿ"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "126886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "perineal_tear_2nd_degree",
+                    "label": "Perineal tear (2 degree)"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "124857AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "perineal_tear_3rd_degree",
+                    "label": "Perineal tear (3 degree)"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "39911AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "perineal_tear_4th_degree",
+                    "label": "Perineal tear (4 degree)"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "120222AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "others",
+                    "label": "Others ಇತರೆ"
+                }
+            ],
+            "name": "complications"
+        },
+        {
+            "name": "woman_survived",
+            "bind": {
+                "required": "yes"
+            },
+            "label": "Woman survived childbirth? ಮಗುವಿನ ಜನನದ ನಂತರ ಮಹಿಳೆ ಬದುಕುಳಿದರೆ?",
+            "instance": {
+                "openmrs_entity_id": "134612AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "select one",
+            "children": [
+                {
+                    "instance": {
+                        "openmrs_code": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "yes",
+                    "label": "Yes ಹೌದು"
+                },
+                {
+                    "instance": {
+                        "openmrs_code": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    "name": "no",
+                    "label": "No ಇಲ್ಲ"
+                }
+            ]
+        },
+        {
+            "control": {
+                "bodyless": true
+            },
+            "type": "group",
+            "children": [
+                {
+                    "bind": {
+                        "readonly": "true()",
+                        "calculate": "concat('uuid:', uuid())"
+                    },
+                    "type": "calculate",
+                    "name": "instanceID"
+                }
+            ],
+            "name": "meta"
+        }
+    ]
+}
