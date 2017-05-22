@@ -12,6 +12,8 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
 import org.opensrp.common.util.HttpResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +26,8 @@ import com.mysql.jdbc.StringUtils;
 @Component
 public class HttpUtil {
 
+	private static Logger logger = LoggerFactory.getLogger(HttpUtil.class.toString());
+	
     public HttpUtil() {
     }
 
@@ -52,6 +56,7 @@ public class HttpUtil {
             return new HttpResponse(con.getResponseCode() == HttpStatus.SC_OK, IOUtils.toString(con.getInputStream()));
 			
         } catch (Exception e) {
+        	logger.error(HttpUtil.class.toString(), e);
             throw new RuntimeException(e);
         }
     }

@@ -144,6 +144,7 @@ public class FormSubmissionController {
 	            		addFormToOpenMRS(formSubmission);
 	            	}
 	            	catch(Exception e){
+	            		logger.error(this.getClass().getName(), e);
 	            		e.printStackTrace();
 	            		ErrorTrace errorTrace=new ErrorTrace(new Date(), "Parse Exception", "", e.getStackTrace().toString(), "Unsolved", formSubmission.formName());
 						errorTrace.setRecordId(formSubmission.instanceId());
