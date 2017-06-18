@@ -1,16 +1,18 @@
 package org.opensrp.common.util;
 
 
-import com.google.gson.Gson;
 import org.apache.http.Header;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.junit.Test;
 import sun.misc.BASE64Encoder;
 
 import java.net.URISyntaxException;
-import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
+import static org.opensrp.common.util.HttpUtil.checkSuccessBasedOnHttpCode;
+import static org.opensrp.common.util.HttpUtil.delete;
 import static org.opensrp.common.util.HttpUtil.makeConnection;
 
 public class HttpUtilTest {
@@ -170,5 +172,25 @@ public class HttpUtilTest {
         assertEquals(url, requestBase.getURI().toString());
         assertEquals(method.name(), requestBase.getMethod());
         assertEquals(expectedAuthString, outputAuthString);
+    }
+
+    @Test
+    public void testDeleteMethodWithoutAuth() {
+        String url = "http://httpbin.org/delete";
+        String payLoad = "payload";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = delete(url, payLoad, authType, "");
+
+        assertEquals(200, response.statusCode().intValue());
+        assertTrue(response.isSuccess());
+    }
+
+    @Test
+    public void testCheckHttpCallSuccessBasedOnReturnCode() {
+        assertTrue(checkSuccessBasedOnHttpCode(200));
+        assertTrue(checkSuccessBasedOnHttpCode(303));
+        assertFalse(checkSuccessBasedOnHttpCode(404));
+        assertFalse(checkSuccessBasedOnHttpCode(505));
     }
 }

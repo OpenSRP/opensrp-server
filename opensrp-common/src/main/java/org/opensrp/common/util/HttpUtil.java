@@ -117,9 +117,17 @@ public class HttpUtil {
         try {
         	HttpDelete request = (HttpDelete) makeConnection(url, payload, RequestMethod.DELETE, authType, authString);
             org.apache.http.HttpResponse response = httpClient.execute(request);
-            return new HttpResponse(response.getStatusLine().getStatusCode() == HttpStatus.SC_NO_CONTENT, response.getStatusLine().getStatusCode(), response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"");
+            return new HttpResponse(checkSuccessBasedOnHttpCode(response.getStatusLine().getStatusCode()), response.getStatusLine().getStatusCode(), response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"");
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    static boolean checkSuccessBasedOnHttpCode(int httpCode) {
+        if(httpCode>=400 && httpCode<=599) {
+	        return false;
+        }else {
+	        return true;
         }
     }
 
