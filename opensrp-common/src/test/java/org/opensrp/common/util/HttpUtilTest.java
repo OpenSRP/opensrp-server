@@ -1,10 +1,14 @@
 package org.opensrp.common.util;
 
 
+import com.google.gson.Gson;
+import org.apache.http.Header;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.junit.Test;
+import sun.misc.BASE64Encoder;
 
 import java.net.URISyntaxException;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 import static org.opensrp.common.util.HttpUtil.makeConnection;
@@ -35,6 +39,20 @@ public class HttpUtilTest {
     public void testMakeConnectionThorowsUriSyntaxException() throws URISyntaxException {
         String invalidUrl = "http://invalidURL^$&%$&^";
         makeConnection(invalidUrl,"", RequestMethod.DELETE, HttpUtil.AuthType.BASIC, "");
+    }
+
+    @Test
+    public void testMakingConnectionWithTrailingSlashes() throws URISyntaxException {
+        String url = "www.google.com/";
+        String expectedUrl = "www.google.com";
+        String payLoad = "";
+        RequestMethod method = RequestMethod.GET;
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpRequestBase requestBase = makeConnection(url, payLoad, method, authType, "");
+
+        assertEquals(expectedUrl, requestBase.getURI().toString());
+        assertEquals(method.name(), requestBase.getMethod());
     }
 
     @Test
@@ -118,5 +136,39 @@ public class HttpUtilTest {
 
         assertEquals(expectedUrl, requestBase.getURI().toString());
         assertEquals(method.name(), requestBase.getMethod());
+    }
+
+    @Test
+    public void testMakingConnectionWithBasicAuthType() throws URISyntaxException {
+        String url = "www.google.com";
+        RequestMethod method = RequestMethod.PUT;
+        HttpUtil.AuthType authType = HttpUtil.AuthType.BASIC;
+        String authString = "userName:pass";
+        String expectedAuthString = "Basic " + new BASE64Encoder().encode(authString.getBytes());
+
+        HttpRequestBase requestBase = makeConnection(url, "", method, authType, authString);
+        Header[] headers = requestBase.getHeaders("Authorization");
+        String outputAuthString = headers[0].getValue();
+
+        assertEquals(url, requestBase.getURI().toString());
+        assertEquals(method.name(), requestBase.getMethod());
+        assertEquals(expectedAuthString, outputAuthString);
+    }
+
+    @Test
+    public void testMakingConnectionWithToken() throws URISyntaxException {
+        String url = "www.google.com";
+        RequestMethod method = RequestMethod.PUT;
+        HttpUtil.AuthType authType = HttpUtil.AuthType.TOKEN;
+        String authString = "userName:pass";
+        String expectedAuthString = "Token " + authString;
+
+        HttpRequestBase requestBase = makeConnection(url, "", method, authType, authString);
+        Header[] headers = requestBase.getHeaders("Authorization");
+        String outputAuthString = headers[0].getValue();
+
+        assertEquals(url, requestBase.getURI().toString());
+        assertEquals(method.name(), requestBase.getMethod());
+        assertEquals(expectedAuthString, outputAuthString);
     }
 }
