@@ -28,6 +28,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class HttpUtil {
 
+
+	private HttpUtil() {
+
+    }
+
 	public enum AuthType{
 		BASIC, TOKEN, NONE
 	}
