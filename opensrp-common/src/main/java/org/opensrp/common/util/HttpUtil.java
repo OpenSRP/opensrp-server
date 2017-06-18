@@ -1,8 +1,6 @@
 package org.opensrp.common.util;
 
-import com.sun.org.apache.regexp.internal.RE;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.*;
