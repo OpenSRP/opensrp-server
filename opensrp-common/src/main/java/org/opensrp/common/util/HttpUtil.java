@@ -1,18 +1,10 @@
 package org.opensrp.common.util;
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.security.KeyStore;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.*;
 import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
@@ -24,6 +16,10 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.protocol.HTTP;
 import org.springframework.stereotype.Component;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.security.KeyStore;
 
 @Component
 public class HttpUtil {
