@@ -11,9 +11,7 @@ import java.net.URISyntaxException;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
-import static org.opensrp.common.util.HttpUtil.checkSuccessBasedOnHttpCode;
-import static org.opensrp.common.util.HttpUtil.delete;
-import static org.opensrp.common.util.HttpUtil.makeConnection;
+import static org.opensrp.common.util.HttpUtil.*;
 
 public class HttpUtilTest {
 
@@ -175,7 +173,7 @@ public class HttpUtilTest {
     }
 
     @Test
-    public void testDeleteMethodWithoutAuth() {
+    public void testSuccessfulDeleteMethod() {
         String url = "http://httpbin.org/delete";
         String payLoad = "payload";
         HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
@@ -184,6 +182,51 @@ public class HttpUtilTest {
 
         assertEquals(200, response.statusCode().intValue());
         assertTrue(response.isSuccess());
+    }
+
+    @Test
+    public void testUnsuccessfulDeleteMethod() {
+        String url = "http://httpbin.org";
+        String payLoad = "payload";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = delete(url, payLoad, authType, "");
+
+        assertEquals(405, response.statusCode().intValue());
+        assertFalse(response.isSuccess());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testDeleteMethodForException() {
+        delete(null, null, "", null);
+    }
+
+    @Test
+    public void testSuccessfulGetMethod() {
+        String url = "http://httpbin.org/get";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = get(url, "", authType, "");
+
+        assertEquals(200, response.statusCode().intValue());
+        assertTrue(response.isSuccess());
+    }
+
+    @Test
+    public void testUnsuccessfulGetMethod() {
+        String url = "http://httpbin.org/delete";
+        String payLoad = "payload";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = get(url, payLoad, authType, "");
+
+        assertEquals(405, response.statusCode().intValue());
+        assertFalse(response.isSuccess());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testGetMethodForException() {
+        delete(null, null, "", null);
     }
 
     @Test
