@@ -131,7 +131,9 @@ public class HttpUtil {
         }
         url = (url+(StringUtils.isBlank(payload)?"":("?"+payload))).replaceAll(" ", "%20");
     	URI urlo = new URI(url);
-    	
+
+        System.out.println(urlo.toString());
+
     	HttpRequestBase requestBase = null;
     	if(method.equals(RequestMethod.GET)){
     		requestBase = new HttpGet(urlo);
