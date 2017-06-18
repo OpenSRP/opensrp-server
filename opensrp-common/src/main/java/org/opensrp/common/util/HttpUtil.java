@@ -72,7 +72,8 @@ public class HttpUtil {
     public static HttpResponse postWithToken(String url, String payload, String data, String token) {
         return post(url, payload, data, "application/json", AuthType.TOKEN, token);
     }
-    
+
+    //TODO: Move setting content type in makeConnection function.
     public static HttpResponse post(String url, String payload, String data, String contentType, AuthType authType, String authString) {
         try {
         	HttpPost request = (HttpPost) makeConnection(url, payload, RequestMethod.POST, authType, authString);
@@ -82,8 +83,7 @@ public class HttpUtil {
             entity.setContentEncoding(contentType);
             request.setEntity(entity);
             org.apache.http.HttpResponse response = httpClient.execute(request);
-            return new HttpResponse(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK, response.getStatusLine()
-            		.getStatusCode(),IOUtils.toString(response.getEntity().getContent()));
+            return createCustomResponseFrom(response);
         } catch (Exception e) {
         	e.printStackTrace();
             throw new RuntimeException(e);
@@ -115,6 +115,7 @@ public class HttpUtil {
             throw new RuntimeException(e);
         }
     }
+
     public static HttpResponse delete(String url, String payload, AuthType authType, String authString) {
         try {
         	HttpDelete request = (HttpDelete) makeConnection(url, payload, RequestMethod.DELETE, authType, authString);

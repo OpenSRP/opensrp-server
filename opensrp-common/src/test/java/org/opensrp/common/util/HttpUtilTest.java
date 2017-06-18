@@ -237,7 +237,47 @@ public class HttpUtilTest {
 
     @Test(expected = RuntimeException.class)
     public void testGetMethodForException() {
-        delete(null, null, "", null);
+        get(null, null, "", null);
+    }
+
+
+    @Test
+    public void testSuccessfulPostMethod() {
+        String url = "http://httpbin.org/post";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = post(url,"", "", "text", authType, "");
+
+        assertEquals(200, response.statusCode().intValue());
+        assertTrue(response.isSuccess());
+    }
+
+    @Test
+    public void testSuccessfulPostMethodWithNoContent() {
+        String url = "http://httpstat.us/204";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = post(url, "","","", authType, "");
+
+        assertEquals(204, response.statusCode().intValue());
+        assertTrue(response.isSuccess());
+    }
+
+    @Test
+    public void testUnsuccessfulPostMethod() {
+        String url = "http://httpbin.org/get";
+        String payLoad = "payload";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = post(url, "","","", authType, "");
+
+        assertEquals(405, response.statusCode().intValue());
+        assertFalse(response.isSuccess());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testPostMethodForException() {
+        post(null, null,null, "", null);
     }
 
     @Test
