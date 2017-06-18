@@ -213,6 +213,17 @@ public class HttpUtilTest {
     }
 
     @Test
+    public void testSuccessfulGetMethodWithNoContent() {
+        String url = "http://httpstat.us/204";
+        HttpUtil.AuthType authType = HttpUtil.AuthType.NONE;
+
+        HttpResponse response = get(url, "", authType, "");
+
+        assertEquals(204, response.statusCode().intValue());
+        assertTrue(response.isSuccess());
+    }
+
+    @Test
     public void testUnsuccessfulGetMethod() {
         String url = "http://httpbin.org/delete";
         String payLoad = "payload";

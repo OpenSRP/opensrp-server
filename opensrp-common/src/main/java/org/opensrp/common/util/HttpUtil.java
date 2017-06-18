@@ -1,5 +1,6 @@
 package org.opensrp.common.util;
 
+import com.sun.org.apache.regexp.internal.RE;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
@@ -17,6 +18,7 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.protocol.HTTP;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.KeyStore;
@@ -108,7 +110,7 @@ public class HttpUtil {
         try {
         	HttpGet request = (HttpGet) makeConnection(url, payload, RequestMethod.GET, authType, authString);
             org.apache.http.HttpResponse response = httpClient.execute(request);
-            return new HttpResponse(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK, response.getStatusLine().getStatusCode(), IOUtils.toString(response.getEntity().getContent()));
+            return createCustomResponseFrom(response);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -117,10 +119,14 @@ public class HttpUtil {
         try {
         	HttpDelete request = (HttpDelete) makeConnection(url, payload, RequestMethod.DELETE, authType, authString);
             org.apache.http.HttpResponse response = httpClient.execute(request);
-            return new HttpResponse(checkSuccessBasedOnHttpCode(response.getStatusLine().getStatusCode()), response.getStatusLine().getStatusCode(), response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"");
+            return createCustomResponseFrom(response);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    static HttpResponse createCustomResponseFrom(org.apache.http.HttpResponse response) throws IOException {
+        return new HttpResponse(checkSuccessBasedOnHttpCode(response.getStatusLine().getStatusCode()), response.getStatusLine().getStatusCode(), response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"");
     }
 
     static boolean checkSuccessBasedOnHttpCode(int httpCode) {
