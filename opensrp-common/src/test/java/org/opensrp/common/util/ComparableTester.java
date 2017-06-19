@@ -5,6 +5,10 @@ import static java.lang.Integer.signum;
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * This is a utility class to easily test compare method.
+ * @see <a href="https://codereview.stackexchange.com/questions/129358/unit-testing-equals-hashcode-and-comparator-asserting-contracts">Source</a>
+ */
 public class ComparableTester {
     /**
      * ensure sgn(x.compareTo(y)) == -sgn(y.compareTo(x)) for all x and y.
