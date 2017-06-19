@@ -13,7 +13,7 @@ import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 import static org.opensrp.common.util.HttpUtil.*;
 
-public class HttpUtilTest {
+public class HttpUtilIntegrationTest {
 
     @Test
     public void testRemovingTrailingSlashes() {

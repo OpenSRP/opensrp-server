@@ -26,7 +26,7 @@ public class MonthSummeryTest {
     }
 
     @Test
-    public void testEqualMethodForInvalidyTypeAndMethod() {
+    public void testEqualMethodForInvalidTypeAndMethod() {
         MonthSummary m1 = new MonthSummary("e", "3", "ee", "ff", Arrays.asList("sup1", "sup2", "sup3"));
         MonthSummary m2 = null;
         String m3 = "";
