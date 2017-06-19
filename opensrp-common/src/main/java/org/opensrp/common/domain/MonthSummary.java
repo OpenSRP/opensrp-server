@@ -6,7 +6,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.List;
 
-public class MonthSummary {
+public final class MonthSummary {
     @JsonProperty
     private final String month;
     @JsonProperty
@@ -57,7 +57,7 @@ public class MonthSummary {
             return false;
         if (currentProgress != null ? !currentProgress.equals(that.currentProgress) : that.currentProgress != null)
             return false;
-        if (externalIDs != null ? !externalIDs.containsAll(that.externalIDs) : that.externalIDs != null) return false;
+        if (externalIDs != null ? !externalIDs.equals(that.externalIDs) : that.externalIDs != null) return false;
         if (month != null ? !month.equals(that.month) : that.month != null) return false;
         if (year != null ? !year.equals(that.year) : that.year != null) return false;
 

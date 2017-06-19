@@ -5,7 +5,7 @@ import org.joda.time.DateTime;
 
 import java.util.Map;
 
-public class AuditMessage implements Comparable<AuditMessage> {
+public final class AuditMessage implements Comparable<AuditMessage> {
     private final DateTime time;
     private final long messageIndex;
     private final AuditMessageType type;
