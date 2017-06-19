@@ -5,6 +5,7 @@ import org.opensrp.common.domain.MonthSummary;
 
 import static java.util.Arrays.asList;
 
+//TODO: Document this class purpose and work methodology.
 public class ANMIndicatorSummaryFactory {
     public static ANMIndicatorSummary createSummaryForIUD() {
         return new ANMIndicatorSummary("IUD", "40", asList(new MonthSummary("4", "2012", "2", "2", asList("CASE 1", "CASE 2")),
