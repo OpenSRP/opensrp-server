@@ -36,12 +36,15 @@ public class EasyMapTest {
     }
 
     @Test
-    public void constructorTest() {
+    public void constructorTestForMapOfMethod() {
         Map<String, Integer> easyMap = EasyMap.mapOf("a", 1);
         assertEquals(1, easyMap.size());
         assertEquals(1, (int) easyMap.get("a"));
         assertNull(easyMap.get("s"));
+    }
 
+    @Test
+    public void constructorTestForCreateMethod() {
         EasyMap<String, Integer> easyMap2 = EasyMap.create("b", 2);
         assertEquals(1, easyMap2.map().size());
         assertEquals(2, (int) easyMap2.map().get("b"));
