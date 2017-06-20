@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Monitor {
-    private static Logger logger = LoggerFactory.getLogger("DRISHTI_MONITOR");
+    public static final String LOGGER_NAME = "DRISHTI_MONITOR";
+    private static Logger logger = LoggerFactory.getLogger(LOGGER_NAME);
 
     public Probe start(Metric metric) {
         return new Probe(metric);
