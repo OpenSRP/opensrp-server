@@ -26,7 +26,6 @@ public class DateUtilTest {
         LocalDate today = LocalDate.now();
         long expected = today.toDate().getTime();
         long localDate = DateUtil.millis();
-        System.out.println(expected + " " + localDate);
         assertNotSame(expected, localDate);
     }
 
