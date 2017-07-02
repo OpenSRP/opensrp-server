@@ -325,9 +325,9 @@
 					<version>2.9</version>
 					<configuration>
 						<printSummary>true</printSummary>
-						<excludes>
+						<!-- <excludes>
 							<exclude>**/it/**</exclude>
-						</excludes>
+						</excludes> -->
 					</configuration>
 				</plugin>
 				
