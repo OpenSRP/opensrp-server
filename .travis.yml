@@ -10,6 +10,8 @@ install:
 before_script:
   - curl -X PUT http://localhost:5984/_config/admins/rootuser -d '"adminpass"'
   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('VA1913wm') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+  - mysql -e 'create database IF NOT EXISTS motechquartz;'
+  - mysql -e "use motechquartz;"
 script:
   - javac -version
   - java -version
