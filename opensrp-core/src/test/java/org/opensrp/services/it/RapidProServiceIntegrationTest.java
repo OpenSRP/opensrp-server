@@ -15,6 +15,7 @@ import org.opensrp.SpringApplicationContextProvider;
 import org.opensrp.service.RapidProService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+@Ignore
 public class RapidProServiceIntegrationTest  extends SpringApplicationContextProvider{
 
 	@Autowired
