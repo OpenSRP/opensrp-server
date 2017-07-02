@@ -1,10 +1,13 @@
 package org.opensrp.form.domain;
 
+import net.jcip.annotations.Immutable;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+@Immutable
 public class FormField {
     @JsonProperty
     private String name;

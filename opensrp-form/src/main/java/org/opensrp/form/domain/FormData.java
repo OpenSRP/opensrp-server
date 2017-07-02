@@ -1,5 +1,7 @@
 package org.opensrp.form.domain;
 
+import net.jcip.annotations.Immutable;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -12,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Immutable
 public class FormData {
     @JsonProperty
     private String bind_type;
@@ -79,6 +82,7 @@ public class FormData {
     public List<SubFormData> subForms() {
         return sub_forms;
     }
+    
     
     @Override
     public boolean equals(Object o) {
