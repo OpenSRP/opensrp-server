@@ -1,5 +1,8 @@
 package org.opensrp.form.repository.it;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +18,7 @@ import static junit.framework.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-opensrp-form.xml")
-public class AllSubmissionsIntegrationTest {
+public class AllSubmissionsIntegrationTest extends TestDatabaseConfig {
     @Autowired
     private AllFormSubmissions formSubmissions;
 
@@ -90,5 +93,31 @@ public class AllSubmissionsIntegrationTest {
         assertEquals(asList(firstFormSubmission, secondFormSubmission), formSubmissions.findByANMIDAndServerVersion("ANM 1", 0L, 2));
 
         assertEquals(0, formSubmissions.findByANMIDAndServerVersion("ANM 1", thirdFormSubmission.serverVersion(), null).size());
+    }
+    @Test
+    public void shouldFindByFormName(){    	
+    	 long baseTimeStamp = DateUtil.now().getMillis();
+         FormSubmission firstFormSubmission = new FormSubmission("ANM 1", "instance id 1", "DemoForm", "entity id 1", 0L, "1", null, baseTimeStamp);
+         formSubmissions.add(firstFormSubmission);
+         assertEquals(asList(firstFormSubmission), formSubmissions.findByFormName("DemoForm", 0l));
+    	
+    }
+    @Test
+    public void shouldGetAllFormSubmissions(){
+    	 long baseTimeStamp = DateUtil.now().getMillis();
+         FormSubmission firstFormSubmission = new FormSubmission("ANM 1", "instance id 1", "DemoForm Name", "entity id 1", 0L, "1", null, baseTimeStamp);
+         formSubmissions.add(firstFormSubmission);
+         assertEquals(asList(firstFormSubmission), formSubmissions.allFormSubmissions(getStdCouchDbConnectorForOpensrpForm(),0, 1));
+    	
+    }
+    @Test
+    public void shouldFindByMetadata(){
+    	 long baseTimeStamp = DateUtil.now().getMillis();
+         FormSubmission firstFormSubmission = new FormSubmission("ANM 2", "instance id 7", "DemoForm ff", "entity id 78", 0L, "1", null, baseTimeStamp);
+         Map<String, Object> metadata = new HashMap<>();
+         metadata.put("formType", new String("type"));
+         firstFormSubmission.setMetadata(metadata);
+         formSubmissions.add(firstFormSubmission);
+         assertEquals(asList(firstFormSubmission), formSubmissions.findByMetadata("formType","type"));
     }
 }

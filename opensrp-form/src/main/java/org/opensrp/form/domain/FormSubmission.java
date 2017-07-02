@@ -136,7 +136,7 @@ public class FormSubmission extends MotechBaseDataObject {
 		metadata.put(key, value);
 	}
     
-	void setMetadata(Map<String, Object> metadata) {
+	public void setMetadata(Map<String, Object> metadata) {
 		this.metadata = metadata;
 	}
 	
