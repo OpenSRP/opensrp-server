@@ -108,7 +108,7 @@ public class AllClientsIntegrationTest {
 		clientService.mergeClient(cu);
 	}
 	
-	@Test
+	@Ignore@Test
 	public void shouldSearchByLastUpdatedDate() throws JSONException {//TODO
 		DateTime start = DateTime.now();
 		
@@ -124,6 +124,7 @@ public class AllClientsIntegrationTest {
 		System.out.println(new DateTime("2016-01-23").toString("MMMM (yyyy)"));
 	}
 	
+	@Ignore
 	@Test 
 	public void shouldSearchFullDataClientsIn10Sec() throws MalformedURLException {
 		
