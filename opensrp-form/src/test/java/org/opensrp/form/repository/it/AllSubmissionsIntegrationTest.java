@@ -100,7 +100,8 @@ public class AllSubmissionsIntegrationTest extends TestDatabaseConfig {
          FormSubmission firstFormSubmission = new FormSubmission("ANM 1", "instance id 1", "DemoForm", "entity id 1", 0L, "1", null, baseTimeStamp);
          formSubmissions.add(firstFormSubmission);
          assertEquals(asList(firstFormSubmission), formSubmissions.findByFormName("DemoForm", 0l));
-    	
+         FormSubmission secondFormSubmission = new FormSubmission("ANM 1", "instance id 2", "form name 1", "entity id 2", 1L, "1", null, baseTimeStamp + 1);
+         assertNotSame(asList(secondFormSubmission), formSubmissions.findByFormName("DemoForm", 0l));
     }
     @Test
     public void shouldGetAllFormSubmissions(){
@@ -108,7 +109,8 @@ public class AllSubmissionsIntegrationTest extends TestDatabaseConfig {
          FormSubmission firstFormSubmission = new FormSubmission("ANM 1", "instance id 1", "DemoForm Name", "entity id 1", 0L, "1", null, baseTimeStamp);
          formSubmissions.add(firstFormSubmission);
          assertEquals(asList(firstFormSubmission), formSubmissions.allFormSubmissions(getStdCouchDbConnectorForOpensrpForm(),0, 1));
-    	
+         FormSubmission secondFormSubmission = new FormSubmission("ANM 1", "instance id 2", "form name 1", "entity id 2", 1L, "1", null, baseTimeStamp + 1);
+         assertNotSame(asList(secondFormSubmission), formSubmissions.allFormSubmissions(getStdCouchDbConnectorForOpensrpForm(),0, 1));
     }
     @Test
     public void shouldFindByMetadata(){
@@ -119,5 +121,7 @@ public class AllSubmissionsIntegrationTest extends TestDatabaseConfig {
          firstFormSubmission.setMetadata(metadata);
          formSubmissions.add(firstFormSubmission);
          assertEquals(asList(firstFormSubmission), formSubmissions.findByMetadata("formType","type"));
+         FormSubmission secondFormSubmission = new FormSubmission("ANM 1", "instance id 2", "form name 1", "entity id 2", 1L, "1", null, baseTimeStamp + 1);
+         assertNotSame(asList(secondFormSubmission), formSubmissions.findByMetadata("formType","type"));
     }
 }
