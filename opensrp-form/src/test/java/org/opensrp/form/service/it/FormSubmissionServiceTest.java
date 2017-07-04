@@ -46,6 +46,19 @@ public class FormSubmissionServiceTest extends TestDatabaseConfig{
 
 	}
 	
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void shouldGetRuntimeExceptionForFindByFormName(){
+		 long baseTimeStamp = DateUtil.now().getMillis();
+		 String provider = "ANM 6";
+         FormSubmission firstFormSubmission = new FormSubmission("ANM 6", "instance id 77", "DemoForm77", "entity id 778", 0L, "1", null, baseTimeStamp);
+         Map<String, Object> metadata = new HashMap<>();
+         metadata.put("formType", new String("type"));
+         firstFormSubmission.setMetadata(metadata);
+         formSubmissions.add(firstFormSubmission);
+         formSubmissionService.findByFormName("DemoForm77t", 0l).get(0).anmId();
+
+	}
+	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void shouldFindByInstanceId(){
@@ -93,7 +106,7 @@ public class FormSubmissionServiceTest extends TestDatabaseConfig{
 		 long baseTimeStamp = DateUtil.now().getMillis();
 	     FormSubmission firstFormSubmission = new FormSubmission("ANM 1", "instance id 1", "DemoForm Name", "entity id 1", 0L, "1", null, baseTimeStamp);
 	     formSubmissions.add(firstFormSubmission);
-	     assertEquals("form name 1", formSubmissionService.getAllSubmissions(getStdCouchDbConnectorForOpensrpForm(),0L, 1).get(0).formName());
+	     assertEquals(1, formSubmissionService.getAllSubmissions(getStdCouchDbConnectorForOpensrpForm(),0L, 1).size());
 	    	
 	 }
 

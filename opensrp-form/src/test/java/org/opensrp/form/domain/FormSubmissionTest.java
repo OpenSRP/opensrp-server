@@ -1,5 +1,6 @@
 package org.opensrp.form.domain;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
@@ -37,8 +38,9 @@ public class FormSubmissionTest {
 		fieldNames.add("provider_town");		
 		FormSubmission formSubmission = new FormSubmission("ANM1", "", "pkchild", "", "1", 0l, formInstance);
 		assertEquals("woman_registration", formSubmission.getSubFormByName("woman_registration").name());
-		
-	}
+		assertNotSame("woman_registrationw", formSubmission.getSubFormByName("woman_registration").name());
+	}	
+	
 	
 	@Test(expected=RuntimeException.class)
 	public void shouldGetRuntimeExceptionWhenGetSubFormByName() throws Exception{

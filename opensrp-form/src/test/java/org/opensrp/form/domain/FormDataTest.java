@@ -1,5 +1,6 @@
 package org.opensrp.form.domain;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -30,12 +31,14 @@ public class FormDataTest {
 	@Test
 	public void shouldTestConstructor(){		
 		assertEquals(getForm().bindType(),"pkchild");
+		assertNotSame(getForm().bindType(),"pkchilds");
 		
 	}
 	
 	@Test
 	public void shouldGetSubFormByName(){		
 		assertEquals("woman_registration", getForm().getSubFormByName("woman_registration").name());
+		assertNotSame("woman_registrations", getForm().getSubFormByName("woman_registration").name());
 		
 	}
 	public FormData getForm(){
@@ -76,11 +79,13 @@ public class FormDataTest {
 		//sub_forms.add(subFormData);
 		FormData formData2 = new FormData(bind_type,default_bind_path,fields,sub_forms);	
 		assertEquals("woman_registration", formData2.getSubFormByName("woman_registration").name());
+		assertNotSame("woman_registrations", formData2.getSubFormByName("woman_registration").name());
 		
 	}
 	@Test
 	public void shouldGetFieldsAsMap(){		
 		assertEquals("providerCity", getForm().getFieldsAsMap().get("provider_city"));
+		assertNotSame("providerCity", getForm().getFieldsAsMap().get("provider_cityu"));
 		
 	}
 
