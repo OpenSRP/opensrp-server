@@ -1,6 +1,6 @@
 package org.opensrp.common.monitor;
 
-public class  Probe {
+public class Probe {
     private Metric metric;
     private long startTime;
 

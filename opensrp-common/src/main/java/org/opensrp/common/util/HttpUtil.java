@@ -126,10 +126,12 @@ public class HttpUtil {
 
     static HttpResponse createCustomResponseFrom(org.apache.http.HttpResponse response) throws IOException {
 	    int statusCode = response.getStatusLine().getStatusCode();
-	    String entity = response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"";
+	    String entity = "";
+	    if(response.getEntity() != null) {
+	        entity = IOUtils.toString(response.getEntity().getContent());
+        }
 
-        return new HttpResponse(
-                checkSuccessBasedOnHttpCode(statusCode), statusCode, entity);
+        return new HttpResponse(checkSuccessBasedOnHttpCode(statusCode), statusCode, entity);
     }
 
     static boolean checkSuccessBasedOnHttpCode(int httpCode) {
