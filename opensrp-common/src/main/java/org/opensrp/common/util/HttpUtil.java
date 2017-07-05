@@ -125,7 +125,11 @@ public class HttpUtil {
     }
 
     static HttpResponse createCustomResponseFrom(org.apache.http.HttpResponse response) throws IOException {
-        return new HttpResponse(checkSuccessBasedOnHttpCode(response.getStatusLine().getStatusCode()), response.getStatusLine().getStatusCode(), response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"");
+	    int statusCode = response.getStatusLine().getStatusCode();
+	    String entity = response.getEntity()!=null?IOUtils.toString(response.getEntity().getContent()):"";
+
+        return new HttpResponse(
+                checkSuccessBasedOnHttpCode(statusCode), statusCode, entity);
     }
 
     static boolean checkSuccessBasedOnHttpCode(int httpCode) {
