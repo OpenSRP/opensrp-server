@@ -117,9 +117,9 @@
 							</goals>
 							<configuration>
 								<argLine>-XX:MaxPermSize=1024M</argLine>
-								<!-- <excludes>
+								<excludes>
 									<exclude>**/it/**</exclude>
-								</excludes> -->
+								</excludes>
 								<redirectTestOutputToFile>true</redirectTestOutputToFile>
 							</configuration>
 						</execution>
@@ -259,9 +259,9 @@
 							</goals>
 							<configuration>
 								<argLine>-XX:MaxPermSize=1024M</argLine>
-								<!-- <includes>
+								<includes>
 									<include>**/it/**</include>
-								</includes> -->
+								</includes>
 								<redirectTestOutputToFile>true</redirectTestOutputToFile>
 							</configuration>
 						</execution>
@@ -325,9 +325,9 @@
 					<version>2.9</version>
 					<configuration>
 						<printSummary>true</printSummary>
-						<!-- <excludes>
+						<excludes>
 							<exclude>**/it/**</exclude>
-						</excludes> -->
+						</excludes>
 					</configuration>
 				</plugin>
 				
