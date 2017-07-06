@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class FormFieldTest {
 	
-	@Test
-	public void shouldTestEqualsAndHash(){
-		EqualsVerifier.forClass(FormField.class)
-		.suppress(Warning.STRICT_INHERITANCE)
-		.verify();
-	}
+    @Test
+    public void shouldTestEqualsAndHash(){
+        EqualsVerifier.forClass(FormField.class)
+            .suppress(Warning.STRICT_INHERITANCE)
+            .verify();
+    }
 
 }
