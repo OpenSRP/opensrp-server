@@ -18,9 +18,9 @@ public class TestDatabaseConfig {
         HttpClient httpClient = new StdHttpClient.Builder() 
             .host("localhost") 
             .username("rootuser").password("adminpass")
-	        .port(5984) 
-	        .socketTimeout(1000) 
-	        .build(); 
+            .port(5984)
+            .socketTimeout(1000) 
+            .build(); 
         dbInstance = new StdCouchDbInstance(httpClient);
         stdCouchDbConnectorOpensrpForm = new StdCouchDbConnector("opensrp-form", dbInstance, new StdObjectMapperFactory());
         stdCouchDbConnectorOpensrpForm.createDatabaseIfNotExists();			

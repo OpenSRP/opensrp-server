@@ -23,7 +23,7 @@ public class SubformMapTest {
         String value = "ProviderTown";
         String source = "pkchild.provider_town";
         String bindPath = "/model/instance/CensusNewMemberRegistration";
-		String type = "FormSubmission";
+        String type = "FormSubmission";
         Map<String, String> attributes = new HashMap<>();
         attributes.put("atr1", "atrValue1");
         attributes.put("atr2", "atrValue2");
