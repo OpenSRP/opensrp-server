@@ -21,12 +21,12 @@ public class FormDataTest {
     }
 	
     @Test
-	public void shouldTestEqualsAndHash(){
+    public void shouldTestEqualsAndHash(){
         EqualsVerifier.forClass(FormData.class)
             .suppress(Warning.STRICT_INHERITANCE)
             .verify();		
     }
-	@Test
+    @Test
     public void shouldTestConstructor(){		
         assertEquals(getForm().bindType(),"pkchild");
         assertNotSame(getForm().bindType(),"pkchilds");		
@@ -35,8 +35,7 @@ public class FormDataTest {
     @Test
     public void shouldGetSubFormByName(){		
         assertEquals("woman_registration", getForm().getSubFormByName("woman_registration").name());
-        assertNotSame("woman_registrations", getForm().getSubFormByName("woman_registration").name());
-		
+        assertNotSame("woman_registrations", getForm().getSubFormByName("woman_registration").name());		
     }
     public FormData getForm(){
         String bind_type = "pkchild";

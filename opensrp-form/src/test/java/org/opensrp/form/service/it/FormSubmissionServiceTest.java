@@ -78,23 +78,23 @@ public class FormSubmissionServiceTest extends TestDatabaseConfig{
         FormSubmission firstFormSubmission = new FormSubmission("ANM 2", "instance id 7", "DemoForm ff", "entity id 78", 0L, "1", null, baseTimeStamp);
         Map<String, Object> metadata = new HashMap<>();
         metadata.put("formType", new String("type"));
-	    firstFormSubmission.setMetadata(metadata);
-	    formSubmissions.add(firstFormSubmission);
-	    assertEquals("type", formSubmissionService.findByMetadata("formType","type").get(0).getMetadata("formType"));
-	    assertNotSame("types", formSubmissionService.findByMetadata("formType","type").get(0).getMetadata("formType"));
+        firstFormSubmission.setMetadata(metadata);
+        formSubmissions.add(firstFormSubmission);
+        assertEquals("type", formSubmissionService.findByMetadata("formType","type").get(0).getMetadata("formType"));
+        assertNotSame("types", formSubmissionService.findByMetadata("formType","type").get(0).getMetadata("formType"));
     }
 	 
     @Test
     public void shouldGetNewSubmissionsForANM(){
         long baseTimeStamp = DateUtil.now().getMillis();
-	    String provider = "ANM 5";
-	    FormSubmission firstFormSubmission = new FormSubmission(provider, "instance id 7", "DemoForm ff", "entity id 78", 0L, "1", null, baseTimeStamp);
-	    Map<String, Object> metadata = new HashMap<>();
-	    metadata.put("formType", new String("type"));
-	    firstFormSubmission.setMetadata(metadata);
-	    formSubmissions.add(firstFormSubmission);
-	    assertEquals(provider, formSubmissionService.getNewSubmissionsForANM(provider,0l,1).get(0).anmId());
-	    assertNotSame("pro", formSubmissionService.getNewSubmissionsForANM(provider,0l,1).get(0).anmId());
+        String provider = "ANM 5";
+        FormSubmission firstFormSubmission = new FormSubmission(provider, "instance id 7", "DemoForm ff", "entity id 78", 0L, "1", null, baseTimeStamp);
+        Map<String, Object> metadata = new HashMap<>();
+        metadata.put("formType", new String("type"));
+        firstFormSubmission.setMetadata(metadata);
+        formSubmissions.add(firstFormSubmission);
+        assertEquals(provider, formSubmissionService.getNewSubmissionsForANM(provider,0l,1).get(0).anmId());
+        assertNotSame("pro", formSubmissionService.getNewSubmissionsForANM(provider,0l,1).get(0).anmId());
     }
 
     @Test
@@ -102,8 +102,7 @@ public class FormSubmissionServiceTest extends TestDatabaseConfig{
         long baseTimeStamp = DateUtil.now().getMillis();
         FormSubmission firstFormSubmission = new FormSubmission("ANM 1", "instance id 1", "DemoForm Name", "entity id 1", 0L, "1", null, baseTimeStamp);
         formSubmissions.add(firstFormSubmission);
-        assertEquals(1, formSubmissionService.getAllSubmissions(getStdCouchDbConnectorForOpensrpForm(),0L, 1).size());
-	    	
+        assertEquals(1, formSubmissionService.getAllSubmissions(getStdCouchDbConnectorForOpensrpForm(),0L, 1).size());	    	
     }
 
 }
