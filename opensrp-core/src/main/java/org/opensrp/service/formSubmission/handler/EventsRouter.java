@@ -47,7 +47,7 @@ public class EventsRouter {
 	Event event;
 
 	@Autowired
-	public EventsRouter(IHandlerMapper handlerMapper, String scheduleConfigFilesPath) {
+	public EventsRouter(IHandlerMapper handlerMapper, @Value("#{opensrp['schedules.config.files.dir']}") String scheduleConfigFilesPath) {
 		this.handlerMapper = handlerMapper;
 		this.scheduleConfigFilesPath = scheduleConfigFilesPath;
 	}

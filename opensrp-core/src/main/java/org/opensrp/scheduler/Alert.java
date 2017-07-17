@@ -66,19 +66,19 @@ public class Alert extends MotechBaseDataObject {
     public Alert(String providerId, String entityId, String beneficiaryType, AlertType alertType, 
     		TriggerType triggerType, String triggerName, String triggerCode, DateTime startDate, DateTime expiryDate,
 			AlertStatus alertStatus, Map<String, String> details) {
-		this.providerId = providerId;
-		this.entityId = entityId;
-		this.beneficiaryType = beneficiaryType;
-		this.alertType = alertType.name();
-		this.triggerType = triggerType.name();
-		this.triggerName = triggerName;
-		this.triggerCode = triggerCode;
-		this.startDate = startDate.toLocalDate().toString();
-		this.expiryDate = expiryDate.toLocalDate().toString();
-		this.alertStatus = alertStatus.name();
-		this.isActive = true;
-		this.timeStamp = DateUtil.now().getMillis();
-		this.details = details;
+		setProviderId(providerId);
+		setEntityId(entityId);
+		setBeneficiaryType(beneficiaryType);
+		setAlertType(alertType.name());
+		setTriggerType(triggerType.name());
+		setTriggerName(triggerName);
+		setTriggerCode(triggerCode);
+		setStartDate(startDate.toLocalDate().toString());
+		setExpiryDate(expiryDate.toLocalDate().toString());
+		setAlertStatus(alertStatus.name());
+		setIsActive(true);
+		setTimeStamp(DateUtil.now().getMillis());
+		setDetails(details);
 	}
 
     public Alert markAlertAsClosed(String reasonForClose) {
@@ -89,7 +89,7 @@ public class Alert extends MotechBaseDataObject {
     	this.closingPeriod = this.alertStatus;
     	this.reasonClosed = reasonForClose;
     	this.alertStatus = AlertStatus.closed.name();
-    	this.dateClosed = new DateTime().toLocalDate().toString();
+    	this.dateClosed = getCurrentDateTime().toLocalDate().toString();
     	this.isActive = false;
     	
     	return this;
@@ -103,11 +103,16 @@ public class Alert extends MotechBaseDataObject {
     	this.dateComplete = completionDate;
     	this.closingPeriod = this.alertStatus;
     	this.alertStatus = AlertStatus.complete.name();
-    	this.dateClosed = new DateTime().toLocalDate().toString();
+    	this.dateClosed = getCurrentDateTime().toLocalDate().toString();
     	this.isActive = false;
     	
     	return this;
 	}
+
+	@JsonIgnore
+	public DateTime getCurrentDateTime() {
+	    return new DateTime();
+    }
 
 	public String providerId() {
 		return providerId;

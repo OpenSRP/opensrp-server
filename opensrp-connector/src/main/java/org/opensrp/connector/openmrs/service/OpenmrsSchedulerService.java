@@ -105,7 +105,7 @@ public class OpenmrsSchedulerService extends OpenmrsService{
 		
 		JSONArray tmarr = new JSONArray();
 		for (Action ac : alertActions) {
-			if(ac.actionType().equalsIgnoreCase("createAlert")){
+			if(ac.getActionType().equalsIgnoreCase("createAlert")){
 				JSONObject tm = fromActionToTrackMilestone(false, ac, trackuuid, e, alertActions);
 				
 				JSONObject tmo = new JSONObject(HttpUtil.post(getURL()+"/"+TRACK_MILESTONE_URL, "", tm.toString(), OPENMRS_USER, OPENMRS_PWD).body());
@@ -143,7 +143,7 @@ public class OpenmrsSchedulerService extends OpenmrsService{
 		
 		JSONArray tmarr = new JSONArray();
 		for (Action ac : alertActions) {
-			if(ac.actionType().equalsIgnoreCase("createAlert")){
+			if(ac.getActionType().equalsIgnoreCase("createAlert")){
 				String milestone = ac.data().get("visitCode");
 				JSONArray j = new JSONObject(HttpUtil.get(getURL()+"/"+TRACK_MILESTONE_URL, "v=full&track="+trackuuid+"&milestone="+milestone, OPENMRS_USER, OPENMRS_PWD).body()).getJSONArray("results");
 				JSONObject tm = fromActionToTrackMilestone(j.length()>0, ac, trackuuid, e, alertActions);
@@ -225,7 +225,7 @@ public class OpenmrsSchedulerService extends OpenmrsService{
 	private Action getClosedAction(String milestone, List<Action> actions){
 		for (Action a : actions) {
 			if(a.data().get("visitCode") != null && a.data().get("visitCode").equalsIgnoreCase(milestone)
-					&& a.actionType().equalsIgnoreCase("closeAlert")){
+					&& a.getActionType().equalsIgnoreCase("closeAlert")){
 				return a;
 			}
 		}
@@ -235,7 +235,7 @@ public class OpenmrsSchedulerService extends OpenmrsService{
 	private Action getCreatedAction(String milestone, List<Action> actions){
 		for (Action a : actions) {
 			if(a.data().get("visitCode") != null && a.data().get("visitCode").equalsIgnoreCase(milestone)
-					&& a.actionType().equalsIgnoreCase("createAlert")){
+					&& a.getActionType().equalsIgnoreCase("createAlert")){
 				return a;
 			}
 		}

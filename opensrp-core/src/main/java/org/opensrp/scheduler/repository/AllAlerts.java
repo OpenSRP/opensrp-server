@@ -30,14 +30,14 @@ public class AllAlerts extends MotechBaseRepository<Alert> {
         super(Alert.class, db);
     }
 
-    @View(name = "alert_by_provider_and_time", map = "function(doc) { if (doc.type === 'Alert') { emit([doc.providerId, doc.timestamp], null); } }")
+    @View(name = "alert_by_provider_and_time", map = "function(doc) { if (doc.type === 'Alert') { emit([doc.providerId, doc.timeStamp], null); } }")
     public List<Alert> findByProviderAndTimestamp(String provider, long timeStamp) {
         ComplexKey startKey = ComplexKey.of(provider, timeStamp + 1);
         ComplexKey endKey = ComplexKey.of(provider, Long.MAX_VALUE);
         return db.queryView(createQuery("alert_by_provider_and_time").startKey(startKey).endKey(endKey).includeDocs(true), Alert.class);
     }
 
-    @View(name = "alert_by_provider_and_time_active", map = "function(doc) { if (doc.type === 'Alert' && doc.isActive) { emit([doc.providerId, doc.timestamp], null); } }")
+    @View(name = "alert_by_provider_and_time_active", map = "function(doc) { if (doc.type === 'Alert' && doc.isActive) { emit([doc.providerId, doc.timeStamp], null); } }")
     public List<Alert> findActiveByProviderAndTimestamp(String provider, long timeStamp) {
         ComplexKey startKey = ComplexKey.of(provider, timeStamp + 1);
         ComplexKey endKey = ComplexKey.of(provider, Long.MAX_VALUE);
@@ -83,7 +83,7 @@ public class AllAlerts extends MotechBaseRepository<Alert> {
         return db.queryView(createQuery("alert_by_entityId_active").key(entityId).includeDocs(true), Alert.class);
     }
 
-    @View(name = "alert_by_entityId_and_trigger_and_time", map = "function(doc) { if (doc.type === 'Alert') { emit([doc.entityId, doc.triggerName, doc.timestamp], null); } }")
+    @View(name = "alert_by_entityId_and_trigger_and_time", map = "function(doc) { if (doc.type === 'Alert') { emit([doc.entityId, doc.triggerName, doc.timeStamp], null); } }")
     public List<Alert> findByEntityIdTriggerAndTimeStamp(String entityId, String trigger, DateTime start, DateTime end) {
         ComplexKey startKey = ComplexKey.of(entityId, trigger, start.getMillis() + 1);
         ComplexKey endKey = ComplexKey.of(entityId, trigger, end.getMillis());

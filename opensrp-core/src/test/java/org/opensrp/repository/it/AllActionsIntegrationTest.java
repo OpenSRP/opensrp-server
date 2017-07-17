@@ -7,7 +7,6 @@ import static junit.framework.Assert.assertTrue;
 import static org.opensrp.dto.AlertStatus.normal;
 import static org.opensrp.dto.BeneficiaryType.mother;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -60,10 +59,10 @@ public class AllActionsIntegrationTest {
         allActions.add(thirdAction);
 
         assertEquals(asList(firstAction, secondAction, thirdAction), allActions.findByProviderIdAndTimeStamp("ANM 1", 0));
-        assertEquals(asList(secondAction, thirdAction), allActions.findByProviderIdAndTimeStamp("ANM 1", firstAction.timestamp()));
-        assertEquals(asList(thirdAction), allActions.findByProviderIdAndTimeStamp("ANM 1", secondAction.timestamp()));
+        assertEquals(asList(secondAction, thirdAction), allActions.findByProviderIdAndTimeStamp("ANM 1", firstAction.getTimestamp()));
+        assertEquals(asList(thirdAction), allActions.findByProviderIdAndTimeStamp("ANM 1", secondAction.getTimestamp()));
 
-        assertEquals(0, allActions.findByProviderIdAndTimeStamp("ANM 1", thirdAction.timestamp()).size());
+        assertEquals(0, allActions.findByProviderIdAndTimeStamp("ANM 1", thirdAction.getTimestamp()).size());
     }
 
     @Test

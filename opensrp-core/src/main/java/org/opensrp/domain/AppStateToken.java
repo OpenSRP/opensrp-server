@@ -99,13 +99,13 @@ public class AppStateToken extends MotechBaseDataObject {
 	}
 
 	@Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this, "id");
+    public final int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override

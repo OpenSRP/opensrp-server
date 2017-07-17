@@ -149,7 +149,7 @@ public class BaseEntity extends BaseDataObject {
 		attributes.remove(name);
 	}
 	
-	public Map<String, String> getIdentifiers() {
+	public Map<String, String>  getIdentifiers() {
 		if(identifiers == null){
 			identifiers = new HashMap<>();
 		}
@@ -262,12 +262,12 @@ public class BaseEntity extends BaseDataObject {
 
 	@Override
 	public boolean equals(Object o) {
-		return EqualsBuilder.reflectionEquals(this, o, "id", "revision");
+		return EqualsBuilder.reflectionEquals(this, o);
 	}
 
 	@Override
 	public int hashCode() {
-		return HashCodeBuilder.reflectionHashCode(this, "id", "revision");
+		return HashCodeBuilder.reflectionHashCode(this);
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 import org.joda.time.DateTime;
 import org.junit.Test;
 import org.opensrp.common.util.ComparableTester;
+import org.opensrp.common.util.ComparableVerifier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,45 +40,13 @@ public class AuditMessageTest {
     }
 
     @Test
-    public void testComparisonReversal() {
-        AuditMessage one = new AuditMessage(null, 123l, null, null);
-        AuditMessage sameAsOne = new AuditMessage(null, 123l, null, null);
-        AuditMessage different = new AuditMessage(null, 321l, null, null);
-
-        ComparableTester.assertComparisonReversal(one, sameAsOne);
-        ComparableTester.assertComparisonReversal(sameAsOne, different);
-        ComparableTester.assertComparisonReversal(one, different);
-    }
-
-    @Test
-    public void testComparisonConsistencyWithEqual() {
-        AuditMessage one = new AuditMessage(null, 123l, null, null);
-        AuditMessage sameAsOne = new AuditMessage(null, 123l, null, null);
-
-        ComparableTester.assertConsistencyWithEqual(one, sameAsOne);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void testComparisonNullPointerException(){
-        AuditMessage one = new AuditMessage(null, 123l, null, null);
-        ComparableTester.assertNullPointerException(one);
-    }
-
-    @Test
-    public void testComparisonTransitivity() {
+    public void testComparableContract() {
         AuditMessage one = new AuditMessage(null, 123l, null, null);
         AuditMessage two = new AuditMessage(null, 300l, null, null);
         AuditMessage third = new AuditMessage(null, 321l, null, null);
 
-        ComparableTester.assertTransitivity(one, two, third);
+        new ComparableVerifier<>(AuditMessage.class, one, two, third).verify();
+
     }
 
-    @Test
-    public void testComparisonConsistency() {
-        AuditMessage one = new AuditMessage(null, 123l, null, null);
-        AuditMessage sameAsOne = new AuditMessage(null, 123l, null, null);
-        AuditMessage different = new AuditMessage(null, 321l, null, null);
-
-        ComparableTester.assertConsistency(one, sameAsOne, different);
-    }
 }

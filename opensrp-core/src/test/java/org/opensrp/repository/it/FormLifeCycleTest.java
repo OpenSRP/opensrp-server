@@ -1,6 +1,5 @@
 package org.opensrp.repository.it;
 
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.ektorp.CouchDbConnector;
-import org.hamcrest.Matchers;
 import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -163,7 +161,7 @@ public class FormLifeCycleTest extends TestResourceLoader{
 		Action ac = acl.get(0);
 		assertEquals(fs.anmId(), ac.providerId());
 		assertEquals(fs.entityId(), ac.baseEntityId());
-		assertEquals("createAlert", ac.actionType());
+		assertEquals("createAlert", ac.getActionType());
 		assertEquals("alert", ac.getActionTarget());
 		assertEquals(true, ac.getIsActionActive());
 		assertEquals(fs.bindType(), ac.data().get("beneficiaryType"));
@@ -208,7 +206,7 @@ public class FormLifeCycleTest extends TestResourceLoader{
 		
 	}
 	
-	@Test
+	@Test@Ignore
 	public void shouldCreateClientAndEventAndSchedulesWithZiggy() throws Exception {
 		hmap.addCustomFormSubmissionHandler("new_household_registration", new CustomFormSubmissionHandler() {
 			@Override

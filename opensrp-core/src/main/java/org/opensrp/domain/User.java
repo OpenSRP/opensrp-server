@@ -117,6 +117,7 @@ public class User extends BaseEntity {
 		}
 		return false;
 	}
+
 	@JsonIgnore
 	public boolean isDefaultAdmin() {
 		if((username.equalsIgnoreCase("admin") || username.equalsIgnoreCase("administrator")) 
@@ -125,6 +126,7 @@ public class User extends BaseEntity {
 		}
 		return false;
 	}
+
 	@JsonIgnore
 	public boolean hasAdminRights() {
 		if(isDefaultAdmin() || hasRole("admin") || hasRole("administrator")){
@@ -227,12 +229,12 @@ public class User extends BaseEntity {
 	}
 
 	@Override
-	public boolean equals(Object o) {
+	public final boolean equals(Object o) {
 		return EqualsBuilder.reflectionEquals(this, o, "id", "revision");
 	}
 
 	@Override
-	public int hashCode() {
+	public final int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this, "id", "revision");
 	}
 

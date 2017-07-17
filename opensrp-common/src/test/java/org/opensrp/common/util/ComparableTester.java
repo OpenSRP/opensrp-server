@@ -4,6 +4,7 @@ package org.opensrp.common.util;
 import static java.lang.Integer.signum;
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * This is a utility class to easily test compare method.
@@ -44,7 +45,13 @@ public class ComparableTester {
      */
 
     public static <T> void assertNullPointerException(Comparable<T> o1) {
-        o1.compareTo(null);
+        try {
+            o1.compareTo(null);
+        }catch (Exception e) {
+            if(!NullPointerException.class.isInstance(e)){
+                throw e;
+            }
+        }
     }
 
     /**

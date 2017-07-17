@@ -97,7 +97,7 @@ public class Address{
 		return addressFields.get(addressField.name());
 	}
 	
-	/**
+	/** TODO: functionality if multiple entry matches single regex
 	 * Returns field matching the regex. Note that incase of multiple fields matching criteria 
 	 * function would return first match. The must be well formed to find out a single value
 	 * @param regex

@@ -60,7 +60,7 @@ public class EventsListener {
 		    "Token to keep track of events processed for client n event parsing and schedule handling", true);
 	}
 
-	@Autowired
+
 	public EventsListener(EventsRouter eventsRouter, ConfigService configService, AllEvents allEvents, EventService eventService,
 						  ErrorTraceService errorTraceService, AllClients allClients) {
 		this.configService = configService;
