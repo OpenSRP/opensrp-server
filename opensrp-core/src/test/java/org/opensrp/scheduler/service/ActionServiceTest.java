@@ -3,6 +3,7 @@ package org.opensrp.scheduler.service;
 import com.google.gson.Gson;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,6 +15,8 @@ import org.opensrp.dto.BeneficiaryType;
 import org.opensrp.dto.MonthSummaryDatum;
 import org.opensrp.scheduler.Action;
 import org.opensrp.scheduler.Alert;
+import org.opensrp.scheduler.Alert.AlertType;
+import org.opensrp.scheduler.Alert.TriggerType;
 import org.opensrp.scheduler.repository.AllActions;
 import org.opensrp.scheduler.repository.AllAlerts;
 import org.opensrp.service.BaseEntityService;
@@ -35,7 +38,7 @@ import static org.powermock.api.mockito.PowerMockito.when;
 
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({DateTime.class, ActionService.class, org.motechproject.util.DateUtil.class})
+@PrepareForTest({DateTime.class, org.motechproject.util.DateUtil.class})
 public class ActionServiceTest {
     public static final String ANM_1 = "ANM 1";
     public static final String CASE_X = "Case X";
@@ -74,8 +77,7 @@ public class ActionServiceTest {
         verify(allAlerts).addOrUpdateScheduleNotificationAlert("mother", "Case X", "ANM ID M", "Ante Natal Care - Normal", "ANC 1", normal, dueDate, expiryDate);
     }
 
-    @Test
-    @Ignore//TODO: alertForBeneficiary(action) should also call allAlerts.
+    @Test 
     public void shouldSaveAlertActionForEntityWithActionObject() throws Exception {
         DateTime dueDate = DateTime.now().minusDays(1);
         DateTime expiryDate = dueDate.plusWeeks(2);
@@ -158,10 +160,11 @@ public class ActionServiceTest {
         service.closeBeneficiary(BeneficiaryType.mother, CASE_X, ANM_1, REASON_FOR_CLOSE);
 
         Action action = new Action(CASE_X, ANM_1, ActionData.closeBeneficiary(BeneficiaryType.mother.name(), REASON_FOR_CLOSE));
-        Alert alert = new Alert(ANM_1, CASE_X, BeneficiaryType.mother.value(), Alert.AlertType.notification,
+        DateTime defaultDate = service.getCurrentDateTime();
+        Alert alert = new Alert(ANM_1, CASE_X, BeneficiaryType.mother.name(), Alert.AlertType.notification,
                 Alert.TriggerType.caseClosed, null, null,
-                new DateTime(), new DateTime(), AlertStatus.urgent, null);
-
+                defaultDate, defaultDate, AlertStatus.urgent, null);
+       
         verify(allActions).add(action);
         verify(allAlerts).add(alert);
     }
