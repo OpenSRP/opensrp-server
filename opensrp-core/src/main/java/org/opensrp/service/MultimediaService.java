@@ -41,11 +41,11 @@ public class MultimediaService {
 				logger.info("Image path : " + multimediaDirPath);
 				
 				Multimedia multimediaFile = new Multimedia()
-						.withCaseId(multimediaDTO.caseId())
-						.withProviderId(multimediaDTO.providerId())
-						.withContentType(multimediaDTO.contentType())
-						.withFilePath(multimediaDTO.filePath())
-						.withFileCategory(multimediaDTO.fileCategory());
+						.withCaseId(multimediaDTO.getCaseId())
+						.withProviderId(multimediaDTO.getProviderId())
+						.withContentType(multimediaDTO.getContentType())
+						.withFilePath(multimediaDTO.getFilePath())
+						.withFileCategory(multimediaDTO.getFileCategory());
 
 				multimediaRepository.add(multimediaFile);
 
@@ -70,7 +70,7 @@ public class MultimediaService {
 
 				 multimediaDirPath = baseMultimediaDirPath + File.separator;
 				String fileExt=".jpg";
-				switch (multimediaDTO.contentType()) {
+				switch (multimediaDTO.getContentType()) {
 				
 				case "application/octet-stream":
 					multimediaDirPath += VIDEOS_DIR;
@@ -94,7 +94,7 @@ public class MultimediaService {
 
 				}
 				new File(multimediaDirPath).mkdir();
-				String fileName=multimediaDirPath+File.separator+multimediaDTO.caseId() + fileExt;
+				String fileName=multimediaDirPath+File.separator+multimediaDTO.getCaseId() + fileExt;
 				multimediaDTO.withFilePath(fileName);
 				File multimediaDir = new File(fileName);
 

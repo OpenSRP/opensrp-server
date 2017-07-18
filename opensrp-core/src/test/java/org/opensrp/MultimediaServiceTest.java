@@ -6,8 +6,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Assert;
@@ -22,8 +20,6 @@ import org.opensrp.repository.MultimediaRepository;
 import org.opensrp.service.MultimediaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -77,11 +73,11 @@ public class MultimediaServiceTest {
 		 MultimediaDTO multimediaDTO = new MultimediaDTO("1234567890", "opensrp","image/jpeg","","profile");
 		
 		Multimedia expectedMultimedia = new Multimedia()
-		.withCaseId(multimediaDTO.caseId())
-		.withProviderId(multimediaDTO.providerId())
-		.withContentType(multimediaDTO.contentType())
-		.withFilePath(multimediaDTO.filePath())
-		.withFileCategory(multimediaDTO.fileCategory());
+		.withCaseId(multimediaDTO.getCaseId())
+		.withProviderId(multimediaDTO.getProviderId())
+		.withContentType(multimediaDTO.getContentType())
+		.withFilePath(multimediaDTO.getFilePath())
+		.withFileCategory(multimediaDTO.getFileCategory());
 		
 		 String baseDirPath = System.getProperty("user.home");
 		 FileInputStream fis = new FileInputStream(baseDirPath + File.separator +".OpenSRP/multimedia/image.jpeg");
@@ -102,7 +98,7 @@ public class MultimediaServiceTest {
 		
 		for(Multimedia actualMultimedia : multimediaFiles)
 		{
-			if(actualMultimedia.getCaseId().equals(multimediaDTO.caseId()))
+			if(actualMultimedia.getCaseId().equals(multimediaDTO.getCaseId()))
 					Assert.assertEquals(expectedMultimedia.getFilePath(),actualMultimedia.getFilePath());
 		}
 	}
