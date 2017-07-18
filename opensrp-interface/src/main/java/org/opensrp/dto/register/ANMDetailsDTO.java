@@ -15,13 +15,17 @@ public class ANMDetailsDTO {
         this.anmDetails = anmDetails;
     }
 
+    public List<ANMDetailDTO> getAnmDetails() {
+        return anmDetails;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
