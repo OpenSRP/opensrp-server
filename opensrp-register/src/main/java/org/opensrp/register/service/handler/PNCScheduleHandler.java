@@ -14,7 +14,7 @@ public class PNCScheduleHandler extends BaseScheduleHandler {
 	
 	private PNCSchedulesService pncSchedulesService;
 	@Autowired
-	public PNCScheduleHandler(PNCSchedulesService pncSchedulesService){
+	public PNCScheduleHandler(PNCSchedulesService pncSchedulesService) {
 		this.pncSchedulesService = pncSchedulesService;
 	}
 	@Override

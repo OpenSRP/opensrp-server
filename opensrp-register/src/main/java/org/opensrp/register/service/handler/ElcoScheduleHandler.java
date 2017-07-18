@@ -9,18 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ElcoScheduleHandler extends BaseScheduleHandler {	
-	
-    private ELCOScheduleService elcoScheduleService;	
-    public static final String ELCO_SCHEDULE_PSRF = "ELCO PSRF";	
+public class ElcoScheduleHandler extends BaseScheduleHandler {
+    private ELCOScheduleService elcoScheduleService;
+    public static final String ELCO_SCHEDULE_PSRF = "ELCO PSRF";
     public static final String MIS_ELCO = "mis_elco";
     @Autowired
-    public ElcoScheduleHandler(ELCOScheduleService elcoScheduleService){
+    public ElcoScheduleHandler(ELCOScheduleService elcoScheduleService) {
         this.elcoScheduleService = elcoScheduleService;
     }
     @Override
     public void handle(Event event, JSONObject scheduleConfigEvent,String scheduleName) {
-	    try {
+        try {
             if(scheduleName==null){
                 scheduleName="BirthNotificationPregnancyStatusFollowUp";
             }
@@ -30,16 +29,15 @@ public class ElcoScheduleHandler extends BaseScheduleHandler {
                 if (action.equalsIgnoreCase(ActionType.enroll.toString())) {
                     elcoScheduleService.imediateEnrollIntoMilestoneOfPSRF(event.getBaseEntityId(),
                         getReferenceDateForSchedule(event, scheduleConfigEvent, action), event.getProviderId(),
-	                    ELCO_SCHEDULE_PSRF, event.getId());
-	            }
-	            else if (action.equalsIgnoreCase(ActionType.fulfill.toString())) {
-	                elcoScheduleService.fullfillMilestone(event.getBaseEntityId(), event.getProviderId(), ELCO_SCHEDULE_PSRF, LocalDate.parse(getReferenceDateForSchedule(event, scheduleConfigEvent, action)), event.getId());
-	            }
-	        }
-			
-	    }
-	    catch (JSONException e) {
-	        logger.error("", e);
-	    }
+                        ELCO_SCHEDULE_PSRF, event.getId());
+                }
+                else if (action.equalsIgnoreCase(ActionType.fulfill.toString())) {
+                    elcoScheduleService.fullfillMilestone(event.getBaseEntityId(), event.getProviderId(), ELCO_SCHEDULE_PSRF, LocalDate.parse(getReferenceDateForSchedule(event, scheduleConfigEvent, action)), event.getId());
+                }
+            }
+        }
+        catch (JSONException e) {
+            logger.error("", e);
+        }
     }
 }

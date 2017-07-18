@@ -58,10 +58,10 @@ public class BNFScheduleHandlerTest extends TestResourceLoader {
     }   
     
     @Test
-    public void shouldTestBNFScheduleHandler() throws Exception{
+    public void shouldTestBNFScheduleHandler() throws Exception {
         Event event = geteventOfVaccination();
         JSONArray schedulesJsonObject = new JSONArray("[" + getFile() + "]");
-        String scheduleName =null;
+        String scheduleName = null;
         for (int i = 0; i < schedulesJsonObject.length(); i++) {
             JSONObject scheduleJsonObject = schedulesJsonObject.getJSONObject(i);            
             JSONArray eventsJsonArray = scheduleJsonObject.getJSONArray(JSON_KEY_EVENTS);                      
@@ -71,13 +71,13 @@ public class BNFScheduleHandlerTest extends TestResourceLoader {
                 List<String> eventsList = jsonArrayToList(eventTypesJsonArray);                
                 if (eventsList.contains(event.getEventType())) {  
                 	String action = bnfScheduleHandler.getAction(scheduleConfigEvent);                	
-                	String milestone=bnfScheduleHandler.getMilestone(scheduleConfigEvent);
+                	String milestone = bnfScheduleHandler.getMilestone(scheduleConfigEvent);
                     LocalDate  date = LocalDate.parse("2016-07-10");
-                	if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())){
+                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())) {
                 		bnfScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);
                         InOrder inOrder = inOrder(bnfSchedulesService);                        
                         inOrder.verify(bnfSchedulesService).enrollBNF(event.getBaseEntityId(), "BirthNotificationPregnancyStatusFollowUp", LocalDate.parse("2016-07-10"), event.getId());                     
-                    } else{                    	
+                    } else {                    	
                     }
                 }				
             }			

@@ -44,8 +44,8 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @RunWith(PowerMockRunner.class)
 //@PrepareForTest({PNCSchedulesService.class})
 @PowerMockIgnore({ "org.apache.log4j.*", "org.apache.commons.logging.*" })
-public class PNCScheduleHandlerTest extends TestResourceLoader{
-	public PNCScheduleHandlerTest(){
+public class PNCScheduleHandlerTest extends TestResourceLoader {
+	public PNCScheduleHandlerTest() {
 		
 	}
 	private PNCScheduleHandler pncScheduleHandler;
@@ -74,7 +74,7 @@ public class PNCScheduleHandlerTest extends TestResourceLoader{
     }
 
     @Test
-    public void shouldTestPNCScheduleHandler() throws Exception{
+    public void shouldTestPNCScheduleHandler() throws Exception {
         Event event = geteventOfVaccination();
         JSONArray schedulesJsonObject = new JSONArray("[" +  getFile() + "]");        
         for (int i = 0; i < schedulesJsonObject.length(); i++) {
@@ -87,18 +87,18 @@ public class PNCScheduleHandlerTest extends TestResourceLoader{
                 if (eventsList.contains(event.getEventType())) {  
                 	String action = pncScheduleHandler.getAction(scheduleConfigEvent);                	
                 	String milestone=pncScheduleHandler.getMilestone(scheduleConfigEvent);
-                	if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())){
-                	    pncScheduleHandler.handle(event,scheduleConfigEvent, null);
+                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())) {
+                        pncScheduleHandler.handle(event,scheduleConfigEvent, null);
                         InOrder inOrder = inOrder(pncSchedulesService);
                         LocalDate  date = LocalDate.parse(pncScheduleHandler.getReferenceDateForSchedule(event, scheduleConfigEvent, action));
                         inOrder.verify(pncSchedulesService).enrollPNCRVForMother(event.getBaseEntityId(), "Post Natal Care Reminder Visit",date , milestone, event.getId());                        
                     }
-                    else if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())){
+                    else if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())) {
                 	    pncScheduleHandler.handle(event,scheduleConfigEvent, null);
                         InOrder inOrder = inOrder(pncSchedulesService);
                         LocalDate  date = LocalDate.parse(pncScheduleHandler.getReferenceDateForSchedule(event, scheduleConfigEvent, action));                        
                         inOrder.verify(pncSchedulesService).fullfillMilestone(event.getBaseEntityId(), event.getProviderId(), "Post Natal Care Reminder Visit", date, event.getId()); 
-                    }else{
+                    } else {
                     	
                     }
                 }				
@@ -107,7 +107,7 @@ public class PNCScheduleHandlerTest extends TestResourceLoader{
     }
     
     @Test(expected=JSONException.class)
-    public void shouldReturnExceptionWhenTestPNCScheduleHandler() throws Exception{
+    public void shouldReturnExceptionWhenTestPNCScheduleHandler() throws Exception {
         Event event = geteventOfVaccination();
         JSONArray schedulesJsonObject = new JSONArray("[" +  getFile() + "]");        
         for (int i = 0; i < schedulesJsonObject.length(); i++) {

@@ -44,7 +44,7 @@ public class HHScheduleHandlerTest extends TestResourceLoader {
     }   
     
     @Test
-    public void shouldTestChilsScheduleHandler() throws Exception{
+    public void shouldTestChilsScheduleHandler() throws Exception {
         Event event = geteventOfVaccination();
         JSONArray schedulesJsonObject = new JSONArray("[" + getFile() + "]");
         String scheduleName =null;        
@@ -58,12 +58,12 @@ public class HHScheduleHandlerTest extends TestResourceLoader {
                 if (eventsList.contains(event.getEventType())) {  
                 	String action = hhScheduleHandler.getAction(scheduleConfigEvent);                	
                 	String milestone=hhScheduleHandler.getMilestone(scheduleConfigEvent);                    
-                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())){
+                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())) {
                         hhScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
                         InOrder inOrder = inOrder(hhSchedulesService);                        
                         inOrder.verify(hhSchedulesService).enrollIntoMilestoneOfCensus(event.getBaseEntityId(),
         				    "2016-07-10", event.getProviderId(), "opv2",event.getId());                        
-                    } else if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())){
+                    } else if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())) {
                     	hhScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
                         InOrder inOrder = inOrder(hhSchedulesService);
                         inOrder.verify(hhSchedulesService).fullfillMilestone(event.getBaseEntityId(), event.getProviderId(), "FW CENSUS", LocalDate.parse("2016-07-10"), event.getId());

@@ -59,7 +59,7 @@ public class VaccinesScheduleHandlerTest extends TestResourceLoader {
     }
 
     @Test
-    public void shouldVaccinesScheduleHandlerForVIT() throws Exception{
+    public void shouldVaccinesScheduleHandlerForVIT() throws Exception {
         Event event = geteventOfVaccination(); 
         String scheduleName = "";
         Schedule schedule = new Schedule("VIT A 1");
@@ -94,7 +94,7 @@ public class VaccinesScheduleHandlerTest extends TestResourceLoader {
         }		
     }
     @Test
-    public void shouldVaccinesScheduleHandlerForMEASLES() throws Exception{
+    public void shouldVaccinesScheduleHandlerForMEASLES() throws Exception {
         Event event = geteventOfVaccination(); 
         String scheduleName = "";
         JSONArray schedulesJsonObject = new JSONArray("[" + getFile() + "]");         
@@ -125,7 +125,7 @@ public class VaccinesScheduleHandlerTest extends TestResourceLoader {
         }		
     }
     @Test
-    public void shouldVaccinesScheduleHandlerForMR() throws Exception{
+    public void shouldVaccinesScheduleHandlerForMR() throws Exception {
         Event event = geteventOfVaccination(); 
         String scheduleName = "";
         JSONArray schedulesJsonObject = new JSONArray("[" + getFile() + "]");        
@@ -152,7 +152,7 @@ public class VaccinesScheduleHandlerTest extends TestResourceLoader {
         }		
     }
     @Test
-    public void shouldVaccinesScheduleHandlerForOPV() throws Exception{
+    public void shouldVaccinesScheduleHandlerForOPV() throws Exception {
         Event event = geteventOfVaccination();      
         List<Event> events = getEvents("2016-02-03");
         when(allEvents, method(AllEvents.class, "findByBaseEntityIdAndConceptParentCode", String.class, String.class,String.class))
@@ -184,7 +184,7 @@ public class VaccinesScheduleHandlerTest extends TestResourceLoader {
         
     }
     @Test
-    public void shouldTestNUllOrEmptyMilestone() throws Exception{
+    public void shouldTestNUllOrEmptyMilestone() throws Exception {
         Event event = geteventOfVaccination();      
         List<Event> events = getEvents("2016-02-03");
         when(allEvents, method(AllEvents.class, "findByBaseEntityIdAndConceptParentCode", String.class, String.class,String.class))
@@ -216,7 +216,7 @@ public class VaccinesScheduleHandlerTest extends TestResourceLoader {
     }
     
     @Test
-    public void shouldTestExceptionForVaccinesScheduleHandlerForOPV() throws Exception{
+    public void shouldTestExceptionForVaccinesScheduleHandlerForOPV() throws Exception {
         Event event = geteventOfVaccination();      
         List<Event> events = getEvents("Not A Valid Date");
         when(allEvents, method(AllEvents.class, "findByBaseEntityIdAndConceptParentCode", String.class, String.class,String.class))

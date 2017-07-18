@@ -37,7 +37,7 @@ public class HHSchedulesServiceTest extends TestResourceLoader {
     }
     
     @Test
-    public void shouldTestAnteNatalCareSchedulesServiceMthods(){
+    public void shouldTestAnteNatalCareSchedulesServiceMthods() {
     	
         final TestLoggerAppender appender = new TestLoggerAppender();       
         final Logger logger = Logger.getLogger(HHSchedulesService.class.toString());

@@ -32,7 +32,7 @@ public class TestResourceLoader {
     private AllSchedules allSchedules;	
     
 	
-    public String getFile() throws IOException{
+    public String getFile() throws IOException {
         ResourceLoader loader = new DefaultResourceLoader();
         String scheduleConfigFilesPath = "./../assets/schedules/schedule-configs";
         File scheduleConfigsFolder = null;
@@ -61,7 +61,7 @@ public class TestResourceLoader {
         return values;
     }
     
-    public List<Event> getEvents(String opv3Date){
+    public List<Event> getEvents(String opv3Date) {
         List<Event> events = new ArrayList<>();
         Event eventObj1 = new Event();
         eventObj1.setBaseEntityId("ooo-yyy-yyy");
@@ -160,14 +160,14 @@ public class TestResourceLoader {
         events.add(eventObj3);
         return events;
     }
-    public Event geteventOfVaccination() throws IOException{
+    public Event geteventOfVaccination() throws IOException {
         String baseEntityId = "ooo-yyy-yyy";
-        String eventType="Vaccination";        
+        String eventType = "Vaccination";        
         DateTime eventDate = new DateTime();
         String entityType = "";
-        String providerId ="anm";
-        String locationId ="";
-        String formSubmissionId ="";
+        String providerId = "anm";
+        String locationId = "";
+        String formSubmissionId = "";
         Event event = new Event(baseEntityId, eventType, eventDate, entityType, providerId, locationId, formSubmissionId);
         event.setId("23456");
         event.setDateCreated(new DateTime("2017-02-02"));
@@ -187,14 +187,14 @@ public class TestResourceLoader {
         return event;
     }
     
-    public Event geteventOfBirthRegistration() throws IOException{
+    public Event geteventOfBirthRegistration() throws IOException {
         String baseEntityId = "ooo-yyy-yyy";        
         String eventType = "Birth Registration";
         DateTime eventDate = new DateTime();
         String entityType = "";
-        String providerId ="anm";
-        String locationId ="";
-        String formSubmissionId ="";
+        String providerId = "anm";
+        String locationId = "";
+        String formSubmissionId = "";
         Event event = new Event(baseEntityId, eventType, eventDate, entityType, providerId, locationId, formSubmissionId);
         event.setId("23456");
         event.setDateCreated(new DateTime("2017-02-02"));
@@ -213,7 +213,7 @@ public class TestResourceLoader {
         event.addObs(observation2);
         return event;
     }
-    public List<Client> getClients(){
+    public List<Client> getClients() {
     	List<Client> clients = new ArrayList<>();
     	Client client = new Client("ooo-yyy-yyy");
     	client.setFirstName("Client");

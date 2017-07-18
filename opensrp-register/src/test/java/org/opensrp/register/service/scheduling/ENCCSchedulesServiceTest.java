@@ -36,7 +36,7 @@ public class ENCCSchedulesServiceTest extends TestResourceLoader {
     }
     
     @Test
-    public void shouldTestELCOScheduleServiceMethods(){    	
+    public void shouldTestELCOScheduleServiceMethods() {    	
         final TestLoggerAppender appender = new TestLoggerAppender();       
         final Logger logger = Logger.getLogger(ENCCSchedulesService.class.toString());
         logger.setLevel(Level.ALL);
@@ -64,7 +64,7 @@ public class ENCCSchedulesServiceTest extends TestResourceLoader {
     }
     
     @Test
-    public void shouldGetException(){
+    public void shouldGetException() {
         Mockito.doThrow(new RuntimeException()).when(scheduler).fullfillMilestoneAndCloseAlert(Mockito.anyString(), Mockito.anyString(), Mockito.anyString(), Mockito.any(LocalDate.class), Mockito.anyString());
         enccSchedulesService.fullfillMilestone("", "", "", null,"");
     }

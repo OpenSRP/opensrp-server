@@ -45,7 +45,7 @@ public class ChildScheduleHandlerTest extends TestResourceLoader {
     }   
     
     @Test
-    public void shouldTestChilsScheduleHandler() throws Exception{
+    public void shouldTestChilsScheduleHandler() throws Exception {
         Event event = geteventOfVaccination();
         JSONArray schedulesJsonObject = new JSONArray("[" + getFile() + "]");
         String scheduleName =null;
@@ -70,12 +70,12 @@ public class ChildScheduleHandlerTest extends TestResourceLoader {
                 List<String> eventsList = jsonArrayToList(eventTypesJsonArray);                
                 if (eventsList.contains(event.getEventType())) {  
                 	String action = childScheduleHandler.getAction(scheduleConfigEvent);                	
-                	String milestone=childScheduleHandler.getMilestone(scheduleConfigEvent);                    
-                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())){
-                		childScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
+                	String milestone = childScheduleHandler.getMilestone(scheduleConfigEvent);                    
+                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())) {
+                        childScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
                         InOrder inOrder = inOrder(enccSchedulesService);                        
                         inOrder.verify(enccSchedulesService).enrollIntoCorrectMilestoneOfENCCCare("ooo-yyy-yyy", "BirthNotificationPregnancyStatusFollowUp", LocalDate.parse("2016-07-10"), event.getId());                        
-                    } else if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())){
+                    } else if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())) {
                     	childScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
                         InOrder inOrder = inOrder(enccSchedulesService);
                         inOrder.verify(enccSchedulesService).fullfillMilestone(event.getBaseEntityId(), event.getProviderId(), "BirthNotificationPregnancyStatusFollowUp", LocalDate.parse("2016-07-10"), event.getId());

@@ -64,7 +64,7 @@ public class BaseScheduleHandlerTest extends TestResourceLoader {
     }   
     
     @Test
-    public void shouldTestgetReferenceDateForSchedule() throws Exception{
+    public void shouldTestgetReferenceDateForSchedule() throws Exception {
         Event event = geteventOfBirthRegistration();      
         List<Event> events = getEvents("2016-02-03");
         when(allEvents, method(AllEvents.class, "findByBaseEntityIdAndConceptParentCode", String.class, String.class,String.class))
@@ -85,9 +85,9 @@ public class BaseScheduleHandlerTest extends TestResourceLoader {
                 JSONArray eventTypesJsonArray = scheduleConfigEvent.getJSONArray(JSON_KEY_TYPES);
                 List<String> eventsList = jsonArrayToList(eventTypesJsonArray);                
                 if (eventsList.contains(event.getEventType())) {
-                	scheduleName = scheduleJsonObject.getString(JSON_KEY_SCHEDULE_NAME);;
+                    scheduleName = scheduleJsonObject.getString(JSON_KEY_SCHEDULE_NAME);;
                     String action = vaccinesScheduleHandler.getAction(scheduleConfigEvent);                    
-                    String milestone=vaccinesScheduleHandler.getMilestone(scheduleConfigEvent);
+                    String milestone = vaccinesScheduleHandler.getMilestone(scheduleConfigEvent);
                     LocalDate  date = LocalDate.parse("2016-07-10");
                     vaccinesScheduleHandler.handle(event,scheduleConfigEvent, scheduleName); 
                     vaccinesScheduleHandler.getReferenceDateForSchedule(event, scheduleConfigEvent, action);

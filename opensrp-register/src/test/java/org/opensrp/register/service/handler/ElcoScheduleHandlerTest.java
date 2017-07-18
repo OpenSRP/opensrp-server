@@ -47,7 +47,7 @@ public class ElcoScheduleHandlerTest extends TestResourceLoader {
     }   
     
     @Test
-    public void shouldTestChilsScheduleHandler() throws Exception{
+    public void shouldTestElcoScheduleHandler() throws Exception {
         Event event = geteventOfVaccination();
         JSONArray schedulesJsonObject = new JSONArray("[" + getFile() + "]");
         String scheduleName =null;        
@@ -61,13 +61,13 @@ public class ElcoScheduleHandlerTest extends TestResourceLoader {
                 if (eventsList.contains(event.getEventType())) {  
                 	String action = elcoScheduleHandler.getAction(scheduleConfigEvent);                	
                 	String milestone=elcoScheduleHandler.getMilestone(scheduleConfigEvent);                    
-                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())){
+                	if (milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.enroll.toString())) {
                 		elcoScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
                         InOrder inOrder = inOrder(elcoScheduleService);                        
                         inOrder.verify(elcoScheduleService).imediateEnrollIntoMilestoneOfPSRF(event.getBaseEntityId(),
-        					    "2016-07-10", event.getProviderId(),
-        					    ELCO_SCHEDULE_PSRF, event.getId());                     
-                    } else if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())){
+                            "2016-07-10", event.getProviderId(),
+                            ELCO_SCHEDULE_PSRF, event.getId());                     
+                    } else if(milestone.equalsIgnoreCase("opv2") && action.equalsIgnoreCase(ActionType.fulfill.toString())) {
                     	elcoScheduleHandler.handle(event,scheduleConfigEvent, scheduleName);                		
                         InOrder inOrder = inOrder(elcoScheduleService);
                         inOrder.verify(elcoScheduleService).fullfillMilestone(event.getBaseEntityId(), event.getProviderId(), ELCO_SCHEDULE_PSRF, LocalDate.parse("2016-07-10"), event.getId());
