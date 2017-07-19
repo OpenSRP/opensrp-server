@@ -46,11 +46,11 @@ public class Action extends MotechBaseDataObject {
     public Action(String baseEntityId, String providerId, ActionData actionData) {
         this.providerId = providerId;
         this.baseEntityId = baseEntityId;
-        this.data = actionData.data();
-        this.actionTarget = actionData.target();
-        this.actionType = actionData.type();
+        this.data = actionData.getData();
+        this.actionTarget = actionData.getTarget();
+        this.actionType = actionData.getType();
         this.timeStamp = DateUtil.now().getMillis();
-        this.details = actionData.details();
+        this.details = actionData.getDetails();
         this.isActionActive = true;
     }
 

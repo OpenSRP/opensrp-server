@@ -61,29 +61,29 @@ public class ActionData {
         return this;
     }
 
-    public Map<String, String> data() {
-        return data;
+    public Map<String, String> getData() {
+        return this.data;
     }
 
-    public String target() {
+    public String getTarget() {
         return target;
     }
 
-    public String type() {
+    public String getType() {
         return type;
     }
 
-    public Map<String, String> details() {
+    public Map<String, String> getDetails() {
         return details;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
