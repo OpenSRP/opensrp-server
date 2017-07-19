@@ -36,45 +36,45 @@ public class Action {
     public Action() {
     }
 
-    public String caseID() {
+    public String getCaseID() {
         return caseID;
     }
 
-    public String target() {
-        return actionTarget;
+    public String getActionTarget() {
+        return this.actionTarget;
     }
 
-    public String type() {
-        return actionType;
+    public String getActionType() {
+        return this.actionType;
     }
 
-    public Boolean isActionActive() {
-        return isActionActive;
+    public Boolean getIsActionActive() {
+        return this.isActionActive;
     }
 
-    public String index() {
-        return timeStamp;
+    public String getTimeStamp() {
+        return this.timeStamp;
     }
 
     public String get(String key) {
         return data.get(key);
     }
 
-    public Map<String, String> data() {
-        return data;
+    public Map<String, String> getData() {
+        return this.data;
     }
 
-    public Map<String, String> details() {
-        return details;
+    public Map<String, String> getDetails() {
+        return this.details;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
