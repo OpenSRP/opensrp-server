@@ -31,29 +31,33 @@ public class VillagesDTO {
         this.villages = villages;
     }
 
-    public String phcName() {
+    public String getDistrict() {
+        return district;
+    }
+
+    public String getPhcName() {
         return phcName;
     }
 
-    public String subCenter() {
-        return subCenter;
-    }
-
-    public List<String> villages() {
-        return villages;
-    }
-
-    public String phcIdentifier() {
+    public String getPhcIdentifier() {
         return phcIdentifier;
     }
 
+    public String getSubCenter() {
+        return subCenter;
+    }
+
+    public List<String> getVillages() {
+        return villages;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
