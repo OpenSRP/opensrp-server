@@ -21,6 +21,10 @@ public class FPRegisterDTO {
     @JsonProperty
     private Integer reportingYear;
 
+    public Integer getReportingYear() {
+        return reportingYear;
+    }
+
     public FPRegisterDTO(List<IUDRegisterEntryDTO> iudRegisterEntries,
                          List<CondomRegisterEntryDTO> condomRegisterEntries,
                          List<OCPRegisterEntryDTO> ocpRegisterEntries,
@@ -36,12 +40,12 @@ public class FPRegisterDTO {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
