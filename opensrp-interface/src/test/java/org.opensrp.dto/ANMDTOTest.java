@@ -30,6 +30,6 @@ public class ANMDTOTest {
         assertNotSame("xyz", anmdto.getIdentifier());
 
         assertTrue(anmdto.getLocation().toString().contains("sub_center=nandanpur"));
-        assertFalse(anmdto.getLocation().toString().contains("district=dhaka"));
+        assertFalse(anmdto.toString().contains("district=dhaka"));
     }
 }
