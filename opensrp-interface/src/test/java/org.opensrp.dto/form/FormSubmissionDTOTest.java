@@ -24,7 +24,7 @@ public class FormSubmissionDTOTest {
 
     @Test
     public void testWithServerVersion() {
-        FormSubmissionDTO formSubmissionDTO = new FormSubmissionDTO("anmId", "", "", "", "", "", "");
+        FormSubmissionDTO formSubmissionDTO = new FormSubmissionDTO("anmId", "hi", "", "", "", "", "");
         formSubmissionDTO.withServerVersion("version");
         assertEquals("version", formSubmissionDTO.getServerVersion());
         assertNotSame("null ", formSubmissionDTO.getServerVersion());

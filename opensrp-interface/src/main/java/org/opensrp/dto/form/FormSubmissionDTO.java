@@ -54,8 +54,8 @@ public class FormSubmissionDTO {
         return this.formName;
     }
 
-    public String getInstance() {
-        return formInstance;
+    public String getFormInstance() {
+        return this.formInstance;
     }
 
     public String getClientVersion() {

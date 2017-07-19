@@ -23,7 +23,7 @@ public class FormSubmissionConverter {
 
     public static FormSubmission toFormSubmission(FormSubmissionDTO formSubmissionDTO) {
         try {
-            FormInstance formInstance = new Gson().fromJson(formSubmissionDTO.getInstance(), FormInstance.class);
+            FormInstance formInstance = new Gson().fromJson(formSubmissionDTO.getFormInstance(), FormInstance.class);
             return new FormSubmission(formSubmissionDTO.getAnmId(), formSubmissionDTO.getInstanceId(), formSubmissionDTO.getFormName(), formSubmissionDTO.getEntityId(),
                     formSubmissionDTO.getFormDataDefinitionVersion(), parseLong(formSubmissionDTO.getClientVersion()), formInstance);
         } catch (Exception e) {
@@ -34,7 +34,7 @@ public class FormSubmissionConverter {
 
     public static FormSubmission toFormSubmissionWithVersion(FormSubmissionDTO formSubmissionDTO) {
         return new FormSubmission(formSubmissionDTO.getAnmId(), formSubmissionDTO.getInstanceId(), formSubmissionDTO.getFormName(),
-                formSubmissionDTO.getEntityId(), parseLong(formSubmissionDTO.getClientVersion()), formSubmissionDTO.getFormDataDefinitionVersion(), new Gson().fromJson(formSubmissionDTO.getInstance(), FormInstance.class),
+                formSubmissionDTO.getEntityId(), parseLong(formSubmissionDTO.getClientVersion()), formSubmissionDTO.getFormDataDefinitionVersion(), new Gson().fromJson(formSubmissionDTO.getFormInstance(), FormInstance.class),
                 parseLong(formSubmissionDTO.getServerVersion()));
     }
 }
