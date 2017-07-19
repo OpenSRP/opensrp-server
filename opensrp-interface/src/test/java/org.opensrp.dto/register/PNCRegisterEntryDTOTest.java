@@ -48,8 +48,6 @@ public class PNCRegisterEntryDTOTest {
         pncRegisterEntryDTO.withChildrenDetails(childrenDetailsList);
         pncRegisterEntryDTO.withPNCVisits(pncVisitsList);
 
-        System.out.println(pncRegisterEntryDTO.toString());
-
         assertTrue(pncRegisterEntryDTO.toString().contains(husbandName));
         assertFalse(pncRegisterEntryDTO.toString().contains("wifeDob=2017-08-19"));
 
