@@ -22,13 +22,29 @@ public class IUDFPDetailsDTO {
         this.uptResult = uptResult;
     }
 
+    public String getFpAcceptanceDate() {
+        return fpAcceptanceDate;
+    }
+
+    public String getIudPlace() {
+        return iudPlace;
+    }
+
+    public String getLmpDate() {
+        return lmpDate;
+    }
+
+    public String getUptResult() {
+        return uptResult;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
