@@ -9,6 +9,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ActionData {
+    public static final String BENEFICIARY_TYPE = "beneficiaryType";
+    public static final String SCHEDULE_NAME = "scheduleName";
+    public static final String VISIT_CODE = "visitCode";
+    public static final String ALERT_STATUS = "alertStatus";
+    public static final String START_DATE = "startDate";
+    public static final String EXPIRY_DATE = "expiryDate";
+    public static final String TARGET = "alert";
+    public static final String TYPE = "createAlert";
+    public static final String COMPLETION_DATE = "completionDate";
+    public static final String ANNUAL_TARGET = "annualTarget";
+    public static final String MONTHLY_SUMMARIES = "monthlySummaries";
+    public static final String REASON_FOR_CLOSE = "reasonForClose";
+
     private Map<String, String> data;
     private String target;
     private String type;
@@ -16,30 +29,30 @@ public class ActionData {
 
     public static ActionData createAlert(String beneficiaryType, String scheduleName, String visitCode,
                                          AlertStatus alertStatus, DateTime startDate, DateTime expiryDate) {
-        return new ActionData("alert", "createAlert")
-                .with("beneficiaryType", beneficiaryType)
-                .with("scheduleName", scheduleName)
-                .with("visitCode", visitCode)
-                .with("alertStatus", alertStatus.value())
-                .with("startDate", startDate.toLocalDate().toString())
-                .with("expiryDate", expiryDate.toLocalDate().toString());
+        return new ActionData(TARGET, TYPE)
+                .with(BENEFICIARY_TYPE, beneficiaryType)
+                .with(SCHEDULE_NAME, scheduleName)
+                .with(VISIT_CODE, visitCode)
+                .with(ALERT_STATUS, alertStatus.value())
+                .with(START_DATE, startDate.toLocalDate().toString())
+                .with(EXPIRY_DATE, expiryDate.toLocalDate().toString());
     }
 
     public static ActionData markAlertAsClosed(String visitCode, String completionDate) {
-        return new ActionData("alert", "closeAlert")
-                .with("visitCode", visitCode)
-                .with("completionDate", completionDate);
+        return new ActionData(TARGET, "closeAlert")
+                .with(VISIT_CODE, visitCode)
+                .with(COMPLETION_DATE, completionDate);
     }
 
     public static ActionData reportForIndicator(String indicator, String annualTarget, String monthSummaries) {
         return new ActionData("report", indicator)
-                .with("annualTarget", annualTarget)
-                .with("monthlySummaries", monthSummaries);
+                .with(ANNUAL_TARGET, annualTarget)
+                .with(MONTHLY_SUMMARIES, monthSummaries);
     }
 
     public static ActionData closeBeneficiary(String target, String reasonForClose) {
         return new ActionData(target, "close")
-                .with("reasonForClose", reasonForClose);
+                .with(REASON_FOR_CLOSE, reasonForClose);
     }
 
     public static ActionData from(String actionType, String actionTarget, Map<String, String> data, Map<String, String> details) {
