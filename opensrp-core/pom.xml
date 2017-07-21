@@ -25,9 +25,7 @@
 			<resource>
 				<directory>../assets/schedules</directory>
 				<targetPath>schedules</targetPath>
-			</resource>
-			<!-- <resource> <directory>../assets/form</directory> <targetPath>form</targetPath> 
-				</resource> -->
+			</resource> 
 			<resource>
 				<directory>../build</directory>
 				<filtering>true</filtering>
@@ -58,8 +56,6 @@
 			<artifactId>ektorplucene</artifactId>
 			<version>0.2.0</version>
 		</dependency>
-		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-core</artifactId> 
-			<version>2.2.2</version> </dependency> -->
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -67,8 +63,6 @@
 			<version>2.2.2</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-annotations</artifactId> 
-			<version>2.2.2</version> </dependency> -->
 		<dependency>
 			<artifactId>motech-sms-api</artifactId>
 			<groupId>org.motechproject</groupId>
