@@ -68,8 +68,7 @@ public class FormEntityServiceTest extends TestResourceLoader{
     
     @Before
     public void setUp() throws Exception {
-    	scheduleConfig = new ScheduleConfig("/schedules/schedule-config.xls");
-    	scheduleService = new HealthSchedulerService(actionService, schService, scheduleConfig);
+    	scheduleConfig = new ScheduleConfig("/schedules/schedule-config.xls"); 
         initMocks(this);
         fsp = new FormSubmissionProcessor(ziggyService, formSubmissionRouter, formEntityConverter, scheduleService, clientService, eventService);
         fec = new FormEntityConverter(new FormAttributeParser("/form"));
@@ -99,7 +98,7 @@ public class FormEntityServiceTest extends TestResourceLoader{
         verifyNoMoreInteractions(formSubmissionRouter);
     }
 	
-    @Test
+    @Test 
     public void shouldProcessNonZiggyWomanTTEnrollmentSubmission() throws Exception {
         FormSubmission fs = getFormSubmissionFor("woman_enrollment");
 
