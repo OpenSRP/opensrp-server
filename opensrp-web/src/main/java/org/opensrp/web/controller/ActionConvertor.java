@@ -9,6 +9,6 @@ public class ActionConvertor {
     }
 
     public static org.opensrp.scheduler.Action toAction(Action actionItem, String anmIdentifier) {
-        return new org.opensrp.scheduler.Action(actionItem.caseID(), anmIdentifier, ActionData.from(actionItem.type(), actionItem.target(), actionItem.data(), actionItem.details()));
+        return new org.opensrp.scheduler.Action(actionItem.getCaseID(), anmIdentifier, ActionData.from(actionItem.getActionType(), actionItem.getActionTarget(), actionItem.getData(), actionItem.getDetails()));
     }
 }

@@ -24,33 +24,33 @@ public class MonthSummaryDatum {
     public MonthSummaryDatum() {
     }
 
-    public String month() {
+    public String getMonth() {
         return month;
     }
 
-    public String year() {
+    public String getYear() {
         return year;
     }
 
-    public String currentProgress() {
+    public String getCurrentProgress() {
         return currentProgress;
     }
 
-    public String aggregatedProgress() {
+    public String getAggregatedProgress() {
         return aggregatedProgress;
     }
 
-    public List<String> externalIDs() {
+    public List<String> getExternalIDs() {
         return externalIDs;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

@@ -47,6 +47,9 @@ public class ClientService {
 	public List<Client> findByRelationshipIdAndDateCreated(String relationalId, String dateFrom, String dateTo) {
 		return allClients.findByRelationshipIdAndDateCreated(relationalId, dateFrom, dateTo);
 	}
+	public List<Client> findByRelationship(String relationalId) {
+		return allClients.findByRelationShip(relationalId);
+	}
 	
 	public List<Client> findAllByAttribute(String attributeType, String attribute) {
 		return allClients.findAllByAttribute(attributeType, attribute);
@@ -263,6 +266,9 @@ public class ClientService {
 	
 	public List<Client> findByFieldValue(String field, List<String> ids) {
 		return allClients.findByFieldValue(field, ids);
+	}
+	public List<Client> findByFieldValue(String id) {
+		return allClients.findByRelationShip(id);
 	}
 	
 	public Client addorUpdate(Client client) {

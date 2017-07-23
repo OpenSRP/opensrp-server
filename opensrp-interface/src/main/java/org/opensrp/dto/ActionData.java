@@ -8,18 +8,27 @@ import org.joda.time.DateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.opensrp.dto.ActionData.DataKey.*;
-
 public class ActionData {
+    public static final String BENEFICIARY_TYPE = "beneficiaryType";
+    public static final String SCHEDULE_NAME = "scheduleName";
+    public static final String VISIT_CODE = "visitCode";
+    public static final String ALERT_STATUS = "alertStatus";
+    public static final String START_DATE = "startDate";
+    public static final String EXPIRY_DATE = "expiryDate";
+    public static final String TARGET = "alert";
+    public static final String TYPE = "createAlert";
+    public static final String COMPLETION_DATE = "completionDate";
+    public static final String ANNUAL_TARGET = "annualTarget";
+    public static final String MONTHLY_SUMMARIES = "monthlySummaries";
+    public static final String REASON_FOR_CLOSE = "reasonForClose";
     private Map<String, String> data;
     private String target;
     private String type;
     private Map<String, String> details;
 
-
     public static ActionData createAlert(String beneficiaryType, String scheduleName, String visitCode,
                                          AlertStatus alertStatus, DateTime startDate, DateTime expiryDate) {
-        return new ActionData(ALERT, CREATE_ALERT)
+        return new ActionData(TARGET, TYPE)
                 .with(BENEFICIARY_TYPE, beneficiaryType)
                 .with(SCHEDULE_NAME, scheduleName)
                 .with(VISIT_CODE, visitCode)
@@ -29,19 +38,19 @@ public class ActionData {
     }
 
     public static ActionData markAlertAsClosed(String visitCode, String completionDate) {
-        return new ActionData(ALERT, CLOSE_ALERT)
+        return new ActionData(TARGET, "closeAlert")
                 .with(VISIT_CODE, visitCode)
                 .with(COMPLETION_DATE, completionDate);
     }
 
     public static ActionData reportForIndicator(String indicator, String annualTarget, String monthSummaries) {
-        return new ActionData(REPORT, indicator)
+        return new ActionData("report", indicator)
                 .with(ANNUAL_TARGET, annualTarget)
                 .with(MONTHLY_SUMMARIES, monthSummaries);
     }
 
     public static ActionData closeBeneficiary(String target, String reasonForClose) {
-        return new ActionData(target, CLOSE)
+        return new ActionData(target, "close")
                 .with(REASON_FOR_CLOSE, reasonForClose);
     }
 
@@ -64,53 +73,39 @@ public class ActionData {
         return this;
     }
 
-    public Map<String, String> data() {
-        return data;
+
+
+    public Map<String, String> getData() {
+        return this.data;
     }
 
-    public String target() {
+    public String getTarget() {
         return target;
     }
 
-    public String type() {
+    public String getType() {
         return type;
     }
 
-    public Map<String, String> details() {
+    public Map<String, String> getDetails() {
         return details;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
     public String toString() {
+
         return ToStringBuilder.reflectionToString(this);
+
     }
 
-
-    public static class DataKey {
-        public static final String START_DATE = "startDate";
-        public static final String EXPIRY_DATE = "expiryDate";
-        public static final String COMPLETION_DATE = "completionDate";
-        public static final String REPORT = "report";
-        public static final String ANNUAL_TARGET = "annualTarget";
-        public static final String MONTHLY_SUMMARIES = "monthlySummaries";
-        public static final String CLOSE = "close";
-        public static final String REASON_FOR_CLOSE = "reasonForClose";
-        public static final String VISIT_CODE = "visitCode";
-        public static final String ALERT_STATUS = "alertStatus";
-        public static final String SCHEDULE_NAME = "scheduleName";
-        public static final String BENEFICIARY_TYPE = "beneficiaryType";
-        public static final String ALERT = "alert";
-        public static final String CREATE_ALERT = "createAlert";
-        public static final String CLOSE_ALERT = "closeAlert";
-    }
 }

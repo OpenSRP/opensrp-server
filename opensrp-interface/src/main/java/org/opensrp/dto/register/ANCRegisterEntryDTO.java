@@ -76,6 +76,8 @@ public class ANCRegisterEntryDTO {
     @JsonProperty
     private List<Map<String, String>> ancInvestigations;
 
+    public ANCRegisterEntryDTO() {
+    }
 
     public ANCRegisterEntryDTO withANCNumber(String ancNumber) {
         this.ancNumber = ancNumber;
@@ -246,13 +248,145 @@ public class ANCRegisterEntryDTO {
         return this;
     }
 
+    public String getAncNumber() {
+        return ancNumber;
+    }
+
+    public String getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public String getEcNumber() {
+        return ecNumber;
+    }
+
+    public String getThayiCardNumber() {
+        return thayiCardNumber;
+    }
+
+    public String getAadharCardNumber() {
+        return aadharCardNumber;
+    }
+
+    public String getWifeName() {
+        return wifeName;
+    }
+
+    public String getHusbandName() {
+        return husbandName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getWifeDOB() {
+        return wifeDOB;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getWifeEducationLevel() {
+        return wifeEducationLevel;
+    }
+
+    public String getHusbandEducationLevel() {
+        return husbandEducationLevel;
+    }
+
+    public String getCaste() {
+        return caste;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public String getEconomicStatus() {
+        return economicStatus;
+    }
+
+    public String getBplCardNumber() {
+        return bplCardNumber;
+    }
+
+    public String getJsyBeneficiary() {
+        return jsyBeneficiary;
+    }
+
+    public String getGravida() {
+        return gravida;
+    }
+
+    public String getParity() {
+        return parity;
+    }
+
+    public String getNumberOfLivingChildren() {
+        return numberOfLivingChildren;
+    }
+
+    public String getNumberOfStillBirths() {
+        return numberOfStillBirths;
+    }
+
+    public String getNumberOfAbortions() {
+        return numberOfAbortions;
+    }
+
+    public String getYoungestChildDOB() {
+        return youngestChildDOB;
+    }
+
+    public String getLmp() {
+        return lmp;
+    }
+
+    public String getEdd() {
+        return edd;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public String getIsHRP() {
+        return isHRP;
+    }
+
+    public List<Map<String, String>> getAncVisits() {
+        return ancVisits;
+    }
+
+    public List<Map<String, String>> getIfaTablets() {
+        return ifaTablets;
+    }
+
+    public List<Map<String, String>> getTtDoses() {
+        return ttDoses;
+    }
+
+    public List<Map<String, String>> getHbTests() {
+        return hbTests;
+    }
+
+    public List<Map<String, String>> getAncInvestigations() {
+        return ancInvestigations;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

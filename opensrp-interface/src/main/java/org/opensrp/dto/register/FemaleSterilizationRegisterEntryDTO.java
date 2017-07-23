@@ -35,59 +35,59 @@ public class FemaleSterilizationRegisterEntryDTO {
     @JsonProperty
     private FemaleSterilizationFPDetailsDTO fpDetails;
 
-    public String ecNumber() {
+    public String getEcNumber() {
         return ecNumber;
     }
 
-    public String wifeName() {
+    public String getWifeName() {
         return wifeName;
     }
 
-    public String husbandName() {
+    public String getHusbandName() {
         return husbandName;
     }
 
-    public String village() {
+    public String getVillage() {
         return village;
     }
 
-    public String subCenter() {
+    public String getSubCenter() {
         return subCenter;
     }
 
-    public String wifeAge() {
+    public String getWifeAge() {
         return wifeAge;
     }
 
-    public String husbandAge() {
+    public String getHusbandAge() {
         return husbandAge;
     }
 
-    public String caste() {
+    public String getCaste() {
         return caste;
     }
 
-    public String religion() {
+    public String getReligion() {
         return religion;
     }
 
-    public String numberOfLivingMaleChildren() {
+    public String getNumberOfLivingMaleChildren() {
         return numberOfLivingMaleChildren;
     }
 
-    public String numberOfLivingFemaleChildren() {
+    public String getNumberOfLivingFemaleChildren() {
         return numberOfLivingFemaleChildren;
     }
 
-    public String wifeEducationLevel() {
+    public String getWifeEducationLevel() {
         return wifeEducationLevel;
     }
 
-    public String husbandEducationLevel() {
+    public String getHusbandEducationLevel() {
         return husbandEducationLevel;
     }
 
-    public FemaleSterilizationFPDetailsDTO fpDetails() {
+    public FemaleSterilizationFPDetailsDTO getFpDetails() {
         return fpDetails;
     }
 
@@ -162,12 +162,12 @@ public class FemaleSterilizationRegisterEntryDTO {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

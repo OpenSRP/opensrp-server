@@ -6,82 +6,82 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class CondomRegisterEntryDTO {
-        @JsonProperty
-        private String ecNumber;
-        @JsonProperty
-        private String wifeName;
-        @JsonProperty
-        private String husbandName;
-        @JsonProperty
-        private String village;
-        @JsonProperty
-        private String subCenter;
-        @JsonProperty
-        private String wifeAge;
-        @JsonProperty
-        private String caste;
-        @JsonProperty
-        private String religion;
-        @JsonProperty
-        private String numberOfLivingMaleChildren;
-        @JsonProperty
-        private String numberOfLivingFemaleChildren;
-        @JsonProperty
-        private String wifeEducationLevel;
-        @JsonProperty
-        private String husbandEducationLevel;
-        @JsonProperty
-        private CondomFPDetailsDTO fpDetails;
+    @JsonProperty
+    private String ecNumber;
+    @JsonProperty
+    private String wifeName;
+    @JsonProperty
+    private String husbandName;
+    @JsonProperty
+    private String village;
+    @JsonProperty
+    private String subCenter;
+    @JsonProperty
+    private String wifeAge;
+    @JsonProperty
+    private String caste;
+    @JsonProperty
+    private String religion;
+    @JsonProperty
+    private String numberOfLivingMaleChildren;
+    @JsonProperty
+    private String numberOfLivingFemaleChildren;
+    @JsonProperty
+    private String wifeEducationLevel;
+    @JsonProperty
+    private String husbandEducationLevel;
+    @JsonProperty
+    private CondomFPDetailsDTO fpDetails;
 
-    public String ecNumber() {
+    public String getEcNumber() {
         return ecNumber;
     }
 
-    public String wifeName() {
+    public String getWifeName() {
         return wifeName;
     }
 
-    public String husbandName() {
+    public String getHusbandName() {
         return husbandName;
     }
 
-    public String village() {
+    public String getVillage() {
         return village;
     }
 
-    public String subCenter() {
+    public String getSubCenter() {
         return subCenter;
     }
 
-    public String wifeAge() {
+    public String getWifeAge() {
         return wifeAge;
     }
 
-    public String caste() {
+    public String getCaste() {
         return caste;
     }
 
-    public String religion() {
+    public String getReligion() {
         return religion;
     }
 
-    public String numberOfLivingMaleChildren() {
+    public String getNumberOfLivingMaleChildren() {
         return numberOfLivingMaleChildren;
     }
 
-    public String numberOfLivingFemaleChildren() {
+    public String getNumberOfLivingFemaleChildren() {
         return numberOfLivingFemaleChildren;
     }
 
-    public String wifeEducationLevel() {
+    public String getWifeEducationLevel() {
         return wifeEducationLevel;
     }
 
-    public String husbandEducationLevel() {
+    public String getHusbandEducationLevel() {
         return husbandEducationLevel;
     }
 
-    public CondomFPDetailsDTO fpDetails() {
+    public CondomFPDetailsDTO getFpDetails() {
         return fpDetails;
     }
 
@@ -151,12 +151,12 @@ public class CondomRegisterEntryDTO {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

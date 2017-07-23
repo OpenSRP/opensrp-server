@@ -23,9 +23,9 @@ public class FormSubmissionConverter {
 
     public static FormSubmission toFormSubmission(FormSubmissionDTO formSubmissionDTO) {
         try {
-            FormInstance formInstance = new Gson().fromJson(formSubmissionDTO.instance(), FormInstance.class);
-            return new FormSubmission(formSubmissionDTO.anmId(), formSubmissionDTO.instanceId(), formSubmissionDTO.formName(), formSubmissionDTO.entityId(),
-                    formSubmissionDTO.formDataDefinitionVersion(), parseLong(formSubmissionDTO.clientVersion()), formInstance);
+            FormInstance formInstance = new Gson().fromJson(formSubmissionDTO.getFormInstance(), FormInstance.class);
+            return new FormSubmission(formSubmissionDTO.getAnmId(), formSubmissionDTO.getInstanceId(), formSubmissionDTO.getFormName(), formSubmissionDTO.getEntityId(),
+                    formSubmissionDTO.getFormDataDefinitionVersion(), parseLong(formSubmissionDTO.getClientVersion()), formInstance);
         } catch (Exception e) {
             logger.error(MessageFormat.format("Converting Form Submission :{0}, failed with error: {1}.", formSubmissionDTO, e));
             throw e;
@@ -33,8 +33,8 @@ public class FormSubmissionConverter {
     }
 
     public static FormSubmission toFormSubmissionWithVersion(FormSubmissionDTO formSubmissionDTO) {
-        return new FormSubmission(formSubmissionDTO.anmId(), formSubmissionDTO.instanceId(), formSubmissionDTO.formName(),
-                formSubmissionDTO.entityId(), parseLong(formSubmissionDTO.clientVersion()), formSubmissionDTO.formDataDefinitionVersion(), new Gson().fromJson(formSubmissionDTO.instance(), FormInstance.class),
-                parseLong(formSubmissionDTO.serverVersion()));
+        return new FormSubmission(formSubmissionDTO.getAnmId(), formSubmissionDTO.getInstanceId(), formSubmissionDTO.getFormName(),
+                formSubmissionDTO.getEntityId(), parseLong(formSubmissionDTO.getClientVersion()), formSubmissionDTO.getFormDataDefinitionVersion(), new Gson().fromJson(formSubmissionDTO.getFormInstance(), FormInstance.class),
+                parseLong(formSubmissionDTO.getServerVersion()));
     }
 }

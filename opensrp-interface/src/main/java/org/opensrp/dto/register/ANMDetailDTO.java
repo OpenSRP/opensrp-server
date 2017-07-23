@@ -42,13 +42,77 @@ public class ANMDetailDTO {
         this.childCount = childCount;
     }
 
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocationDTO getLocation() {
+        return location;
+    }
+
+    public void setLocation(LocationDTO location) {
+        this.location = location;
+    }
+
+    public int getEcCount() {
+        return ecCount;
+    }
+
+    public void setEcCount(int ecCount) {
+        this.ecCount = ecCount;
+    }
+
+    public int getFpCount() {
+        return fpCount;
+    }
+
+    public void setFpCount(int fpCount) {
+        this.fpCount = fpCount;
+    }
+
+    public int getAncCount() {
+        return ancCount;
+    }
+
+    public void setAncCount(int ancCount) {
+        this.ancCount = ancCount;
+    }
+
+    public int getPncCount() {
+        return pncCount;
+    }
+
+    public void setPncCount(int pncCount) {
+        this.pncCount = pncCount;
+    }
+
+    public int getChildCount() {
+        return childCount;
+    }
+
+    public void setChildCount(int childCount) {
+        this.childCount = childCount;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

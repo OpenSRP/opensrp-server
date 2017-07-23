@@ -1,9 +1,7 @@
 package org.opensrp.connector.dhis2;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import org.opensrp.common.util.HttpUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

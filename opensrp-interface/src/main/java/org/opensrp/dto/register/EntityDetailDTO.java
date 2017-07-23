@@ -18,23 +18,24 @@ public class EntityDetailDTO {
     @JsonProperty
     private String anmIdentifier;
 
-    public String anmIdentifier() {
-        return this.anmIdentifier;
-    }
-    public String entityID() {
-        return this.entityId;
+    public String getEntityId() {
+        return entityId;
     }
 
-    public String entityType() {
-        return this.entityType;
+    public String getEntityType() {
+        return entityType;
     }
 
-    public String thayiCardNumber() {
-        return this.thayiCardNumber;
+    public String getThayiCardNumber() {
+        return thayiCardNumber;
     }
 
-    public String ecNumber() {
-        return this.ecNumber;
+    public String getEcNumber() {
+        return ecNumber;
+    }
+
+    public String getAnmIdentifier() {
+        return anmIdentifier;
     }
 
     public EntityDetailDTO withThayiCardNumber(String thayiCardNumber) {
@@ -61,13 +62,14 @@ public class EntityDetailDTO {
         this.entityType = type;
         return this;
     }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

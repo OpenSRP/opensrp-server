@@ -21,25 +21,25 @@ public class ANMDTO {
         this.location = location;
     }
 
-    public String identifier() {
+    public String getIdentifier() {
         return identifier;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
-    public LocationDTO location() {
+    public LocationDTO getLocation() {
         return location;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

@@ -1,11 +1,12 @@
 package org.opensrp.dto.report;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.joda.time.LocalDate;
 
 public class ServiceProvidedReportDTO {
-
-
     @JsonProperty
     private Integer id;
 
@@ -81,5 +82,72 @@ public class ServiceProvidedReportDTO {
     public ServiceProvidedReportDTO withDate(LocalDate date) {
         this.reported_date = date;
         return this;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getAnm_identifier() {
+        return anm_identifier;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getIndicator() {
+        return indicator;
+    }
+
+    public LocalDate getReported_date() {
+        return reported_date;
+    }
+
+    public Integer getNrhm_report_month() {
+        return nrhm_report_month;
+    }
+
+    public Integer getNrhm_report_year() {
+        return nrhm_report_year;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public String getSub_center() {
+        return sub_center;
+    }
+
+    public String getPhc() {
+        return phc;
+    }
+
+    public String getTaluka() {
+        return taluka;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        return EqualsBuilder.reflectionEquals(this, o);
+    }
+
+    @Override
+    public final int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }

@@ -38,45 +38,45 @@ public class FormSubmissionDTO {
         return this;
     }
 
-    public String anmId() {
+    public String getAnmId() {
         return this.anmId;
     }
 
-    public String instanceId() {
+    public String getInstanceId() {
         return this.instanceId;
     }
 
-    public String entityId() {
+    public String getEntityId() {
         return this.entityId;
     }
 
-    public String formName() {
+    public String getFormName() {
         return this.formName;
     }
 
-    public String instance() {
-        return formInstance;
+    public String getFormInstance() {
+        return this.formInstance;
     }
 
-    public String clientVersion() {
+    public String getClientVersion() {
         return this.clientVersion;
     }
 
-    public String  formDataDefinitionVersion() {
+    public String getFormDataDefinitionVersion() {
         return this.formDataDefinitionVersion;
     }
 
-    public String serverVersion() {
+    public String getServerVersion() {
         return serverVersion;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 

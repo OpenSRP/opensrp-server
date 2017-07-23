@@ -1,5 +1,6 @@
 package org.opensrp.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.ektorp.ComplexKey;
@@ -99,11 +100,23 @@ public class AllClients extends MotechBaseRepository<Client> {
         return clients;
     }
 	
+//	@View(name = "client_by_relationship", map = "function(doc) {if (doc.type === 'Client') {for(var key in doc.relationships) {emit([key, doc.relationships[key]]);}}}")
+//	@View(name = "client_by_relationship", map = "function(doc) { if(doc.type == 'Client' && doc.relationships.mother[0]) {emit(null, doc._id)} }")
+	@View(name = "client_by_relationship", map = "function(doc) { if(doc.type === 'Client' && doc.relationships) { for (var key in doc.relationships) { var entityid = doc.relationships[key][0]; if (key === 'mother') {emit([key, entityid], doc);}}}}")
+	
+	public List<Client> findByRela3tionshipId(String relationshipType, String entityId) {
+		return db.queryView(createQuery("client_by_relationship").startKey(entityId).endKey(entityId).includeDocs(true), Client.class);
+	}
+	
+//	@View(name = "clients_by_relationship", map = "function(doc) {if (doc.type === 'Client' && doc.relationships.mother) {for(var key in doc.relationships) {emit(doc.relationships.mother[key]);}}}")
+//	public List<Client> findByRelationshipId(String identifier) {
+//		return db.queryView(createQuery("clients_by_relationship").key(identifier).includeDocs(true), Client.class);
+//	}
 	public List<Client> findByCriteria(String nameLike, String gender, DateTime birthdateFrom, DateTime birthdateTo, 
 			DateTime deathdateFrom, DateTime deathdateTo, String attributeType, String attributeValue, 
 			String addressType, String country, String stateProvince, String cityVillage, String countyDistrict, 
 			String  subDistrict, String town, String subTown, DateTime lastEditFrom, DateTime lastEditTo) {
-		return lcr.getByCriteria(nameLike, gender, birthdateFrom, birthdateTo, deathdateFrom, deathdateTo, attributeType, attributeValue, addressType, country, stateProvince, cityVillage, countyDistrict, subDistrict, town, subTown, lastEditFrom, lastEditTo);//db.queryView(q.includeDocs(true), Client.class);
+		return lcr.getByCriteria(nameLike, gender, birthdateFrom, birthdateTo, deathdateFrom, deathdateTo, attributeType, attributeValue, addressType, country, stateProvince, cityVillage, countyDistrict, subDistrict, town, subTown, lastEditFrom, lastEditTo,null);//db.queryView(q.includeDocs(true), Client.class);
 	}
 	
 	public List<Client> findByDynamicQuery(String query) {
@@ -112,12 +125,16 @@ public class AllClients extends MotechBaseRepository<Client> {
 	
 	public List<Client> findByCriteria(String nameLike, String gender, DateTime birthdateFrom, DateTime birthdateTo, 
 			DateTime deathdateFrom, DateTime deathdateTo, String attributeType, String attributeValue, DateTime lastEditFrom, DateTime lastEditTo){
-		return lcr.getByCriteria(nameLike, gender, birthdateFrom, birthdateTo, deathdateFrom, deathdateTo, attributeType, attributeValue, null, null, null, null, null, null, null, null, lastEditFrom, lastEditTo);
+		return lcr.getByCriteria(nameLike, gender, birthdateFrom, birthdateTo, deathdateFrom, deathdateTo, attributeType, attributeValue, null, null, null, null, null, null, null, null, lastEditFrom, lastEditTo,null);
 	}
 	
-	public List<Client> findByCriteria(String addressType, String country, String stateProvince, String cityVillage, String countyDistrict, 
+	public List<Client> findByCriteria(String addressType, String country, String stateProvince, String cityVillage, String countyDistrict,
 			String  subDistrict, String town, String subTown, DateTime lastEditFrom, DateTime lastEditTo) {
-		return lcr.getByCriteria(null, null, null, null, null, null, null, null, addressType, country, stateProvince, cityVillage, countyDistrict, subDistrict, town, subTown, lastEditFrom, lastEditTo);
+		return lcr.getByCriteria(null, null, null, null, null, null, null, null, addressType, country, stateProvince, cityVillage, countyDistrict, subDistrict, town, subTown, lastEditFrom, lastEditTo,null);
+	}
+	
+	public List<Client> findByRelationShip(String motherIndentier) {
+		return lcr.getByClientByMother("mother",motherIndentier);
 	}
 	
 	/**

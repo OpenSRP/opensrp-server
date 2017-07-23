@@ -3,6 +3,7 @@ package org.opensrp.web.listener;
 import java.util.concurrent.TimeUnit;
 
 import org.opensrp.common.AllConstants;
+import org.opensrp.connector.dhis2.DHIS2DatasetPush;
 import org.opensrp.connector.openmrs.constants.OpenmrsConstants;
 import org.opensrp.scheduler.RepeatingSchedule;
 import org.opensrp.scheduler.TaskSchedulerService;
@@ -26,6 +27,7 @@ public class ApplicationStartupListener implements ApplicationListener<ContextRe
     private RepeatingSchedule openmrsScheduleSyncerScheduler;
     private RepeatingSchedule atomfeedSchedule;
     private RepeatingSchedule encounterSchedule;
+    private RepeatingSchedule dhis2Schedule;
     
     @Autowired
     public ApplicationStartupListener(TaskSchedulerService scheduler, 
@@ -41,6 +43,7 @@ public class ApplicationStartupListener implements ApplicationListener<ContextRe
         // TODO openmrsScheduleSyncerScheduler = new RepeatingSchedule(OpenmrsConstants.SCHEDULER_TRACKER_SYNCER_SUBJECT, 2, TimeUnit.MINUTES, openmrsSchSyncerMin, TimeUnit.MINUTES);
         atomfeedSchedule = new RepeatingSchedule(OpenmrsConstants.SCHEDULER_OPENMRS_ATOMFEED_SYNCER_SUBJECT, 5, TimeUnit.MINUTES, 1, TimeUnit.MINUTES);
         encounterSchedule = new RepeatingSchedule(OpenmrsConstants.SCHEDULER_OPENMRS_DATA_PUSH_SUBJECT, 5, TimeUnit.MINUTES, 1, TimeUnit.MINUTES);
+        dhis2Schedule = new RepeatingSchedule(DHIS2DatasetPush.SCHEDULER_DHIS2_DATA_PUSH_SUBJECT, 5, TimeUnit.MINUTES, 1, TimeUnit.MINUTES);
     }
 
     @Override
@@ -54,6 +57,7 @@ public class ApplicationStartupListener implements ApplicationListener<ContextRe
            // scheduler.startJob(openmrsScheduleSyncerScheduler);
             scheduler.startJob(atomfeedSchedule);
             scheduler.startJob(encounterSchedule);
+            scheduler.startJob(dhis2Schedule);
             
         	System.out.println("STARTED ALL SCHEDULES");
         }
