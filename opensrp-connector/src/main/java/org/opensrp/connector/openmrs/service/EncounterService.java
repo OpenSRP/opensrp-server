@@ -22,7 +22,6 @@ import java.util.Map;
 
 @Service
 public class EncounterService extends OpenmrsService {
-
 	public static final String OPENMRS_UUID_IDENTIFIER_TYPE = "OPENMRS_UUID";
 
 	private static final String ENCOUNTER_URL = "ws/rest/v1/encounter";//"ws/rest/emrapi/encounter";
