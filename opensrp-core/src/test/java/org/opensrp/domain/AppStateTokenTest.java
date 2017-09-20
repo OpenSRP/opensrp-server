@@ -30,6 +30,7 @@ public class AppStateTokenTest {
     public void testEqualAndHashcodeContract() {
         EqualsVerifier.forClass(AppStateToken.class)
                 .suppress(Warning.NONFINAL_FIELDS)
+                .withIgnoredFields("id", "revision")
                 .withRedefinedSuperclass()
                 .verify();
     }

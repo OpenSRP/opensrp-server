@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.joda.time.DateTime;
@@ -228,5 +231,20 @@ public class Obs {
 	public Obs withHumanReadableValues(List<Object> humanReadableValues) {
 		this.humanReadableValues = humanReadableValues;
 		return this;
+	}
+
+	@Override
+	public final boolean equals(Object o) {
+		return EqualsBuilder.reflectionEquals(this, o, "set");
+	}
+
+	@Override
+	public final int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, "set");
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 }

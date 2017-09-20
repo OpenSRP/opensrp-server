@@ -17,7 +17,7 @@ public class MultimediaTest {
     @Test
     public void testEqualAndHashcodeContract() {
         EqualsVerifier.forClass(Multimedia.class)
-                .withIgnoredFields("id")
+                .withIgnoredFields("id", "revision")
                 .suppress(Warning.NONFINAL_FIELDS)
                 .withRedefinedSuperclass()
                 .verify();

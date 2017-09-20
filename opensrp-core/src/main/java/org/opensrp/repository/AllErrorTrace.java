@@ -19,8 +19,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class AllErrorTrace extends MotechBaseRepository<ErrorTrace> {
-	
-	
+
+
 	@Autowired
 	protected AllErrorTrace(
 			@Qualifier(AllConstants.OPENSRP_ERRORTRACE_DATABASE) CouchDbConnector db) {
@@ -41,11 +41,11 @@ public class AllErrorTrace extends MotechBaseRepository<ErrorTrace> {
 		System.out.println("Error by id : = "+errors);
 		return errors;
 	}
-	
+
 	public boolean exists(String id) {
 		return findById(id) != null;
 	}
-	
+
 	@View(name = "all_errors", map = "function(doc) {  emit(doc.id);  }")
 	public List<ErrorTrace> findAllErrors()  throws DocumentNotFoundException{
 		return db.queryView(createQuery("all_errors").includeDocs(true),
@@ -57,10 +57,10 @@ public class AllErrorTrace extends MotechBaseRepository<ErrorTrace> {
 		return db.queryView(createQuery("all_unsolved_errors").includeDocs(true),
 				ErrorTrace.class);
 	}
-	
+
 	@View(name = "all_solved_errors", map = "function(doc) { if (doc.status === 'solved') { emit(doc.id); } }")
 	public List<ErrorTrace> findAllSolvedErrors() throws DocumentNotFoundException {
-		return db.queryView(createQuery("all_solved__errors").includeDocs(true),
+		return db.queryView(createQuery("all_solved_errors").includeDocs(true),
 				ErrorTrace.class);
 	}
 

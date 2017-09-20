@@ -2,6 +2,9 @@ package org.opensrp.domain;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.ektorp.support.TypeDiscriminator;
 import org.joda.time.DateTime;
@@ -10,7 +13,7 @@ import org.motechproject.model.MotechBaseDataObject;
 /**
  * @author muhammad.ahmed@ihsinformatics.com Created on May 25, 2015
  */
-@TypeDiscriminator("doc.type == 'Error'")
+@TypeDiscriminator("doc.type == 'ErrorTrace'")
 public class ErrorTrace extends MotechBaseDataObject {
 
 	/*
@@ -154,5 +157,20 @@ public class ErrorTrace extends MotechBaseDataObject {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	@Override
+	public final boolean equals(Object o) {
+		return EqualsBuilder.reflectionEquals(this, o, "id", "revision");
+	}
+
+	@Override
+	public final int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, "id", "revision");
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 }

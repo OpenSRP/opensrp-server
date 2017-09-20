@@ -1,5 +1,6 @@
 package org.opensrp.connector.openmrs.service;
 
+
 import com.mysql.jdbc.StringUtils;
 import org.joda.time.DateTime;
 import org.json.JSONArray;
@@ -22,6 +23,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -81,6 +83,7 @@ public class PatientService extends OpenmrsService {
 	}
 
 	public JSONObject getPatientByIdentifier(String identifier) throws JSONException {
+
 		JSONObject j = new JSONObject(
 				HttpUtil.get(getURL() + "/" + PATIENT_URL, "v=full&identifier=" + identifier, OPENMRS_USER, OPENMRS_PWD)
 						.body());
@@ -164,8 +167,7 @@ public class PatientService extends OpenmrsService {
 		return false;
 	}
 
-	public JSONObject createPatientRelationShip(String personB, String personA, String relationshipType)
-			throws JSONException {
+	public JSONObject createPatientRelationShip(String personB, String personA, String relationshipType)throws JSONException {
 		if (checkIfRelationShipExist(personB, personA, relationshipType)) {
 			return null;
 		}
@@ -511,6 +513,7 @@ public class PatientService extends OpenmrsService {
 		DateTime dd = pr.has("deathDate") && !pr.getString("deathDate").equalsIgnoreCase("null") ?
 				new DateTime(pr.getString("deathDate")) :
 				null;
+
 		c.withFirstName(pr.getJSONObject("preferredName").getString("givenName")).withMiddleName(mn)
 				.withLastName(pr.getJSONObject("preferredName").getString("familyName")).withGender(pr.getString("gender"))
 				.withBirthdate(new DateTime(pr.getString("birthdate")), pr.getBoolean("birthdateEstimated"))
@@ -537,7 +540,6 @@ public class PatientService extends OpenmrsService {
 				DateTime endDate = ad.has("startDate") && !ad.getString("endDate").equalsIgnoreCase("null") ?
 						new DateTime(ad.getString("endDate")) :
 						null;
-				;
 				Address a = new Address(ad.getString("address6"), startDate, endDate, null, ad.getString("latitude"),
 						ad.getString("longitude"), ad.getString("postalCode"), ad.getString("stateProvince"),
 						ad.getString("country"));
@@ -555,9 +557,9 @@ public class PatientService extends OpenmrsService {
 		return c;
 	}
 
-	public void patientImageUpload(Multimedia multimedia) throws IOException {
+	public List<String> patientImageUpload(Multimedia multimedia) throws IOException {
 		//String requestURL =  "http://46.101.51.199:8080/openmrs/ws/rest/v1/patientimage/uploadimage";
-
+		List<String> response = new ArrayList<>();
 		try {
 			File convFile = new File("/opt" + multimedia.getFilePath());
 			MultipartUtility multipart = new MultipartUtility(getURL() + "/" + PATIENT_IMAGE_URL, OPENMRS_USER, OPENMRS_PWD);
@@ -565,7 +567,7 @@ public class PatientService extends OpenmrsService {
 			multipart.addFormField("category", multimedia.getFileCategory());
 			multipart.addFilePart("file", convFile);
 
-			List<String> response = multipart.finish();
+			response = multipart.finish();
 
 			System.out.println("SERVER REPLIED:");
 
@@ -576,6 +578,7 @@ public class PatientService extends OpenmrsService {
 		catch (IOException ex) {
 			System.err.println(ex);
 		}
+		return response;
 	}
 
 	public JSONObject updatePersonAsDeceased(Event deathEvent) throws JSONException {

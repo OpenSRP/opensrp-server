@@ -353,4 +353,11 @@ public class AllConstants {
 		public static final String SERVICE_PROVIDER_ANM = "ANM";
 	}
 	
+	public static class DHIS2Constants {
+		
+		public static final String DHIS2_TRACK_DATA_SYNCER_SUBJECT = "DHIS2 TRACK DATA SYNCER";
+		
+		public static final String DHIS2_TRACK_DATA_SYNCER_VERSION_MARKER = "DHIS2 TRACK DATA SYNCER VERSION MARKER";
+	}
+	
 }

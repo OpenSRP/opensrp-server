@@ -69,7 +69,7 @@ public class SearchResource extends RestResource<Client> {
 		
 		Map<String, String> attributeMap = null;
 		String attributes = getStringFilter("attribute", request);
-		if (StringUtils.isEmptyOrWhitespaceOnly(attributes)) {
+		if (!StringUtils.isEmptyOrWhitespaceOnly(attributes)) {
 			String attributeType = StringUtils.isEmptyOrWhitespaceOnly(attributes) ? null : attributes.split(":", -1)[0];
 			String attributeValue = StringUtils.isEmptyOrWhitespaceOnly(attributes) ? null : attributes.split(":", -1)[1];
 			

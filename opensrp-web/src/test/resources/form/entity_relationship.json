@@ -1,0 +1,35 @@
+[
+  {
+    "parent": "pkwoman",
+    "child": "pkchild",
+    "field": "child",
+    "kind": "one_to_many",
+    "from": "pkwoman.id",
+    "to": "pkchild.relationalid"
+  },
+
+  {
+    "parent": "stock",
+    "child": "reports",
+    "field": "stock",
+    "kind": "one_to_one",
+    "from": "stock.id",
+    "to": "reports.relationalid"
+  },
+  {
+    "parent": "eligible_couple",
+    "child": "mother",
+    "field": "wife",
+    "kind": "one_to_one",
+    "from": "eligible_couple.id",
+    "to": "mother.ecCaseId"
+  },
+  {
+    "parent": "wife",
+    "child": "child",
+    "field": "children",
+    "kind": "one_to_many",
+    "from": "wife.id",
+    "to": "child.motherCaseId"
+  }
+]

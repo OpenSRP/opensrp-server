@@ -1,0 +1,655 @@
+{
+    "default_language": "Bengali",
+    "id_string": "FWNewHH_1",
+    "children": [
+        {
+            "name": "existing_location",
+            "instance": {
+                "openmrs_entity_id": "location_id",
+                "openmrs_entity": "encounter"
+            },
+            "type": "hidden"
+        },
+        {
+            "name": "today",
+            "instance": {
+                "openmrs_entity_id": "encounter_date",
+                "openmrs_entity": "encounter"
+            },
+            "type": "today"
+        },
+        {
+            "name": "start",
+            "instance": {
+                "openmrs_entity_id": "encounter_start",
+                "openmrs_entity": "encounter"
+            },
+            "type": "start"
+        },
+        {
+            "name": "end",
+            "instance": {
+                "openmrs_entity_id": "encounter_end",
+                "openmrs_entity": "encounter"
+            },
+            "type": "end"
+        },
+        {
+            "name": "FWNHREGDATE",
+            "hint": {
+                "Bengali": "আজকের তারিখ দিন",
+                "English": "Confirm Today’s date is correct"
+            },
+            "bind": {
+                "jr:constraintMsg": {
+                    "Bengali": "তারিখ আজকের তারিখের চেয়ে বেশী হতে পারবেনা",
+                    "English": "Date cannot be greater than current date."
+                },
+                "required": "yes",
+                "constraint": ".<=${today}"
+            },
+            "label": {
+                "Bengali": "তথ্য সংগ্রহের তারিখ",
+                "English": "Date of Interview"
+            },
+            "instance": {
+                "openmrs_entity_id": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "date"
+        },
+        {
+            "control": {
+                "appearance": "numbers"
+            },
+            "name": "FWGOBHHID",
+            "hint": {
+                "Bengali": "অনুগ্রহ করে খানার দরজাতে লেখা কালো রঙের JiVitA/Study household ID (HHID) টি টাইপ করুন",
+                "English": "Please input the Black – painted Government household ID (HHID) as displayed on the door/wall of the HH."
+            },
+            "bind": {
+                "jr:constraintMsg": {
+                    "Bengali": "অনুগ্রহ করে ০০০১ থেকে ৯৯৯৯ এর মধ্যে ৪ ডিজিটের GoB HHID টাইপ করুন",
+                    "English": "Please enter 4 digits of GoB HHID from 0001 to 9999"
+                },
+                "required": "yes",
+                "constraint": "regex(., '^(?!0{4})[0-9]{4}$')"
+            },
+            "label": {
+                "Bengali": "GoB HHID",
+                "English": "GoB HHID"
+            },
+            "instance": {
+                "openmrs_entity_id": "GOB HHID",
+                "openmrs_entity": "person_identifier"
+            },
+            "type": "text"
+        },
+        {
+            "control": {
+                "appearance": "numbers"
+            },
+            "name": "FWJIVHHID",
+            "hint": {
+                "Bengali": "অনুগ্রহ করে খানার দরজাতে লেখা লাল রঙের JiVitA/Study household ID (HHID) টি টাইপ করুন",
+                "English": "Please input the RED – painted JiVitA / Study household ID (HHID) as displayed on the door/wall of the HH."
+            },
+            "bind": {
+                "jr:constraintMsg": {
+                    "Bengali": "অনুগ্রহ করে ০০০১ থেকে ৯৯৯৯ এর মধ্যে ৪ ডিজিটের JiVitA HHID টাইপ করুন",
+                    "English": "Please enter 4 digits of JiVitA HHID from 0001 to 9999"
+                },
+                "required": "yes",
+                "constraint": "regex(., '^(?!0{4})[0-9]{4}$')"
+            },
+            "label": {
+                "Bengali": "JiVitA HHID",
+                "English": "JiVitA HHID"
+            },
+            "instance": {
+                "openmrs_entity_id": "JiVitA HHID",
+                "openmrs_entity": "person_identifier"
+            },
+            "type": "text"
+        },
+        {
+            "name": "FWNHNEARTO",
+            "label": {
+                "Bengali": "নিকটবর্তী স্থান",
+                "English": "Near to"
+            },
+            "instance": {
+                "openmrs_entity_parent": "usual_residence",
+                "openmrs_entity_id": "landmark",
+                "openmrs_entity": "person_address"
+            },
+            "type": "text"
+        },
+        {
+            "name": "FWNHHHGPS",
+            "bind": {
+                "required": "yes"
+            },
+            "label": {
+                "Bengali": "জি পি এস",
+                "English": "Collect GPS Location of HH"
+            },
+            "instance": {
+                "openmrs_entity_parent": "usual_residence",
+                "openmrs_entity_id": "geopoint",
+                "openmrs_entity": "person_address"
+            },
+            "type": "geopoint"
+        },
+        {
+            "name": "FWHOHFNAME",
+            "bind": {
+                "required": "yes"
+            },
+            "label": {
+                "Bengali": "খানা প্রধানের নাম-",
+                "English": "Head of Household Name"
+            },
+            "instance": {
+                "openmrs_entity_id": "first_name",
+                "openmrs_entity": "person"
+            },
+            "type": "text"
+        },
+        {
+            "name": "FWHOHLNAME",
+            "bind": {
+                "calculate": "\".\""
+            },
+            "instance": {
+                "openmrs_entity_id": "last_name",
+                "openmrs_entity": "person"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "FWHOHBIRTHDATE",
+            "bind": {
+                "calculate": "\"1900-01-01\""
+            },
+            "instance": {
+                "openmrs_entity_id": "birthdate",
+                "openmrs_entity": "person"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "FWHOHGENDER",
+            "bind": {
+                "calculate": "\"male\""
+            },
+            "instance": {
+                "openmrs_entity_id": "gender",
+                "openmrs_entity": "person"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "FWNHHMBRNUM",
+            "label": {
+                "Bengali": "খানা সদস্যের সংখ্যা কত?",
+                "English": "How many people are currently living in this household?"
+            },
+            "instance": {
+                "openmrs_entity_id": "5611AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "openmrs_entity": "concept"
+            },
+            "type": "integer"
+        },
+        {
+            "children": [
+                {
+                    "name": "0",
+                    "label": {
+                        "Bengali": "না",
+                        "English": "No"
+                    },
+                    "instance": {
+                        "openmrs_code": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    }
+                },
+                {
+                    "name": "1",
+                    "label": {
+                        "Bengali": "হ্যাঁ",
+                        "English": "Yes"
+                    },
+                    "instance": {
+                        "openmrs_code": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    }
+                },
+                {
+                    "name": "9",
+                    "label": {
+                        "Bengali": "জানিনা",
+                        "English": "Don't know"
+                    },
+                    "instance": {
+                        "openmrs_code": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    }
+                }
+            ],
+            "name": "FWNHHMWRA",
+            "label": {
+                "Bengali": "এই খানায় কি প্রজনন বয়সী বিবাহিত মহিলা আছেন?",
+                "English": "Are there any MWRAs in this Household?"
+            },
+            "type": "select one"
+        },
+        {
+            "children": [
+                {
+                    "name": "FWWOMFNAME",
+                    "hint": {
+                        "Bengali": "অনুগ্রহ করে মহিলার নাম টাইপ করুন",
+                        "English": "Please type woman's name"
+                    },
+                    "bind": {
+                        "required": "yes"
+                    },
+                    "label": {
+                        "Bengali": "মহিলার নাম-",
+                        "English": "Woman Name"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "first_name",
+                        "openmrs_entity": "person"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "FWWOMLNAME",
+                    "bind": {
+                        "calculate": "\".\""
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "last_name",
+                        "openmrs_entity": "person"
+                    },
+                    "type": "calculate"
+                },
+                {
+                    "control": {
+                        "appearance": "numbers"
+                    },
+                    "name": "FWWOMNID",
+                    "hint": {
+                        "Bengali": "অনুগ্রহ করে জাতীয় পরিচয়পত্র কার্ড দেখে সরকার প্রদত্ত আইডি টাইপ করুন",
+                        "English": "Please input the Government ID as displayed on the national ID card"
+                    },
+                    "bind": {
+                        "jr:constraintMsg": {
+                            "Bengali": "জাতীয় পরিচয়পত্র নং ১৩ অথবা ১৭ ডিজিটের হবে",
+                            "English": "National ID should be 13 or 17 digits"
+                        },
+                        "constraint": "regex(., '^(?!0{13})[0-9]{13}$') or regex(., '^(?!0{17})[0-9]{17}$')"
+                    },
+                    "label": {
+                        "Bengali": "মহিলার জাতীয় পরিচয়পত্র নং-",
+                        "English": "Woman's National ID Number"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "NID",
+                        "openmrs_entity": "person_identifier"
+                    },
+                    "type": "text"
+                },
+                {
+                    "control": {
+                        "appearance": "numbers"
+                    },
+                    "name": "FWWOMBID",
+                    "hint": {
+                        "Bengali": "অনুগ্রহ করে জন্ম নিবন্ধন সনদ দেখে সরকার প্রদত্ত আইডি টাইপ করুন",
+                        "English": "Please input the Government ID as displayed on the birth certificate"
+                    },
+                    "bind": {
+                        "jr:constraintMsg": {
+                            "Bengali": "জন্ম নিবন্ধন সনদ নং ১৭ ডিজিটের হবে",
+                            "English": "Birth Registration ID should be 17 digits"
+                        },
+                        "required": "yes",
+                        "constraint": "regex(., '^(?!0{17})[0-9]{17}$')"
+                    },
+                    "label": {
+                        "Bengali": "মহিলার জন্ম নিবন্ধন সনদ নং-",
+                        "English": "Woman's Birth Registration ID"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "Birth Registration ID",
+                        "openmrs_entity": "person_identifier"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "FWHUSNAME",
+                    "hint": {
+                        "Bengali": "অনুগ্রহ করে স্বামীর নাম টাইপ করুন",
+                        "English": "Please type husband's name"
+                    },
+                    "bind": {
+                        "required": "yes"
+                    },
+                    "label": {
+                        "Bengali": "স্বামীর নাম-",
+                        "English": "Husband Name"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "161135AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "text"
+                },
+                {
+                    "name": "FWBIRTHDATE",
+                    "hint": {
+                        "Bengali": "মহিলার জন্ম নিবন্ধন পত্র থাকলে সেখান থেকে জন্ম তারিখটি লিখে নিন। যদি জন্ম তারিখ জানা না থাকে তবে তারিখ ১৫ সিলেক্ট করুন, যদি মাস জানা না থাকে তবে মাস ৬ (জুন) সিলেক্ট করুন",
+                        "English": "If birth certificate is available, take date of birth from the birth certificate. \nIf date of birth is unknown, choose 15th as the date of birth. If month is unknown, choose month 06 (June) as month of birth."
+                    },
+                    "bind": {
+                        "jr:constraintMsg": {
+                            "Bengali": "মহিলার বয়স অবশ্যই ১৩ বছরের বেশী হবে",
+                            "English": "Woman must be older than 13 years of age"
+                        },
+                        "required": "yes",
+                        "constraint": "((${FWBIRTHDATE})+4745) <= today()"
+                    },
+                    "label": {
+                        "Bengali": "মহিলার জন্ম তারিখ",
+                        "English": "Woman's Date of Birth"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "birthdate",
+                        "openmrs_entity": "person"
+                    },
+                    "type": "date"
+                },
+                {
+                    "name": "FWGENDER",
+                    "bind": {
+                        "calculate": "\"female\""
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "gender",
+                        "openmrs_entity": "person"
+                    },
+                    "type": "calculate"
+                },
+                {
+                    "name": "FWWOMAGE",
+                    "bind": {
+                        "calculate": "round(((${today} - ${FWBIRTHDATE}) div 365.25),0)"
+                    },
+                    "type": "calculate"
+                },
+                {
+                    "name": "display_age",
+                    "label": {
+                        "Bengali": "মহিলার বয়স ${FWWOMAGE}",
+                        "English": "The woman's age is ${FWWOMAGE}."
+                    },
+                    "type": "note"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "0",
+                            "label": {
+                                "Bengali": "না",
+                                "English": "No"
+                            },
+                            "instance": {
+                                "openmrs_code": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "1",
+                            "label": {
+                                "Bengali": "হ্যাঁ",
+                                "English": "Yes"
+                            },
+                            "instance": {
+                                "openmrs_code": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "9",
+                            "label": {
+                                "Bengali": "জানিনা",
+                                "English": "Don't know"
+                            },
+                            "instance": {
+                                "openmrs_code": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        }
+                    ],
+                    "name": "FWNHWOMSTRMEN",
+                    "bind": {
+                        "required": "yes"
+                    },
+                    "label": {
+                        "Bengali": "আপনার কি মাসিক একেবারে উঠে গেছে/আপনি কি স্থায়ী জন্মনিয়ন্ত্রন পদ্ধতি গ্রহণ করেছেন?",
+                        "English": "Are you currently menopausal or sterilized?"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "0",
+                            "label": {
+                                "Bengali": "মারা গেছেন",
+                                "English": "Deceased"
+                            },
+                            "instance": {
+                                "openmrs_code": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "1",
+                            "label": {
+                                "Bengali": "বেঁচে আছেন",
+                                "English": "Alive"
+                            },
+                            "instance": {
+                                "openmrs_code": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "9",
+                            "label": {
+                                "Bengali": "জানিনা",
+                                "English": "Don't know"
+                            },
+                            "instance": {
+                                "openmrs_code": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        }
+                    ],
+                    "name": "FWNHWOMHUSALV",
+                    "bind": {
+                        "relevant": "${FWNHWOMSTRMEN}='0'",
+                        "required": "yes"
+                    },
+                    "label": {
+                        "Bengali": "আপনার স্বামী কি বেঁচে আছেন?",
+                        "English": "Is the husband alive?"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "5561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "0",
+                            "label": {
+                                "Bengali": "না",
+                                "English": "No"
+                            },
+                            "instance": {
+                                "openmrs_code": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "1",
+                            "label": {
+                                "Bengali": "হ্যাঁ",
+                                "English": "Yes"
+                            },
+                            "instance": {
+                                "openmrs_code": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "9",
+                            "label": {
+                                "Bengali": "জানিনা",
+                                "English": "Don't know"
+                            },
+                            "instance": {
+                                "openmrs_code": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        }
+                    ],
+                    "name": "FWNHWOMHUSLIV",
+                    "bind": {
+                        "relevant": "${FWNHWOMSTRMEN}='0' and ${FWNHWOMHUSALV}='1'",
+                        "required": "yes"
+                    },
+                    "label": {
+                        "Bengali": "আপনি কি বর্তমানে আপনার স্বামীর সাথে বসবাস করছেন?",
+                        "English": "Are you currently living with your husband?"
+                    },
+                    "instance": {
+                        "openmrs_entity_id": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "openmrs_entity": "concept"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "children": [
+                        {
+                            "name": "0",
+                            "label": {
+                                "Bengali": "না",
+                                "English": "No"
+                            },
+                            "instance": {
+                                "openmrs_code": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "1",
+                            "label": {
+                                "Bengali": "হ্যাঁ",
+                                "English": "Yes"
+                            },
+                            "instance": {
+                                "openmrs_code": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        },
+                        {
+                            "name": "9",
+                            "label": {
+                                "Bengali": "জানিনা",
+                                "English": "Don't know"
+                            },
+                            "instance": {
+                                "openmrs_code": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                            }
+                        }
+                    ],
+                    "name": "FWNHWOMHUSSTR",
+                    "bind": {
+                        "relevant": "${FWNHWOMSTRMEN}='0' and ${FWNHWOMHUSLIV}='1'",
+                        "required": "yes"
+                    },
+                    "label": {
+                        "Bengali": "আপনার স্বামী কি স্থায়ী জন্মনিয়ন্ত্রন পদ্ধতি গ্রহণ করেছেন?",
+                        "English": "Is the husband sterilized?"
+                    },
+                    "type": "select one"
+                },
+                {
+                    "name": "FWELIGIBLE",
+                    "bind": {
+                        "calculate": "if(${FWNHWOMSTRMEN}='0' and ${FWNHWOMHUSLIV}='1' and ${FWNHWOMHUSSTR}='0',1,0)"
+                    },
+                    "type": "calculate"
+                },
+                {
+                    "name": "add_women",
+                    "label": {
+                        "Bengali": "এই খানায় যদি আরও কোন মহিলা থাকে যাকে রেজিস্ট্রেশন করা হয়নি, তাহলে '+' অপশনটি বাছুন এবং একই প্রক্রিয়ায় পরবর্তী মহিলাকে রেজিস্ট্রেশন করুন",
+                        "English": "If there are any additional unregistered women in this household, select the '+' to add them now."
+                    },
+                    "type": "note"
+                }
+            ],
+            "name": "woman",
+            "hint": {
+                "Bengali": "আমরা এখন মহিলাটির রেজিস্ট্রেশন প্রক্রিয়া শুরু করতে যাচ্ছি। অনুগ্রহ করে মহিলাটিরে তার জন্ম নিবন্ধন স ও জাতীয় পরিচয়পত্র নিয়ে আসতে বলুন।",
+                "English": "We will now register the woman. Please ask her to bring her National ID Card and Birth Certificate."
+            },
+            "bind": {
+                "relevant": "${FWNHHMWRA}='1'"
+            },
+            "label": {
+                "Bengali": "মহিলা তথ্যঃ",
+                "English": "New Woman Registration"
+            },
+            "instance": {
+                "openmrs_entity_id": "Census and New Woman Registration",
+                "openmrs_entity": "person"
+            },
+            "type": "repeat"
+        },
+        {
+            "name": "join_names",
+            "bind": {
+                "calculate": "join(' ', ${FWWOMFNAME})"
+            },
+            "type": "calculate"
+        },
+        {
+            "name": "MWRA",
+            "bind": {
+                "calculate": "if(${join_names} = '', 0, count(${woman}))"
+            },
+            "type": "calculate"
+        },
+        {
+            "control": {
+                "bodyless": true
+            },
+            "children": [
+                {
+                    "name": "instanceID",
+                    "bind": {
+                        "readonly": "true()",
+                        "calculate": "concat('uuid:', uuid())"
+                    },
+                    "type": "calculate"
+                }
+            ],
+            "name": "meta",
+            "type": "group"
+        }
+    ],
+    "instance": {
+        "encounter_type": "New Household Registration"
+    },
+    "version": "201505070930",
+    "type": "survey",
+    "name": "FWNewHH",
+    "sms_keyword": "FWNewHH",
+    "title": "FW new HH Reg"
+}

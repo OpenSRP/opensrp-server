@@ -276,24 +276,7 @@ public class ClientService {
 	}
 
 	public Client addorUpdate(Client client) {
-		if (client.getBaseEntityId() == null) {
-			throw new RuntimeException("No baseEntityId");
-		}
-		Client c = findClient(client);
-		if (c != null) {
-			client.setRevision(c.getRevision());
-			client.setId(c.getId());
-			c.setDateEdited(DateTime.now());
-			client.setServerVersion(null);
-			client.addIdentifier("OPENMRS_UUID", c.getIdentifier("OPENMRS_UUID"));
-			allClients.update(client);
-
-		} else {
-
-			client.setDateCreated(DateTime.now());
-			allClients.add(client);
-		}
-		return client;
+		return addorUpdate(client, true);
 	}
 
 	public Client imageUpdate(Client client) {
@@ -314,9 +297,9 @@ public class ClientService {
 		if (c != null) {
 			client.setRevision(c.getRevision());
 			client.setId(c.getId());
-			c.setDateEdited(DateTime.now());
+			client.setDateEdited(DateTime.now());
 			if (resetServerVersion) {
-				c.setServerVersion(null);
+				client.setServerVersion(null);
 			}
 			allClients.update(client);
 

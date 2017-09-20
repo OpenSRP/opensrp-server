@@ -77,7 +77,7 @@ public class ClientResource extends RestResource<Client>{
 		String attributes = getStringFilter("attribute", request);
 		String attributeType = StringUtils.isEmptyOrWhitespaceOnly(attributes)?null:attributes.split(":",-1)[0];
 		String attributeValue = StringUtils.isEmptyOrWhitespaceOnly(attributes)?null:attributes.split(":",-1)[1];
-		
+
 		return clientService.findByCriteria(nameLike, gender, 
 				birthdate==null?null:birthdate[0], birthdate==null?null:birthdate[1], 
 				deathdate == null?null:deathdate[0], deathdate == null?null:deathdate[1], attributeType, attributeValue,

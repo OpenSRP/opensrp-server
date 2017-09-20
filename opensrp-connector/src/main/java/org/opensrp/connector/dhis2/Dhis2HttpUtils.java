@@ -1,7 +1,6 @@
 package org.opensrp.connector.dhis2;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -15,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.opensrp.common.util.HttpResponse;
 import org.opensrp.common.util.HttpUtil;
+import org.opensrp.common.util.HttpUtil.AuthType;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
@@ -63,11 +63,7 @@ public class Dhis2HttpUtils extends DHIS2Service {
 			while ((output = br.readLine()) != null) {
 				sb.append(output);
 			}
-			System.out.println(sb.toString());
 			return new HttpResponse(con.getResponseCode() == HttpStatus.SC_OK, sb.toString());
-		}
-		catch (FileNotFoundException e) {
-			return new HttpResponse(true, "");
 		}
 		catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException(e);
@@ -78,8 +74,8 @@ public class Dhis2HttpUtils extends DHIS2Service {
 	}
 	
 	public JSONObject get(String url, String payload) throws JSONException {
-		HttpResponse op = HttpUtil.get(HttpUtil.removeEndingSlash(this.DHIS2_BASE_URL) + "/" + url, payload, this.DHIS2_USER,
-		    this.DHIS2_PWD);
+		HttpResponse op = HttpUtil.get(HttpUtil.removeEndingSlash(this.DHIS2_BASE_URL) + "/" + url, payload,
+		    this.DHIS2_USER, this.DHIS2_PWD);
 		JSONObject response = new JSONObject(op.body());
 		
 		return response;
@@ -91,6 +87,13 @@ public class Dhis2HttpUtils extends DHIS2Service {
 		JSONObject response = new JSONObject(op.body());
 		
 		return response;
+	}
+	
+	public void delete(String url, String payload, String data) {
+		new TurnOffCertificateValidation().ForHTTPSConnections();
+		HttpUtil.delete(HttpUtil.removeEndingSlash(this.DHIS2_BASE_URL) + "/" + url, payload, AuthType.BASIC,
+		    this.DHIS2_USER.replaceAll("\\s+", "") + ":" + this.DHIS2_PWD.replaceAll("\\s+", ""));
+		
 	}
 	
 }

@@ -131,5 +131,11 @@ public class ActionController {
 			return new ResponseEntity<>(new Gson().toJson(response), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/test")
+	@ResponseBody
+	public String test(){
+		return "I am here for test";
+	}
 }
 

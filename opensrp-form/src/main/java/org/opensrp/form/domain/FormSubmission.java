@@ -142,12 +142,12 @@ public class FormSubmission extends MotechBaseDataObject {
 	
     @Override
     public boolean equals(Object o) {
-        return EqualsBuilder.reflectionEquals(o, this);
+        return EqualsBuilder.reflectionEquals(o, this, "id", "revision");
     }
 
     @Override
     public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this, "id");
+        return HashCodeBuilder.reflectionHashCode(this, "id", "revision");
     }
 
     @Override

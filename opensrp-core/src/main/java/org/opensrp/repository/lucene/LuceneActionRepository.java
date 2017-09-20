@@ -18,52 +18,44 @@ import com.github.ldriscoll.ektorplucene.designdocument.annotation.FullText;
 import com.github.ldriscoll.ektorplucene.designdocument.annotation.Index;
 import com.mysql.jdbc.StringUtils;
 
-@FullText({
-        @Index(name = "by_all_criteria", analyzer = "perfield:{baseEntityId:\"keyword\"}", index = "function(doc) {"+
-    "if (doc.type !== 'Action') return null;"+
-    "var arr1 = ['baseEntityId','providerId','actionTarget','actionType', 'isActionActive','timeStamp','version'];"+
-    "var ret = new Document();"+
-    "for (var i in arr1) {"+
-        "ret.add(doc[arr1[i]], {"+
-            "'field': arr1[i]"+
-       " });}"
-       + "return ret;}"
-            ) })
+@FullText({ @Index(name = "by_all_criteria", analyzer = "perfield:{baseEntityId:\"keyword\"}", index = "function(doc) {"
+		+ "if (doc.type !== 'Action') return null;"
+		+ "var arr1 = ['baseEntityId','providerId','actionTarget','actionType', 'isActionActive','timeStamp','version'];"
+		+ "var ret = new Document();" + "for (var i in arr1) {" + "ret.add(doc[arr1[i]], {" + "'field': arr1[i]" + " });}"
+		+ "return ret;}") })
 @Component
 public class LuceneActionRepository extends CouchDbRepositorySupportWithLucene<Action> {
-	
+
 	private LuceneDbConnector ldb;
-	
+
 	@Autowired
 	protected LuceneActionRepository(LuceneDbConnector db) {
 		super(Action.class, db);
 		this.ldb = db;
 		initStandardDesignDocument();
 	}
-	
 
-	
 	/**
 	 * @param providerId- health worker id
 	 * @param timeStamp
-	 * @param sortBy Prefix with / for ascending order and \ for descending order (ascending is the
-	 *            default if not specified).
-	 * @param sortOrder either descending or ascending
+	 * @param sortBy      Prefix with / for ascending order and \ for descending order (ascending is the
+	 *                    default if not specified).
+	 * @param sortOrder   either descending or ascending
 	 * @param limit
-	 * @param team this is a comma separated string of team members id
+	 * @param team        this is a comma separated string of team members id
 	 * @return
 	 */
-	public List<Action> getByCriteria(String team, String providerId,  Long timeStamp, String sortBy,
-	                                 String sortOrder, int limit) {
+	public List<Action> getByCriteria(String team, String providerId, Long timeStamp, String sortBy, String sortOrder,
+	                                  int limit) {
 		// create a simple query against the view/search function that we've created
 		LuceneQuery query = new LuceneQuery("Action", "by_all_criteria");
-		
+
 		Query qf = new Query(FilterType.AND);
-		
+
 		if (timeStamp != null) {
 			qf.between(org.opensrp.common.AllConstants.Action.TIMESTAMP, timeStamp, Long.MAX_VALUE);
 		}
-		
+
 		if (team != null && !team.isEmpty()) {
 			//convert team string to list
 			String[] idsArray = org.apache.commons.lang.StringUtils.split(team, ",");
@@ -76,7 +68,7 @@ public class LuceneActionRepository extends CouchDbRepositorySupportWithLucene<A
 		} else if ((providerId != null && !StringUtils.isEmptyOrWhitespaceOnly(providerId))) {
 			qf.eq(PROVIDER_ID, providerId);
 		}
-		
+
 		if (StringUtils.isEmptyOrWhitespaceOnly(qf.query())) {
 			throw new RuntimeException("At least one search filter must be specified");
 		}
@@ -86,7 +78,7 @@ public class LuceneActionRepository extends CouchDbRepositorySupportWithLucene<A
 		query.setIncludeDocs(true);
 		query.setLimit(limit);
 		query.setSort((sortOrder.toLowerCase().contains("desc") ? "\\" : "/") + sortBy);
-		
+
 		try {
 			LuceneResult result = db.queryLucene(query);
 			return ldb.asList(result, Action.class);
@@ -95,6 +87,5 @@ public class LuceneActionRepository extends CouchDbRepositorySupportWithLucene<A
 			throw new RuntimeException(e);
 		}
 	}
-	
-	
+
 }

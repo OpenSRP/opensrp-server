@@ -16,7 +16,7 @@ public class ActionTest {
 
     @Test
     public void testEqualityAndHashCode() {
-        EqualsVerifier.forClass(Action.class).withIgnoredFields("timeStamp", "revision").suppress(Warning.NONFINAL_FIELDS).verify();
+        EqualsVerifier.forClass(Action.class).withIgnoredFields("id", "timeStamp", "revision").suppress(Warning.NONFINAL_FIELDS).verify();
     }
 
     @Test

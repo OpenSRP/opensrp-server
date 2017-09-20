@@ -105,12 +105,12 @@ public class  Action extends MotechBaseDataObject {
 
     @Override
     public final boolean equals(Object o) {
-        return EqualsBuilder.reflectionEquals(this, o, "timeStamp", "revision");
+        return EqualsBuilder.reflectionEquals(this, o, "id","timeStamp", "revision");
     }
 
     @Override
     public final int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this, "timeStamp", "revision");
+        return HashCodeBuilder.reflectionHashCode(this, "id","timeStamp", "revision");
     }
 
     @Override

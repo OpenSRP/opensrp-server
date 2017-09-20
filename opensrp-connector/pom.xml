@@ -204,7 +204,12 @@
 			<artifactId>bcprov-ext-jdk15on</artifactId>
 			<version>1.54</version>
 		</dependency>
-		
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

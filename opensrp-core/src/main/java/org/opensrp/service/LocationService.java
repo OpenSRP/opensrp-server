@@ -17,33 +17,24 @@ public class LocationService {
 	public LocationService(AllLocations allLocations) {
 		this.allLocations = allLocations;
 	}
-	
-	public List<Location> getAllLocations()
-	{
+
+	public List<Location> getAllLocations() {
 		ArrayList<Location> apiLocations = new ArrayList<>();
-		
+
 		List<org.opensrp.domain.Location> locations = allLocations.findAllLocations();
-		
-		for(org.opensrp.domain.Location location: locations)
-		{
+
+		for (org.opensrp.domain.Location location : locations) {
 			org.opensrp.domain.Location parentLocation = location.getParentLocation();
-			
-			Location apiParentLocation = new Location()
-										.withLocationId(parentLocation.getLocationId())
-										.withName(parentLocation.getName())
-										.withTags(parentLocation.getTags())
-										//.withAddress(parentLocation.getAddress())
-										.withAttributes(parentLocation.getAttributes())
-										.withIdentifiers(parentLocation.getIdentifiers());
-			
-			Location apiLocation = new Location()
-			                          .withLocationId(location.getLocationId())
-			                          .withName(location.getName())
-			                          .withParentLocation(apiParentLocation)
-			                          .withTags(location.getTags())
-			                    	//  .withAddress(location.getAddress())
-			                    	  .withIdentifiers(location.getIdentifiers())
-			                    	  .withAttributes(location.getAttributes());
+
+			Location apiParentLocation = new Location().withLocationId(parentLocation.getLocationId())
+					.withName(parentLocation.getName()).withTags(parentLocation.getTags())
+					//.withAddress(parentLocation.getAddress())
+					.withAttributes(parentLocation.getAttributes()).withIdentifiers(parentLocation.getIdentifiers());
+
+			Location apiLocation = new Location().withLocationId(location.getLocationId()).withName(location.getName())
+					.withParentLocation(apiParentLocation).withTags(location.getTags())
+					//  .withAddress(location.getAddress())
+					.withIdentifiers(location.getIdentifiers()).withAttributes(location.getAttributes());
 			
 			
 				/*
@@ -55,39 +46,32 @@ public class LocationService {
 						  apiLocation.withDateVoided(location.getDateVoided());
 						  apiLocation.withVoided(location.getVoided());
 						  apiLocation.withVoidReason(location.getRevision());*/
-						
-				  apiLocations.add(apiLocation);			  
-			
+
+			apiLocations.add(apiLocation);
+
 		}
-		
+
 		return apiLocations;
-		
+
 	}
-	
-	public void addLocation(Location location)
-	{
+
+	public void addLocation(Location location) {
 		org.opensrp.domain.Location domainLocation = new org.opensrp.domain.Location()
-														.withLocationId(location.getLocationId())
-														.withName(location.getName())
-														.withTags(location.getTags())
-														//.withAddress(location.getAddress())
-														.withIdentifiers(location.getIdentifiers())
-														.withAttributes(location.getAttributes());
+				.withLocationId(location.getLocationId()).withName(location.getName()).withTags(location.getTags())
+				//.withAddress(location.getAddress())
+				.withIdentifiers(location.getIdentifiers()).withAttributes(location.getAttributes());
 		allLocations.add(domainLocation);
-		
+
 	}
-	
-	public void updateLocation(Location location)
-	{
+
+	// FIXME: 8/28/17 api.Location to domain.Location doens't set id field.
+	public void updateLocation(Location location) {
 		org.opensrp.domain.Location domainLocation = new org.opensrp.domain.Location()
-														.withLocationId(location.getLocationId())
-														.withName(location.getName())
-														.withTags(location.getTags())
-														//.withAddress(location.getAddress())
-														.withIdentifiers(location.getIdentifiers())
-														.withAttributes(location.getAttributes());
+				.withLocationId(location.getLocationId()).withName(location.getName()).withTags(location.getTags())
+				//.withAddress(location.getAddress())
+				.withIdentifiers(location.getIdentifiers()).withAttributes(location.getAttributes());
 		allLocations.update(domainLocation);
-		
+
 	}
 
 }

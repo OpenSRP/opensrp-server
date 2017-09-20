@@ -91,12 +91,12 @@ public class Multimedia extends MotechBaseDataObject {
 
 	@Override
 	public final boolean equals(Object o) {
-		return EqualsBuilder.reflectionEquals(this, o, "id");
+		return EqualsBuilder.reflectionEquals(this, o, "id", "revision");
 	}
 
 	@Override
 	public final int hashCode() {
-		return HashCodeBuilder.reflectionHashCode(this, "id");
+		return HashCodeBuilder.reflectionHashCode(this, "id","revision");
 	}
 
 	@Override

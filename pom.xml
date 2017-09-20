@@ -28,7 +28,7 @@
         <motech.contrib.group>org.motechproject.contrib-drishti</motech.contrib.group>
         <motech.contrib.version>0.1-SNAPSHOT</motech.contrib.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>3.1.0.RELEASE</spring.version>
+        <spring.version>3.1.1.RELEASE</spring.version>
 		<mysql.connector.version>5.1.36</mysql.connector.version>
         <jackson.version>1.9.7</jackson.version>
 		<opensrp.updatePolicy>always</opensrp.updatePolicy>
