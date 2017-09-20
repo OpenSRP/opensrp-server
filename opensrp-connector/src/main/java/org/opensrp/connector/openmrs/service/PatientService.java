@@ -1,6 +1,5 @@
 package org.opensrp.connector.openmrs.service;
 
-
 import com.mysql.jdbc.StringUtils;
 import org.joda.time.DateTime;
 import org.json.JSONArray;
@@ -31,7 +30,7 @@ import java.util.Map.Entry;
 @Service
 public class PatientService extends OpenmrsService {
 
-	// This ID should start with opensrp and end with uid. As matched by atomefeed module`s patient service
+	//	This ID should start with opensrp and end with uid. As matched by atomefeed module`s patient service
 	public static final String OPENSRP_IDENTIFIER_TYPE = "OpenSRP Thrive UID";
 
 	public static final String OPENSRP_IDENTIFIER_TYPE_MATCHER = "(?i)opensrp.*uid";
@@ -83,7 +82,6 @@ public class PatientService extends OpenmrsService {
 	}
 
 	public JSONObject getPatientByIdentifier(String identifier) throws JSONException {
-
 		JSONObject j = new JSONObject(
 				HttpUtil.get(getURL() + "/" + PATIENT_URL, "v=full&identifier=" + identifier, OPENMRS_USER, OPENMRS_PWD)
 						.body());
@@ -167,7 +165,8 @@ public class PatientService extends OpenmrsService {
 		return false;
 	}
 
-	public JSONObject createPatientRelationShip(String personB, String personA, String relationshipType)throws JSONException {
+	public JSONObject createPatientRelationShip(String personB, String personA, String relationshipType)
+			throws JSONException {
 		if (checkIfRelationShipExist(personB, personA, relationshipType)) {
 			return null;
 		}
@@ -201,9 +200,10 @@ public class PatientService extends OpenmrsService {
 				String motherBaseId = c.getRelationships().get("mother").get(0).toString();
 
 				JSONObject person = getPatientByIdentifier(motherBaseId).has("person") ?
-						getPatientByIdentifier(motherBaseId).getJSONObject("person") : null;
+						getPatientByIdentifier(motherBaseId).getJSONObject("person") :
+						null;
 
-				if (person!=null && person.has("uuid")) {
+				if (person != null && person.has("uuid")) {
 					createPatientRelationShip(c.getIdentifier("OPENMRS_UUID"), person.getString("uuid"),
 							"8d91a210-c2cc-11de-8d13-0010c6dffd0f");
 				}
@@ -246,9 +246,9 @@ public class PatientService extends OpenmrsService {
 		logger.info("PERSON TO CREATE RESPONSE ----" + response);
 		JSONObject jsonResponse = new JSONObject(response);
 
-		if(jsonResponse.has("error")){
+		if (jsonResponse.has("error")) {
 			JSONObject responseError = new JSONObject(jsonResponse.getString("error"));
-			if(responseError.has("message")&& responseError.getString("message").equals("User is not logged in")){
+			if (responseError.has("message") && responseError.getString("message").equals("User is not logged in")) {
 				be.setServerVersion(null);
 				clientService.updateClient(be);
 			}
@@ -288,7 +288,8 @@ public class PatientService extends OpenmrsService {
 			if (event.getEventType().equals("Birth Registration")) {
 				List<Obs> obs = event.getObs();
 				for (Obs obs2 : obs) {
-					if (obs2 != null && obs2.getFieldType().equals("formsubmissionField") && obs2.getFormSubmissionField().equals("Home_Facility") && obs2.getValue() != null) {
+					if (obs2 != null && obs2.getFieldType().equals("formsubmissionField") && obs2.getFormSubmissionField()
+							.equals("Home_Facility") && obs2.getValue() != null) {
 						String clientAddress4 = openmrsLocationService.getLocation(obs2.getValue().toString()).getName();
 						if (be.getAttribute("Home_Facility") != null) {
 							be.removeAttribute("Home_Facility");
@@ -296,8 +297,9 @@ public class PatientService extends OpenmrsService {
 						be.addAttribute("Home_Facility", clientAddress4);
 					}
 				}
+				break;
 			}
-			break;
+
 		}
 		per.put("attributes", convertAttributesToOpenmrsJson(be.getAttributes()));
 
@@ -320,7 +322,6 @@ public class PatientService extends OpenmrsService {
 			a.put("value", at.getValue());
 			attrs.put(a);
 		}
-
 		return attrs;
 	}
 
@@ -346,10 +347,8 @@ public class PatientService extends OpenmrsService {
 				List<Event> registrationEvents = eventService.findByBaseEntityId(client.getBaseEntityId());
 				for (Event event : registrationEvents) {
 					if (event.getEventType().equals("Birth Registration")) {
-
 						List<Obs> obs = event.getObs();
 						for (Obs obs2 : obs) {
-
 							if (obs2 != null && obs2.getFieldType().equals("formsubmissionField") && obs2
 									.getFormSubmissionField().equals("Home_Facility") && obs2.getValue() != null) {
 
@@ -379,7 +378,6 @@ public class PatientService extends OpenmrsService {
 					}
 				}
 				jao.put("cityVillage", ad.getCityVillage());
-
 			}
 			jao.put("address6", ad.getAddressType());
 			jao.put("postalCode", ad.getPostalCode());
@@ -391,7 +389,6 @@ public class PatientService extends OpenmrsService {
 			if (ad.getEndDate() != null) {
 				jao.put("endDate", OPENMRS_DATE.format(ad.getEndDate().toDate()));
 			}
-
 			jaar.put(jao);
 		}
 

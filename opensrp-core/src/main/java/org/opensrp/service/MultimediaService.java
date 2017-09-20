@@ -1,8 +1,5 @@
 package org.opensrp.service;
 
-import java.io.File;
-import java.util.List;
-
 import org.opensrp.domain.Client;
 import org.opensrp.domain.Multimedia;
 import org.opensrp.dto.form.MultimediaDTO;
@@ -14,21 +11,24 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.List;
+
 @Service
 public class MultimediaService {
 
 	private static Logger logger = LoggerFactory.getLogger(MultimediaService.class.toString());
-	
+
 	public static final String IMAGES_DIR = "patient_images";
-	
+
 	private static final String VIDEOS_DIR = "videos";
-	
+
 	private final MultimediaRepository multimediaRepository;
-	
+
 	private final ClientService clientService;
-	
+
 	private String multimediaDirPath;
-	
+
 	@Value("#{opensrp['multimedia.directory.name']}")
 	String baseMultimediaDirPath;
 
@@ -37,7 +37,7 @@ public class MultimediaService {
 		this.multimediaRepository = multimediaRepository;
 		this.clientService = clientService;
 	}
-	
+
 	public String saveMultimediaFile(MultimediaDTO multimediaDTO, MultipartFile file) {
 
 		boolean uploadStatus = uploadFile(multimediaDTO, file);
@@ -55,8 +55,8 @@ public class MultimediaService {
 
 				multimediaRepository.add(multimediaFile);
 				Client client = clientService.getByBaseEntityId(multimediaDTO.getCaseId());
-				if (client !=null) {
-					if(client.getAttribute("Patient Image") != null) {
+				if (client != null) {
+					if (client.getAttribute("Patient Image") != null) {
 						client.removeAttribute("Patient Image");
 					}
 					client.addAttribute("Patient Image", multimediaDTO.getCaseId() + ".jpg");
@@ -70,15 +70,14 @@ public class MultimediaService {
 				e.getMessage();
 			}
 		}
-		
+
 		return "fail";
 	}
 
 	public boolean uploadFile(MultimediaDTO multimediaDTO, MultipartFile multimediaFile) {
-		
+
 		if (!multimediaFile.isEmpty()) {
 			try {
-
 
 				multimediaDirPath = baseMultimediaDirPath + File.separator;
 				String fileExt = ".jpg";
@@ -112,7 +111,7 @@ public class MultimediaService {
 				String fileName = multimediaDirPath + File.separator + multimediaDTO.getCaseId() + fileExt;
 				multimediaDTO.withFilePath(fileName);
 				File multimediaDir = new File(fileName);
-				
+
 				multimediaFile.transferTo(multimediaDir);
 
 			/*
@@ -144,6 +143,7 @@ public class MultimediaService {
 	public List<Multimedia> getMultimediaFiles(String providerId) {
 		return multimediaRepository.all(providerId);
 	}
+
 	public Multimedia findByCaseId(String entityId) {
 		return multimediaRepository.findByCaseId(entityId);
 	}

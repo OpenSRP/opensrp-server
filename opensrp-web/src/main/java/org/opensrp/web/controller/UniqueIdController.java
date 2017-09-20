@@ -130,7 +130,7 @@ public class UniqueIdController {
 	/**
 	 * Fetch unique Ids from OMRS
 	 *
-	 * @return  json array object with ids
+	 * @return json array object with ids
 	 */
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET)

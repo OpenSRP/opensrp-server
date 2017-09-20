@@ -75,7 +75,6 @@ public class EncounterService extends OpenmrsService {
 	}
 
 	public JSONObject getObsByEncounterUuid(String encounterUuid) throws JSONException {
-		// The data format returned contains the obs uuid and concept uuids
 		return new JSONObject(HttpUtil.get(getURL() + "/" + ENCOUNTER_URL + "/" + encounterUuid,
 				"v=custom:(uuid,obs:(uuid,concept:(uuid)))", OPENMRS_USER, OPENMRS_PWD).body());
 	}
@@ -92,7 +91,6 @@ public class EncounterService extends OpenmrsService {
 		// its hard to find whether it was network error or object not found or server error
 		JSONObject resEncounterType = new JSONObject(
 				HttpUtil.get(getURL() + "/" + ENCOUNTER__TYPE_URL, "v=full", OPENMRS_USER, OPENMRS_PWD).body());
-
 		if (resEncounterType.has("results") && resEncounterType.get("results") instanceof JSONArray) {
 			JSONArray res = resEncounterType.getJSONArray("results");
 			for (int i = 0; i < res.length(); i++) {
@@ -139,9 +137,8 @@ public class EncounterService extends OpenmrsService {
 		if (ol != null)
 			for (Obs obs : ol) {
 				if (!StringUtils.isEmptyOrWhitespaceOnly(obs.getFieldCode()) && (obs.getFieldType() == null || obs
-						.getFieldType()
-						.equalsIgnoreCase("concept"))) {
-//					skipping empty obs and fields that don't have concepts if no parent simply make it root obs
+						.getFieldType().equalsIgnoreCase("concept"))) {
+					//					skipping empty obs and fields that don't have concepts if no parent simply make it root obs
 
 					if (obs.getFieldType().equals("concept") && obs.getFormSubmissionField().equals("Birth_Facility_Name")
 							&& obs.getValue() != null
@@ -150,7 +147,7 @@ public class EncounterService extends OpenmrsService {
 					}
 					if (StringUtils.isEmptyOrWhitespaceOnly(obs.getParentCode())) {
 						p.put(obs.getFieldCode(), convertObsToJson(obs));
-					}else {
+					} else {
 						//find parent obs if not found search and fill or create one
 						JSONArray parentObs = p.get(obs.getParentCode());
 						if (parentObs == null) {
