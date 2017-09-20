@@ -37,7 +37,7 @@ public class EncounterService extends OpenmrsService {
 
 	private ClientService clientService;
 
-	private OpenmrsLocationService openmrsLocationService;
+    private OpenmrsLocationService openmrsLocationService;
 
 	@Autowired
 	public EncounterService(PatientService patientService, OpenmrsUserService userService, ClientService clientService,
@@ -45,7 +45,7 @@ public class EncounterService extends OpenmrsService {
 		this.patientService = patientService;
 		this.userService = userService;
 		this.clientService = clientService;
-		this.openmrsLocationService = openmrsLocationService;
+        this.openmrsLocationService = openmrsLocationService;
 	}
 
 	public EncounterService(String openmrsUrl, String user, String password) {
@@ -68,18 +68,18 @@ public class EncounterService extends OpenmrsService {
 		this.userService = userService;
 	}
 
-	public JSONObject getEncounterByUuid(String uuid, boolean noRepresentationTag) throws JSONException {
-		return new JSONObject(
+    public JSONObject getEncounterByUuid(String uuid, boolean noRepresentationTag) throws JSONException {
+        return new JSONObject(
 				HttpUtil.get(getURL() + "/" + ENCOUNTER_URL + "/" + uuid, noRepresentationTag ? "" : "v=full", OPENMRS_USER,
 						OPENMRS_PWD).body());
 	}
 
-	public JSONObject getObsByEncounterUuid(String encounterUuid) throws JSONException {
-		return new JSONObject(HttpUtil.get(getURL() + "/" + ENCOUNTER_URL + "/" + encounterUuid,
+    public JSONObject getObsByEncounterUuid(String encounterUuid) throws JSONException {
+        return new JSONObject(HttpUtil.get(getURL() + "/" + ENCOUNTER_URL + "/" + encounterUuid,
 				"v=custom:(uuid,obs:(uuid,concept:(uuid)))", OPENMRS_USER, OPENMRS_PWD).body());
 	}
 
-	public JSONObject getObsUuidByParentObsUuid(String obsUuid) throws JSONException {
+    public JSONObject getObsUuidByParentObsUuid(String obsUuid) throws JSONException {
 		//The data format returned contains the children obs uuid and concept uuids
 		return new JSONObject(
 				HttpUtil.get(getURL() + "/" + OBS_URL + "/" + obsUuid, "v=custom:(groupMembers:(uuid,concept:(uuid)))",
@@ -89,9 +89,9 @@ public class EncounterService extends OpenmrsService {
 	public JSONObject getEncounterType(String encounterType) throws JSONException {
 		// we have to use this ugly approach because identifier not found throws exception and 
 		// its hard to find whether it was network error or object not found or server error
-		JSONObject resEncounterType = new JSONObject(
+        JSONObject resEncounterType = new JSONObject(
 				HttpUtil.get(getURL() + "/" + ENCOUNTER__TYPE_URL, "v=full", OPENMRS_USER, OPENMRS_PWD).body());
-		if (resEncounterType.has("results") && resEncounterType.get("results") instanceof JSONArray) {
+        if (resEncounterType.has("results") && resEncounterType.get("results") instanceof JSONArray) {
 			JSONArray res = resEncounterType.getJSONArray("results");
 			for (int i = 0; i < res.length(); i++) {
 				if (res.getJSONObject(i).getString("display").equalsIgnoreCase(encounterType)) {
@@ -115,7 +115,7 @@ public class EncounterService extends OpenmrsService {
 		return a;
 	}
 
-	public JSONObject createEncounter(Event e) throws JSONException {
+    public JSONObject createEncounter(Event e) throws JSONException {
 		JSONObject pt = patientService.getPatientByIdentifier(e.getBaseEntityId());
 		JSONObject enc = new JSONObject();
 
