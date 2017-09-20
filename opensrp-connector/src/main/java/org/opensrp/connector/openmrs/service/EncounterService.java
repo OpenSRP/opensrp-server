@@ -69,8 +69,7 @@ public class EncounterService extends OpenmrsService {
 	}
 
     public JSONObject getEncounterByUuid(String uuid, boolean noRepresentationTag) throws JSONException {
-        return new JSONObject(
-				HttpUtil.get(getURL() + "/" + ENCOUNTER_URL + "/" + uuid, noRepresentationTag ? "" : "v=full", OPENMRS_USER,
+        return new JSONObject(HttpUtil.get(getURL() + "/" + ENCOUNTER_URL + "/" + uuid, noRepresentationTag ? "" : "v=full", OPENMRS_USER,
 						OPENMRS_PWD).body());
 	}
 
@@ -81,7 +80,7 @@ public class EncounterService extends OpenmrsService {
 
     public JSONObject getObsUuidByParentObsUuid(String obsUuid) throws JSONException {
 		//The data format returned contains the children obs uuid and concept uuids
-		return new JSONObject(
+        return new JSONObject(
 				HttpUtil.get(getURL() + "/" + OBS_URL + "/" + obsUuid, "v=custom:(groupMembers:(uuid,concept:(uuid)))",
 						OPENMRS_USER, OPENMRS_PWD).body());
 	}
@@ -115,7 +114,7 @@ public class EncounterService extends OpenmrsService {
 		return a;
 	}
 
-    public JSONObject createEncounter(Event e) throws JSONException {
+	public JSONObject createEncounter(Event e) throws JSONException {
 		JSONObject pt = patientService.getPatientByIdentifier(e.getBaseEntityId());
 		JSONObject enc = new JSONObject();
 
