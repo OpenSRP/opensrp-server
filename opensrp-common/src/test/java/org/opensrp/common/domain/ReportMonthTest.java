@@ -139,4 +139,3 @@ public class ReportMonthTest {
 		assertNotSame(2016, currentYear);
 	}
 }
-

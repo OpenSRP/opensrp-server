@@ -54,16 +54,16 @@ public class AtomFeedIntegrationTest extends TestResourceLoader {
 	@Autowired
 	@Qualifier(OpenmrsConstants.ATOMFEED_DATABASE_CONNECTOR)
 	CouchDbConnector cdb;
-	
+
 	@Autowired
 	ClientService clientService;
-	
+
 	@Autowired
 	AllClients allClients;
-	
+
 	@Autowired
 	EventService eventService;
-	
+
 	@Autowired
 	AllEvents allEvents;
 
@@ -72,20 +72,20 @@ public class AtomFeedIntegrationTest extends TestResourceLoader {
 
 	@Autowired
 	private AllFailedEventsCouchImpl allFailedEvents;
-	
-	
+
+
 	@Before
 	public void setup(){
 		allClients.removeAll();
 		allEvents.removeAll();
 	}
-	
+
 	public AtomFeedIntegrationTest() throws IOException {
 		super();
 	}
 
 	@Test
-    public void shouldReadEventsCreatedEvents() throws URISyntaxException {
+	public void shouldReadEventsCreatedEvents() throws URISyntaxException {
 		PatientAtomfeed paf = new PatientAtomfeed(allMarkers, allFailedEvents, openmrsOpenmrsUrl, patientService, clientService);
 
 		EncounterAtomfeed eaf = new EncounterAtomfeed(allMarkers, allFailedEvents, openmrsOpenmrsUrl, encounterService, eventService);
@@ -94,5 +94,5 @@ public class AtomFeedIntegrationTest extends TestResourceLoader {
 
 			eaf.processEvents();
 		}
-    }
+	}
 }

@@ -1,9 +1,7 @@
 package org.opensrp.service;
 
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.List;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.ektorp.CouchDbConnector;
 import org.joda.time.DateTime;
 import org.json.JSONException;
@@ -15,8 +13,9 @@ import org.opensrp.util.DateTimeTypeConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class ClientService {
@@ -280,6 +279,16 @@ public class ClientService {
 		return addorUpdate(client, true);
 	}
 
+	public Client imageUpdate(Client client) {
+		if (client.getBaseEntityId() == null) {
+			throw new RuntimeException("No baseEntityId");
+		}
+		client.setDateEdited(DateTime.now());
+		client.setServerVersion(null);
+		allClients.update(client);
+		return client;
+	}
+
 	public Client addorUpdate(Client client, boolean resetServerVersion) {
 		if (client.getBaseEntityId() == null) {
 			throw new RuntimeException("No baseEntityId");
@@ -290,7 +299,7 @@ public class ClientService {
 			client.setId(c.getId());
 			client.setDateEdited(DateTime.now());
 			if (resetServerVersion) {
-				client.setServerVersion(System.currentTimeMillis());
+				client.setServerVersion(null);
 			}
 			allClients.update(client);
 

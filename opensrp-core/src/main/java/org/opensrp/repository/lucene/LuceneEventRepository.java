@@ -1,30 +1,25 @@
 package org.opensrp.repository.lucene;
 
-import static org.opensrp.common.AllConstants.BaseEntity.BASE_ENTITY_ID;
-import static org.opensrp.common.AllConstants.BaseEntity.LAST_UPDATE;
-import static org.opensrp.common.AllConstants.Event.ENTITY_TYPE;
-import static org.opensrp.common.AllConstants.Event.EVENT_DATE;
-import static org.opensrp.common.AllConstants.Event.EVENT_TYPE;
-import static org.opensrp.common.AllConstants.Event.LOCATION_ID;
-import static org.opensrp.common.AllConstants.Event.PROVIDER_ID;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import org.joda.time.DateTime;
-import org.opensrp.common.AllConstants.BaseEntity;
-import org.opensrp.domain.Event;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.github.ldriscoll.ektorplucene.CouchDbRepositorySupportWithLucene;
 import com.github.ldriscoll.ektorplucene.LuceneQuery;
 import com.github.ldriscoll.ektorplucene.LuceneResult;
 import com.github.ldriscoll.ektorplucene.designdocument.annotation.FullText;
 import com.github.ldriscoll.ektorplucene.designdocument.annotation.Index;
 import com.mysql.jdbc.StringUtils;
+import org.joda.time.DateTime;
+import org.opensrp.common.AllConstants.BaseEntity;
+import org.opensrp.domain.Event;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.opensrp.common.AllConstants.BaseEntity.BASE_ENTITY_ID;
+import static org.opensrp.common.AllConstants.BaseEntity.LAST_UPDATE;
+import static org.opensrp.common.AllConstants.Event.*;
 
 @FullText({
 		@Index(name = "by_all_criteria", analyzer = "perfield:{baseEntityId:\"keyword\",locationId:\"keyword\"}", index = "function(doc) {   if(doc.type !== 'Event') return null;   var arr1 = ['baseEntityId','eventType','entityType','providerId','locationId'];   var ret = new Document(); var serverVersion = doc.serverVersion;ret.add(serverVersion, {'field': 'serverVersion'});  for (var i in arr1){     ret.add(doc[arr1[i]], {'field':arr1[i]});   }   if(doc.eventDate){     var bd=doc.eventDate.substring(0,19);      ret.add(bd, {'field':'eventDate','type':'date'});   }          var crd = doc.dateCreated.substring(0, 19);     ret.add(crd, {'field' : 'lastEdited','type' : 'date'});          if(doc.dateEdited){     var led = doc.dateEdited.substring(0, 19);     ret.add(led, {'field' : 'lastEdited','type' : 'date'});         }        return ret;   }"),
@@ -123,8 +118,14 @@ public class LuceneEventRepository extends CouchDbRepositorySupportWithLucene<Ev
 			qf.eq(PROVIDER_ID, providerId);
 		}
 
-		if (!StringUtils.isEmptyOrWhitespaceOnly(locationId)) {
-			qf.eq(LOCATION_ID, locationId);
+		if (locationId != null || !StringUtils.isEmptyOrWhitespaceOnly(locationId)) {
+			if (locationId.contains(",")) {
+				String[] locationArray = org.apache.commons.lang.StringUtils.split(locationId, ",");
+				List<String> locations = new ArrayList<>(Arrays.asList(locationArray));
+				qf.inList(LOCATION_ID, locations);
+			} else {
+				qf.eq(LOCATION_ID, locationId);
+			}
 		}
 
 		if (!StringUtils.isEmptyOrWhitespaceOnly(baseEntityId)) {

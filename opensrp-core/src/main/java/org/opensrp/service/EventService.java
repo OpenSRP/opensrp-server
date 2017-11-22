@@ -162,14 +162,13 @@ public class EventService {
 	 */
 	public synchronized Event processOutOfArea(Event event) {
 		if (event.getBaseEntityId() == null || event.getBaseEntityId().isEmpty()) {
-
+			
 			//get events identifiers;
 			String identifier = event.getIdentifier(Client.ZEIR_ID);
 			List<org.opensrp.domain.Client> clients = clientService
 					.findAllByIdentifier(Client.ZEIR_ID.toUpperCase(), identifier);
 			if (clients != null && !clients.isEmpty()) {
 				org.opensrp.domain.Client client = clients.get(0);
-
 				//set providerid to the last providerid who served this client in their catchment (assumption)
 				List<Event> existingEvents = findByBaseEntityAndType(client.getBaseEntityId(), "Birth Registration");
 				if (existingEvents != null && !existingEvents.isEmpty()) {
@@ -185,7 +184,6 @@ public class EventService {
 						details.put("out_of_catchment_provider_id", event.getProviderId());
 						event.setDetails(details);
 					}
-
 				}
 
 			}

@@ -1,8 +1,6 @@
 package org.opensrp.service;
 
-import java.io.File;
-import java.util.List;
-
+import org.opensrp.domain.Client;
 import org.opensrp.domain.Multimedia;
 import org.opensrp.dto.form.MultimediaDTO;
 import org.opensrp.repository.MultimediaRepository;
@@ -13,16 +11,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.List;
+
 @Service
 public class MultimediaService {
 
 	private static Logger logger = LoggerFactory.getLogger(MultimediaService.class.toString());
 
-	public static final String IMAGES_DIR = "images";
+	public static final String IMAGES_DIR = "patient_images";
 
 	private static final String VIDEOS_DIR = "videos";
 
 	private final MultimediaRepository multimediaRepository;
+
+	private final ClientService clientService;
 
 	private String multimediaDirPath;
 
@@ -30,8 +33,9 @@ public class MultimediaService {
 	String baseMultimediaDirPath;
 
 	@Autowired
-	public MultimediaService(MultimediaRepository multimediaRepository) {
+	public MultimediaService(MultimediaRepository multimediaRepository, ClientService clientService) {
 		this.multimediaRepository = multimediaRepository;
+		this.clientService = clientService;
 	}
 
 	public String saveMultimediaFile(MultimediaDTO multimediaDTO, MultipartFile file) {
@@ -50,7 +54,15 @@ public class MultimediaService {
 						.withFilePath(multimediaDTO.getFilePath()).withFileCategory(multimediaDTO.getFileCategory());
 
 				multimediaRepository.add(multimediaFile);
-
+				Client client = clientService.getByBaseEntityId(multimediaDTO.getCaseId());
+				if (client != null) {
+					if (client.getAttribute("Patient Image") != null) {
+						client.removeAttribute("Patient Image");
+					}
+					client.addAttribute("Patient Image", multimediaDTO.getCaseId() + ".jpg");
+					client.setServerVersion(null);
+					clientService.updateClient(client);
+				}
 				return "success";
 
 			}
@@ -60,12 +72,9 @@ public class MultimediaService {
 		}
 
 		return "fail";
-
 	}
 
 	public boolean uploadFile(MultimediaDTO multimediaDTO, MultipartFile multimediaFile) {
-
-		// String baseMultimediaDirPath = System.getProperty("user.home");
 
 		if (!multimediaFile.isEmpty()) {
 			try {
@@ -93,10 +102,12 @@ public class MultimediaService {
 						multimediaDirPath += IMAGES_DIR;
 						fileExt = ".png";
 						break;
+
 					default:
 						throw new IllegalArgumentException("Unknown content type : " + multimediaDTO.getContentType());
 				}
 				new File(multimediaDirPath).mkdirs();
+
 				String fileName = multimediaDirPath + File.separator + multimediaDTO.getCaseId() + fileExt;
 				multimediaDTO.withFilePath(fileName);
 				File multimediaDir = new File(fileName);
@@ -127,7 +138,6 @@ public class MultimediaService {
 		File file = new File(dirPath);
 		if (!file.exists())
 			file.mkdirs();
-
 	}
 
 	public List<Multimedia> getMultimediaFiles(String providerId) {
