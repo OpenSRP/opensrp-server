@@ -156,10 +156,12 @@ public class EventResource extends RestResource<Event> {
 				    new TypeToken<ArrayList<Client>>() {}.getType());
 				for (Client client : clients) {
 					try {
-					    clientService.addorUpdate(client);
+						clientService.addorUpdate(client);
 					}
 					catch (Exception e) {
-						logger.error("Client" + client.getBaseEntityId()==null?"":client.getBaseEntityId()+" failed to sync", e);
+						logger.error(
+						    "Client" + client.getBaseEntityId() == null ? "" : client.getBaseEntityId() + " failed to sync",
+						    e);
 					}
 				}
 				
@@ -173,7 +175,10 @@ public class EventResource extends RestResource<Event> {
 						eventService.addorUpdateEvent(event);
 					}
 					catch (Exception e) {
-						logger.error("Event of type "+event.getEventType()+" for client " + event.getBaseEntityId()==null?"":event.getBaseEntityId()+" failed to sync", e);
+						logger.error(
+						    "Event of type " + event.getEventType() + " for client " + event.getBaseEntityId() == null ? ""
+						            : event.getBaseEntityId() + " failed to sync",
+						    e);
 					}
 				}
 			}

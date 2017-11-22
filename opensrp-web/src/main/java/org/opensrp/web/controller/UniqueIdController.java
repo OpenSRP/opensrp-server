@@ -7,16 +7,20 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.joda.time.DateTime;
 import org.json.JSONException;
 import org.opensrp.api.domain.User;
 import org.opensrp.connector.openmrs.service.OpenmrsUserService;
 import org.opensrp.service.OpenmrsIDService;
+import org.opensrp.util.DateTimeTypeConverter;
 import org.opensrp.web.utils.PdfUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.ibm.icu.text.SimpleDateFormat;
 
 @Controller
@@ -43,8 +48,14 @@ public class UniqueIdController {
 	@Value("#{opensrp['qrcodes.directory.name']}")
 	private String qrCodesDir;
 	
+	Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+	        .registerTypeAdapter(DateTime.class, new DateTimeTypeConverter()).create();
+	
 	@Autowired
 	OpenmrsIDService openmrsIdService;
+	
+	@Autowired
+	private UserController userController;
 	
 	@Autowired
 	OpenmrsUserService openmrsUserService;
@@ -52,7 +63,7 @@ public class UniqueIdController {
 	/**
 	 * Download extra ids from openmrs if less than the specified batch size, convert the ids to qr
 	 * and print to a pdf
-	 * 
+	 *
 	 * @param request
 	 * @param response
 	 * @return
@@ -116,6 +127,28 @@ public class UniqueIdController {
 			if (StringUtils.containsIgnoreCase(roleName, role))
 				return true;
 		return false;
+	}
+	
+	/**
+	 * Fetch unique Ids from OMRS
+	 *
+	 * @return json array object with ids
+	 */
+	
+	@RequestMapping(value = "/get", method = RequestMethod.GET)
+	@ResponseBody
+	protected ResponseEntity<String> get(HttpServletRequest request) throws JSONException {
+		
+		String numberToGenerate = getStringFilter("numberToGenerate", request);
+		String source = getStringFilter("source", request);
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("identifiers",
+		    openmrsIdService.getOpenMRSIdentifiers(source, numberToGenerate,
+		        SecurityContextHolder.getContext().getAuthentication().getName(),
+		        userController.getAuthenticationAdvisor(request).getCredentials().toString()));
+		
+		return new ResponseEntity<>(new Gson().toJson(map), HttpStatus.OK);
 	}
 	
 }

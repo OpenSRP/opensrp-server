@@ -234,8 +234,8 @@ public class OpenmrsSyncerListener {
 		
 		for (Client c : cl) {
 			if (c.getRelationships() != null) {// Mother has no relations. 
-				JSONObject motherJson = patientService.getPatientByIdentifier(c.getRelationships().get("mother").get(0)
-				        .toString());
+				JSONObject motherJson = patientService
+				        .getPatientByIdentifier(c.getRelationships().get("mother").get(0).toString());
 				JSONObject person = motherJson.getJSONObject("person");
 				
 				if (person.getString("uuid") != null) {
@@ -245,8 +245,8 @@ public class OpenmrsSyncerListener {
 					logger.info("RelationshipsCreated check openrs" + c.getIdentifier("OPENMRS_UUID"));
 				}
 				
-				List<Client> siblings = clientService.findByRelationship(c.getRelationships().get("mother").get(0)
-				        .toString());
+				List<Client> siblings = clientService
+				        .findByRelationship(c.getRelationships().get("mother").get(0).toString());
 				if (!siblings.isEmpty() || siblings != null) {
 					JSONObject siblingJson;
 					JSONObject sibling;
@@ -265,6 +265,8 @@ public class OpenmrsSyncerListener {
 			logger.info("RelationshipsCreated sibling1 ");
 			
 		}
+		logger.info("RUNNING FOR RELATIONSHIPS");
+		patientService.createRelationShip(cl);
 		returnJsonObject.put("patient", patientsJsonArray); // only for test code purpose
 		returnJsonObject.put("relation", relationshipsArray);// only for test code purpose
 		return returnJsonObject;
@@ -285,6 +287,7 @@ public class OpenmrsSyncerListener {
 				} else {
 					JSONObject eventJson = encounterService.createEncounter(e);
 					encounter = eventJson;// only for test code purpose
+					encounterService.processUpdateEvents(e);
 					if (eventJson != null && eventJson.has("uuid")) {
 						e.addIdentifier(EncounterService.OPENMRS_UUID_IDENTIFIER_TYPE, eventJson.getString("uuid"));
 						eventService.updateEvent(e);

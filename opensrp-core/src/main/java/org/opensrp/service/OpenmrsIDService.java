@@ -1,5 +1,11 @@
 package org.opensrp.service;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -16,12 +22,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 @Service
 public class OpenmrsIDService {
@@ -51,13 +51,12 @@ public class OpenmrsIDService {
 	
 	@Autowired
 	private UniqueIdRepository uniqueIdRepository;
-
-
+	
 	public static OpenmrsIDService createInstanceWithOpenMrsUrl(String openmrsUrl) {
-	   OpenmrsIDService openmrsIDService = new OpenmrsIDService();
-	   openmrsIDService.openmrsUrl = openmrsUrl;
-	   return openmrsIDService;
-    }
+		OpenmrsIDService openmrsIDService = new OpenmrsIDService();
+		openmrsIDService.openmrsUrl = openmrsUrl;
+		return openmrsIDService;
+	}
 	
 	public OpenmrsIDService() {
 		this.client = HttpClientBuilder.create().build();
@@ -69,12 +68,12 @@ public class OpenmrsIDService {
 		// Add query parameters
 		openmrsQueryUrl += "?source=" + this.openmrsSourceId + "&numberToGenerate=" + size;
 		openmrsQueryUrl += "&username=" + this.openmrsUserName + "&password=" + this.openmrsPassword;
-
+		
 		HttpGet get = new HttpGet(openmrsQueryUrl);
 		try {
 			HttpResponse response = client.execute(get);
 			String jsonResponse = EntityUtils.toString(response.getEntity());
-
+			
 			JSONObject responseJson = new JSONObject(jsonResponse);
 			JSONArray jsonArray = responseJson.getJSONArray("identifiers");
 			
@@ -91,15 +90,17 @@ public class OpenmrsIDService {
 		// import IDs and client data to database together with assignments 
 		return ids;
 	}
+	
 	/**
 	 * download ids only if the total unused is less than the size specified
+	 * 
 	 * @param size
 	 */
-	public void downloadAndSaveIds(int size,String userName) {
+	public void downloadAndSaveIds(int size, String userName) {
 		try {
 			Integer totalUnUsed = uniqueIdRepository.totalUnUsedIds();
 			if (totalUnUsed < size) {
-				int numberToGenerate=size-totalUnUsed;
+				int numberToGenerate = size - totalUnUsed;
 				List<String> ids = downloadOpenmrsIds(numberToGenerate);
 				for (String id : ids) {
 					UniqueId uniqueId = new UniqueId();
@@ -139,7 +140,7 @@ public class OpenmrsIDService {
 			
 			logger.info(
 			    "[checkIfClientExists] - Card Number:" + args[0] + " - [Exists] " + (rowCount == 0 ? "false" : "true"));
-
+			
 			return rowCount >= 1 ? true : false;
 		}
 		catch (Exception e) {
@@ -170,16 +171,48 @@ public class OpenmrsIDService {
 			logger.error("", e);
 		}
 	}
-	public List<UniqueId> getNotUsedIds(int limit){
+	
+	public List<UniqueId> getNotUsedIds(int limit) {
 		return uniqueIdRepository.getNotUsedIds(limit);
 	}
 	
-	public List<String> getNotUsedIdsAsString(int limit){
+	public List<String> getNotUsedIdsAsString(int limit) {
 		return uniqueIdRepository.getNotUsedIdsAsString(limit);
 	}
-
-	public int[] markIdsAsUsed(List<String> ids){
+	
+	public int[] markIdsAsUsed(List<String> ids) {
 		return uniqueIdRepository.markAsUsed(ids);
+	}
+	
+	public List<String> getOpenMRSIdentifiers(String source, String numberToGenerate, String userName, String password)
+	    throws JSONException {
+		List<String> ids = new ArrayList<>();
+		String openMRSUrl = this.openmrsUrl + OPENMRS_IDGEN_URL;
+		openMRSUrl += "?source=" + source + "&numberToGenerate=" + numberToGenerate;
+		openMRSUrl += "&username=" + userName + "&password=" + password;
+		
+		HttpGet get = new HttpGet(openMRSUrl);
+		try {
+			HttpResponse response = client.execute(get);
+			String jsonResponse = EntityUtils.toString(response.getEntity());
+			
+			JSONObject responseJson = new JSONObject(jsonResponse);
+			JSONArray jsonArray = responseJson.getJSONArray("identifiers");
+			
+			if (jsonArray != null && jsonArray.length() > 0) {
+				for (int i = 0; i < jsonArray.length(); i++) {
+					ids.add(jsonArray.getString(i));
+				}
+			}
+			
+			return ids;
+			
+		}
+		catch (IOException | JSONException e) {
+			logger.error("", e);
+			return null;
+		}
+		
 	}
 	
 }
