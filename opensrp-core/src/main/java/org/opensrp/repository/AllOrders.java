@@ -6,6 +6,8 @@ import org.ektorp.util.Documents;
 import org.motechproject.dao.MotechBaseRepository;
 import org.opensrp.common.AllConstants;
 import org.opensrp.domain.Order;
+import org.opensrp.domain.Stock;
+import org.opensrp.repository.lucene.LuceneOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -13,20 +15,26 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AllOrders extends MotechBaseRepository<Order> {
 
-    private CouchDbConnector couchDbConnector;
+    private LuceneOrderRepository luceneOrderRepository;
 
     @Autowired
-    public AllOrders(@Qualifier(AllConstants.OPENSRP_DATABASE_CONNECTOR) CouchDbConnector couchDbConnector) {
+    public AllOrders(@Qualifier(AllConstants.OPENSRP_DATABASE_CONNECTOR) CouchDbConnector couchDbConnector,
+                     LuceneOrderRepository luceneOrderRepository) {
         super(Order.class, couchDbConnector);
-        this.couchDbConnector = couchDbConnector;
+        this.luceneOrderRepository = luceneOrderRepository;
     }
 
     public void add(Order order) {
         Assert.isTrue(Documents.isNew(order), "order entity must be new");
-        couchDbConnector.create(order);
+        db.create(order);
     }
 
     public Order findById(String id) {
-        return couchDbConnector.get(Order.class, id);
+        return db.get(Order.class, id);
+    }
+
+    public List<Order> findByLocationId(String locationId, long serverVersion, String sortOrder,
+                                        String orderBy, int limit) {
+        return luceneOrderRepository.getByLocationId(locationId, serverVersion, sortOrder, orderBy, limit);
     }
 }

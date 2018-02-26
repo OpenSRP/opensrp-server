@@ -9,7 +9,7 @@ import org.ektorp.support.TypeDiscriminator;
 public class Order extends BaseDataObject {
 
     @JsonProperty
-    private Long identifier;
+    private Long clientIdentifier;
 
     @JsonProperty
     private String locationId;
@@ -28,12 +28,12 @@ public class Order extends BaseDataObject {
         this.dateCreatedByClient = dateCreatedByClient;
     }
 
-    public Long getIdentifier() {
-        return identifier;
+    public Long getClientIdentifier() {
+        return clientIdentifier;
     }
 
-    public void setIdentifier(Long identifier) {
-        this.identifier = identifier;
+    public void setClientIdentifier(Long clientIdentifier) {
+        this.clientIdentifier = clientIdentifier;
     }
 
     public String getType() {

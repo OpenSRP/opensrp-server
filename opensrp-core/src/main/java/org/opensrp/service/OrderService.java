@@ -7,6 +7,8 @@ import org.opensrp.repository.AllOrders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderService {
     private final AllOrders allOrders;
@@ -25,5 +27,10 @@ public class OrderService {
         order.setDateCreated(new DateTime());
         allOrders.add(order);
         return order;
+    }
+
+    public List<Order> findOrdersByLocationId(String locationId, long serverVersion, String sortOrder,
+                                      String orderBy, int limit) {
+        return allOrders.findByLocationId(locationId, serverVersion, sortOrder, orderBy, limit);
     }
 }

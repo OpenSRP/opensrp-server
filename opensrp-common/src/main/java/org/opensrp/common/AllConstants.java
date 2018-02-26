@@ -135,6 +135,10 @@ public class AllConstants {
 
 		public static final String DATE_CREATED = "dateCreated";
 
+		public static final String SERVER_VERSION = "serverVersion";
+
+		public static final String DATE_CREATED_BY_CLIENT = "dateCreatedByClient";
+
 	}
 	
 	public static class Action {
