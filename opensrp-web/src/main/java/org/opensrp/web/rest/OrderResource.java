@@ -29,7 +29,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/rest/stockresource/order")
-public class OrderResource extends  RestResource<Order> {
+public class OrderResource extends RestResource<Order> {
 
     private OrderService orderService;
     private static Logger logger = LoggerFactory.getLogger(OrderResource.class.getName());
@@ -46,23 +46,20 @@ public class OrderResource extends  RestResource<Order> {
 
         try {
             JSONObject jsonObject = new JSONObject(jsonData);
-
             if (!jsonObject.has("orders")) {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
 
-            ArrayList<Order> orderArrayList = gson.fromJson(jsonObject.getString("orders"),
+            String ordersString = jsonObject.getString("orders");
+            ArrayList<Order> orderArrayList = gson.fromJson(ordersString,
                     new TypeToken<ArrayList<Order>>(){}.getType());
 
             for(Order order: orderArrayList) {
                 orderService.addOrder(order);
             }
-
             return new ResponseEntity<>(HttpStatus.CREATED);
-
         } catch (JSONException e) {
             logger.error(e.getMessage());
-
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
