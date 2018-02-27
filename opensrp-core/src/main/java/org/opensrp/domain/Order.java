@@ -20,6 +20,14 @@ public class Order extends BaseDataObject {
     @JsonProperty
     private long dateCreatedByClient;
 
+    public long getDateCreatedByClient() {
+        return dateCreatedByClient;
+    }
+
+    public void setDateCreatedByClient(long dateCreatedByClient) {
+        this.dateCreatedByClient = dateCreatedByClient;
+    }
+
     public Long getIdentifier() {
         return identifier;
     }
