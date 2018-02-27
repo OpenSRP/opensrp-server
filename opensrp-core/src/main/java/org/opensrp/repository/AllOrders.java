@@ -6,11 +6,12 @@ import org.ektorp.util.Documents;
 import org.motechproject.dao.MotechBaseRepository;
 import org.opensrp.common.AllConstants;
 import org.opensrp.domain.Order;
-import org.opensrp.domain.Stock;
 import org.opensrp.repository.lucene.LuceneOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class AllOrders extends MotechBaseRepository<Order> {

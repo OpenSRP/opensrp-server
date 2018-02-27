@@ -1,12 +1,10 @@
 package org.opensrp.repository.lucene;
 
 import com.github.ldriscoll.ektorplucene.CouchDbRepositorySupportWithLucene;
-import com.github.ldriscoll.ektorplucene.LuceneAwareCouchDbConnector;
 import com.github.ldriscoll.ektorplucene.LuceneQuery;
 import com.github.ldriscoll.ektorplucene.LuceneResult;
 import com.github.ldriscoll.ektorplucene.designdocument.annotation.FullText;
 import com.github.ldriscoll.ektorplucene.designdocument.annotation.Index;
-import com.mysql.jdbc.StringUtils;
 import org.opensrp.common.AllConstants;
 import org.opensrp.domain.Order;
 import org.springframework.beans.factory.annotation.Autowired;
