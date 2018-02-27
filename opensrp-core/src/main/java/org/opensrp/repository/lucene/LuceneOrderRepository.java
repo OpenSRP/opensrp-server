@@ -7,6 +7,7 @@ import com.github.ldriscoll.ektorplucene.designdocument.annotation.FullText;
 import com.github.ldriscoll.ektorplucene.designdocument.annotation.Index;
 import org.opensrp.common.AllConstants;
 import org.opensrp.domain.Order;
+import org.opensrp.exception.LuceneIOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -58,7 +59,7 @@ public class LuceneOrderRepository extends CouchDbRepositorySupportWithLucene<Or
             LuceneResult result = db.queryLucene(luceneQuery);
             return luceneDbConnector.asList(result, Order.class);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new LuceneIOException(e);
         }
     }
 }
