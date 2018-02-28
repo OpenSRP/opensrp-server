@@ -121,7 +121,6 @@ public class OrderResource extends RestResource<Order> {
         return orderService.addOrder(entity);
     }
 
-
     @Override
     public Order update(Order entity) {
         return null;
