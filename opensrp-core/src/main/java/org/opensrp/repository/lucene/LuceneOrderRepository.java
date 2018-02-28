@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @FullText({
-        @Index(name = "by_all_criteria", analyzer = "perfield:{locationId:\"keyword\"}", index = "function(doc) { if (doc.type !== 'Order') return null; var arr1 = ['clientIdentifier', 'locationId', 'providerId', 'serverVersion']; var ret = new Document(); var serverVersion = doc.serverVersion; ret.add(serverVersion, { 'field': 'serverVersion' }); for (var i in arr1) { ret.add(doc[arr1[i]], { 'field': arr1[i] }); } if (doc.dateCreated) { var dc = doc.dateCreated; ret.add(dc, { 'field': 'dateCreated' }); } if (doc.dateEdited) { var de = doc.dateEdited; ret.add(de, { 'field': 'dateEdited' }); } if (doc.dateCreatedByClient) { var dcbc = doc.dateCreatedByClient; ret.add(dcbc, { 'field': 'dateCreatedByClient' }); } return ret; }")
+        @Index(name = "by_all_criteria", analyzer = "perfield:{locationId:\"keyword\"}", index = "function(doc) { if (doc.type !== 'Order') return null; var arr1 = ['clientIdentifier', 'locationId', 'providerId', 'serverVersion']; var ret = new Document(); for (var i in arr1) { ret.add(doc[arr1[i]], { 'field': arr1[i] }); } if (doc.dateCreated) { var dc = doc.dateCreated; ret.add(dc, { 'field': 'dateCreated' }); } if (doc.dateEdited) { var de = doc.dateEdited; ret.add(de, { 'field': 'dateEdited' }); } if (doc.dateCreatedByClient) { var dcbc = doc.dateCreatedByClient; ret.add(dcbc, { 'field': 'dateCreatedByClient' }); } return ret; }")
 })
 @Component
 public class LuceneOrderRepository extends CouchDbRepositorySupportWithLucene<Order> {
@@ -27,6 +27,7 @@ public class LuceneOrderRepository extends CouchDbRepositorySupportWithLucene<Or
     protected LuceneOrderRepository(LuceneDbConnector db) {
         super(Order.class, db);
         this.luceneDbConnector = db;
+        initStandardDesignDocument();
     }
 
     /**
@@ -41,8 +42,8 @@ public class LuceneOrderRepository extends CouchDbRepositorySupportWithLucene<Or
      */
     public List<Order> getByLocationId(String locationId, long serverVersion, String sortOrder, String orderBy, int limit) {
         LuceneQuery luceneQuery = new LuceneQuery("Order", "by_all_criteria");
-        Query query = new Query(FilterType.AND);
 
+        Query query = new Query(FilterType.AND);
         query.eq(AllConstants.Order.LOCATION_ID, locationId);
         query.between(AllConstants.Order.SERVER_VERSION, serverVersion, Long.MAX_VALUE);
 

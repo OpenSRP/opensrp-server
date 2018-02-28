@@ -77,7 +77,9 @@ public class OrderResource extends RestResource<Order> {
             String limitStringRep = RestUtils.getStringFilter("limit", request);
 
             int limit = (limitStringRep == null) ? 25 : Integer.valueOf(limitStringRep);
-            long serverVersion = Long.valueOf(RestUtils.getStringFilter(AllConstants.Order.SERVER_VERSION, request));
+
+            String serverVersionStringRepr = RestUtils.getStringFilter(AllConstants.Order.SERVER_VERSION, request);
+            long serverVersion = serverVersionStringRepr == null ? 0 : Long.valueOf(serverVersionStringRepr);
 
             List<Order> orders = orderService.findOrdersByLocationId(locationId, serverVersion, orderBy, sortOrder, limit);
             JsonArray ordersArray = (JsonArray) gson.toJsonTree(orders, new TypeToken<List<Order>>() {}.getType());
