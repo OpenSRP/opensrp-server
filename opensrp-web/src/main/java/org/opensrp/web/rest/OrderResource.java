@@ -87,7 +87,7 @@ public class OrderResource extends RestResource<Order> {
 
             return new ResponseEntity<>(gson.toJson(response), HttpStatus.OK);
         } catch (Exception e) {
-            response.put("msg", "Error occured");
+            response.put("msg", "Error occured!");
             logger.error("", e);
             return new ResponseEntity<>(new Gson().toJson(response), HttpStatus.INTERNAL_SERVER_ERROR);
         }
