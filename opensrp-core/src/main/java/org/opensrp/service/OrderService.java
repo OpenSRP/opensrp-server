@@ -20,9 +20,9 @@ public class OrderService {
         // assumes id field is always populated in Order data model object
         // any time an order is created in  couchDB.
         // ASSUMPTION: If an Order comes with an id, then it already exists in CouchDB
-        if (!TextUtils.isEmpty(order.getId())) {
-            throw new IllegalArgumentException("Order object should not have id field populated. " +
-                    "Alternatively, " + order.getId() + " already exists");
+        if (!TextUtils.isEmpty(order.getRevision())) {
+            throw new IllegalArgumentException("Order object should not have revision field populated. " +
+                    "Alternatively, " + order.getRevision() + " already exists");
         }
         order.setDateCreated(new DateTime());
         allOrders.add(order);
