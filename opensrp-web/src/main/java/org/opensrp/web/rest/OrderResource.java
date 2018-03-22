@@ -83,8 +83,8 @@ public class OrderResource extends RestResource<Order> {
         Map<String, Object> response = new HashMap<>();
         try {
             String locationId = RestUtils.getStringFilter(AllConstants.Order.LOCATION_ID, request);
-            String sortOrder = "desc";
-            String orderBy = AllConstants.Order.DATE_CREATED_BY_CLIENT;
+            String sortOrder = "asc";
+            String orderBy = AllConstants.Order.SERVER_VERSION;
             String limitStringRep = RestUtils.getStringFilter("limit", request);
 
             int limit = (limitStringRep == null) ? 25 : Integer.valueOf(limitStringRep);
