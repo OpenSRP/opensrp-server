@@ -60,8 +60,8 @@ public class ShipmentResource extends RestResource<Shipment> {
 
         try {
             String receivingFacilityCode = RestUtils.getStringFilter(AllConstants.Shipment.RECEIVING_FACILITY_CODE, request);
-            String sortOrder = "desc";
-            String orderBy = AllConstants.Shipment.ORDERED_DATE;
+            String sortOrder = "asc";
+            String orderBy = AllConstants.Shipment.SERVER_VERSION;
             String limitStringRep = RestUtils.getStringFilter("limit", request);
 
             int limit = (limitStringRep == null) ? 25 : Integer.valueOf(limitStringRep);
