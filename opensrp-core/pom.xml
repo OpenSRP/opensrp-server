@@ -25,7 +25,7 @@
 			<resource>
 				<directory>../assets/schedules</directory>
 				<targetPath>schedules</targetPath>
-			</resource> 
+			</resource>
 			<resource>
 				<directory>../build</directory>
 				<filtering>true</filtering>
@@ -46,6 +46,12 @@
 
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.11.244</version>
+		</dependency>
 		<dependency>
 			<artifactId>motech-platform-server-api</artifactId>
 			<groupId>org.motechproject</groupId>
@@ -60,7 +66,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.2.2</version>
+			<version>2.6.0</version>
 		</dependency>
 
 		<dependency>
@@ -207,7 +213,7 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.1.0.RELEASE</version>
-		</dependency> 
+		</dependency>
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
@@ -218,7 +224,7 @@
             <groupId>com.openpojo</groupId>
             <artifactId>openpojo</artifactId>
             <version>0.8.6</version>
-        </dependency> 
+        </dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -239,7 +245,7 @@
 			<scope>test</scope>
 			<classifier>runtime</classifier>
 		</dependency>
-		
-		
+
+
 	</dependencies>
 </project>
