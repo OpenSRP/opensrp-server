@@ -19,6 +19,7 @@
         <module>opensrp-register</module>
         <module>opensrp-connector</module>
         <module>opensrp-web</module>
+        <module>opensrp-stock-management</module>
         <!-- <module>opensrp-reporting</module> -->
     </modules>
 
