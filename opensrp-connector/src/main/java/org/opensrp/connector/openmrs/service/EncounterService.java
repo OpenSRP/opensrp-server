@@ -133,8 +133,8 @@ public class EncounterService extends OpenmrsService {
 		enc.put("encounterType", e.getEventType());
 		//TODO enc.put("encounterTypeUuid", e.getEventType());
 		enc.put("location", e.getLocationId());
-		enc.put("provider", pruuid);
-		
+		makeProvider(enc, e.getProviderId());
+
 		List<Obs> ol = e.getObs();
 		Map<String, JSONArray> p = new HashMap<>();
 		Map<String, JSONArray> pc = new HashMap<>();
@@ -193,6 +193,24 @@ public class EncounterService extends OpenmrsService {
 		    enc.toString(), OPENMRS_USER, OPENMRS_PWD);
 		return new JSONObject(op.body());
 	}
+
+	private void makeProvider(JSONObject jsonObject, String providerId) {
+		try {
+			if (OPENMRS_VERSION.startsWith("1")) {
+				jsonObject.put(OPENMRS_PROVIDER, userService.getPersonUUIDByUser(providerId));
+			} else {
+				JSONArray providerRoleArray = new JSONArray();
+				JSONObject providerObj = new JSONObject();
+				providerObj.put(OPENMRS_PROVIDER, userService.getProvider(null, userService.getUser(providerId).getBaseEntityId()).getString("uuid"));
+				providerObj.put("encounterRole", userService.getEncounterRoleUUID(OPENMRS_PROVIDER));
+				providerRoleArray.put(providerObj);
+				jsonObject.put("encounterProviders", providerRoleArray);
+			}
+		}
+		catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public JSONObject buildUpdateEncounter(Event e) throws JSONException {
 		String openmrsuuid = e.getIdentifier(OPENMRS_UUID_IDENTIFIER_TYPE);
@@ -212,7 +230,7 @@ public class EncounterService extends OpenmrsService {
 		//TODO	enc.put("patientUuid", pt.getString("uuid"));
 		enc.put("encounterType", e.getEventType());
 		enc.put("location", e.getLocationId());
-		enc.put("provider", pruuid == null ? "" : pruuid);
+		makeProvider(enc, e.getProviderId());
 		
 		List<Obs> ol = e.getObs();
 		Map<String, JSONArray> p = new HashMap<>();

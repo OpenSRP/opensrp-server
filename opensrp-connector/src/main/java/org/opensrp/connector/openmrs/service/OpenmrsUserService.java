@@ -1,11 +1,13 @@
 package org.opensrp.connector.openmrs.service;
 
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.opensrp.api.domain.User;
 import org.opensrp.common.util.HttpResponse;
 import org.opensrp.common.util.HttpUtil;
+import org.opensrp.common.util.OpenMRSCrossVariables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -20,9 +22,14 @@ public class OpenmrsUserService extends OpenmrsService {
 	private static final String PROVIDER_URL = "ws/rest/v1/provider";
 	
 	private static final String TEAM_MEMBER_URL = "ws/rest/v1/teammodule/member";
+
+	private static final String ENCOUNTER_ROLE_URL = "ws/rest/v1/encounterrole";
 	
 	private static Logger logger = LoggerFactory.getLogger(OpenmrsUserService.class.toString());
-	
+
+	public static final String CUSTOM_UUID_PARAM = "v=custom:(uuid)";
+
+
 	public OpenmrsUserService() {
 	}
 	
@@ -113,22 +120,43 @@ public class OpenmrsUserService extends OpenmrsService {
 		
 		return null;
 	}
-	
+
 	public JSONObject getTeamMember(String uuid) throws JSONException {
-		HttpResponse op = HttpUtil.get(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL) + "/" + TEAM_MEMBER_URL + "/" + uuid,
-		    "v=full", OPENMRS_USER, OPENMRS_PWD);
+		HttpResponse op = HttpUtil.get(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL) + "/" + OpenMRSCrossVariables.TEAM_MEMBER_URL.makeVariable(OPENMRS_VERSION) + "/" + uuid, "v=full", OPENMRS_USER, OPENMRS_PWD);
 		return new JSONObject(op.body());
 	}
-	
-	public JSONObject getProvider(String identifier) throws JSONException {
-		HttpResponse op = HttpUtil.get(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL) + "/" + PROVIDER_URL,
-		    "v=full&q=" + identifier, OPENMRS_USER, OPENMRS_PWD);
+
+	public JSONObject getProvider(String identifier, String user) throws JSONException {
+		String payload;
+		if (user != null && !StringUtils.isBlank(user)) {
+			payload = "user=" + user+"&"+CUSTOM_UUID_PARAM;
+		} else {
+			payload = "v=full&q=" + identifier;
+		}
+		HttpResponse op = HttpUtil.get(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL) + "/" + PROVIDER_URL, payload, OPENMRS_USER, OPENMRS_PWD);
 		JSONArray res = new JSONObject(op.body()).getJSONArray("results");
 		if (res.length() == 0) {
 			return null;
 		}
 		JSONObject obj = res.getJSONObject(0);
 		return obj;
+	}
+
+	public String getEncounterRoleUUID(String encounterRole) throws JSONException {
+
+		if (encounterRole == null || StringUtils.isBlank(encounterRole)) {
+			return null;
+		}
+		JSONObject encounterRoles = new JSONObject(HttpUtil.get(HttpUtil.removeEndingSlash(OPENMRS_BASE_URL) + "/" + ENCOUNTER_ROLE_URL, "v=custom:(uuid,display)", OPENMRS_USER, OPENMRS_PWD).body());
+		if (encounterRoles.has("results") && encounterRoles.get("results") instanceof JSONArray) {
+			JSONArray res = encounterRoles.getJSONArray("results");
+			for (int i = 0; i < res.length(); i++) {
+				if (res.getJSONObject(i).getString("display").equalsIgnoreCase(encounterRole)) {
+					return res.getJSONObject(i).getString("uuid");
+				}
+			}
+		}
+		return null;
 	}
 	
 	public JSONObject createProvider(String existingUsername, String identifier) throws JSONException {

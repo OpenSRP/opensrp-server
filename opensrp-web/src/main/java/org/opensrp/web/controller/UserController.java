@@ -19,10 +19,12 @@ import org.opensrp.api.domain.Time;
 import org.opensrp.api.domain.User;
 import org.opensrp.api.util.LocationTree;
 import org.opensrp.common.domain.UserDetail;
+import org.opensrp.common.util.OpenMRSCrossVariables;
 import org.opensrp.connector.openmrs.service.OpenmrsLocationService;
 import org.opensrp.connector.openmrs.service.OpenmrsUserService;
 import org.opensrp.web.security.DrishtiAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -45,6 +47,8 @@ public class UserController {
     private DrishtiAuthenticationProvider opensrpAuthenticationProvider;
 	private OpenmrsLocationService openmrsLocationService;
 	private OpenmrsUserService openmrsUserService;
+	@Value("#{opensrp['openmrs.version']}")
+	protected String OPENMRS_VERSION;
 	
     @Autowired
     public UserController(OpenmrsLocationService openmrsLocationService, OpenmrsUserService openmrsUserService, 
@@ -101,7 +105,7 @@ public class UserController {
         JSONObject tm = null;
         try{
         	tm = openmrsUserService.getTeamMember(u.getAttribute("_PERSON_UUID").toString());
-        	JSONArray locs = tm.getJSONArray("location");
+	        JSONArray locs = tm.getJSONArray(OpenMRSCrossVariables.LOCATIONS_JSON_KEY.makeVariable(OPENMRS_VERSION));
         	for (int i = 0; i < locs.length(); i++) {
 				lid += locs.getJSONObject(i).getString("uuid")+";;";
 			}

@@ -17,11 +17,15 @@ public abstract class OpenmrsService {
 	
 	@Value("#{opensrp['openmrs.password']}")
 	protected String OPENMRS_PWD;
-	
+
+	@Value("#{opensrp['openmrs.version']}")
+	protected String OPENMRS_VERSION;
+
 	public static final SimpleDateFormat OPENMRS_DATE = new SimpleDateFormat("yyyy-MM-dd");
 	public static final String PROBABLE_CAUSE_OF_DEATH_CONCEPT= "5002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static final String PROBABLE_CAUSE_OF_DEATH_TEXT= "160218AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static final String PROBABLE_CAUSE_PARENT_CONCEPT= "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	public static final String OPENMRS_PROVIDER= "provider";
 	public OpenmrsService() {	}
 	
 	public OpenmrsService(String openmrsUrl, String user, String password) {

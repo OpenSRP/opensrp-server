@@ -153,7 +153,7 @@ public class OpenmrsSchedulerServiceTest extends TestResourceLoader {
 			household.addHHMember((Client) dep.get(hhmid).get("client"), (Event) dep.get(hhmid).get("event"));
 		}
 		if (pushToOpenmrsForTest) {
-			JSONObject pr = us.getProvider(fs.anmId());
+			JSONObject pr = us.getProvider(fs.anmId(),null);
 			if (pr == null) {
 				us.createProvider(fs.anmId(), fs.anmId());
 			}
