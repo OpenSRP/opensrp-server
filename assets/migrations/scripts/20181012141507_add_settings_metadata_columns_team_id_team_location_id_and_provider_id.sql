@@ -14,22 +14,18 @@
 --    limitations under the License.
 --
 
--- // create view configurations metadata table
+-- // add settings metadata columns team id team location_id and provider id
 -- Migration SQL that makes the change goes here.
 
-CREATE TABLE core.view_configuration_metadata
-(
-    id bigserial NOT NULL,
-    view_configuration_id bigint REFERENCES core.view_configuration (id),
-    document_id character varying UNIQUE NOT NULL,
-    identifier varchar UNIQUE,
-    server_version bigint,
-    PRIMARY KEY (id)
-)
-WITH (
-    OIDS = FALSE
-);
+ALTER TABLE core.settings_metadata ADD COLUMN team VARCHAR;
+ALTER TABLE core.settings_metadata ADD COLUMN team_id VARCHAR;
+ALTER TABLE core.settings_metadata ADD COLUMN provider_id VARCHAR;
+ALTER TABLE core.settings_metadata ADD COLUMN location_id VARCHAR;
 
 -- //@UNDO
--- SQL to undo the change goes here.
-DROP TABLE core.view_configuration_metadata;
+-- SQL to undo the change goes here. 
+
+ALTER TABLE core.settings_metadata DROP COLUMN team;
+ALTER TABLE core.settings_metadata DROP COLUMN team_id;
+ALTER TABLE core.settings_metadata DROP COLUMN provider_id;
+ALTER TABLE core.settings_metadata DROP COLUMN location_id;

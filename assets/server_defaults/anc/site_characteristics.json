@@ -1,0 +1,37 @@
+{
+    "_id": "1",
+    "_rev": "v1",
+    "type": "SettingConfiguration",
+    "identifier": "site_characteristics",
+    "locationId": "",
+    "providerId": "",
+    "teamId": "",
+    "dateCreated": "1970-10-04T10:17:09.993+03:00",
+    "serverVersion": 1,
+    "settings": [
+        {
+            "key": "site_ipv_assess",
+            "label": "Minimum requirements for IPV assessment",
+            "value": null,
+            "description": "Are all of the following in place at your facility: \r\n\ta. A protocol or standard operating procedure for Intimate Partner Violence (IPV); \r\n\tb. A health worker trained on how to ask about IPV and how to provide the minimum response or beyond;\r\n\tc. A private setting; \r\n\td. A way to ensure confidentiality; \r\n\te. Time to allow for appropriate disclosure; and\r\n\tf. A system for referral in place. "
+        },
+        {
+            "key": "site_anc_hiv",
+            "label": "Generalized HIV epidemic",
+            "value": null,
+            "description": "Is the HIV prevalence consistently > 1% in pregnant women attending antenatal clinics at your facility?"
+        },
+        {
+            "key": "site_ultrasound",
+            "label": "Ultrasound available",
+            "value": null,
+            "description": "Is an ultrasound machine available and functional at your facility and a trained health worker available to use it?"
+        },
+        {
+            "key": "site_bp_tool",
+            "label": "Automated BP measurement tool",
+            "value": null,
+            "description": "Does your facility use an automated blood pressure (BP) measurement tool?"
+        }
+    ]
+}

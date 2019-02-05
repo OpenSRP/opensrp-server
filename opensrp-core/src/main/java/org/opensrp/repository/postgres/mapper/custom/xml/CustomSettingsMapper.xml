@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="org.opensrp.repository.postgres.mapper.custom.CustomSettingMapper">
+
+	<insert id="insertSelectiveAndSetId"
+		parameterType="org.opensrp.domain.postgres.Settings"
+		useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		insert into core.settings
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="json != null">
+				json,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="json != null">
+				#{json,jdbcType=OTHER,typeHandler=org.opensrp.repository.postgres.handler.SettingTypeHandler},
+			</if>
+		</trim>
+	</insert>
+</mapper>

@@ -14,22 +14,12 @@
 --    limitations under the License.
 --
 
--- // create view configurations metadata table
+-- // alter settings metadata column identifier remove constraint
 -- Migration SQL that makes the change goes here.
 
-CREATE TABLE core.view_configuration_metadata
-(
-    id bigserial NOT NULL,
-    view_configuration_id bigint REFERENCES core.view_configuration (id),
-    document_id character varying UNIQUE NOT NULL,
-    identifier varchar UNIQUE,
-    server_version bigint,
-    PRIMARY KEY (id)
-)
-WITH (
-    OIDS = FALSE
-);
+ALTER TABLE core.settings_metadata DROP CONSTRAINT settings_metadata_identifier_key
 
 -- //@UNDO
 -- SQL to undo the change goes here.
-DROP TABLE core.view_configuration_metadata;
+
+ALTER TABLE core.settings_metadata ADD CONSTRAINT settings_metadata_identifier_key UNIQUE (identifier);

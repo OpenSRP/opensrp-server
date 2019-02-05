@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="org.opensrp.repository.postgres.mapper.custom.CustomSettingMetadataMapper">
+
+	<sql id="Base_Column_List">
+		v.id, v.json
+	</sql>
+
+	<sql id="Base_Table_List">
+		from core.settings_metadata m
+		join
+		core.settings v on m.settings_id = v.id
+	</sql>
+
+	<select id="selectByDocumentId" parameterType="java.lang.String"
+		resultMap="org.opensrp.repository.postgres.mapper.SettingsMapper.BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		<include refid="Base_Table_List" />
+		where m.document_id = #{documentId,jdbcType=VARCHAR}
+	</select>
+
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+
+	<select id="selectMany" resultMap="org.opensrp.repository.postgres.mapper.SettingsMapper.BaseResultMap">
+		select
+		<if test="example.distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		<include refid="Base_Table_List" />
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="example.orderByClause != null">
+			order by ${example.orderByClause}
+		</if>
+		LIMIT #{limit} OFFSET #{offset}
+	</select>
+</mapper>

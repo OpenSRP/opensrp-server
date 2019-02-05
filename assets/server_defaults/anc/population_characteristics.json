@@ -1,0 +1,87 @@
+{
+  "_id": 2,
+  "_rev": 1,
+  "type": "SettingConfiguration",
+  "identifier": "population_characteristics",
+  "serverVersion": null,
+  "settings": [
+    {
+      "key": "pop_undernourish",
+      "label": "Undernourished prevalence 20% or higher",
+      "value": null,
+      "description": "The proportion of women in the adult population (18 years or older), with a BMI less than 18.5, is 20% or higher."
+    },
+    {
+      "key": "pop_anaemia_40",
+      "label": "Anaemia prevalence 40% or higher",
+      "value": null,
+      "description": "The proportion of pregnant women in the population with anaemia (haemoglobin level less than 11 g/dl) is 40% or higher."
+    },
+    {
+      "key": "pop_anaemia_20",
+      "label": "Anaemia prevalence 20% or lower",
+      "value": null,
+      "description": "The proportion of pregnant women in the population with anaemia (haemoglobin level less than 11 g/dl) is 20% or lower."
+    },
+    {
+      "key": "pop_low_calcium",
+      "label": "Low dietary calcium intake",
+      "value": null,
+      "description": "Women in the population are likely to have low dietary calcium intake (less than 900 mg of calcium per day)."
+    },
+    {
+      "key": "pop_tb",
+      "label": "TB prevalence 100/100,000 or high.",
+      "value": null,
+      "description": "The tuberculosis prevalence in the general population is 100 cases per 100,000 persons or greater."
+    },
+    {
+      "key": "pop_vita",
+      "label": "Vitamin A deficiency 5% or higher",
+      "value": null,
+      "description": "The prevalence of night blindness is 5% or higher in pregnant women or 5% or higher in children 24–59 months of age, or the proportion of pregnant women with a serum retinol level less than 0.7 mol/L is 20% or higher. "
+    },
+    {
+      "key": "pop_helminth",
+      "label": "Soil-transmitted helminth infection prevalence 20% or higher",
+      "value": null,
+      "description": "The percentage of individuals in the general population infected with at least one species of soil-transmitted helminth is 20% or higher."
+    },
+    {
+      "key": "pop_hiv_incidence",
+      "label": "HIV incidence greater than 3 per 100 person-years in the absence of PrEP",
+      "value": null,
+      "description": "Women in the population have a substantial risk of HIV infection. Substantial risk of HIV infection is provisionally defined as HIV incidence greater than 3 per 100 person–years in the absence of pre-exposure prophylaxis (PrEP)."
+    },
+    {
+      "key": "pop_hiv_prevalence",
+      "label": "HIV prevalence 5% or higher",
+      "value": null,
+      "description": "The HIV prevalence in pregnant women in the population is 5% or higher."
+    },
+    {
+      "key": "pop_malaria",
+      "label": "Malaria-endemic setting",
+      "value": null,
+      "description": "This is a malaria-endemic setting."
+    },
+    {
+      "key": "pop_syphilis",
+      "label": "Syphilis prevalence 5% or higher",
+      "value": null,
+      "description": "The prevalence of syphilis in pregnant women in the population is 5% or higher."
+    },
+    {
+      "key": "pop_hepb",
+      "label": "Hep B prevalence is intermediate (2% or higher) or high (5% or higher)",
+      "value": null,
+      "description": "The proportion of Hepatitis B surface antigen (HBsAg) seroprevalance in the general population is 2% or higher."
+    },
+    {
+      "key": "pop_hepc",
+      "label": "Hep C prevalence is intermediate (2% or higher) or high (5% or higher)",
+      "value": null,
+      "description": "The proportion of Hepatitis C virus (HCV) antibody seroprevalence in the general population is 2% or higher. "
+    }
+  ]
+}

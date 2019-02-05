@@ -14,13 +14,13 @@
 --    limitations under the License.
 --
 
--- // create view configurations metadata table
+-- // create_settings_metadata_table.sql
 -- Migration SQL that makes the change goes here.
 
-CREATE TABLE core.view_configuration_metadata
+CREATE TABLE core.settings_metadata
 (
     id bigserial NOT NULL,
-    view_configuration_id bigint REFERENCES core.view_configuration (id),
+    settings_id bigint REFERENCES core.settings (id),
     document_id character varying UNIQUE NOT NULL,
     identifier varchar UNIQUE,
     server_version bigint,
@@ -32,4 +32,5 @@ WITH (
 
 -- //@UNDO
 -- SQL to undo the change goes here.
-DROP TABLE core.view_configuration_metadata;
+
+DROP TABLE core.settings_metadata;

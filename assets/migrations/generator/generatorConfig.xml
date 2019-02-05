@@ -2,10 +2,10 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 	<classPathEntry
-		location="/Users/coder/Projects/opensrp-server/assets/migrations/drivers/postgresql-42.2.1.jar" />
+		location="/Users/ndegwamartin/Workspace/opensrp-server/assets/migrations/drivers/postgresql-42.2.1.jar" />
 	<context id="core">
 		<!-- <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin> -->
-		<jdbcConnection connectionURL="jdbc:postgresql://localhost:5432/opensrp"
+		<jdbcConnection connectionURL="jdbc:postgresql://localhost:5432/opensrp_anc"
 			driverClass="org.postgresql.Driver" password="admin" userId="opensrp_admin" />
 		<javaModelGenerator targetPackage="org.opensrp.domain.postgres"
 			targetProject="opensrp-core" />
@@ -62,7 +62,15 @@
 			<columnOverride column="json"
 				typeHandler="org.opensrp.repository.postgres.handler.ViewConfigurationTypeHandler" />		
 		</table>
-		<table schema="core" tableName="view_configuration_metadata" /> -->
-
+		<table schema="core" tableName="view_configuration_metadata" />
+ 
+		
+    	<table schema="core" tableName="settings">
+			<columnOverride column="json"
+				typeHandler="org.opensrp.repository.postgres.handler.SettingTypeHandler" />
+		</table>
+		 -->
+		<table schema="core" tableName="settings_metadata" />
+		 
 	</context>
 </generatorConfiguration>
