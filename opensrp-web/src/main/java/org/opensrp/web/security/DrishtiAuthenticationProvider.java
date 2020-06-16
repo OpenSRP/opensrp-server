@@ -1,7 +1,5 @@
 package org.opensrp.web.security;
 
-import static java.text.MessageFormat.format;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +9,7 @@ import org.opensrp.api.domain.User;
 import org.opensrp.connector.openmrs.service.OpenmrsUserService;
 import org.opensrp.domain.postgres.CustomQuery;
 import org.opensrp.service.ClientService;
+import org.opensrp.service.EventService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +24,7 @@ import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 
@@ -44,23 +44,33 @@ public class DrishtiAuthenticationProvider implements AuthenticationProvider {
 	
 	private static final String AUTH_HASH_KEY = "_auth";
 	
+	private static final String provider = "Provider";
+	
 	//private AllOpenSRPUsers allOpenSRPUsers;
 	private PasswordEncoder passwordEncoder;
 	
 	private OpenmrsUserService openmrsUserService;
+	
+	@Autowired
+	private BCryptPasswordEncoder bcryptPasswordEncoder;
 	
 	@Resource(name = "redisTemplate")
 	private HashOperations<String, String, Authentication> hashOps;
 	
 	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
+	
 	private ClientService clientService;
+	
+	@Autowired
+	private EventService eventService;
+	
 	@Value("#{opensrp['opensrp.authencation.cache.ttl']}")
 	private int cacheTTL;
 	
 	@Autowired
 	public DrishtiAuthenticationProvider(OpenmrsUserService openmrsUserService,
-	    @Qualifier("shaPasswordEncoder") PasswordEncoder passwordEncoder,ClientService clientService) {
+	    @Qualifier("shaPasswordEncoder") PasswordEncoder passwordEncoder, ClientService clientService) {
 		this.openmrsUserService = openmrsUserService;
 		this.passwordEncoder = passwordEncoder;
 		this.clientService = clientService;
@@ -114,7 +124,7 @@ public class DrishtiAuthenticationProvider implements AuthenticationProvider {
 		});
 	}
 	
-	public User getDrishtiUser(Authentication authentication, String username) {
+	/*public User getDrishtiUser(Authentication authentication, String username) {
 		User user = null;
 		try {
 			if (openmrsUserService.authenticate(authentication.getName(), authentication.getCredentials().toString())) {
@@ -133,5 +143,70 @@ public class DrishtiAuthenticationProvider implements AuthenticationProvider {
 			throw new BadCredentialsException(INTERNAL_ERROR);
 		}
 		return user;
+	}*/
+	
+	public Boolean getAuthentication(Authentication authentication, CustomQuery userInfo) {
+		/*CustomQuery userInfo = eventService.getUser(authentication.getName());*/
+		Boolean match = false;
+		if (userInfo != null) {
+			List<CustomQuery> roles = eventService.getRoles(userInfo.getId());
+			
+			if (!isProvider(roles)) {
+				return false;
+			}
+		}
+		if (userInfo != null) {
+			match = bcryptPasswordEncoder.matches(authentication.getCredentials().toString(), userInfo.getPassword());
+		}
+		
+		return match;
+	}
+	
+	public User getDrishtiUser(Authentication authentication, String username) {
+		User user = null;
+		
+		CustomQuery userInfo = eventService.getUser(authentication.getName());
+		if (getAuthentication(authentication, userInfo)) {
+			
+			//user = openmrsUserService.getUser(username);
+			user = new User(userInfo.getUserUUID(), userInfo.getName(), null, userInfo.getFullName(), null,
+			        userInfo.getFullName(), null, null);
+			
+			user.addAttribute("_PERSON_UUID", userInfo.getPersonUUID());
+			user.addRole("Provider");
+			user.addPermission(null);
+			
+		}
+		
+		return user;
+	}
+	
+	public User getUser(Authentication authentication, String username) {
+		User user = null;
+		
+		CustomQuery userInfo = eventService.getUser(authentication.getName());
+		
+		if (userInfo != null) {
+			user = new User(userInfo.getUserUUID(), userInfo.getName(), null, userInfo.getFullName(), null,
+			        userInfo.getFullName(), null, null);
+			
+			user.addAttribute("_PERSON_UUID", userInfo.getPersonUUID());
+			user.addRole("Provider");
+			user.addPermission(null);
+			
+			System.out.println("user:" + user);
+		}
+		return user;
+	}
+	
+	private Boolean isProvider(List<CustomQuery> roles) {
+		if (roles != null) {
+			for (CustomQuery role : roles) {
+				if (role.getName().equalsIgnoreCase(provider)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }

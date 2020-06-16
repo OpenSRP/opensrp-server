@@ -351,7 +351,8 @@ public class EventResource extends RestResource<Event> {
 	protected ResponseEntity<String> clientListToDeleteFromAPP(HttpServletRequest request) {
 		Map<String, Object> response = new HashMap<String, Object>();
 		try {
-			List<CustomQuery> locations = eventService.getLocations(request.getRemoteUser());
+			System.err.println("");
+			/*List<CustomQuery> locations = eventService.getLocations(request.getRemoteUser());
 			String location = "";
 			String userType = "";
 			List<String> address = new ArrayList<String>();
@@ -429,8 +430,8 @@ public class EventResource extends RestResource<Event> {
 			} else {
 				logger.info("No location found..");
 				return new ResponseEntity<>(new Gson().toJson(response), HttpStatus.INTERNAL_SERVER_ERROR);
-			}
-			
+			}*/
+			return new ResponseEntity<>(new Gson().toJson(response), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		catch (Exception e) {
 			response.put("msg", "Error occurred");

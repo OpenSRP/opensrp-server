@@ -30,20 +30,21 @@ public interface CustomEventMapper extends EventMapper {
 	                                                     @Param("parentCode") String parentCode);
 	
 	List<Event> selectByConceptAndValue(@Param("concept") String concept, @Param("conceptValue") String conceptValue);
-
+	
 	List<CustomQuery> getLocations(int userId);
-
+	
 	CustomQuery getUser(String userName);
-
+	
 	CustomQuery getTeamMemberId(int userId);
-
+	
 	int updateHealthId(HealthId healthId);
-
+	
 	List<HealthId> gethealthIds(boolean status, String type);
-
+	
 	List<Event> selectByProvider(@Param("serverVersion") long serverVersion, @Param("providerId") String providerId,
 	                             @Param("limit") int limit);
-
-
+	
 	int insertHealthId(HealthId healthId);
+	
+	List<CustomQuery> getRoles(@Param("userId") int userId);
 }

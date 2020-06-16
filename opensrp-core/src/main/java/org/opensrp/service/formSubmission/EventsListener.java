@@ -82,7 +82,7 @@ public class EventsListener {
 		}
 		try {
 			//update server version first
-			addServerVersion();
+			//addServerVersion();
 			logger.info("Fetching Events");
 			long version = getVersion();
 			

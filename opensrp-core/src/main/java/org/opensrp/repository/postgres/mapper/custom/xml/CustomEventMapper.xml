@@ -12,6 +12,10 @@
 	<resultMap id="customQueryMap" type="org.opensrp.domain.postgres.CustomQuery">
 		<id column="id" jdbcType="BIGINT" property="id" />
 		<result column="name" jdbcType="VARCHAR" property="name"/>
+		<result column="password" jdbcType="VARCHAR" property="password"/>
+		<result column="person_uuid" jdbcType="VARCHAR" property="personUUID"/>
+		<result column="uuid" jdbcType="VARCHAR" property="userUUID"/>
+		<result column="full_name" jdbcType="VARCHAR" property="fullName"/>
 	</resultMap>
 
 	<resultMap id="healthIdMap" type="org.opensrp.domain.postgres.HealthId">
@@ -42,8 +46,11 @@
 	</select>
 
 	<select id="getUser" parameterType="java.lang.String" resultMap="customQueryMap">
-		select id as id, username as name, enable_sim_print as enable from core.users
+	select id as id, username as name,password,person_uuid, uuid,concat(trim(first_name),' ',trim(last_name)) as full_name,enable_sim_print as enable  from core.users
 		WHERE username = #{userName,jdbcType=VARCHAR}
+		
+		<!-- select id as id, username as name, enable_sim_print as enable from core.users
+		WHERE username = #{userName,jdbcType=VARCHAR} -->
 	</select>
 
 	<select id="getTeamMemberId" parameterType="int" resultMap="customQueryMap">
@@ -165,4 +172,9 @@
 		)
 	</insert>
 
+	<select id="getRoles" resultMap="customQueryMap">
+		select r.name from core.user_role as ul join core.role as r
+		on ul.role_id = r.id where ul.user_id = #{userId}
+	</select>
+	
 </mapper>

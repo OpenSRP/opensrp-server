@@ -272,68 +272,73 @@ public class AllEvents extends MotechBaseRepository<Event> implements EventsRepo
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public List<CustomQuery> getLocations(int userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public CustomQuery getUser(String userName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public CustomQuery getTeamMemberId(int userId) {
 		return null;
 	}
-
+	
 	@Override
 	public int updateHealthId(HealthId healthId) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	
 	@Override
 	public List<HealthId> gethealthIds(boolean status, String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public List<Event> selectBySearchBean(AddressSearchBean addressSearchBean, long serverVersion, String providerId,
 	                                      int limit) {
 		return null;
 	}
-
+	
 	@Override
 	public Integer findEventIdByFormSubmissionId(String formSubmissionId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public Event findEventByEventId(Integer eventId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public List<Event> selectByProvider(long serverVersion, String providerId, int limit) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
+	
 	@Override
 	public int insertHealthId(HealthId healthId) {
 		return 0;
 	}
-
+	
 	@Override
 	public List<String> getHouseholdId(Integer maxid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public List<CustomQuery> getRoles(int userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

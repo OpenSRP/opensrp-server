@@ -525,7 +525,7 @@ public class EventsRepositoryImpl extends BaseRepositoryImpl<Event> implements E
 		}
 		return new ArrayList<>();
 	}
-
+	
 	@Override
 	public List<CustomQuery> getLocations(int userId) {
 		
@@ -537,37 +537,37 @@ public class EventsRepositoryImpl extends BaseRepositoryImpl<Event> implements E
 		// TODO Auto-generated method stub
 		return eventMapper.getUser(userName);
 	}
-
+	
 	@Override
 	public CustomQuery getTeamMemberId(int userId) {
 		return eventMapper.getTeamMemberId(userId);
 	}
-
+	
 	@Override
 	public int updateHealthId(HealthId healthId) {
 		return eventMapper.updateHealthId(healthId);
 		
 	}
-
+	
 	@Override
 	public List<HealthId> gethealthIds(boolean status, String type) {
 		List<HealthId> healthIds = eventMapper.gethealthIds(status, type);
 		return null;
 	}
-
+	
 	@Override
 	public List<Event> selectBySearchBean(AddressSearchBean addressSearchBean, long serverVersion, String providerId,
 	                                      int limit) {
 		return convert(eventMetadataMapper.selectBySearchBean(addressSearchBean, serverVersion, providerId,
 		    DEFAULT_FETCH_SIZE));
 	}
-
+	
 	@Override
 	public Integer findEventIdByFormSubmissionId(String formSubmissionId) {
 		// TODO Auto-generated method stub
 		return eventMetadataMapper.findEventIdByFormSubmissionId(formSubmissionId);
 	}
-
+	
 	@Override
 	public Event findEventByEventId(Integer eventId) {
 		org.opensrp.domain.postgres.Event pgEvent = eventMetadataMapper.findEventByEventId(eventId);
@@ -577,22 +577,26 @@ public class EventsRepositoryImpl extends BaseRepositoryImpl<Event> implements E
 			return null;
 		}
 	}
-
+	
 	@Override
 	public List<Event> selectByProvider(long serverVersion, String providerId, int limit) {
 		return convert(eventMetadataMapper.selectByProvider(serverVersion, providerId, DEFAULT_FETCH_SIZE));
 	}
-
-
-
+	
 	@Override
 	public int insertHealthId(HealthId healthId) {
 		return eventMapper.insertHealthId(healthId);
 	}
-
+	
 	@Override
 	public List<String> getHouseholdId(Integer maxId) {
 		// TODO Auto-generated method stub
-		return eventMetadataMapper.getHouseholdId(maxId, maxId+200);
+		return eventMetadataMapper.getHouseholdId(maxId, maxId + 200);
+	}
+	
+	@Override
+	public List<CustomQuery> getRoles(int userId) {
+		// TODO Auto-generated method stub
+		return eventMapper.getRoles(userId);
 	}
 }
